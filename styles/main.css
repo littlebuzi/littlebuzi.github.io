@@ -280,7 +280,7 @@ p > code {
   background: #e1e9ed;
 }
 pre {
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
   padding: 10pt 15pt;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;

@@ -7,7 +7,7 @@
 <title>
     PHP初级 | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564062780596">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564064243030">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564062780596" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564064243030" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -127,9 +127,11 @@
 <ol>
 <li>PHP 脚本以 <?php 开始，以 ?>结束：</li>
 </ol>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 // PHP 代码
 ?&gt;
+
 </code></pre>
 <ul>
 <li>PHP 脚本在服务器上执行，然后将纯 HTML 结果发送回浏览器。</li>
@@ -140,7 +142,8 @@
 <hr>
 <br>
 <p>2.向浏览器输出文本 &quot;Hello World!&quot;：</p>
-<pre><code>&lt;!DOCTYPE html&gt; 
+<pre><code>
+&lt;!DOCTYPE html&gt; 
 &lt;html&gt; 
 &lt;body&gt; 
 
@@ -152,6 +155,7 @@ echo &quot;Hello World!&quot;;
 
 &lt;/body&gt; 
 &lt;/html&gt;
+
 </code></pre>
 <ul>
 <li>PHP 中的每个代码行都必须以分号结束。</li>
@@ -161,7 +165,8 @@ echo &quot;Hello World!&quot;;
 <hr>
 <br>
 <p>3.注释</p>
-<pre><code>&lt;!DOCTYPE html&gt;
+<pre><code>
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
 
@@ -177,18 +182,22 @@ PHP 多行
 
 &lt;/body&gt;
 &lt;/html&gt;
+
 </code></pre>
 <hr>
 <br>
 <h1 id="变量">变量</h1>
+<br>
 <hr>
 <br>
 <p>变量是用于存储信息的&quot;容器&quot;：</p>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 $txt=&quot;Hello world!&quot;;
 $x=5;
 $y=10.5;
 ?&gt;
+
 </code></pre>
 <ul>
 <li>PHP 变量规则：</li>
@@ -197,7 +206,6 @@ $y=10.5;
 <li>变量名只能包含字母数字字符以及下划线（A-z、0-9 和 _ ）</li>
 <li>变量名不能包含空格</li>
 <li>变量名是区分大小写的（$y 和 $Y 是两个不同的变量）</li>
-<li></li>
 </ul>
 <hr>
 <br>
@@ -214,10 +222,12 @@ $y=10.5;
 <li>变量的作用域是脚本中变量可被引用/使用的部分。</li>
 <li>PHP 有四种不同的变量作用域：</li>
 </ul>
-<pre><code>local
+<pre><code>
+local
 global
 static
 parameter
+
 </code></pre>
 <ul>
 <li>局部和全局作用域</li>
@@ -225,7 +235,8 @@ parameter
 <li>除了函数外，全局变量可以被脚本中的任何部分访问，要在一个函数中访问一个全局变量，需要使用 global 关键字。</li>
 <li>在 PHP 函数内部声明的变量是局部变量，仅能在函数内部访问：</li>
 </ul>
-<pre><code>&lt;?php 
+<pre><code>
+&lt;?php 
 $x=5; // 全局变量 
 
 function myTest() 
@@ -266,7 +277,8 @@ echo &quot;变量 y 为: $y&quot;;
 <li>global 关键字用于函数内访问全局变量。</li>
 <li>在函数内调用函数外定义的全局变量，我们需要在函数中的变量前加上 global 关键字：</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 $x=5;
 $y=10;
  
@@ -279,12 +291,14 @@ function myTest()
 myTest();
 echo $y; // 输出 15
 ?&gt;
+
 </code></pre>
 <ul>
 <li>PHP 将所有全局变量存储在一个名为 $GLOBALS[index] 的数组中。 index 保存变量的名称。这个数组可以在函数内部访问，也可以直接用来更新全局变量。</li>
 <li>上面的实例可以写成这样：</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 $x=5;
 $y=10;
  
@@ -296,15 +310,17 @@ function myTest()
 myTest();
 echo $y;
 ?&gt;
+
 </code></pre>
 <hr>
 <br>
-<p>Static 作用域</p>
 <ul>
+<li>Static 作用域</li>
 <li>当一个函数完成时，它的所有变量通常都会被删除。然而，有时候您希望某个局部变量不要被删除。</li>
 <li>要做到这一点，请在您第一次声明变量时使用 static 关键字：</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 function myTest()
 {
     static $x=0;
@@ -317,6 +333,7 @@ myTest();
 myTest();
 myTest();
 ?&gt;
+
 </code></pre>
 <ul>
 <li>然后，每次调用该函数时，该变量将会保留着函数前一次被调用时的值。</li>
@@ -329,13 +346,15 @@ myTest();
 <li>参数是通过调用代码将值传递给函数的局部变量。</li>
 <li>参数是在参数列表中声明的，作为函数声明的一部分：</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 function myTest($x)
 {
     echo $x;
 }
 myTest(5);
 ?&gt;
+
 </code></pre>
 <hr>
 <br>
@@ -347,7 +366,8 @@ myTest(5);
 <li>4、函数内访问全局变量需要 global 关键字或者使用 $GLOBALS[index] 数组</li>
 <li>在 php 中函数是有独立的作用域，所以局部变量会覆盖全局变量，即使局部变量中没有全局变量相同的变量，也会被覆盖。如下：</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 $a=5;
 $b=3;
 function t()
@@ -356,11 +376,13 @@ function t()
 }
 t();
 ?&gt;
+
 </code></pre>
 <ul>
 <li>要想在函数中直接使用全局变量可以通过 global 关键字声明或者通过 php 中自定义的 $GLOBALS 数组获取:</li>
 </ul>
-<pre><code>&lt;?php
+<pre><code>
+&lt;?php
 $a=5;
 $b=3;
 function t1()
@@ -378,15 +400,81 @@ function t2()
 }
 t2();
 ?&gt;
+
 </code></pre>
 <hr>
 <br>
-<hr>
+# echo 和 print 语句
 <br>
 <hr>
 <br>
+<ul>
+<li>echo 和 print 区别:</li>
+<li>echo - 可以输出一个或多个字符串</li>
+<li>print - 只允许输出一个字符串，返回值总为 1</li>
+<li>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。</li>
+</ul>
 <hr>
 <br>
+<ul>
+<li>PHP echo 语句</li>
+<li>echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。</li>
+</ul>
+<pre><code>
+&lt;?php
+echo &quot;&lt;h2&gt;PHP 很有趣!&lt;/h2&gt;&quot;;
+echo &quot;Hello world!&lt;br&gt;&quot;;
+echo &quot;我要学 PHP!&lt;br&gt;&quot;;
+echo &quot;这是一个&quot;, &quot;字符串，&quot;, &quot;使用了&quot;, &quot;多个&quot;, &quot;参数。&quot;;
+?&gt;
+
+</code></pre>
+<p>显示变量</p>
+<pre><code>
+&lt;?php
+$txt1=&quot;学习 PHP&quot;;
+$txt2=&quot;RUNOOB.COM&quot;;
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+ 
+echo $txt1;
+echo &quot;&lt;br&gt;&quot;;
+echo &quot;在 $txt2 学习 PHP &quot;;
+echo &quot;&lt;br&gt;&quot;;
+echo &quot;我车的品牌是 {$cars[0]}&quot;;
+
+?&gt;
+
+</code></pre>
+<hr>
+<br>
+<ul>
+<li>PHP print 语句</li>
+<li>print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。</li>
+<li>显示字符串</li>
+</ul>
+<pre><code>
+&lt;?php
+print &quot;&lt;h2&gt;PHP 很有趣!&lt;/h2&gt;&quot;;
+print &quot;Hello world!&lt;br&gt;&quot;;
+print &quot;我要学习 PHP!&quot;;
+?&gt;
+
+</code></pre>
+<p>显示变量</p>
+<pre><code>
+&lt;?php
+$txt1=&quot;学习 PHP&quot;;
+$txt2=&quot;RUNOOB.COM&quot;;
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+ 
+print $txt1;
+print &quot;&lt;br&gt;&quot;;
+print &quot;在 $txt2 学习 PHP &quot;;
+print &quot;&lt;br&gt;&quot;;
+print &quot;我车的品牌是 {$cars[0]}&quot;;
+?&gt;
+
+</code></pre>
 <hr>
 <br>
 <hr>
