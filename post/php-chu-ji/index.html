@@ -7,7 +7,7 @@
 <title>
     PHP初级 | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564059721968">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564062518418">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564059721968" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564062518418" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -112,7 +112,7 @@
                             <time class="post-time">2019-07-25</time>
                             
                                 <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-banana">
                             #php
                         </a>
                                 
@@ -207,38 +207,204 @@ $y=10.5;
 * 在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称。
 <hr>
 <br>
+* PHP 变量作用域
+* 变量的作用域是脚本中变量可被引用/使用的部分。
+* PHP 有四种不同的变量作用域：
+```
+local
+global
+static
+parameter
+```
+<ul>
+<li>局部和全局作用域</li>
+<li>在所有函数外部定义的变量，拥有全局作用域。</li>
+<li>除了函数外，全局变量可以被脚本中的任何部分访问，要在一个函数中访问一个全局变量，需要使用 global 关键字。</li>
+<li>在 PHP 函数内部声明的变量是局部变量，仅能在函数内部访问：</li>
+</ul>
+<pre><code>&lt;?php 
+$x=5; // 全局变量 
+
+function myTest() 
+{ 
+    $y=10; // 局部变量 
+    echo &quot;&lt;p&gt;测试函数内变量:&lt;p&gt;&quot;; 
+    echo &quot;变量 x 为: $x&quot;; 
+    echo &quot;&lt;br&gt;&quot;; 
+    echo &quot;变量 y 为: $y&quot;; 
+}  
+
+myTest(); 
+
+echo &quot;&lt;p&gt;测试函数外变量:&lt;p&gt;&quot;; 
+echo &quot;变量 x 为: $x&quot;; 
+echo &quot;&lt;br&gt;&quot;; 
+echo &quot;变量 y 为: $y&quot;; 
+?&gt;
+
+
+运行结果：
+
+测试函数内变量:
+
+变量 x 为: 
+变量 y 为: 10
+
+测试函数外变量:
+
+变量 x 为: 5
+变量 y 为:
+
+</code></pre>
 <hr>
 <br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
-<hr>
-<br>
+* PHP global 关键字
+* global 关键字用于函数内访问全局变量。
+* 在函数内调用函数外定义的全局变量，我们需要在函数中的变量前加上 global 关键字：
+```
+<?php
+$x=5;
+$y=10;
+<p>function myTest()
+{
+global <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mpunct">,</span></span></span></span>y;
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">y=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mrel">=</span></span></span></span>x+$y;
+}</p>
+<p>myTest();
+echo $y; // 输出 15
+?&gt;</p>
+<pre><code>* PHP 将所有全局变量存储在一个名为 $GLOBALS[index] 的数组中。 index 保存变量的名称。这个数组可以在函数内部访问，也可以直接用来更新全局变量。
+* 上面的实例可以写成这样：
+</code></pre>
+<?php
+$x=5;
+$y=10;
+ 
+function myTest()
+{
+    $GLOBALS['y']=$GLOBALS['x']+$GLOBALS['y'];
+} 
+ 
+myTest();
+echo $y;
+?>
+<pre><code>&lt;hr&gt;
+&lt;br&gt;
+Static 作用域
+* 当一个函数完成时，它的所有变量通常都会被删除。然而，有时候您希望某个局部变量不要被删除。
+* 要做到这一点，请在您第一次声明变量时使用 static 关键字：
+</code></pre>
+<?php
+function myTest()
+{
+    static $x=0;
+    echo $x;
+    $x++;
+    echo PHP_EOL;    // 换行符
+}
+ 
+myTest();
+myTest();
+myTest();
+?>
+<pre><code>* 然后，每次调用该函数时，该变量将会保留着函数前一次被调用时的值。
+* 该变量仍然是函数的局部变量。
+&lt;hr&gt;
+&lt;br&gt;
+* 参数作用域
+* 参数是通过调用代码将值传递给函数的局部变量。
+* 参数是在参数列表中声明的，作为函数声明的一部分：
+</code></pre>
+<?php
+function myTest($x)
+{
+    echo $x;
+}
+myTest(5);
+?>
+<pre><code>
+&lt;hr&gt;
+&lt;br&gt;
+* 总结：
+* 1、定义在函数外部的就是全局变量，它的作用域从定义处一直到文件结尾。
+* 2、函数内定义的变量就是局部变量，它的作用域为函数定义范围内。
+* 3、函数之间存在作用域互不影响。
+* 4、函数内访问全局变量需要 global 关键字或者使用 $GLOBALS[index] 数组
+* 在 php 中函数是有独立的作用域，所以局部变量会覆盖全局变量，即使局部变量中没有全局变量相同的变量，也会被覆盖。如下：
+</code></pre>
+<?php
+$a=5;
+$b=3;
+function t()
+{
+    echo $a-$b; // 输出 0
+}
+t();
+?>
+<pre><code>* 要想在函数中直接使用全局变量可以通过 global 关键字声明或者通过 php 中自定义的 $GLOBALS 数组获取:
+</code></pre>
+<?php
+$a=5;
+$b=3;
+function t1()
+{  
+    global $a,$b;
+    echo $a-$b;  // 输出 2
+}
+t1();
+
+echo PHP_EOL;
+
+function t2()
+{
+    echo $GLOBALS['a']-$GLOBALS['b'];  // 输出 2
+}
+t2();
+?>
+<pre><code>
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+&lt;hr&gt;
+&lt;br&gt;
+
+
+
+
+
+
+
+</code></pre>
 
                                 </div>
                     </article>
