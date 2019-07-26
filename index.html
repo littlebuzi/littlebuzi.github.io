@@ -7,7 +7,7 @@
 <title>
     buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564140924857">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564148025622">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564140924857" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564148025622" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -107,7 +107,7 @@
                     <time class="post-time">2019-07-25</time>
                     
                         <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-success">
             #php
         </a>
                         
@@ -565,8 +565,97 @@ echo $a;
 
 
 
+String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布尔型）, Array（数组）, Object（对象）, NULL（空值）。
 
 
+PHP 字符串
+
+一个字符串是一串字符的序列，就像 &amp;quot;Hello world!&amp;quot;。
+你可以将任何文本放在单引号和双引号中：
+
+
+&amp;lt;?php 
+$x = &amp;quot;Hello world!&amp;quot;;
+echo $x;
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+$x = &#39;Hello world!&#39;;
+echo $x;
+?&amp;gt;
+
+
+
+
+PHP 整型
+
+
+整数是一个没有小数的数字。
+
+
+整数必须至少有一个数字 (0-9)
+
+
+整数不能包含逗号或空格
+
+
+整数是没有小数点的
+
+
+整数可以是正数或负数
+
+
+整型可以用三种格式来指定：十进制， 十六进制（ 以 0x 为前缀）或八进制（前缀为 0）。
+
+
+PHP var_dump() 函数返回变量的数据类型和值：
+
+&amp;lt;?php 
+$x = 5985;
+var_dump($x);
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+$x = -345; // 负数 
+var_dump($x);
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+$x = 0x8C; // 十六进制数
+var_dump($x);
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;
+$x = 047; // 八进制数
+var_dump($x);
+?&amp;gt;
+
+结果：
+
+int(5985) 
+int(-345) 
+int(140) 
+int(39)
+
+
+PHP 浮点型
+
+浮点数是带小数部分的数字，或是指数形式。
+在以下实例中我们将测试不同的数字。 PHP var_dump() 函数返回变量的数据类型和值：
+
+
+&amp;lt;?php 
+$x = 10.365;
+var_dump($x);
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+$x = 2.4e3;
+var_dump($x);
+echo &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+$x = 8E-5;
+var_dump($x);
+?&amp;gt;
+
+
+PHP 布尔型
+
+布尔型可以是 TRUE 或 FALSE。
+布尔型通常用于条件判断。在接下来的章节中你会学到更多关于条件控制的教程。
+
+
+$x=true;
+$y=false;
 
 
 
@@ -784,7 +873,7 @@ For 循环
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-banana">
             #工具
         </a>
                         
@@ -869,7 +958,7 @@ For 循环
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564140924857)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564148025622)">
         </div>
         <h1 class="id_card-title">
             buzi
