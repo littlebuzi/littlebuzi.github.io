@@ -7,7 +7,7 @@
 <title>
     php | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564148025622">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564405725232">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564148025622" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564405725232" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -112,7 +112,7 @@
                     <time class="post-time">2019-07-25</time>
                     
                         <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_4">
             #php
         </a>
                         
@@ -635,6 +635,8 @@ int(140)
 int(39)
 
 
+
+
 PHP 浮点型
 
 浮点数是带小数部分的数字，或是指数形式。
@@ -653,10 +655,12 @@ var_dump($x);
 ?&amp;gt;
 
 
+
+
 PHP 布尔型
 
 布尔型可以是 TRUE 或 FALSE。
-布尔型通常用于条件判断。在接下来的章节中你会学到更多关于条件控制的教程。
+布尔型通常用于条件判断。
 
 
 $x=true;
@@ -665,11 +669,158 @@ $y=false;
 
 
 
+PHP 数组
+
+数组可以在一个变量中存储多个值。
+在以下实例中创建了一个数组， 然后使用 PHP var_dump() 函数返回数组的数据类型和值：
+
+
+&amp;lt;?php 
+$cars=array(&amp;quot;Volvo&amp;quot;,&amp;quot;BMW&amp;quot;,&amp;quot;Toyota&amp;quot;);
+var_dump($cars);
+?&amp;gt;
+
+
+
+
+PHP 对象
+对象数据类型也可以用于存储数据。
+
+在 PHP 中，对象必须声明。
+首先，你必须使用class关键字声明类对象。类是可以包含属性和方法的结构。
+然后我们在类中定义数据类型，然后在实例化的类中使用数据类型：
+
+
+&amp;lt;?php
+class Car
+{
+  var $color;
+  function __construct($color=&amp;quot;green&amp;quot;) {
+    $this-&amp;gt;color = $color;
+  }
+  function what_color() {
+    return $this-&amp;gt;color;
+  }
+}
+?&amp;gt;
+
+
+
+以上实例中PHP关键字this就是指向当前对象实例的指针，不指向任何其他对象或类。
+
+
+
+PHP NULL 值
+
+NULL 值表示变量没有值。NULL 是数据类型为 NULL 的值。
+NULL 值指明一个变量是否为空值。 同样可用于数据空值和NULL值的区别。
+可以通过设置变量值为 NULL 来清空变量数据：
+
+
+&amp;lt;?php
+$x=&amp;quot;Hello world!&amp;quot;;
+$x=null;
+var_dump($x);
+?&amp;gt;
+
+
 
 
 类型比较
 
 
+
+虽然 PHP 是弱类型语言，但也需要明白变量类型及它们的意义，因为我们经常需要对 PHP 变量进行比较，包含松散和严格比较。
+
+松散比较：使用两个等号 == 比较，只比较值，不比较类型。
+严格比较：用三个等号 === 比较，除了比较值，也比较类型。
+例如，&amp;quot;42&amp;quot; 是一个字符串而 42 是一个整数。FALSE 是一个布尔值而 &amp;quot;false&amp;quot; 是一个字符串。
+
+
+&amp;lt;?php
+if(42 == &amp;quot;42&amp;quot;) {
+    echo &#39;1、值相等&#39;;
+}
+ 
+echo PHP_EOL; // 换行符
+ 
+if(42 === &amp;quot;42&amp;quot;) {
+    echo &#39;2、类型相等&#39;;
+} else {
+    echo &#39;3、不相等&#39;;
+}
+?&amp;gt;
+
+以上实例输出结果为：
+
+1、值相等
+3、不相等
+
+
+
+
+PHP中 比较 0、false、null
+
+测试代码:
+
+&amp;lt;?php
+echo &#39;0 == false: &#39;;
+var_dump(0 == false);
+echo &#39;0 === false: &#39;;
+var_dump(0 === false);
+echo PHP_EOL;
+echo &#39;0 == null: &#39;;
+var_dump(0 == null);
+echo &#39;0 === null: &#39;;
+var_dump(0 === null);
+echo PHP_EOL;
+echo &#39;false == null: &#39;;
+var_dump(false == null);
+echo &#39;false === null: &#39;;
+var_dump(false === null);
+echo PHP_EOL;
+echo &#39;&amp;quot;0&amp;quot; == false: &#39;;
+var_dump(&amp;quot;0&amp;quot; == false);
+echo &#39;&amp;quot;0&amp;quot; === false: &#39;;
+var_dump(&amp;quot;0&amp;quot; === false);
+echo PHP_EOL;
+echo &#39;&amp;quot;0&amp;quot; == null: &#39;;
+var_dump(&amp;quot;0&amp;quot; == null);
+echo &#39;&amp;quot;0&amp;quot; === null: &#39;;
+var_dump(&amp;quot;0&amp;quot; === null);
+echo PHP_EOL;
+echo &#39;&amp;quot;&amp;quot; == false: &#39;;
+var_dump(&amp;quot;&amp;quot; == false);
+echo &#39;&amp;quot;&amp;quot; === false: &#39;;
+var_dump(&amp;quot;&amp;quot; === false);
+echo PHP_EOL;
+echo &#39;&amp;quot;&amp;quot; == null: &#39;;
+var_dump(&amp;quot;&amp;quot; == null);
+echo &#39;&amp;quot;&amp;quot; === null: &#39;;
+var_dump(&amp;quot;&amp;quot; === null);
+
+以上实例输出结果为：
+
+0 == false: bool(true)
+0 === false: bool(false)
+
+0 == null: bool(true)
+0 === null: bool(false)
+
+false == null: bool(true)
+false === null: bool(false)
+
+&amp;quot;0&amp;quot; == false: bool(true)
+&amp;quot;0&amp;quot; === false: bool(false)
+
+&amp;quot;0&amp;quot; == null: bool(false)
+&amp;quot;0&amp;quot; === null: bool(false)
+
+&amp;quot;&amp;quot; == false: bool(true)
+&amp;quot;&amp;quot; === false: bool(false)
+
+&amp;quot;&amp;quot; == null: bool(true)
+&amp;quot;&amp;quot; === null: bool(false)
 
 
 
@@ -879,7 +1030,7 @@ For 循环
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564148025622)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564405725232)">
         </div>
         <h1 class="id_card-title">
             buzi
