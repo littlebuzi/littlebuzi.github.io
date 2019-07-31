@@ -7,7 +7,7 @@
 <title>
     关于 | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564578648241">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564579818720">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -31,11 +31,57 @@
 
 <body>
     <div class="main">
-        <div class="header">
+        <style>
+
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
+
+/* Slide transitions */
+
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
+
+<div class="header" class="header-navigation" id="header">
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564578648241" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564579818720" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -83,6 +129,31 @@
         </div>
     </div>
 </div>
+
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
+
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
+
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
+
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
+
+    new_scroll_position = last_scroll_position;
+});
+</script>
 
 <script>
     $(document).ready(function() {
@@ -160,7 +231,7 @@
                                 <!-- id-card -->
                                 
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564578648241)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564579818720)">
         </div>
         <h1 class="id_card-title">
             buzi
