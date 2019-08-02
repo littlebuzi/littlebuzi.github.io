@@ -7,7 +7,7 @@
 <title>
     buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564750288864">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1564758656314">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -73,7 +73,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564750288864" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1564758656314" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -318,6 +318,157 @@ Go 语言的基础组成有以下几个部分：
 
 
 
+
+基础语法
+
+
+
+1.Go 标记
+
+Go 程序可以由多个标记组成，可以是关键字，标识符，常量，字符串，符号。如以下 GO 语句由 6 个标记组成：
+
+
+fmt.Println(&amp;quot;Hello, World!&amp;quot;)
+
+
+
+
+
+2.行分隔符
+
+
+在 Go 程序中，一行代表一个语句结束。每个语句不需要像 C 家族中的其它语言一样以分号 ; 结尾，因为这些工作都将由 Go 编译器自动完成。
+
+
+如果你打算将多个语句写在同一行，它们则必须使用 ; 人为区分，但在实际开发中我们并不鼓励这种做法。
+
+
+以下为两个语句：
+
+
+
+fmt.Println(&amp;quot;Be my girl friend !&amp;quot;)
+fmt.Println(&amp;quot;交个朋友：Be my girl friend&amp;quot;)
+
+
+
+
+3.注释
+
+注释不会被编译，每一个包应该有相关注释。
+单行注释是最常见的注释形式，你可以在任何地方使用以 // 开头的单行注释。多行注释也叫块注释，均已以 /* 开头，并以 */ 结尾。如：
+
+
+// 单行注释
+/*
+ Author by 菜鸟教程
+ 我是多行注释
+ */
+
+
+
+
+标识符
+标识符用来命名变量、类型等程序实体。一个标识符实际上就是一个或是多个字母(A~Z和a~z)数字(0~9)、下划线_组成的序列，但是第一个字符必须是字母或下划线而不能是数字。
+以下是有效的标识符：
+
+mahesh   kumar   abc   move_name   a_123
+myname50   _temp   j   a23b9   retVal
+
+
+以下是无效的标识符：
+
+1ab（以数字开头）
+case（Go 语言的关键字）
+a+b（运算符是不允许的）
+
+
+
+
+字符串连接
+Go 语言的字符串可以通过 + 实现：
+
+package main
+import &amp;quot;fmt&amp;quot;
+func main() {
+    fmt.Println(&amp;quot;Google&amp;quot; + &amp;quot;Runoob&amp;quot;)
+}
+
+以上实例输出结果为：
+
+GoogleRunoob
+
+
+
+
+关键字
+
+下面列举了 Go 代码中会使用到的 25 个关键字或保留字：
+
+
+
+除了以上介绍的这些关键字，Go 语言还有 36 个预定义标识符：
+
+
+
+
+程序一般由关键字、常量、变量、运算符、类型和函数组成。
+
+
+程序中可能会使用到这些分隔符：括号 ()，中括号 [] 和大括号 {}。
+
+
+程序中可能会使用到这些标点符号：.、,、;、: 和 …。
+
+
+
+
+Go 语言的空格
+
+Go 语言中变量的声明必须使用空格隔开，如：
+
+
+var age int;
+
+
+
+
+语句中适当使用空格能让程序更易阅读。
+
+
+无空格：
+
+
+
+fruit=apples+oranges;
+
+
+
+在变量与运算符间加入空格，程序看起来更加美观，如：
+
+
+fruit = apples + oranges; 
+
+
+
+
+数据类型
+
+
+
+在 Go 编程语言中，数据类型用于声明函数和变量。
+数据类型的出现是为了把数据分成所需内存大小不同的数据，编程的时候需要用大数据的时候才需要申请大内存，就可以充分利用内存。
+Go 语言按类别有以下几种数据类型：
+
+数字类型
+Go 也有基于架构的类型，例如：int、uint 和 uintptr。
+
+浮点型
+
+其他数字类型
+以下列出了其他更多的数字类型：
+
+
                                         </div>
                                         
                                             <a class="btn btn-text" href="https://littlebuzi.github.io//post/H_c-BK4ns">Read More ~</a>
@@ -488,7 +639,7 @@ WP Pusher是另一个基于Git的插件，可让您直接从GitHub将主题和�
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://littlebuzi.github.io//tag/N4SH6d1dT" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-error">
             #科学
         </a>
                         
@@ -1476,7 +1627,7 @@ For 循环
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-banana">
             #工具
         </a>
                         
@@ -1561,7 +1712,7 @@ For 循环
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564750288864)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1564758656314)">
         </div>
         <h1 class="id_card-title">
             buzi
