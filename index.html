@@ -7,7 +7,7 @@
 <title>
     buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565337833419">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565362181264">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -73,7 +73,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565337833419" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565362181264" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -168,6 +168,218 @@ window.addEventListener('scroll', function(e) {
                 <div id="content" class="main-container-left">
                     
         
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/VKynG8VXp">
+                        制作“漫画网站”爬虫全过程
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-09</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/VKynG8VXp" class="post-feature-image" style="background-image:url(https://www.crummy.com/software/BeautifulSoup/10.1.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            #目的
+1.目标网站：https://www.manhwa.cc/
+![1565345268608](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565345268608.png)
+2.目标结果：获取全部漫画图片文件，并分好文件夹
+#实现
+1.基本逻辑
+![1565360279264](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565360279264.png)
+2.代码实现
+import requests
+from bs4 import BeautifulSoup
+import re
+import os
+
+#1-1030
+for num1 in range(1,1031):
+    circle = requests.get(&#39;https://www.manhwa.cc/book/&#39;+str(num1))
+    # 将获取的图片地址依次放入count中
+    count = []
+    # 将获取的网页内容放入BeautifulSoup
+    soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+    # 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+
+for item_book in soup.select(&#39;.d_bg_t&#39;):
+    for book_name in item_book.find_all(&#39;a&#39;):
+        if(book_name.string!=&#39;韩国&#39;and book_name.string!=&#39;男性&#39;):
+            book_name_clean=book_name.string
+            print(num1, book_name_clean)
+
+os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
+
+#menu_path_num = []
+
+for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
+    # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+    for a in item.find_all(&#39;a&#39;):
+        #print(&#39;a&#39;, a)
+        # m 是 img标签中存在的属性
+        menu_path = &#39;https://www.manhwa.cc/&#39; + a.get(&#39;href&#39;)
+        #count.append(menu_path)
+        #menu_path_num.append(re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path))
+        menu_path_num=re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path)
+
+        #当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
+
+        #for num in menu_path_num:
+        print(&#39;book_url:&#39;,menu_path)
+        circle = requests.get(menu_path)
+        # 将获取的图片地址依次放入count中
+        count = []
+        # 将获取的网页内容放入BeautifulSoup
+        soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+        # 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+
+        for title in soup.select(&#39;div.fl.r_tab_l&#39;):
+            for title in title.find_all(&#39;span&#39;):
+                print(&#39;title:&#39;, title.text)
+                title=title.text
+
+        for item in soup.select(&#39;.r_img&#39;):
+            # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+            for img in item.find_all(&#39;img&#39;):
+                print(&#39;img_url:&#39;, img)
+                # m 是 img标签中存在的属性
+                img_path = img.get(&#39;data-original&#39;)
+                count.append(img_path)
+        # 用enumerate依次取出count中的图片地址 放入v中
+        os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
+        for i, v in enumerate(count):
+            # 将获取的v值再次放入request中进行与网站相应
+            image = requests.get(v)
+            # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
+            with open(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+            #with open(&#39;C://Users//50159//Desktop//manhua//test//&#39; + str(num1) + &#39;_&#39; + str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+                # content：图片转换成二进制，进行保存。
+                file.write(image.content)
+            print(i)
+
+到这基本工作已完成
+进入测试阶段，出现以下问题：
+1.第250本左右，书名字开始出现异常，爬取书名有其他文字并出现混乱，因为之前是通过最前面几本书的情况，通过抛弃字样，来筛选出书名，而后1030本里标签发生变动，所以之后通过只取第一个出现的标签代替现在的筛选。
+2.文件夹命名及生成文件夹出错，由于整理时出现混乱，代码写重复了。而后修改。
+3.中途停止，可能是网站识别到了这是爬虫，而后添加伪浏览器头部head，还是会停，基本是connect超时。
+针对上面问题，修改成了2.0版本:
+import requests
+from bs4 import BeautifulSoup
+import re
+import os
+
+#1-1030
+for num1 in range(2,1031):
+    #716字符问题无法生成文件夹
+import urllib.request  # url包
+
+def openUrl(circle):
+    headers = {
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&#39;,
+        &#39;Host&#39;: &#39;jandan.net&#39;
+    }
+    req = urllib.request.Request(circle, headers=headers)
+    response = urllib.request.urlopen(req)  # 请求
+    html = response.read()  # 获取
+    html = html.decode(&amp;quot;utf-8&amp;quot;)  # 解码
+    print(html)  # 打印
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    circle = requests.get(&#39;https://www.manhwa.cc/book/&#39; + str(num1))
+
+
+# 将获取的图片地址依次放入count中
+count = []
+# 将获取的网页内容放入BeautifulSoup
+soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+# 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+
+for item_book in soup.select(&#39;.d_bg_t&#39;):
+    for book_name in item_book.select(&#39;a&#39;)[0]:
+        book_name_clean = book_name.string
+        print(num1, book_name_clean)
+
+#os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
+
+for item_book in soup.select(&#39;.d_bg_t&#39;):
+    for book_name in item_book.find_all(&#39;a&#39;):
+        if(book_name.string!=&#39;韩国&#39;and book_name.string!=&#39;男性&#39;):
+            book_name_clean=book_name.string
+            print(num1, book_name_clean)
+
+#menu_path_num = []
+
+for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
+    # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+    for a in item.find_all(&#39;a&#39;):
+        #print(&#39;a&#39;, a)
+        # m 是 img标签中存在的属性
+        menu_path = &#39;https://www.manhwa.cc/&#39; + a.get(&#39;href&#39;)
+        #count.append(menu_path)
+        #menu_path_num.append(re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path))
+        menu_path_num=re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path)
+
+        #当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
+
+        #for num in menu_path_num:
+        print(&#39;book_url:&#39;,menu_path)
+        
+        circle = requests.get(menu_path)
+        # 将获取的图片地址依次放入count中
+        count = []
+        # 将获取的网页内容放入BeautifulSoup
+        soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+
+        for title in soup.select(&#39;div.fl.r_tab_l&#39;):
+            for title in title.find_all(&#39;span&#39;):
+                print(&#39;title:&#39;, title.text)
+                title=title.text
+
+        for item in soup.select(&#39;.r_img&#39;):
+            # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+            for img in item.find_all(&#39;img&#39;):
+                print(&#39;img_url:&#39;, img)
+                # m 是 img标签中存在的属性
+                img_path = img.get(&#39;data-original&#39;)
+                count.append(img_path)
+                
+        # 用enumerate依次取出count中的图片地址 放入v中
+        os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
+        for i, v in enumerate(count):
+            # 将获取的v值再次放入request中进行与网站相应
+            image = requests.get(v)
+            # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
+            with open(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+            #with open(&#39;C://Users//50159//Desktop//manhua//test//&#39; + str(num1) + &#39;_&#39; + str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+                # content：图片转换成二进制，进行保存。
+                file.write(image.content)
+            print(i)
+
+#爬取过程：
+![1565361188393](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361188393.png)
+保存：
+![1565361235369](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361235369.png)
+![1565361244280](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361244280.png)
+基本可行，最高纪录 ，爬取四本后停止。
+真的太多了，一本大小平均150M左右。
+#总结：
+爬取正本漫画 ✔
+整站漫画半自动化爬取（停止需手动启动一次）✔
+全自动下载网站漫画 （会被网站截停）×
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/VKynG8VXp">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
             <article class="post i-card">
                 <h2 class="post-title">
                     <a href="https://littlebuzi.github.io//post/6tMaFkqFd">
@@ -331,7 +543,7 @@ WP Pusher是另一个基于Git的插件，可让您直接从GitHub将主题和�
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://littlebuzi.github.io//tag/N4SH6d1dT" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-error">
             #科学
         </a>
                         
@@ -402,7 +614,7 @@ AlphaGo结合了3大块技术：先进的搜索算法、机器学习算法（即
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_4">
             #工具
         </a>
                         
@@ -487,7 +699,7 @@ AlphaGo结合了3大块技术：先进的搜索算法、机器学习算法（即
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1565337833419)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1565362181264)">
         </div>
         <h1 class="id_card-title">
             buzi

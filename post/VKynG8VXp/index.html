@@ -1,0 +1,483 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    制作“漫画网站”爬虫全过程 | buzi
+</title>
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565362181264">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
+
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <style>
+
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
+
+/* Slide transitions */
+
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
+
+<div class="header" class="header-navigation" id="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://littlebuzi.github.io/">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565362181264" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    buzi
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    时间线
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    分类
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
+
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
+
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
+
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
+
+    new_scroll_position = last_scroll_position;
+});
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            制作“漫画网站”爬虫全过程
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-08-09</time>
+                            
+                        </div>
+                        
+                            <div class="post-feature-image" style="background-image: url('https://www.crummy.com/software/BeautifulSoup/10.1.jpg')"></div>
+                            
+                                <div class="post-content">
+                                    <p>#目的</p>
+<p>1.目标网站：https://www.manhwa.cc/</p>
+<p>![1565345268608](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565345268608.png)</p>
+<p>2.目标结果：获取全部漫画图片文件，并分好文件夹</p>
+<p>#实现</p>
+<p>1.基本逻辑</p>
+<p>![1565360279264](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565360279264.png)</p>
+<p>2.代码实现</p>
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+import re
+import os
+
+#1-1030
+for num1 in range(1,1031):
+    circle = requests.get('https://www.manhwa.cc/book/'+str(num1))
+    # 将获取的图片地址依次放入count中
+    count = []
+    # 将获取的网页内容放入BeautifulSoup
+    soup = BeautifulSoup(circle.text, 'lxml')
+    # 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+
+for item_book in soup.select('.d_bg_t'):
+    for book_name in item_book.find_all('a'):
+        if(book_name.string!='韩国'and book_name.string!='男性'):
+            book_name_clean=book_name.string
+            print(num1, book_name_clean)
+
+os.makedirs('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' + str(num1) +'.'+ book_name_clean )
+
+#menu_path_num = []
+
+for item in soup.select('.d_menu&gt;ul&gt;li'):
+    # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+    for a in item.find_all('a'):
+        #print('a', a)
+        # m 是 img标签中存在的属性
+        menu_path = 'https://www.manhwa.cc/' + a.get('href')
+        #count.append(menu_path)
+        #menu_path_num.append(re.findall(r&quot;\d+\.?\d*&quot;, menu_path))
+        menu_path_num=re.findall(r&quot;\d+\.?\d*&quot;, menu_path)
+
+        #当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
+
+        #for num in menu_path_num:
+        print('book_url:',menu_path)
+        circle = requests.get(menu_path)
+        # 将获取的图片地址依次放入count中
+        count = []
+        # 将获取的网页内容放入BeautifulSoup
+        soup = BeautifulSoup(circle.text, 'lxml')
+        # 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+</code></pre>
+<pre><code class="language-python">        for title in soup.select('div.fl.r_tab_l'):
+            for title in title.find_all('span'):
+                print('title:', title.text)
+                title=title.text
+
+        for item in soup.select('.r_img'):
+            # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+            for img in item.find_all('img'):
+                print('img_url:', img)
+                # m 是 img标签中存在的属性
+                img_path = img.get('data-original')
+                count.append(img_path)
+        # 用enumerate依次取出count中的图片地址 放入v中
+        os.makedirs('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' +  book_name_clean + '//' + str(title) + '//')
+        for i, v in enumerate(count):
+            # 将获取的v值再次放入request中进行与网站相应
+            image = requests.get(v)
+            # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
+            with open('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' + book_name_clean + '//'+ str(title) + '//' +str(i) + '.jpg', 'wb') as file:
+            #with open('C://Users//50159//Desktop//manhua//test//' + str(num1) + '_' + str(i) + '.jpg', 'wb') as file:
+                # content：图片转换成二进制，进行保存。
+                file.write(image.content)
+            print(i)
+</code></pre>
+<p>到这基本工作已完成</p>
+<p>进入测试阶段，出现以下问题：</p>
+<p>1.第250本左右，书名字开始出现异常，爬取书名有其他文字并出现混乱，因为之前是通过最前面几本书的情况，通过抛弃字样，来筛选出书名，而后1030本里标签发生变动，所以之后通过只取第一个出现的标签代替现在的筛选。</p>
+<p>2.文件夹命名及生成文件夹出错，由于整理时出现混乱，代码写重复了。而后修改。</p>
+<p>3.中途停止，可能是网站识别到了这是爬虫，而后添加伪浏览器头部head，还是会停，基本是connect超时。</p>
+<p>针对上面问题，修改成了2.0版本:</p>
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+import re
+import os
+
+#1-1030
+for num1 in range(2,1031):
+    #716字符问题无法生成文件夹
+import urllib.request  # url包
+
+def openUrl(circle):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+        'Host': 'jandan.net'
+    }
+    req = urllib.request.Request(circle, headers=headers)
+    response = urllib.request.urlopen(req)  # 请求
+    html = response.read()  # 获取
+    html = html.decode(&quot;utf-8&quot;)  # 解码
+    print(html)  # 打印
+
+if __name__ == &quot;__main__&quot;:
+    circle = requests.get('https://www.manhwa.cc/book/' + str(num1))
+</code></pre>
+<h1 id=""></h1>
+<pre><code class="language-python"># 将获取的图片地址依次放入count中
+count = []
+# 将获取的网页内容放入BeautifulSoup
+soup = BeautifulSoup(circle.text, 'lxml')
+# 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+
+for item_book in soup.select('.d_bg_t'):
+    for book_name in item_book.select('a')[0]:
+        book_name_clean = book_name.string
+        print(num1, book_name_clean)
+
+#os.makedirs('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' + str(num1) +'.'+ book_name_clean )
+
+for item_book in soup.select('.d_bg_t'):
+    for book_name in item_book.find_all('a'):
+        if(book_name.string!='韩国'and book_name.string!='男性'):
+            book_name_clean=book_name.string
+            print(num1, book_name_clean)
+
+#menu_path_num = []
+
+for item in soup.select('.d_menu&gt;ul&gt;li'):
+    # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+    for a in item.find_all('a'):
+        #print('a', a)
+        # m 是 img标签中存在的属性
+        menu_path = 'https://www.manhwa.cc/' + a.get('href')
+        #count.append(menu_path)
+        #menu_path_num.append(re.findall(r&quot;\d+\.?\d*&quot;, menu_path))
+        menu_path_num=re.findall(r&quot;\d+\.?\d*&quot;, menu_path)
+
+        #当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
+
+        #for num in menu_path_num:
+        print('book_url:',menu_path)
+        
+        circle = requests.get(menu_path)
+        # 将获取的图片地址依次放入count中
+        count = []
+        # 将获取的网页内容放入BeautifulSoup
+        soup = BeautifulSoup(circle.text, 'lxml')
+
+        for title in soup.select('div.fl.r_tab_l'):
+            for title in title.find_all('span'):
+                print('title:', title.text)
+                title=title.text
+
+        for item in soup.select('.r_img'):
+            # 用bs4中的find_all获取 #gallery-list 中是否存在 img这个标签
+            for img in item.find_all('img'):
+                print('img_url:', img)
+                # m 是 img标签中存在的属性
+                img_path = img.get('data-original')
+                count.append(img_path)
+                
+        # 用enumerate依次取出count中的图片地址 放入v中
+        os.makedirs('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' +  book_name_clean + '//' + str(title) + '//')
+        for i, v in enumerate(count):
+            # 将获取的v值再次放入request中进行与网站相应
+            image = requests.get(v)
+            # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
+            with open('D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//' + book_name_clean + '//'+ str(title) + '//' +str(i) + '.jpg', 'wb') as file:
+            #with open('C://Users//50159//Desktop//manhua//test//' + str(num1) + '_' + str(i) + '.jpg', 'wb') as file:
+                # content：图片转换成二进制，进行保存。
+                file.write(image.content)
+            print(i)
+</code></pre>
+<p>#爬取过程：</p>
+<p>![1565361188393](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361188393.png)</p>
+<p>保存：</p>
+<p>![1565361235369](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361235369.png)</p>
+<p>![1565361244280](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361244280.png)</p>
+<p>基本可行，最高纪录 ，爬取四本后停止。</p>
+<p>真的太多了，一本大小平均150M左右。</p>
+<p>#总结：</p>
+<p>爬取正本漫画 ✔</p>
+<p>整站漫画半自动化爬取（停止需手动启动一次）✔</p>
+<p>全自动下载网站漫画 （会被网站截停）×</p>
+
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://littlebuzi.github.io//post/6tMaFkqFd">
+                                <h3 class="post-title">
+                                    帝国时代Ⅱ—2018年世界高手排名前10
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li></li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                            
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: 'e7c2b33da7e627d57c5a',
+            clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+            repo: 'littlebuzi.github.io',
+            owner: 'littlebuzi',
+            admin: ['littlebuzi'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
+
+                    
+                                
+</body>
+
+</html>
