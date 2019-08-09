@@ -7,7 +7,7 @@
 <title>
     制作“漫画网站”爬虫全过程 | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565362881335">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565363188801">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -81,7 +81,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565362881335" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565363188801" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -193,7 +193,7 @@ window.addEventListener('scroll', function(e) {
 <p>2.目标结果：获取全部漫画图片文件，并分好文件夹</p>
 <h1 id="实现过程">实现过程</h1>
 <p>##基本逻辑</p>
-<p>![1565360279264](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565360279264.png)</p>
+<p><img src="https://littlebuzi.github.io//post-images/1565360279264.png" alt="1565360279264"></p>
 <p>2.代码实现</p>
 <pre><code class="language-python">import requests
 from bs4 import BeautifulSoup
@@ -363,10 +363,10 @@ for item in soup.select('.d_menu&gt;ul&gt;li'):
             print(i)
 </code></pre>
 <p>#爬取过程：</p>
-<p>![1565361188393](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361188393.png)</p>
+<p><img src="https://littlebuzi.github.io//post-images/1565361188393.png" alt="1565361188393"></p>
 <p>保存：</p>
-<p>![1565361235369](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361235369.png)</p>
-<p>![1565361244280](file://C:/Users/buzi/AppData/Roaming/Typora/typora-user-images/1565361244280.png)</p>
+<p><img src="https://littlebuzi.github.io//post-images/1565361235369.png" alt="1565361235369"></p>
+<p><img src="https://littlebuzi.github.io//post-images/1565361244280.png" alt="1565361244280"></p>
 <p>基本可行，最高纪录 ，爬取四本后停止。</p>
 <p>真的太多了，一本大小平均150M左右。</p>
 <p>#总结：</p>
