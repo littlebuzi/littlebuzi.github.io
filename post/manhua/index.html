@@ -7,7 +7,7 @@
 <title>
     制作“漫画网站”爬虫全过程 | buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565363576216">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565364520536">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -81,7 +81,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565363576216" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565364520536" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -187,15 +187,30 @@ window.addEventListener('scroll', function(e) {
                             <div class="post-feature-image" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565968372&amp;di=32c53eba2ac536fb809cfd3b47052ca7&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190503%2F979c577053014c69a796ea4c4f7add99.jpg')"></div>
                             
                                 <div class="post-content">
-                                    <h1 id="目的">目的</h1>
+                                    <hr>
+<br>
+<h1 id="目的">目的</h1>
+<br>
+<hr>
+<br>
 <p>1.目标网站：https://www.manhwa.cc/</p>
 <p><img src="https://littlebuzi.github.io//post-images/1565345268608.png" alt="1565345268608"></p>
 <p>2.目标结果：获取全部漫画图片文件，并分好文件夹</p>
+<hr>
+<br>
 <h1 id="实现过程">实现过程</h1>
+<br>
+<hr>
+<br>
 <h2 id="基本逻辑">基本逻辑</h2>
 <p><img src="https://littlebuzi.github.io//post-images/1565360279264.png" alt="1565360279264"></p>
+<hr>
+<br>
 <h2 id="代码实现">代码实现</h2>
-<pre><code class="language-python">import requests
+<hr>
+<br>
+<pre><code>
+import requests
 from bs4 import BeautifulSoup
 import re
 import os
@@ -239,8 +254,10 @@ for item in soup.select('.d_menu&gt;ul&gt;li'):
         # 将获取的网页内容放入BeautifulSoup
         soup = BeautifulSoup(circle.text, 'lxml')
         # 根据谷歌SelectGadGet这个插件，获取html标签，比如获取：#gallery-list
+				
 </code></pre>
-<pre><code class="language-python">        for title in soup.select('div.fl.r_tab_l'):
+<pre><code>
+        for title in soup.select('div.fl.r_tab_l'):
             for title in title.find_all('span'):
                 print('title:', title.text)
                 title=title.text
@@ -270,7 +287,8 @@ for item in soup.select('.d_menu&gt;ul&gt;li'):
 <p>2.文件夹命名及生成文件夹出错，由于整理时出现混乱，代码写重复了。而后修改。</p>
 <p>3.中途停止，可能是网站识别到了这是爬虫，而后添加伪浏览器头部head，还是会停，基本是connect超时。</p>
 <p>针对上面问题，修改成了2.0版本:</p>
-<pre><code class="language-python">import requests
+<pre><code>
+import requests
 from bs4 import BeautifulSoup
 import re
 import os
@@ -294,7 +312,8 @@ def openUrl(circle):
 if __name__ == &quot;__main__&quot;:
     circle = requests.get('https://www.manhwa.cc/book/' + str(num1))
 </code></pre>
-<pre><code class="language-python"># 将获取的图片地址依次放入count中
+<pre><code>
+# 将获取的图片地址依次放入count中
 count = []
 # 将获取的网页内容放入BeautifulSoup
 soup = BeautifulSoup(circle.text, 'lxml')
