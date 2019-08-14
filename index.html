@@ -7,7 +7,7 @@
 <title>
     buzi
 </title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565417494371">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565763517750">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -73,7 +73,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565417494371" alt="">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565763517750" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -170,8 +170,214 @@ window.addEventListener('scroll', function(e) {
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/manhua2">
+                        制作“漫画网站”爬虫 2.0
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-14</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/manhua2" class="post-feature-image" style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=239995526,4272589595&amp;fm=11&amp;gp=0.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            2.0优化版
+代码：
+启动代码：
+
+import os
+
+os.system(r&amp;quot;python D:\manhua\整站爬取www.manhwa.cc\manhua4.py&amp;quot;)
+
+os.system(r&amp;quot;F:\CloudMusic\是萝莉控真是太好了.mp3&amp;quot;)
+
+
+爬取代码：
+
+import requests
+from bs4 import BeautifulSoup
+import re
+import os
+
+from PyQt5.QtWidgets import QApplication, QWidget, QLineEdit, QInputDialog, QGridLayout, QLabel, QPushButton, QFrame, QProgressBar
+
+first=1
+
+class InputDialog(QWidget):
+
+    def __init__(self):
+        super(InputDialog,self).__init__()
+        self.initUi()
+
+    def initUi(self):
+        self.setWindowTitle(&amp;quot;漫画爬取&amp;quot;)
+        self.setGeometry(50,50,1200,600)
+
+        label1=QLabel(&amp;quot;第一本:&amp;quot;)
+        label2=QLabel(&amp;quot;最后一本:&amp;quot;)
+
+        self.nameLable = QLabel(&amp;quot;1&amp;quot;)#1
+        self.first=int(self.nameLable.text())
+        self.nameLable.setText(str(self.first))
+        self.nameLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+        self.styleLable = QLabel(&amp;quot;1&amp;quot;)#1030
+        self.last=self.styleLable.text()
+        self.styleLable.setText(str(self.last))
+        self.styleLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+
+        # 设置进度条(弃用)
+
+        nameButton=QPushButton(&amp;quot;更改&amp;quot;)
+        nameButton.clicked.connect(self.selectName)
+        styleButton=QPushButton(&amp;quot;更改&amp;quot;)
+        styleButton.clicked.connect(self.selectStyle)
+        okButton = QPushButton(&amp;quot;OK&amp;quot;)
+        okButton.clicked.connect(self.selectOk)
+
+        mainLayout=QGridLayout()
+        mainLayout.addWidget(label1,0,0)
+        mainLayout.addWidget(self.nameLable,0,1)
+        mainLayout.addWidget(nameButton,0,2)
+        mainLayout.addWidget(label2,1,0)
+        mainLayout.addWidget(self.styleLable,1,1)
+        mainLayout.addWidget(styleButton,1,2)
+        mainLayout.addWidget(okButton,2,1)
+
+        self.setLayout(mainLayout)
+
+    #爬取代码
+    def ManHua(self):
+
+        for num1 in range(first,1030):
+            import urllib.request  # url包
+
+            def openUrl(circle):
+                headers = {
+                    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&#39;,
+                    &#39;Host&#39;: &#39;jandan.net&#39;
+                }
+                req = urllib.request.Request(circle, headers=headers)
+                response = urllib.request.urlopen(req)  # 请求
+                html = response.read()  # 获取
+                html = html.decode(&amp;quot;utf-8&amp;quot;)  # 解码
+                print(html)  # 打印
+
+            if __name__ == &amp;quot;__main__&amp;quot;:
+                circle = requests.get(&#39;https://这里是网址/book/&#39; + str(num1))
+
+            count = []
+            soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+
+            for item_book in soup.select(&#39;.d_bg_t&#39;):
+                for book_name in item_book.select(&#39;a&#39;)[0]:
+                    book_name_clean = book_name.string
+                    print(&#39;&#39;)
+                    print(&amp;quot;正在下载：&amp;quot;,num1, book_name_clean)
+                    aa=0
+                    #print(aa,num1)
+                    if num1&amp;gt;aa:
+                        aa=num1
+                        #print(aa)
+                        for i in range(int(num1*(100/1030))+1):
+                            print(&#39;\r&#39;+&#39;总进度：&#39; + &#39;▇&#39; * (i // 2) + str(i) + &#39;%&#39;, end=&#39;&#39;)
+                            print(&#39;&#39;)
+
+            for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
+                for a in item.find_all(&#39;a&#39;):
+                    menu_path = &#39;https://这里是网址/&#39; + a.get(&#39;href&#39;)
+                    # count.append(menu_path)
+                    # menu_path_num.append(re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path))
+                    menu_path_num = re.findall(r&amp;quot;\d+\.?\d*&amp;quot;, menu_path)
+
+                    # 当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
+
+                    # for num in menu_path_num:
+                    #print(&#39;book_url:&#39;, menu_path)
+
+
+                    circle = requests.get(menu_path)
+                    count = []
+                    soup = BeautifulSoup(circle.text, &#39;lxml&#39;)
+                    #print(menu_path)
+                    print(&#39;.&#39;, end=&#39;&#39;)
+
+                    for title in soup.select(&#39;div.fl.r_tab_l&#39;):
+                        for title in title.find_all(&#39;span&#39;):
+                            #print(&#39;title:&#39;, title.text)
+                            title = title.text
+
+                    for item in soup.select(&#39;.r_img&#39;):
+                        for img in item.find_all(&#39;img&#39;):
+                            #print(&#39;img_url:&#39;, img)
+                            img_path = img.get(&#39;data-original&#39;)
+                            count.append(img_path)
+
+                    #自动识别&#39;文件夹+文件&#39;重复后跳过下载如何continue
+                    if(os.path.exists(&#39;D:/manhua/manhuatest/&#39; + book_name_clean + &#39;/&#39; + str(title) + &#39;/&#39;)):
+                        continue
+                    else:
+                        os.makedirs(&#39;D:/manhua/manhuatest/&#39; + book_name_clean + &#39;/&#39; + str(title) + &#39;/&#39;)
+
+                        for i, v in enumerate(count):
+                            image = requests.get(v)
+                            if (os.path.exists(&#39;D:/manhua/manhuatest/&#39; + book_name_clean + &#39;/&#39; + str(title) + &#39;/&#39; + str(i) + &#39;.jpg&#39;)):
+                                continue
+                            else:
+                                with open(&#39;D:/manhua/manhuatest/&#39; + book_name_clean + &#39;/&#39; + str(title) + &#39;/&#39; + str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+                                    file.write(image.content)
+                                #print(i)
+                                continue
+                        continue
+
+
+    def selectName(self):
+        name,ok = QInputDialog.getText(self,&amp;quot;第一本&amp;quot;,&amp;quot;第一本序号:&amp;quot;,
+                                       QLineEdit.Normal,self.nameLable.text())
+        if ok and (len(name)!=0):
+            self.nameLable.setText(name)
+    def selectStyle(self):
+        style, ok = QInputDialog.getText(self, &amp;quot;最后一本&amp;quot;, &amp;quot;最后一本序号:&amp;quot;,
+                                        QLineEdit.Normal, self.nameLable.text())
+        if ok and (len(style)!=0):
+            self.styleLable.setText(style)
+    def selectOk(self):
+        self.ManHua()
+
+if __name__==&amp;quot;__main__&amp;quot;:
+    import sys
+    app=QApplication(sys.argv)
+    myshow=InputDialog()
+    myshow.show()
+    sys.exit(app.exec_())
+
+
+
+过程：
+
+
+
+总结：
+整站漫画全自动化爬取✅
+ui界面添加✅
+网站截停后 播放音乐提醒 但不能自动重启 ❌
+基本百分之95的功能实现，项目可宣布成功完成！✅
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/manhua2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://littlebuzi.github.io//post/manhua">
-                        制作“漫画网站”爬虫
+                        制作“漫画网站”爬虫 1.0
                     </a>
                 </h2>
                 <div class="post-info">
@@ -180,7 +386,7 @@ window.addEventListener('scroll', function(e) {
                 </div>
                 <div class="post-article">
                     
-                        <a href="https://littlebuzi.github.io//post/manhua" class="post-feature-image" style="background-image:url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565968372&amp;di=32c53eba2ac536fb809cfd3b47052ca7&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190503%2F979c577053014c69a796ea4c4f7add99.jpg) ">
+                        <a href="https://littlebuzi.github.io//post/manhua" class="post-feature-image" style="background-image:url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565772708873&amp;di=06b0c974f0026e707bb77f70ab760347&amp;imgtype=0&amp;src=http%3A%2F%2Fwx1.sinaimg.cn%2Fwap720%2F0060hSxwly1fq5g57ffjoj30u00i0113.jpg) ">
                         </a>
                         
                             <div class="post-content">
@@ -216,7 +422,7 @@ import os
 
 #1-1030
 for num1 in range(1,1031):
-    circle = requests.get(&#39;https://www.manhwa.cc/book/&#39;+str(num1))
+    circle = requests.get(&#39;https://这里是网址/book/&#39;+str(num1))
     # 将获取的图片地址依次放入count中
     count = []
     # 将获取的网页内容放入BeautifulSoup
@@ -229,7 +435,7 @@ for item_book in soup.select(&#39;.d_bg_t&#39;):
             book_name_clean=book_name.string
             print(num1, book_name_clean)
 
-os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
+os.makedirs(&#39;D://manhua//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
 
 #menu_path_num = []
 
@@ -269,12 +475,12 @@ for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
                 img_path = img.get(&#39;data-original&#39;)
                 count.append(img_path)
         # 用enumerate依次取出count中的图片地址 放入v中
-        os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
+        os.makedirs(&#39;D://manhua//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
         for i, v in enumerate(count):
             # 将获取的v值再次放入request中进行与网站相应
             image = requests.get(v)
             # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
-            with open(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+            with open(&#39;D://manhua//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
             #with open(&#39;C://Users//50159//Desktop//manhua//test//&#39; + str(num1) + &#39;_&#39; + str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
                 # content：图片转换成二进制，进行保存。
                 file.write(image.content)
@@ -309,7 +515,7 @@ def openUrl(circle):
     print(html)  # 打印
 
 if __name__ == &amp;quot;__main__&amp;quot;:
-    circle = requests.get(&#39;https://www.manhwa.cc/book/&#39; + str(num1))
+    circle = requests.get(&#39;https://这里是网址/book/&#39; + str(num1))
 
 
 # 将获取的图片地址依次放入count中
@@ -323,7 +529,7 @@ for item_book in soup.select(&#39;.d_bg_t&#39;):
         book_name_clean = book_name.string
         print(num1, book_name_clean)
 
-#os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
+#os.makedirs(&#39;D://manhua//整站漫画爬取//&#39; + str(num1) +&#39;.&#39;+ book_name_clean )
 
 for item_book in soup.select(&#39;.d_bg_t&#39;):
     for book_name in item_book.find_all(&#39;a&#39;):
@@ -368,12 +574,12 @@ for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
                 count.append(img_path)
                 
         # 用enumerate依次取出count中的图片地址 放入v中
-        os.makedirs(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
+        os.makedirs(&#39;D://manhua//整站漫画爬取//&#39; +  book_name_clean + &#39;//&#39; + str(title) + &#39;//&#39;)
         for i, v in enumerate(count):
             # 将获取的v值再次放入request中进行与网站相应
             image = requests.get(v)
             # 存取图片过程中，出现不能存储 int 类型，故而，我们对他进行类型转换 str()。w:读写方式打开，b：二进制进行读写。图片一般用到的都是二进制。
-            with open(&#39;D://manhua//整站爬取www.manhwa.cc//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
+            with open(&#39;D://manhua//整站漫画爬取//&#39; + book_name_clean + &#39;//&#39;+ str(title) + &#39;//&#39; +str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
             #with open(&#39;C://Users//50159//Desktop//manhua//test//&#39; + str(num1) + &#39;_&#39; + str(i) + &#39;.jpg&#39;, &#39;wb&#39;) as file:
                 # content：图片转换成二进制，进行保存。
                 file.write(image.content)
@@ -387,8 +593,8 @@ for item in soup.select(&#39;.d_menu&amp;gt;ul&amp;gt;li&#39;):
 基本可行，最高纪录 ，爬取四本后停止。
 真的太多了，一本大小平均150M左右。
 总结：
-爬取正本漫画 ✔
-整站漫画半自动化爬取（停止需手动启动一次）✔
+爬取正本漫画 ✅
+整站漫画半自动化爬取（停止需手动启动一次）✅
 全自动下载网站漫画 （会被网站截停）❌
 
                                         </div>
@@ -561,7 +767,7 @@ WP Pusher是另一个基于Git的插件，可让您直接从GitHub将主题和�
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://littlebuzi.github.io//tag/N4SH6d1dT" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_3">
             #科学
         </a>
                         
@@ -632,7 +838,7 @@ AlphaGo结合了3大块技术：先进的搜索算法、机器学习算法（即
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_4">
             #工具
         </a>
                         
@@ -717,7 +923,7 @@ AlphaGo结合了3大块技术：先进的搜索算法、机器学习算法（即
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1565417494371)">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1565763517750)">
         </div>
         <h1 class="id_card-title">
             buzi
