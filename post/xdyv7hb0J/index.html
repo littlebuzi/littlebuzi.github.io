@@ -1,196 +1,107 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    emoji表情大全😁 | buzi
-</title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565778234859">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<title>emoji表情大全😁 | buzi</title>
+<meta name="description" content="德丽莎世界第一可爱">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1565778300442">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
 
-                    
-                            
-</head>
+  </head>
+  <body>
+    <div id="app" class="main">
 
-<body>
-    <div class="main">
-        <style>
-
-.header-navigation {
-	position:fixed;
-	top:0;
-	width:100%;
-	height:60px;
-	line-height:60px;
-	background-color:#333;
-	text-align:center;
-	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
-	z-index:9999;
-}
-
-/* Slide transitions */
-
-	.slideUp {
-	/* -webkit-transform:translateY(-100px);
-	transform:translateY(-100px);
-	*/
-	  -webkit-transform:translateY(-100px);
-	-ms-transform:translateY(-100px);
-	-o-transform:translateY(-100px);
-	transform:translateY(-100px);
-	/*transition:transform .5s ease-out;
-	*/
-	  -webkit-transition:transform .5s ease-out;
-	-o-transition:transform .5s ease-out;
-	transition:transform .5s ease-out;
-}
-.slideDown {
-	/*-webkit-transform:translateY(0);
-	transform:translateY(0);
-	*/
-	  -webkit-transform:translateY(0);
-	-ms-transform:translateY(0);
-	-o-transform:translateY(0);
-	transform:translateY(0);
-	/*transition:transform .5s ease-out;
-	*/
-	  -webkit-transition:transform .5s ease-out;
-	-o-transition:transform .5s ease-out;
-	transition:transform .5s ease-out;
-}
-</style>
-
-<div class="header" class="header-navigation" id="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://littlebuzi.github.io/">
-                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1565778234859" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    buzi
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    时间线
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    分类
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://littlebuzi.github.io/">
+        <img src="https://littlebuzi.github.io//images/avatar.png?v=1565778300442" class="site-logo">
+        <h1 class="site-title">buzi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            时间线
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      德丽莎世界第一可爱
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
 </div>
 
-<script>
-var new_scroll_position = 0;
-var last_scroll_position;
-var header = document.getElementById("header");
 
-window.addEventListener('scroll', function(e) {
-    last_scroll_position = window.scrollY;
-
-    // Scrolling down
-    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
-        // header.removeClass('slideDown').addClass('slideUp');
-        header.classList.remove("slideDown");
-        header.classList.add("slideUp");
-
-        // Scrolling up
-    } else if (new_scroll_position > last_scroll_position) {
-        // header.removeClass('slideUp').addClass('slideDown');
-        header.classList.remove("slideUp");
-        header.classList.add("slideDown");
-    }
-
-    new_scroll_position = last_scroll_position;
-});
-</script>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            emoji表情大全😁
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-07-18</time>
-                            
-                                <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="post-tag i-tag
-                            i-tag-other_2">
-                            #工具
-                        </a>
-                                
-                        </div>
-                        
-                                <div class="post-content">
-                                    <h1 id="表情">表情</h1>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">emoji表情大全😁</h2>
+            <div class="post-date">2019-07-18</div>
+            
+            <div class="post-content">
+              <h1 id="表情">表情</h1>
 <p>😀😁😂😃😄😅😆😉😊😋😎😍😘😗😙😚☺😇😐😑😶😏😣😥😮😯😪😫😴😌😛😜😝😒😓😔😕😲😷😖😞😟😤😢😭😦😧😨😬😰😱😳😵😡😠</p>
 <h1 id="人物">人物</h1>
 <p>👦👧👨👩👴👵👶👱👮👲👳👷👸💂🎅👰👼💆💇🙍🙎🙅🙆💁🙋🙇🙌🙏👤👥🚶🏃👯💃👫👬👭💏💑👪</p>
@@ -247,128 +158,74 @@ window.addEventListener('scroll', function(e) {
 <h1 id="箭头">箭头</h1>
 <p>⬆↗➡↘⬇↙⬅↖↕↔↩↪⤴⤵🔃🔄🔙🔚🔛🔜🔝</p>
 
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li><a href="#%E8%A1%A8%E6%83%85">表情</a></li>
-<li><a href="#%E4%BA%BA%E7%89%A9">人物</a></li>
-<li><a href="#%E6%89%8B%E5%8A%BF">手势</a></li>
-<li><a href="#%E6%97%A5%E5%B8%B8">日常</a></li>
-<li><a href="#%E6%89%8B%E6%9C%BA">手机</a></li>
-<li><a href="#%E5%85%AC%E5%85%B1">公共</a></li>
-<li><a href="#%E5%8A%A8%E7%89%A9">动物</a></li>
-<li><a href="#%E6%A4%8D%E7%89%A9">植物</a></li>
-<li><a href="#%E8%87%AA%E7%84%B6">自然</a></li>
-<li><a href="#%E9%A5%AE%E9%A3%9F">饮食</a></li>
-<li><a href="#%E6%96%87%E4%BD%93">文体</a></li>
-<li><a href="#%E6%81%90%E6%80%96">恐怖</a></li>
-<li><a href="#%E6%97%85%E6%B8%B8">旅游</a></li>
-<li><a href="#%E7%89%A9%E5%93%81">物品</a></li>
-<li><a href="#%E6%A0%87%E5%BF%97">标志</a></li>
-<li><a href="#%E7%94%9F%E8%82%96">生肖</a></li>
-<li><a href="#%E6%98%9F%E5%BA%A7">星座</a></li>
-<li><a href="#%E9%92%9F%E8%A1%A8">钟表</a></li>
-<li><a href="#%E5%BF%83%E5%BD%A2">心形</a></li>
-<li><a href="#%E8%8A%B1%E8%8D%89">花草</a></li>
-<li><a href="#%E6%A0%91%E5%8F%B6">树叶</a></li>
-<li><a href="#%E6%9C%88%E4%BA%AE">月亮</a></li>
-<li><a href="#%E6%B0%B4%E6%9E%9C">水果</a></li>
-<li><a href="#%E9%92%B1%E5%B8%81">钱币</a></li>
-<li><a href="#%E4%BA%A4%E9%80%9A">交通</a></li>
-<li><a href="#%E5%BB%BA%E7%AD%91">建筑</a></li>
-<li><a href="#%E5%8A%9E%E5%85%AC">办公</a></li>
-<li><a href="#%E7%AE%AD%E5%A4%B4">箭头</a></li>
-</ul>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="tag">
+                    工具
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
+      </div>
     </div>
-    
-                            
 
-                </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+<script type="application/javascript">
 
+AOS.init();
 
+hljs.initHighlightingOnLoad()
 
-            </div>
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
 </script>
 
 
-    </div>
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
+
+      var gitalk = new Gitalk({
+        clientID: 'e7c2b33da7e627d57c5a',
+        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+        repo: 'littlebuzi.github.io',
+        owner: 'littlebuzi',
+        admin: ['littlebuzi'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
     </script>
-    
-        
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: 'e7c2b33da7e627d57c5a',
-            clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
-            repo: 'littlebuzi.github.io',
-            owner: 'littlebuzi',
-            admin: ['littlebuzi'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
+  
 
-        gitalk.render('gitalk-container')
-    }
-</script>
-                
+  
 
-                    
-                                
-</body>
 
+
+
+  </body>
 </html>
