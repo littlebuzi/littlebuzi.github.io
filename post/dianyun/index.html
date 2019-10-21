@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>企业建站-问题合集 | buzi</title>
+<meta name="description" content="德丽莎世界第一可爱">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1571663906442">
+<link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://littlebuzi.github.io/">
+        <img src="https://littlebuzi.github.io//images/avatar.png?v=1571663906442" class="site-logo">
+        <h1 class="site-title">buzi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            时间线
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/littlebuzi" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      德丽莎世界第一可爱
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">企业建站-问题合集</h2>
+            <div class="post-date">2019-10-21</div>
+            
+              <div class="feature-container" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571648569155&amp;di=e2fe00a9bcdafb575d8663b28dcea1f4&amp;imgtype=0&amp;src=http%3A%2F%2Fp4.g.680.com%2F2019-01%2F22%2F20190122095845290848.png')">
+              </div>
+            
+            <div class="post-content">
+              <p>#部署-巅云自助建站系统3.0学习试用</p>
+<p>1.刚用的时候，phpwamp运行，结果乱码。改用wamp也是。改utf-8源码标签，不行。最后尝试改index为utf-8记事本保存可以。但剩下的文件手动改不可能。就用了个批量改文件软件把所有格式的文件都改成utf-8，改动中，提示“.db”,修改不成功。最后改完，运行。还是乱码，记事本打开，还是utf-8编码。。。最后把说明看一遍，有个地方：阿帕奇和php版本有要求（好像阿帕奇没说），php版本说要5.3-5.6，不信邪换了下，真的行了。。。<br>
+<img src="https://littlebuzi.github.io/2019/07/30/php/dianyun/1567314946645.png" alt=""><br>
+所以，需看清php版本！！！</p>
+<p>#dicuz不支持php7以及以上 on wamp</p>
+<p>wamp部署discuzx时：<br>
+wamp版本：<br>
+<img src="https://littlebuzi.github.io/2019/07/30/php/wamp_and_discuz/1567268240865.png" alt=""><br>
+discuzx：<br>
+<img src="https://littlebuzi.github.io/2019/07/30/php/wamp_and_discuz/1567268250554.png" alt=""><br>
+<a href="https://github.com/Discuz-X/DiscuzX"></a></p>
+<p>（正好遇上discuzx关闭，貌似）<br>
+放进www下后发现，报错：<br>
+<img src="https://littlebuzi.github.io/2019/07/30/php/wamp_and_discuz/1567268269972.png" alt=""><br>
+原因dicuz不支持php7以及以上（我的运行时是php7.2非5.6）</p>
+<p>所以屏蔽掉这里</p>
+<p>/install/index.php<br>
+<img src="https://littlebuzi.github.io/2019/07/30/php/wamp_and_discuz/1567268288874.png" alt=""><br>
+即可！<br>
+访问空白<br>
+<a href="https://gitee.com/3dming/DiscuzL/attach_files">https://gitee.com/3dming/DiscuzL/attach_files</a><br>
+这个可行！</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://littlebuzi.github.io//post/Quadratic_element">
+                  <h3 class="post-title">
+                    二次元资讯网站
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'e7c2b33da7e627d57c5a',
+        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+        repo: 'littlebuzi.github.io',
+        owner: 'littlebuzi',
+        admin: ['littlebuzi'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>php数据库的增删改查及php与javascript之间的交互 | buzi的博客</title>
+  <meta name="keywords" content>
+  <meta name="description" content="php数据库的增删改查及php与javascript之间的交互 | buzi的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="没女朋友  👦98  生活技术博🎨  🏡死瘦宅一个。  喜欢发呆😑  职业是 搬砖💻,目前待业  服务器在阿里云上海🏢ECS  域名是github📌自带  原博客：buzi的后花园  因沉迷崩坏导致忘记续费,猝.">
+<meta name="keywords" content="buzi的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="http://littlebuzi.github.io/about/index.html">
+<meta property="og:site_name" content="buzi的博客">
+<meta property="og:description" content="没女朋友  👦98  生活技术博🎨  🏡死瘦宅一个。  喜欢发呆😑  职业是 搬砖💻,目前待业  服务器在阿里云上海🏢ECS  域名是github📌自带  原博客：buzi的后花园  因沉迷崩坏导致忘记续费,猝.">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564039203602&di=f379147af984ef170f734a334b8c948c&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F9385434082%2F1000">
+<meta property="og:updated_time" content="2019-08-30T03:17:23.713Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="没女朋友  👦98  生活技术博🎨  🏡死瘦宅一个。  喜欢发呆😑  职业是 搬砖💻,目前待业  服务器在阿里云上海🏢ECS  域名是github📌自带  原博客：buzi的后花园  因沉迷崩坏导致忘记续费,猝.">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564039203602&di=f379147af984ef170f734a334b8c948c&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F9385434082%2F1000">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Buzi</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/littlebuzi" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/5e3911be9d58" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:501596098@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=501596098&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=308855385" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(22)</small></div></li>
+    
+        
+            
+            <li><div data-rel="php"><i class="fold iconfont icon-right"></i>php<small>(7)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="数据库">数据库<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="python">python<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="java">java<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="c">c<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="">相册</a>
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/littlebuzi">github</a>
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="22">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://hezijiang.cn/">盒子匠</a></li>
+            
+            <li><a target="_blank" href="https://buzi.online/">buzi的后花园</a></li>
+            
+            <li><a target="_blank" href="https://buzi.online/2/">一抹多ACG</a></li>
+            
+            <li><a target="_blank" href="https://buzi.online/add/laopo/">后宫起火</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="php "
+           href="/2019/08/23/php/Quadratic_element/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二次元资讯网站">二次元资讯网站</span>
+            <span class="post-date" title="2019-08-23 10:52:07">2019/08/23</span>
+        </a>
+        
+        <a  class="php "
+           href="/2019/07/30/php/dianyun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="部署-巅云自助建站系统3.0学习试用">部署-巅云自助建站系统3.0学习试用</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="php "
+           href="/2019/07/30/php/mysql_php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="php数据库的增删改查及php与javascript之间的交互">php数据库的增删改查及php与javascript之间的交互</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="php 数据库 "
+           href="/2019/07/30/php/php_mysql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="php查询sql 中文乱码“ ？”">php查询sql 中文乱码“ ？”</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/30/php/mysql_1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于数据库-mysql账号密码login">关于数据库-mysql账号密码login</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="php "
+           href="/2019/07/30/php/typecho_theme/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="typecho博客主题修改">typecho博客主题修改</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="php "
+           href="/2019/07/30/php/wamp_and_discuz/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="dicuz不支持php7以及以上 on wamp">dicuz不支持php7以及以上 on wamp</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/09/python/learn_mc_1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用python学习minecraft">用python学习minecraft</span>
+            <span class="post-date" title="2019-08-09 18:05:22">2019/08/09</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/14/python/face_2d/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="动漫人物人脸识别">动漫人物人脸识别</span>
+            <span class="post-date" title="2019-08-14 13:33:46">2019/08/14</span>
+        </a>
+        
+        <a  class="php "
+           href="/2019/07/30/php/xp_web/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="xp的web之旅">xp的web之旅</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/14/python/manhua2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="制作“漫画网站”爬虫 2.0">制作“漫画网站”爬虫 2.0</span>
+            <span class="post-date" title="2019-08-14 13:33:46">2019/08/14</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/09/python/face/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人脸识别签到系统 opencv">人脸识别签到系统 opencv</span>
+            <span class="post-date" title="2019-08-09 18:05:22">2019/08/09</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/09/18/tools/cmd/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="写能执行cmd命令的bat文件">写能执行cmd命令的bat文件</span>
+            <span class="post-date" title="2019-09-18 13:54:07">2019/09/18</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/07/30/java/cloud/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="云计算 docker">云计算 docker</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/07/30/tools/net/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于网络工程师">关于网络工程师</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/07/30/tools/github/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GitHub">GitHub</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/07/31/java/java_gui_2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="简易桌面 v1.0 总结">简易桌面 v1.0 总结</span>
+            <span class="post-date" title="2019-07-31 13:54:07">2019/07/31</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/07/30/java/java_gui_1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="简易桌面 v1.0 问题">简易桌面 v1.0 问题</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="c "
+           href="/2019/07/30/c/c1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c#语法基础">c#语法基础</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/09/python/manhua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="制作“漫画网站”爬虫 1.0">制作“漫画网站”爬虫 1.0</span>
+            <span class="post-date" title="2019-08-09 18:05:22">2019/08/09</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/07/31/java/java_gui_3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="简易桌面 v1.0 错误汇总">简易桌面 v1.0 错误汇总</span>
+            <span class="post-date" title="2019-07-31 13:54:07">2019/07/31</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/07/30/java/android1/android1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安卓入门-目录结构【Android Studio】">安卓入门-目录结构【Android Studio】</span>
+            <span class="post-date" title="2019-07-30 13:54:07">2019/07/30</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-php/mysql_php" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">php数据库的增删改查及php与javascript之间的交互</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="php">php</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-18 15:09:30'>2019-07-30 13:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章主要为大家详细介绍了php数据库的增删改查，以及php与javascript之间的交互，具有一定的参考价值，感兴趣的小伙伴们可以参考一下,原地址：<a href="https://www.jb51.net/article/122598.htm" target="_blank" rel="noopener">https://www.jb51.net/article/122598.htm</a></p>
+</blockquote>
+<p>使用语言操作数据库是重中之重，如果一门语言你不懂得如何操作数据库，那么你还是没有学会这门语言。</p>
+<p>PHP操作数据库的方法并不难<br>同时php的值还可以与JavaScript脚本之间进行控制</p>
+<p>一般是php的值传递到javascript中，一般不会反过来操作</p>
+<p><strong>一、基本目标</strong></p>
+<p>首先，在mysql中有一张用户信息表user，里面的字段分别是id,username与password，打开网页dbselect.php，首先就用php查出整张user表：</p>
+<p><img src="201708311609538.png" alt></p>
+<p>然后，插入数据的一栏，输入数据，就可把数据插入到mysql中的user表当中</p>
+<p><img src="201708311609539.gif" alt></p>
+<p>在修改数据的一栏中，第一个下拉菜单是通过javascript来创建的，根据表中的数据多少，而给予多少的下拉选项。</p>
+<p><img src="2017083116095510.gif" alt></p>
+<p>第二个下拉菜单让用户选择要修改的列</p>
+<p>第三个输入框就是让用户输入要修改的值</p>
+<p><img src="2017083116095511.gif" alt></p>
+<p>至于为什么没有做删除数据，那是因为一来删除数据的操作与修改数据类似，二是因为在自增表中一般不删除数据的，仅仅是设置键值让这条数据隐藏</p>
+<p><strong>二、基本思想</strong></p>
+<p>程序入口是dbselect.php，操作数据库的过程分别是两个新页面，一个dbinsert.php，一个是dbupdate.php，这两个页面操作完数据库，马上通过javascript返回。</p>
+<p><img src="2017083116095512.png" alt></p>
+<p><strong>三、制作过程</strong></p>
+<p>（1）dbselect.php</p>
+<p>也是本实现过程中，最复杂的一个页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html <span class="keyword">PUBLIC</span> <span class="string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt; </span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt; </span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span> /&gt; </span><br><span class="line">&lt;title&gt;dbselect&lt;/title&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">  </span><br><span class="line">&lt;body&gt; </span><br><span class="line">user表： </span><br><span class="line">&lt;table border=<span class="string">"1"</span>&gt; </span><br><span class="line">&lt;tr&gt; </span><br><span class="line">&lt;td&gt;id&lt;/td&gt; </span><br><span class="line">&lt;td&gt;username&lt;/td&gt; </span><br><span class="line">&lt;td&gt;password&lt;/td&gt; </span><br><span class="line">&lt;/tr&gt; </span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//php连接数据库的指定动作，其中第一个root是数据库的用户名，第二个root是数据库的密码 </span></span><br><span class="line"><span class="comment">//如果连接失败，马上通过die语句打断后面的所有程序，只输出“连接失败” </span></span><br><span class="line">$con=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>); </span><br><span class="line"><span class="keyword">if</span>(!$con)&#123; </span><br><span class="line"> <span class="keyword">die</span>(<span class="string">"连接失败！"</span>); </span><br><span class="line"> &#125; </span><br><span class="line"><span class="comment">//要操作test数据库 </span></span><br><span class="line">mysql_select_db(<span class="string">"test"</span>,$con); </span><br><span class="line"><span class="comment">//total变量是用来记录user记录条数的 </span></span><br><span class="line">$total; </span><br><span class="line"><span class="comment">//要在test数据库中操作select count(*) as total from user语句并且把结果放到result变量里 </span></span><br><span class="line">$result=mysql_query(<span class="string">"select count(*) as total from user"</span>); </span><br><span class="line"><span class="comment">//result变量是个数据，$total=$row["total"];把查询结果中的total列的值赋予给php中的total变量 </span></span><br><span class="line"><span class="comment">//$row=mysql_fetch_array($result)能够把当前行的值赋予给row数组，并把游标下移一行，游标并不需要初始化，自动完成 </span></span><br><span class="line"><span class="keyword">while</span>($row=mysql_fetch_array($result))&#123; </span><br><span class="line"> $total=$row[<span class="string">"total"</span>]; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line"><span class="comment">//输出整个表的过程与上面的过程类此 </span></span><br><span class="line">$result=mysql_query(<span class="string">"select * from user"</span>); </span><br><span class="line"><span class="keyword">while</span>($row=mysql_fetch_array($result))&#123; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"&lt;tr&gt;"</span>; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"&lt;td&gt;$&#123;row["</span>id<span class="string">"]&#125;&lt;/td&gt;"</span>; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"&lt;td&gt;$&#123;row["</span>username<span class="string">"]&#125;&lt;/td&gt;"</span>; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"&lt;td&gt;$&#123;row["</span>password<span class="string">"]&#125;&lt;/td&gt;"</span>; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"&lt;/tr&gt;"</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//查询完毕，记得人走带门 </span></span><br><span class="line">mysql_close($con); </span><br><span class="line">  </span><br><span class="line"><span class="meta">?&gt;</span> </span><br><span class="line">&lt;/table&gt; </span><br><span class="line">&lt;br /&gt; </span><br><span class="line">  </span><br><span class="line">&lt;!--以下是两个表单，不再赘述了--&gt;</span><br><span class="line">插入数据： </span><br><span class="line">&lt;form action=<span class="string">"dbinsert.php"</span> method=<span class="string">"get"</span>&gt; </span><br><span class="line">username:&lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt; </span><br><span class="line">password:&lt;input type=<span class="string">"text"</span> name=<span class="string">"password"</span> /&gt; </span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"go!"</span> /&gt; </span><br><span class="line">&lt;/form&gt; </span><br><span class="line">  </span><br><span class="line">修改数据： </span><br><span class="line">&lt;form action=<span class="string">"dbupdate.php"</span> method=<span class="string">"get"</span>&gt; </span><br><span class="line">&lt;select id=<span class="string">"userid"</span> name=<span class="string">"userid"</span>&gt;&lt;/select&gt; </span><br><span class="line">&lt;script&gt; </span><br><span class="line"><span class="comment">//这是php与javascript交互部分，把上面求出来的php的$total变量，赋予给javascript的var total </span></span><br><span class="line"><span class="keyword">var</span> total=<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $total; <span class="meta">?&gt;</span>; </span><br><span class="line"><span class="keyword">var</span> i=<span class="number">1</span>; </span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;total+<span class="number">1</span>;i++)&#123; </span><br><span class="line"> <span class="comment">//javascript增加节点过程 </span></span><br><span class="line"> <span class="keyword">var</span> selectnode=document.createElement(<span class="string">"option"</span>); </span><br><span class="line"> selectnode.value=i; </span><br><span class="line"> selectnode.innerHTML=i; </span><br><span class="line"> document.getElementById(<span class="string">"userid"</span>).appendChild(selectnode); </span><br><span class="line">&#125; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;select name=<span class="string">"rowname"</span>&gt; </span><br><span class="line">&lt;option value=<span class="string">"username"</span>&gt;username&lt;/option&gt; </span><br><span class="line">&lt;option value=<span class="string">"password"</span>&gt;password&lt;/option&gt; </span><br><span class="line">&lt;/select&gt; </span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"rowtext"</span> /&gt; </span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"go!"</span> /&gt; </span><br><span class="line">&lt;/form&gt; </span><br><span class="line">  </span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>javascript控制html节点的详细，可以参照我之前写的《【JavaScript】网页节点的增删改查》一文（<a href="https://www.jb51.net/article/60672.htm" target="_blank" rel="noopener">点击打开链接</a>）</p>
+<p>（2）dbinsert.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html <span class="keyword">PUBLIC</span> <span class="string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt; </span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt; </span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span> /&gt; </span><br><span class="line">&lt;title&gt;dbinsert.php&lt;/title&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">  </span><br><span class="line">&lt;body&gt; </span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//首先从dbselect.php的表单中接受操作的数据 </span></span><br><span class="line"><span class="comment">//dbselect.php故意用到get方法，只是想说明php中对get与post的处理同样可以通过$_REQUEST["变量名"]来实现 </span></span><br><span class="line">$username=$_REQUEST[<span class="string">"username"</span>]; </span><br><span class="line">$password=$_REQUEST[<span class="string">"password"</span>]; </span><br><span class="line"><span class="comment">//操作数据库的指定动作同dbselect.php。 </span></span><br><span class="line">$con=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>); </span><br><span class="line"><span class="keyword">if</span>(!$con)&#123; </span><br><span class="line"> <span class="keyword">die</span>(<span class="string">"连接失败！"</span>); </span><br><span class="line"> &#125; </span><br><span class="line">mysql_select_db(<span class="string">"test"</span>,$con); </span><br><span class="line"><span class="comment">//控制数据库比dbselect.php更加简单，因为不用对数据库的查询结果进行处理 </span></span><br><span class="line"><span class="comment">//只是要注意，这里连接字符串是用到.的，而不是jsp的+，asp的&amp;，请注意！ </span></span><br><span class="line">mysql_query(<span class="string">"insert into user(username,password) values ('"</span>.$username.<span class="string">"','"</span>.$password.<span class="string">"');"</span>); </span><br><span class="line">mysql_close($con); </span><br><span class="line"><span class="meta">?&gt;</span> </span><br><span class="line">&lt;script&gt; </span><br><span class="line">alert(<span class="string">"添加成功"</span>); </span><br><span class="line">window.location.href=<span class="string">"dbselect.php"</span> rel=<span class="string">"external nofollow"</span> rel=<span class="string">"external nofollow"</span> ; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（3）dbupdate.php<br>与dbinsert.php逻辑是一模一样的，只是mysql_query那个的查询语句，从insert into语句变成了update语句而已</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html <span class="keyword">PUBLIC</span> <span class="string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt; </span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt; </span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span> /&gt; </span><br><span class="line">&lt;title&gt;无标题文档&lt;/title&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">  </span><br><span class="line">&lt;body&gt; </span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$userid=$_REQUEST[<span class="string">"userid"</span>]; </span><br><span class="line">$rowname=$_REQUEST[<span class="string">"rowname"</span>]; </span><br><span class="line">$rowtext=$_REQUEST[<span class="string">"rowtext"</span>]; </span><br><span class="line">$con=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>); </span><br><span class="line"><span class="keyword">if</span>(!$con)&#123; </span><br><span class="line"> <span class="keyword">die</span>(<span class="string">"连接失败！"</span>); </span><br><span class="line"> &#125; </span><br><span class="line">mysql_select_db(<span class="string">"test"</span>,$con); </span><br><span class="line">mysql_query(<span class="string">"update user set "</span>.$rowname.<span class="string">"='"</span>.$rowtext.<span class="string">"' where id="</span>.$userid.<span class="string">";"</span>); </span><br><span class="line">mysql_close($con); </span><br><span class="line"><span class="meta">?&gt;</span> </span><br><span class="line">&lt;script&gt; </span><br><span class="line">alert(<span class="string">"修改成功"</span>); </span><br><span class="line">window.location.href=<span class="string">"dbselect.php"</span> rel=<span class="string">"external nofollow"</span> rel=<span class="string">"external nofollow"</span> ; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以上，就是整个制作过程。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>php数据库的增删改查及php与javascript之间的交互</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Buzi">Buzi</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-30, 13:54:07</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-18, 15:09:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/30/php/mysql_php/" title="php数据库的增删改查及php与javascript之间的交互">http://littlebuzi.github.io/2019/07/30/php/mysql_php/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Buzi</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("http://img3.duitang.com/uploads/item/201411/21/20141121184321_HaPH2.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="">相册</a>
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/littlebuzi">github</a>
+    
+</div>
+
+
+</html>

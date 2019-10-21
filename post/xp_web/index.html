@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>疑难杂症 | buzi</title>
+<meta name="description" content="德丽莎世界第一可爱">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1571663906442">
+<link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://littlebuzi.github.io/">
+        <img src="https://littlebuzi.github.io//images/avatar.png?v=1571663906442" class="site-logo">
+        <h1 class="site-title">buzi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            时间线
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/littlebuzi" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      德丽莎世界第一可爱
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">疑难杂症</h2>
+            <div class="post-date">2019-10-21</div>
+            
+              <div class="feature-container" style="background-image: url('http://www.baofengjihuo.com/wp-content/uploads/2016/04/2016041114034372.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <h1 id="xp的web之旅">xp的web之旅</h1>
+<p>环境：</p>
+<p>用家里的xp系统，是之前用类似“番茄花园”的整合版安装的。</p>
+<p>在尝试各种wamp的版本屡屡碰壁后，试着用其他整合环境：</p>
+<p>1.phpstudy</p>
+<p>初次采用时，搭建z-blog感觉良好，界面也比较熟悉。</p>
+<p>而后的chanzhi与lzcms都同一个错误，you don’t have permisson to aseen it ! ;可能是lzcms的静态没开，但之后开了也没反应，并不能确认是否开成功。</p>
+<p>之后发现可能是之恩能够开在linux上！也可能第一次访问后，就默认了一个ip一个网站，再访问其他需要在配置文件里修改加上，但这个可能比较小，因为这违反了www的访问习惯，</p>
+<p>在这个目录下，就算是不同系统，如果把他们看成其中一个的分系统，那样也说得清。</p>
+<p>2.phpwamp</p>
+<p>就是因为phpstudy遇到了这个情况，所以采用phpwamp，感觉这个比他跟老式，不过更加适合我的xp。</p>
+<p>用着用着感觉也是和phpstudy差不多，类似于绑定访问的第一个，这次我不用lzcms，我用chanzhicms。也尝试着去改这改那，发现还是不行。</p>
+<p>最后，找到了wamp2.2/2.4（之前的假wamp浪费了很多时间），php版本和apache版本也刚好到chanzhi要求。</p>
+<p>所以用上了这个wamp，xp真的不容易，各种软件要兼容，在现在这个环境下。</p>
+<p>计划：用wamp学tp，最初的想法就是这样，为了混乱原有的环境，想在另一台电脑，xp上弄，结果也不省心。最后可以了</p>
+<br>
+<hr>
+<br>
+<h1 id="写能执行cmd命令的bat文件">写能执行cmd命令的bat文件</h1>
+<p>每次运行jar文件时，我总是需要先打开cmd窗口，再切换到我jar文件保存的盘符，再执行java -jar test.jar，虽然操作不是很复杂，但是如果直接写一个bat文件，每次使用直接双击，这种傻瓜式的方式，估计更容易被大家所喜欢并能够方便使用。</p>
+<p>方式也很简单，比如：<br>
+<img src="https://littlebuzi.github.io/2019/09/18/tools/cmd/20170119112532636.png" alt=""><br>
+新建一个txt文本，输入如下：<br>
+<img src="https://littlebuzi.github.io/2019/09/18/tools/cmd/20170119112645075.png" alt=""><br>
+然后保存为bat文件即可，如果以后路径或者名称有变更的话，直接编辑修改，不用每次再去cmd中输入指令了。</p>
+<p>双击即可运行test1.jar的代码啦！</p>
+<p>又或者例如：</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io/2019/09/18/tools/cmd/2019091815153653.png" alt=""></figure>
+<p>更新hexo，同步缓存</p>
+<blockquote>
+<p>版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。本文链接：https://blog.csdn.net/qq_15158911/article/details/54613948</p>
+</blockquote>
+<br>
+<hr>
+<br>
+<h1 id="云计算-docker">云计算 docker</h1>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/qq_22211217/article/details/80414227">https://blog.csdn.net/qq_22211217/article/details/80414227</a><br>
+<a href="https://blog.csdn.net/hehailiang_dream/article/details/79983229">https://blog.csdn.net/hehailiang_dream/article/details/79983229</a><br>
+<a href="https://blog.csdn.net/yr12dong/article/details/80720690">https://blog.csdn.net/yr12dong/article/details/80720690</a></p>
+<br>
+<hr>
+<br>
+<h1 id="关于网络工程师">关于网络工程师</h1>
+<h2 id="考纲">考纲：</h2>
+<p><a href="http://www.baidu.com/link?url=EX25o0QxqfOKfsRYcQxXwmQYuljdSCAgUhmadAhCFA_FPSMKUaxJPZbJAEyxFIrp">【中国计算机技术职业资格网(软考)】</a></p>
+<p>2019年官网考纲：<a href="http://www.ruankao.org.cn/platform/details?code=02_24">http://www.ruankao.org.cn/platform/details?code=02_24</a></p>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io/2019/07/30/tools/net/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88.png" alt=""></figure>
+<h2 id="学习资源">学习资源：</h2>
+<p><a href="http://www.baidu.com/link?url=XyVSbZ5Y4dTw0p23ZJB-DSUU7JcazbywJzt1m8MuCLKtVLTwf6Tosj86cIIEWy1J">【哔哩哔哩 (゜-゜)つロ 干杯~-bilibili】</a></p>
+<p>1.<a href="https://www.bilibili.com/video/av50506518?from=search&amp;seid=4496232001982375832">2019网络工程师【软考】</a></p>
+<p>2.<a href="https://www.bilibili.com/video/av53851647">网络工程师考试-视频教程-希赛</a></p>
+<h2 id="下载途径">下载途径：</h2>
+<p>1.<a href="https://www.jijidown.com/">https://www.jijidown.com/</a></p>
+<p>2.b站手机版</p>
+<p>3.<a href="https://github.com/Henryhaohao/Bilibili_video_download">https://github.com/Henryhaohao/Bilibili_video_download</a></p>
+<br>
+<hr>
+<br>
+<h1 id="简易桌面-v10-总结">简易桌面 v1.0 总结</h1>
+<p>项目1：简易桌面1.0</p>
+<p>针对于mom使用eclipse为平台制作的第一代，简易桌面软件，目的在于用户的简易操作。</p>
+<p>问题：经验总结：</p>
+<p>第一：明确目的，时刻纠正方向，走走停停。</p>
+<p>第二：确定方向，用图画的方式将界面描绘好，利于以后的代码翻译编写。</p>
+<p>第三：在实际编程的过程中，会出现一些小改动，处于临时的灵感，就会对草稿图进行修改，想象计划与实际真的有很大的出入。真的不去实际做一做，可能你永远也不知道。</p>
+<p>第四：停留知识水平，框架的基础构建，只是皮毛，经过网上的百度学习，在错误值积累经验，蹒跚学步，跌跌撞撞。做出来还是可以看的，但是技术要求方面不高。达不到要求。</p>
+<p>第五：有必要进行一次完整的学习，零碎伴有一些错误的学习经历，危害甚大。一次不完整的学习经历的确可以对往后造成很大的危害。</p>
+<p>第六：遇到问题方面；是灵感想法创意的来源。认识到错误，提高自己。做好笔记。</p>
+<p>第七，固步自封，井底之蛙，最为致命；以上讨论的比较大概，会做更详细的分析（问题）。</p>
+<p>今天导出后 在xp上准备运行 先前研究过得知 需要运行环境jre才能运行可运行jar，在win10（有jre1.8的环境中运行可以）上ok，在xp上时，显示jar直接为一个zip，考虑问题，可能是环境jre安装错误，后面才意识到要安在c盘，还要注册表注册？主要是下载来的jre1.8u151是类似安装包安装在c盘上后的文件夹效果，应该下个安装包。再来试试。正在放到xp上的感觉，xp真的很久很久。以后考虑换成win7，再来，可能会轻松点</p>
+<br>
+<hr>
+<br>
+<h1 id="简易桌面-v10-问题">简易桌面 v1.0 问题</h1>
+<p>简易桌面v1.0</p>
+<p>问题1:（状态：已解决）</p>
+<p>解决：用new Enter（）的方法，比没有想象中的跳转画面，但是衍生出new后，布局排版乱了，按钮飞到最上面，经过移植斗地主的布局代码，经过调试修改，成功解决，ojbk）</p>
+<p>问题：以new Enter（）；的形式切换应用节目缺点，画面会跳一下，影响观感，使用体验。</p>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333784141.png" alt=""></figure>
+<p>将DDX展开为全屏，原游戏窗口大小不变，流式布局下添加按钮btn，setbounds，背景Lable。</p>
+<p>问题二：（未解决）</p>
+<p>卡片式切换组件？</p>
+<p>文字+纯色背景→图片→组件→程序</p>
+<p>new Enter（）后，前个class会自动隐藏掉</p>
+<p>问题三：（simplewindow系统设计）</p>
+<p>主界面-音乐播放器</p>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333815566.png" alt=""></figure>
+<p>音乐播放器考虑new后会重复播放，而且主界面在new后还在，所以计划把播放器仅仅镶在第一个主界面即可，有难度……应该ok</p>
+<p>斗地主界面</p>
+<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333833251.png" alt=""></figure>
+<p>推箱子界面</p>
+<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333842977.png" alt=""></figure>
+<p>魔兽</p>
+<figure data-type="image" tabindex="7"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333851350.png" alt=""></figure>
+<p>相片浏览界面</p>
+<figure data-type="image" tabindex="8"><img src="https://littlebuzi.github.io/2019/07/30/java/java_gui_1/1567333865870.png" alt=""></figure>
+<p>主菜单<br>
+进度50%</p>
+<p>音乐界面修改作为主菜单<br>
+看相册界面作为主界面与游戏按钮并列的按钮<br>
+这两个项目进展可以，遇到的问题很多也解决了很多，github上的代码不错，要达到预期效果还需要经过不断调整，学习。<br>
+进度85%</p>
+<br>
+<hr>
+<br>
+<h1 id="简易桌面-v10-错误汇总">简易桌面 v1.0 错误汇总</h1>
+<p>问题1：【五子棋退出按钮后序出现多余画面】</p>
+<p>注意点1：<br>
+【五子棋退出按钮后序出现多余画面】<br>
+这是五子棋小游戏的游戏画面</p>
+<figure data-type="image" tabindex="9"><img src="https://littlebuzi.github.io/2019/07/31/java/java_gui_3/1567334208887.png" alt=""></figure>
+<p>其他地方大致都调试好，运行都ok。<br>
+出问题的是红色圈的按钮；“返回桌面”</p>
+<pre><code class="language-java">  if(event.getSource()==exitbtn){
+        dispose(); 
+//存在执行后，会继续弹出按钮和面板，再按一次吃咸的“确认”按钮，才能正常关闭
+ }
+</code></pre>
+<p>详细如下：</p>
+<figure data-type="image" tabindex="10"><img src="https://littlebuzi.github.io/2019/07/31/java/java_gui_3/1567334259063.png" alt=""></figure>
+<p>当按按钮“返回桌面”时，应该是执行“dispose（）”，一个很直接的关闭窗口命令。<br>
+然而出现了这一幕，可能是关乎于:</p>
+<pre><code class="language-java">
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+this.setDefaultCloseOperation(JFrame.EXIT_ON_DISPOSE); //（这句dispose）
+</code></pre>
+<p>不知道正确性，就是当关闭窗口时是否停止整个线程？的意思？</p>
+<p>这种情况是出现在用Star()启动时会出现，（frame之间切换的冲突？），单独运行这个五子棋Gobang（），关闭便不会出现这种情况。</p>
+<p>注意点2：<br>
+【第？个ImagesVewier，尝试通过识别图片分辨率，长和宽来确定他的setbounds和size】<br>
+通过识别图片的长和宽，如（图片）width+height&gt;=1800（拟定大小，尽可能小），考虑图片比较小就将其定位于接近框架中间（框架为全屏），并且将其（照片）设为一个800*800（较小）的大小。若width+height&lt;1800，考虑比较大的图片，将其设置为最大窗口大小，后续考虑，图片的长宽比例，进行图片size的调整。</p>
+<pre><code class="language-java">if(width+height&gt;=1800){
+iconimage.setbounds(200,200,800,800)
+}
+if(width+height&lt;1800){
+iconimage.setbounds(350,350,800,800)//拉扯
+}
+</code></pre>
+<p>注意点3：按钮监听的两种模式<br>
+按钮监听的两种模式：第一种可以监听事件里可以直接使用dispose();而第二种需要如：jFrame.dispose()；this.dispose();????还未100%肯定，待研究</p>
+<pre><code class="language-java">class entend ActionListener {
+
+//按钮布局，JButton；
+如果是在class里初始化声明了如：
+JButton DDZButton，BOXButton，WZQButton；
+后面接的直接可以是：
+
+DDZButton = new JButton(&quot;斗地主&quot;,new ImageIcon(&quot;images/dizhu.gif&quot;));
+BOXButton = new JButton(new ImageIcon(&quot;image/bt.jpg&quot;));
+WZQButton = new JButton(&quot;五子棋&quot;,new ImageIcon(&quot;images/5son.png&quot;));        
+
+DDZButton.setBounds(63,34,180,130);
+BOXButton.setBounds(64,180,180,133);
+WZQButton.setBounds(63,331,188,140);
+
+this.add(WZQButton);
+this.add(BOXButton);
+this.add(DDZButton);
+
+//装监听
+backButton.addActionListener(this);
+DDZButton.addActionListener(this);
+BOXButton.addActionListener(this);
+
+
+public ActionListener{
+
+if(ae.getSource()==DDZButton)
+             {
+                new Main();
+             }
+            if(ae.getSource()==BOXButton)
+             {
+                new LoginFrame();
+             }
+            if(ae.getSource()==WZQButton)
+             {
+                new Gobang();
+             }                   
+   }
+}
+而如果没有事先声明初始化的话
+这样：
+
+JButton DDZButton = new JButton(&quot;斗地主&quot;,new ImageIcon(&quot;images/dizhu.gif&quot;));
+JButton BOXButton = new JButton(new ImageIcon(&quot;image/bt.jpg&quot;));
+JButton WZQButton = new JButton(&quot;五子棋&quot;,new ImageIcon(&quot;images/5son.png&quot;));    
+DDZButton.xxxxx{
+xxxxxxx
+}
+//监听都好像不用
+</code></pre>
+<p>注意点4：imagesviwer拥有的功能</p>
+<p>github上的这个imagesviwer拥有的功能与其他类型的图片浏览器相比。其具有多了按钮有图标，其他很相似。但意外发现“-&gt;”这个符号。提示错误，是因为这个符号是jdk1.8的新特性。我得eclipse jdk开发环境最高是到1.7，所以。。然后为了解决这个问题，首先装上一个jdk1.8（这里补充jdk是开发环境，jre是运行环境，即导出成可运行jar后，需要先安装对应版本的jre。），关联eclipse后，依然是不行，（具体：依然提醒和之前一样的错误，没有变化）。然后上了eclipse的官网，Oracle上下了个网络安装包，安装了个应该是ee版本的eclipse，最高jdk版本达到1.9（最新），安装打开后，启动画面是什么otion（氧气的英文）。结果导入包后，运行结果：界面出来了，但是按按钮没反应。（图片并未出来，后面有说明）eclipse里提示错误：</p>
+<pre><code class="language-java">{
+Exception in thread &quot;AWT-EventQueue-0&quot; java.lang.NullPointerException
+     at github.ViewerAction.actionPerformed(ViewerAction.java:39)
+     at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+     at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+     at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+     at java.awt.Component.processMouseEvent(Unknown Source)
+     at javax.swing.JComponent.processMouseEvent(Unknown Source)
+     at java.awt.Component.processEvent(Unknown Source)
+     at java.awt.Container.processEvent(Unknown Source)
+     at java.awt.Component.dispatchEventImpl(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Window.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+     at java.awt.EventQueue.access$500(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue.dispatchEvent(Unknown Source)
+     at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.run(Unknown Source)
+Exception in thread &quot;AWT-EventQueue-0&quot; java.lang.NullPointerException
+     at github.ViewerAction.actionPerformed(ViewerAction.java:39)
+     at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+     at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+     at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+     at java.awt.Component.processMouseEvent(Unknown Source)
+     at javax.swing.JComponent.processMouseEvent(Unknown Source)
+     at java.awt.Component.processEvent(Unknown Source)
+     at java.awt.Container.processEvent(Unknown Source)
+     at java.awt.Component.dispatchEventImpl(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Window.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+     at java.awt.EventQueue.access$500(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue.dispatchEvent(Unknown Source)
+     at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.run(Unknown Source)
+}
+</code></pre>
+<p>但是以前曾经在通过改变里面的图片绝对路径后，显示图片后，按按钮好像第一次不行，之后再试就可以正常运行了。</p>
+<p>注意点5：进入斗地主反应（响应）慢<br>
+问题一：进入“斗地主小游戏”的时候，反应速度接近7至8秒。其他的小游戏还行。</p>
+<figure data-type="image" tabindex="11"><img src="https://littlebuzi.github.io/2019/07/31/java/java_gui_3/1567335388861.png" alt=""></figure>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="tag">
+                    php
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://littlebuzi.github.io//post/dongman">
+                  <h3 class="post-title">
+                    动漫人物人脸识别
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'e7c2b33da7e627d57c5a',
+        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+        repo: 'littlebuzi.github.io',
+        owner: 'littlebuzi',
+        admin: ['littlebuzi'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
