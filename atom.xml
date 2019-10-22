@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-10-22T01:07:13.625Z</updated>
+    <updated>2019-10-22T01:46:11.921Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -16,15 +16,15 @@
         <link href="https://littlebuzi.github.io//post/android">
         </link>
         <updated>2019-10-21T13:11:33.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012943383.png" alt=""></figure>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012947432.png" alt=""></figure>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012951207.png" alt=""></figure>
-<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012955595.png" alt=""></figure>
-<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012959717.png" alt=""></figure>
-<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012966111.png" alt=""></figure>
-<figure data-type="image" tabindex="7"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012970580.png" alt=""></figure>
-<figure data-type="image" tabindex="8"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012974967.png" alt=""></figure>
-<figure data-type="image" tabindex="9"><img src="https://littlebuzi.github.io/2019/07/30/java/android1/android1/1568012978151.png" alt=""></figure>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012943383.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012947432.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012951207.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012955595.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012959717.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012966111.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012970580.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012974967.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://littlebuzi.github.io//post-images/2019/07/30/java/android1/android1/1568012978151.png" alt=""></figure>
 ]]></content>
     </entry>
     <entry>
