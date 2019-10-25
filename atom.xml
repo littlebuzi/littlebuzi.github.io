@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-10-25T05:36:30.564Z</updated>
+    <updated>2019-10-25T05:38:54.318Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -16,13 +16,16 @@
         <link href="https://littlebuzi.github.io//post/pip">
         </link>
         <updated>2019-10-25T05:06:10.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="pip源地址">pip源（地址）：</h1>
+        <content type="html"><![CDATA[<br>
+<h1 id="pip源地址">pip源（地址）：</h1>
 <p>（1）阿里云 : http://mirrors.aliyun.com/pypi/simple/<br>
 （2）豆瓣 : http://pypi.douban.com/simple/<br>
 （3）清华大学 : https://pypi.tuna.tsinghua.edu.cn/simple/<br>
 （4）中国科学技术大学 : http://pypi.mirrors.ustc.edu.cn/simple/<br>
 （5）华中科技大学 : http://pypi.hustunique.com/</p>
+<br>
 <h2 id="1普通使用">1.普通使用：</h2>
+<br>
 <blockquote>
 <p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> pandas</p>
 </blockquote>
@@ -30,6 +33,7 @@
 <p>pip_install_-i_源的地址_包/库名<br>
 '_'符号代表空格</p>
 </blockquote>
+<br>
 <h2 id="2清华源使用介绍">2.<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华源使用介绍：</a></h2>
 <p>pypi 镜像使用帮助<br>
 pypi 镜像每 5 分钟同步一次。</p>
@@ -44,6 +48,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple<br>
 如果您到 pip 默认源的网络连接较差，临时使用本镜像站来升级 pip：<br>
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U</p>
 </blockquote>
+<br>
 <h2 id="3关于一键修改源-linux">3.<a href="https://blog.csdn.net/sinat_21591675/article/details/82770360">关于一键修改源、Linux</a></h2>
 ]]></content>
     </entry>
