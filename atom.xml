@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-10-25T05:51:56.354Z</updated>
+    <updated>2019-10-25T05:59:26.819Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -18,7 +18,7 @@
         <updated>2019-10-25T05:06:10.000Z</updated>
         <content type="html"><![CDATA[<hr>
 <br>
-<h1 id="pip源地址">pip源（地址）：</h1>
+<h1 id="一-pip源地址">一、pip源（地址）：</h1>
 <br>
 <pre><code>（1）阿里云 : http://mirrors.aliyun.com/pypi/simple/
 （2）豆瓣 : http://pypi.douban.com/simple/
@@ -29,7 +29,7 @@
 <br>
 <h2 id="1普通使用">1.普通使用：</h2>
 <br>
-<pre><code>pip install -i [https://pypi.tuna.tsinghua.edu.cn/simple](https://pypi.tuna.tsinghua.edu.cn/simple) pandas
+<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
 </code></pre>
 <blockquote>
 <p>pip_install_-i_源的地址_包/库名<br>
@@ -57,7 +57,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 <br>
 <hr>
 <br>
-<h1 id="anacondaconda-切换为国内源">anaconda/conda 切换为国内源</h1>
+<h1 id="二-anacondaconda-切换为国内源">二、anaconda/conda 切换为国内源</h1>
 <h2 id="windows下">windows下</h2>
 <p>在清华源和中科大源之间自行选择</p>
 <p>添加清华源<br>
