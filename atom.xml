@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-10-28T11:15:51.083Z</updated>
+    <updated>2019-10-30T10:54:02.760Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -163,6 +163,9 @@ show_channel_urls: true
 <p>注册一个免费的GitHub帐户<br>
 按照GitHub Hello World指南了解您可能想要采取的最受欢迎的操作。</p>
 <p>官网地址：<a href="https://github.com/">https://github.com/</a></p>
+<h1 id="如何加快github下载速度">如何加快github下载速度</h1>
+<p>https://blog.csdn.net/mist99/article/details/80602090</p>
+<p>52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
 ]]></content>
     </entry>
     <entry>
