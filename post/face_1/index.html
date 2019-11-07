@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Python &amp; Minecraft | buzi</title>
+<title>liunx &amp; Tenserflow | buzi</title>
 <meta name="description" content="德丽莎世界第一可爱">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -101,26 +101,111 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Python &amp; Minecraft</h2>
-            <div class="post-date">2019-10-21</div>
-            
-              <div class="feature-container" style="background-image: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4165144139,346046632&amp;fm=15&amp;gp=0.jpg')">
-              </div>
+            <h2 class="post-title">liunx &amp; Tenserflow</h2>
+            <div class="post-date">2019-10-25</div>
             
             <div class="post-content">
-              <p>1.用python学习minecraft<br>
-原理：用python2.7.6接入mc游戏接口，利用python语句调试mc游戏。<br>
-异常：控制台（开服器cmd）有时会出现python调试后（已经开始执行运行一个py时），无反应，游戏也是。按下回车后即可（类似于刷新），才有反应（恢复正常）</p>
-<p>最为基础的是这个“将pythonGUI和mc游戏连接起来”具体是python链接进mc提供的接口： 创建一个py格式文件，在myadventure目录下例：buildHouse.py<br>
-1.导入需要的模块：【类似于Java的Import】import mcpi.minecraft as minecraftimport mcpi.block as block(还有时间方面的import time)</p>
-<p>2.连接Minecraft游戏：【注意大小写，英文冒号以及python语言格式】mc=minecraft.Minecraft.create()</p>
-<p>一.<br>
-1.在这个网站下载“入门包”：<a href="https://www.wiley.com/WileyCDA/Section/id-823690.html">https://www.wiley.com/WileyCDA/Section/id-823690.html</a><br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/learn_mc_1/1568084356167.png" alt=""><br>
-2.python2.7.6下载：<a href="https://www.python.org/download/releases/2.7.6/">https://www.python.org/download/releases/2.7.6/</a><br>
-二.</p>
-<p>1.打开 开服器cmd，开服localhost，使用mc1.6.4客户端连上localhost</p>
-<p>…</p>
+              <p>服务器：腾讯云<br>
+操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
+类型：公共镜像（池）<br>
+内存：2 GB<br>
+CPU：1 核<br>
+硬盘：50 G<br>
+公网带宽：1 Mbps</p>
+<p>window端（客户端）工具：Xshell、Xftp</p>
+<p>① i2v库的安装：</p>
+<p>Github：<br>
+https://github.com/rezoo/illustration2vec/</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
+<p>Github_Releases 下载提速：</p>
+<p><a href="https://www.cmsky.com/linux-hosts/">修改host(window/liunx)</a>:<br>
+52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
+<pre><code class="language-ubuntu">
+wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
+
+以此类推...
+
+</code></pre>
+<p>动漫人脸检测并截取：</p>
+<pre><code class="language-python">
+#coding=utf-8
+import cv2
+import sys
+import os.path
+
+cascade = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')  # 引入xml
+image = cv2.imread('/root/comic/test.jpg', cv2.IMREAD_COLOR)  # 读入一幅彩色图片
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 色彩空间转换
+gray = cv2.equalizeHist(gray)  # 图像直方图均衡化
+
+faces = cascade.detectMultiScale(gray,
+                                 # detector options
+                                 scaleFactor=1.1,
+                                 minNeighbors=5,
+                                 minSize=(24, 24))
+
+i = 0
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+
+    face = image[y: y + h, x:x + w, :]
+    face = cv2.resize(face, (96, 96))
+    save_filename = '%s_%d.png' % (os.path.basename('/root/comic/faces/').split('.')[0], i)
+    cv2.imwrite(&quot;/root/comic/faces/&quot; + save_filename, face)
+    i = i + 1
+
+#cv2.imshow(&quot;AnimeFaceDetect&quot;, image)
+cv2.waitKey(0)
+cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
+
+</code></pre>
+<p>视频一帧帧截取动漫人脸：</p>
+<pre><code class="language-python">
+#coding=utf-8
+import cv2
+import os
+
+face_id = 1
+count = 0
+cap = cv2.VideoCapture('/root/comic/1.mp4')
+face_detector = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')
+
+while True:
+
+    # 从摄像头读取图片
+    sucess, img = cap.read()
+    # 转为灰度图片
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # 检测人脸
+    faces = face_detector.detectMultiScale(gray, 1.3, 5)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+w), (255, 0, 0))
+        count += 1
+        font = cv2.FONT_HERSHEY_TRIPLEX
+        cv2.putText(img, 'num:%d' % (count), (x + 30, y + 30), font, 1, (255, 0, 255), 4)
+        # 保存图像
+        cv2.imwrite(&quot;/root/comic/faces/User.&quot; + str(face_id) + '.' + str(count) + '.jpg', gray[y: y + h, x: x + w])
+        #cv2.imshow('image', img)
+    # 保持画面的持续。
+    k = cv2.waitKey(1)
+
+    if k == 27:   # 通过esc键退出摄像
+        break
+
+# 关闭摄像头
+cap.release()
+cv2.destroyAllWindows()
+
+</code></pre>
+<p>图片分类：</p>
+<pre><code class="language-python">开发中
+</code></pre>
+<p>之前使用：</p>
+<p>服务器：阿里云<br>
+操作系统：CetenOS 6.5</p>
 
             </div>
             
@@ -135,9 +220,9 @@
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://littlebuzi.github.io//post/typecho_theme">
+                <a href="https://littlebuzi.github.io//post/pip">
                   <h3 class="post-title">
-                    typecho博客主题修改
+                    Python二三事
                   </h3>
                 </a>
               </div>

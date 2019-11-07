@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-10-30T10:56:04.978Z</updated>
+    <updated>2019-11-07T04:44:03.245Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -10,6 +10,115 @@
     <logo>https://littlebuzi.github.io//images/avatar.png</logo>
     <icon>https://littlebuzi.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[liunx & Tenserflow]]></title>
+        <id>https://littlebuzi.github.io//post/face_1</id>
+        <link href="https://littlebuzi.github.io//post/face_1">
+        </link>
+        <updated>2019-10-25T06:26:30.000Z</updated>
+        <content type="html"><![CDATA[<p>服务器：腾讯云<br>
+操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
+类型：公共镜像（池）<br>
+内存：2 GB<br>
+CPU：1 核<br>
+硬盘：50 G<br>
+公网带宽：1 Mbps</p>
+<p>window端（客户端）工具：Xshell、Xftp</p>
+<p>① i2v库的安装：</p>
+<p>Github：<br>
+https://github.com/rezoo/illustration2vec/</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
+<p>Github_Releases 下载提速：</p>
+<p><a href="https://www.cmsky.com/linux-hosts/">修改host(window/liunx)</a>:<br>
+52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
+<pre><code class="language-ubuntu">
+wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
+
+以此类推...
+
+</code></pre>
+<p>动漫人脸检测并截取：</p>
+<pre><code class="language-python">
+#coding=utf-8
+import cv2
+import sys
+import os.path
+
+cascade = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')  # 引入xml
+image = cv2.imread('/root/comic/test.jpg', cv2.IMREAD_COLOR)  # 读入一幅彩色图片
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 色彩空间转换
+gray = cv2.equalizeHist(gray)  # 图像直方图均衡化
+
+faces = cascade.detectMultiScale(gray,
+                                 # detector options
+                                 scaleFactor=1.1,
+                                 minNeighbors=5,
+                                 minSize=(24, 24))
+
+i = 0
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+
+    face = image[y: y + h, x:x + w, :]
+    face = cv2.resize(face, (96, 96))
+    save_filename = '%s_%d.png' % (os.path.basename('/root/comic/faces/').split('.')[0], i)
+    cv2.imwrite(&quot;/root/comic/faces/&quot; + save_filename, face)
+    i = i + 1
+
+#cv2.imshow(&quot;AnimeFaceDetect&quot;, image)
+cv2.waitKey(0)
+cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
+
+</code></pre>
+<p>视频一帧帧截取动漫人脸：</p>
+<pre><code class="language-python">
+#coding=utf-8
+import cv2
+import os
+
+face_id = 1
+count = 0
+cap = cv2.VideoCapture('/root/comic/1.mp4')
+face_detector = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')
+
+while True:
+
+    # 从摄像头读取图片
+    sucess, img = cap.read()
+    # 转为灰度图片
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # 检测人脸
+    faces = face_detector.detectMultiScale(gray, 1.3, 5)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+w), (255, 0, 0))
+        count += 1
+        font = cv2.FONT_HERSHEY_TRIPLEX
+        cv2.putText(img, 'num:%d' % (count), (x + 30, y + 30), font, 1, (255, 0, 255), 4)
+        # 保存图像
+        cv2.imwrite(&quot;/root/comic/faces/User.&quot; + str(face_id) + '.' + str(count) + '.jpg', gray[y: y + h, x: x + w])
+        #cv2.imshow('image', img)
+    # 保持画面的持续。
+    k = cv2.waitKey(1)
+
+    if k == 27:   # 通过esc键退出摄像
+        break
+
+# 关闭摄像头
+cap.release()
+cv2.destroyAllWindows()
+
+</code></pre>
+<p>图片分类：</p>
+<pre><code class="language-python">开发中
+</code></pre>
+<p>之前使用：</p>
+<p>服务器：阿里云<br>
+操作系统：CetenOS 6.5</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python二三事]]></title>
         <id>https://littlebuzi.github.io//post/pip</id>
@@ -765,198 +874,6 @@ default-character-set=utf8
 原文链接：https://blog.csdn.net/u014762625/article/details/80667115</p>
 <p>以下与标题无关：</p>
 <p>（记一次记录ip，get ip php语句 安在菜单栏的加载里（数据库查询） 插进数据库 再后台读取）</p>
-<blockquote>
-<p>转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com</p>
-</blockquote>
-<blockquote>
-<p>文章标题:php数据库的增删改查及php与javascript之间的交互<br>
-本文作者:Buzi<br>
-发布时间:2019-07-30, 13:54:07<br>
-最后更新:2019-09-18, 15:09:30<br>
-原始链接:http://littlebuzi.github.io/2019/07/30/php/mysql_php/<br>
-版权声明: &quot;署名-非商用-相同方式共享 4.0&quot; 转载请保留原文链接及作者。</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[php数据库的增删改查&php与javascript之间的交互]]></title>
-        <id>https://littlebuzi.github.io//post/mysql_php</id>
-        <link href="https://littlebuzi.github.io//post/mysql_php">
-        </link>
-        <updated>2019-10-21T06:16:15.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>这篇文章主要为大家详细介绍了php数据库的增删改查，以及php与javascript之间的交互，具有一定的参考价值，感兴趣的小伙伴们可以参考一下,原地址：https://www.jb51.net/article/122598.htm</p>
-</blockquote>
-<blockquote>
-<p>使用语言操作数据库是重中之重，如果一门语言你不懂得如何操作数据库，那么你还是没有学会这门语言。<br>
-PHP操作数据库的方法并不难<br>
-同时php的值还可以与JavaScript脚本之间进行控制<br>
-一般是php的值传递到javascript中，一般不会反过来操作</p>
-</blockquote>
-<p><strong>一、基本目标</strong></p>
-<p>首先，在mysql中有一张用户信息表user，里面的字段分别是id,username与password，打开网页dbselect.php，首先就用php查出整张user表：<br>
-<img src="https://littlebuzi.github.io//post-images/2019/07/30/php/mysql_php/201708311609538.png" alt=""><br>
-然后，插入数据的一栏，输入数据，就可把数据插入到mysql中的user表当中<br>
-<img src="https://littlebuzi.github.io//post-images/2019/07/30/php/mysql_php/201708311609539.gif" alt=""><br>
-在修改数据的一栏中，第一个下拉菜单是通过javascript来创建的，根据表中的数据多少，而给予多少的下拉选项。<br>
-<img src="https://littlebuzi.github.io//post-images/2019/07/30/php/mysql_php/2017083116095510.gif" alt=""><br>
-第二个下拉菜单让用户选择要修改的列<br>
-第三个输入框就是让用户输入要修改的值<br>
-<img src="https://littlebuzi.github.io//post-images/2019/07/30/php/mysql_php/2017083116095511.gif" alt=""><br>
-至于为什么没有做删除数据，那是因为一来删除数据的操作与修改数据类似，二是因为在自增表中一般不删除数据的，仅仅是设置键值让这条数据隐藏</p>
-<p><strong>二、基本思想</strong></p>
-<p>程序入口是dbselect.php，操作数据库的过程分别是两个新页面，一个dbinsert.php，一个是dbupdate.php，这两个页面操作完数据库，马上通过javascript返回。<br>
-<img src="https://littlebuzi.github.io//post-images/2019/07/30/php/mysql_php/2017083116095512.png" alt=""></p>
-<p>三、制作过程</p>
-<p>（1）dbselect.php</p>
-<p>也是本实现过程中，最复杂的一个页面</p>
-<pre><code class="language-php">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt; 
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt; 
-&lt;head&gt; 
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt; 
-&lt;title&gt;dbselect&lt;/title&gt; 
-&lt;/head&gt; 
-  
-&lt;body&gt; 
-user表： 
-&lt;table border=&quot;1&quot;&gt; 
-    &lt;tr&gt; 
-        &lt;td&gt;id&lt;/td&gt; 
-        &lt;td&gt;username&lt;/td&gt; 
-        &lt;td&gt;password&lt;/td&gt; 
-    &lt;/tr&gt; 
-    &lt;?php
-    //php连接数据库的指定动作，其中第一个root是数据库的用户名，第二个root是数据库的密码 
-    //如果连接失败，马上通过die语句打断后面的所有程序，只输出“连接失败” 
-    $con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); 
-    if(!$con){ 
-    die(&quot;连接失败！&quot;); 
-    } 
-    //要操作test数据库 
-    mysql_select_db(&quot;test&quot;,$con); 
-    //total变量是用来记录user记录条数的 
-    $total; 
-    //要在test数据库中操作select count(*) as total from user语句并且把结果放到result变量里 
-    $result=mysql_query(&quot;select count(*) as total from user&quot;); 
-    //result变量是个数据，$total=$row[&quot;total&quot;];把查询结果中的total列的值赋予给php中的total变量 
-    //$row=mysql_fetch_array($result)能够把当前行的值赋予给row数组，并把游标下移一行，游标并不需要初始化，自动完成 
-    while($row=mysql_fetch_array($result)){ 
-        $total=$row[&quot;total&quot;]; 
-    } 
-    
-    //输出整个表的过程与上面的过程类此 
-    $result=mysql_query(&quot;select * from user&quot;); 
-    while($row=mysql_fetch_array($result)){ 
-        echo &quot;&lt;tr&gt;&quot;; 
-        echo &quot;&lt;td&gt;${row[&quot;id&quot;]}&lt;/td&gt;&quot;; 
-        echo &quot;&lt;td&gt;${row[&quot;username&quot;]}&lt;/td&gt;&quot;; 
-        echo &quot;&lt;td&gt;${row[&quot;password&quot;]}&lt;/td&gt;&quot;; 
-        echo &quot;&lt;/tr&gt;&quot;; 
-    } 
-    //查询完毕，记得人走带门 
-    mysql_close($con); 
-    
-    ?&gt; 
-&lt;/table&gt; 
-&lt;br /&gt; 
-  
-&lt;!--以下是两个表单，不再赘述了--&gt;
-插入数据： 
-&lt;form action=&quot;dbinsert.php&quot; method=&quot;get&quot;&gt; 
-    username:&lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt; 
-    password:&lt;input type=&quot;text&quot; name=&quot;password&quot; /&gt; 
-    &lt;input type=&quot;submit&quot; value=&quot;go!&quot; /&gt; 
-&lt;/form&gt; 
-  
-修改数据： 
-&lt;form action=&quot;dbupdate.php&quot; method=&quot;get&quot;&gt; 
-    &lt;select id=&quot;userid&quot; name=&quot;userid&quot;&gt;&lt;/select&gt; 
-    &lt;script&gt; 
-    //这是php与javascript交互部分，把上面求出来的php的$total变量，赋予给javascript的var total 
-    var total=&lt;?php echo $total; ?&gt;; 
-    var i=1; 
-    for(i=1;i&lt;total+1;i++){ 
-    //javascript增加节点过程 
-    var selectnode=document.createElement(&quot;option&quot;); 
-    selectnode.value=i; 
-    selectnode.innerHTML=i; 
-    document.getElementById(&quot;userid&quot;).appendChild(selectnode); 
-    } 
-    &lt;/script&gt; 
-    &lt;select name=&quot;rowname&quot;&gt; 
-        &lt;option value=&quot;username&quot;&gt;username&lt;/option&gt; 
-        &lt;option value=&quot;password&quot;&gt;password&lt;/option&gt; 
-    &lt;/select&gt; 
-    &lt;input type=&quot;text&quot; name=&quot;rowtext&quot; /&gt; 
-    &lt;input type=&quot;submit&quot; value=&quot;go!&quot; /&gt; 
-&lt;/form&gt; 
-  
-&lt;/body&gt; 
-&lt;/html&gt;
-</code></pre>
-<p>javascript控制html节点的详细，可以参照我之前写的《【JavaScript】网页节点的增删改查》一文（<a href="https://www.jb51.net/article/60672.htm">点击打开链接</a>）</p>
-<p>（2）dbinsert.php</p>
-<pre><code class="language-php">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt; 
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt; 
-&lt;head&gt; 
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt; 
-&lt;title&gt;dbinsert.php&lt;/title&gt; 
-&lt;/head&gt; 
-  
-&lt;body&gt; 
-&lt;?php
-//首先从dbselect.php的表单中接受操作的数据 
-//dbselect.php故意用到get方法，只是想说明php中对get与post的处理同样可以通过$_REQUEST[&quot;变量名&quot;]来实现 
-$username=$_REQUEST[&quot;username&quot;]; 
-$password=$_REQUEST[&quot;password&quot;]; 
-//操作数据库的指定动作同dbselect.php。 
-$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); 
-if(!$con){ 
-    die(&quot;连接失败！&quot;); 
- } 
-mysql_select_db(&quot;test&quot;,$con); 
-//控制数据库比dbselect.php更加简单，因为不用对数据库的查询结果进行处理 
-//只是要注意，这里连接字符串是用到.的，而不是jsp的+，asp的&amp;，请注意！ 
-mysql_query(&quot;insert into user(username,password) values ('&quot;.$username.&quot;','&quot;.$password.&quot;');&quot;); 
-mysql_close($con); 
-?&gt; 
-&lt;script&gt; 
-    alert(&quot;添加成功&quot;); 
-    window.location.href=&quot;dbselect.php&quot; rel=&quot;external nofollow&quot; rel=&quot;external nofollow&quot; ; 
-&lt;/script&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;
-</code></pre>
-<p>（3）dbupdate.php</p>
-<p>与dbinsert.php逻辑是一模一样的，只是mysql_query那个的查询语句，从insert into语句变成了update语句而已</p>
-<pre><code class="language-php">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt; 
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt; 
-&lt;head&gt; 
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt; 
-&lt;title&gt;无标题文档&lt;/title&gt; 
-&lt;/head&gt; 
-  
-&lt;body&gt; 
-&lt;?php
-$userid=$_REQUEST[&quot;userid&quot;]; 
-$rowname=$_REQUEST[&quot;rowname&quot;]; 
-$rowtext=$_REQUEST[&quot;rowtext&quot;]; 
-$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); 
-if(!$con){ 
-    die(&quot;连接失败！&quot;); 
- } 
-mysql_select_db(&quot;test&quot;,$con); 
-mysql_query(&quot;update user set &quot;.$rowname.&quot;='&quot;.$rowtext.&quot;' where id=&quot;.$userid.&quot;;&quot;); 
-mysql_close($con); 
-?&gt; 
-&lt;script&gt; 
-    alert(&quot;修改成功&quot;); 
-    window.location.href=&quot;dbselect.php&quot; rel=&quot;external nofollow&quot; rel=&quot;external nofollow&quot; ; 
-&lt;/script&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;
-</code></pre>
-<p>以上，就是整个制作过程。</p>
 <blockquote>
 <p>转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com</p>
 </blockquote>
