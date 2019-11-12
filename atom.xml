@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-11-12T09:35:24.046Z</updated>
+    <updated>2019-11-12T09:39:51.604Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -20,13 +20,15 @@
 <p>服务器：阿里云<br>
 操作系统：CetenOS 6.5</p>
 <p>window端（客户端）工具：Xshell、Xftp</p>
-<p>① i2v库的安装：<br>
-0<br>
-Github：<br>
+<p>① 动漫人脸分类器下载：</p>
+<p>https://github.com/nagadomi/lbpcascade_animeface/</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573551561230.png" alt=""></figure>
+<p>② i2v库的安装：</p>
+<p>Github：<br>
 https://github.com/rezoo/illustration2vec/</p>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
 <h3 id="你会可能遇到的问题">你会可能遇到的问题：</h3>
 <h1 id="1下载速度太慢">1.下载速度太慢：</h1>
 <h2 id="法一">法一：</h2>
@@ -34,7 +36,7 @@ https://github.com/rezoo/illustration2vec/</p>
 <p>Linux系统下hosts文件的位置是 /etc/hosts ，以root用户登录Linux，使用vi编辑/etc/hosts文件，将附加的内容添加在其后面即可：</p>
 <p>修改hosts(liunx):<br>
 52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
-<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
 <pre><code class="language-linux">
 wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
 
