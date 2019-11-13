@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -9,14 +9,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="kveln">
-  <title>buzi</title>
+  <title>Tensorflow | buzi</title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://littlebuzi.github.io//media/css/bootstrap.min.css" rel="stylesheet"> -->
   <!--  <link href="https://littlebuzi.github.io//media/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="buzi » Feed" href="https://littlebuzi.github.io//atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tensorflow | buzi » Feed" href="https://littlebuzi.github.io//atom.xml">
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
   <link href="https://littlebuzi.github.io//styles/main.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -25,6 +25,11 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
+    <meta property="og:description" content="Tensorflow"/>
+    <meta property="og:url" content="https://littlebuzi.github.io//post/tensorflow"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="buzi"/>
   </head>
   <body>
   	<!-- Navigation -->
@@ -66,163 +71,90 @@
       </div>
     </div>
   </nav>
-<!-- Page Header -->
+  <!-- Page Header -->
   <header class="masthead" style="background-image: url('https://littlebuzi.github.io//media/images/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1 class="tag-tl">#python</h1>
+          	<span class="tags">
+          	 
+            <a href="https://littlebuzi.github.io//tag/nKWkHExQP" class="tag">python</a>
+            
+        </span>
+            <h1>Tensorflow</h1>
+            <span class="meta">
+            	Posted on
+              2019-11-13，1 min read
+            </span>
           </div>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Post Content -->
+  <article>
     <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-       
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/tensorflow">
-            <h2 class="post-title">
-              Tensorflow
-            </h2>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="tensorflow是什么">Tensorflow是什么？</h1>
+<p>Google的开源软件库：</p>
+<ul>
+<li>采取数据流，用于数值计算。</li>
+<li>支持多种平台 —— GPU、CPU、移动设备。（方便的无缝切换，不用更改大部分的代码）</li>
+<li>最初用于深度学习，变得越来越通用。（tensorflow并不只是适用于深度学习，大部分还是深度学习，只要是能抽象为数据流图的问题，都能使用它来解决）</li>
+</ul>
+<p>数据流图：<br>
+<img src="https://littlebuzi.github.io//post-images/1573563675094.png" alt=""></p>
+<ul>
+<li>
+<h2 id="节点-处理数据">节点 —— 处理数据</h2>
+对数据进行计算，每个框框（方形，圆形）都表示一个节点。</li>
+<li>
+<h2 id="线-节点输入输出的关系">线 —— 节点输入输出的关系</h2>
+节点与节点之间的数据依赖。（如偏最上面的三个绿色节点，Cross Entropy 依赖 Softmax 和Cross Labels 的输出，通过计算得出新的值，如果前两个节点没有计算完，后面的节点是无法计算的。）</li>
+<li>
+<h2 id="线上运输张量tensor">线上运输张量（tensor）</h2>
+</li>
+</ul>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://littlebuzi.github.io//post/tensorflow1">
+              <span class="post-title">
+                Tensorflow&rarr;
+              </span>
             </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-11-13</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
+          </p>
         
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/tensorflow1">
-            <h2 class="post-title">
-              Tensorflow
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-11-13</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
+        <div class="comment">
+          
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'e7c2b33da7e627d57c5a',
+    clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+    repo: 'littlebuzi.github.io',
+    owner: 'littlebuzi',
+    admin: ['littlebuzi'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+          
+          
         
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/face_1">
-            <h2 class="post-title">
-              liunx &amp; Tenserflow
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-10-25</span>
-             <span>,</span>
-             <span class="post-stats">5 min read</span>
-            </p>
         </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/pip">
-            <h2 class="post-title">
-              Python二三事
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-10-25</span>
-             <span>,</span>
-             <span class="post-stats">3 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/face">
-            <h2 class="post-title">
-              基于opencv的人脸识别签到系统 
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-10-21</span>
-             <span>,</span>
-             <span class="post-stats">7 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/dongman">
-            <h2 class="post-title">
-              动漫人物人脸识别
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-10-21</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://littlebuzi.github.io//post/minecraft_python">
-            <h2 class="post-title">
-              Python &amp; Minecraft
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-10-21</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        
-        
       </div>
     </div>
-  </div>
-
-  
+  </article>
  <!-- Footer -->
   <footer>
     <div class="container">
@@ -294,3 +226,4 @@
   })(this));</script>
   </body>
 </html>
+
