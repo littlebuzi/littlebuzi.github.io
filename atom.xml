@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-11-13T08:07:36.251Z</updated>
+    <updated>2019-11-13T08:15:25.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -45,11 +45,22 @@
 <br>
 <hr>
 <br>
-<p>特性：</p>
+<h2 id="特性">特性：</h2>
 <ul>
-<li>
-<h2 id=""></h2>
-</li>
+<li><big><strong>高度的灵活性</strong></big><br>
+可以表示为数据流图的都可使用，主要同于神经网络，卷积等都使用了封装。也可写自己的封装，就像panda函数那样。<br>
+<br></li>
+<li><big><strong>真正的可移植性</strong></big><br>
+可在很多设备上执行，如 CPU、GPU、移动设备。你在电脑里训练了一个model，可部署在服务器上，手机上，Docker上。<br>
+<br></li>
+<li><big><strong>产品和科研结合</strong></big><br>
+<br></li>
+<li><big><strong>自动求微分</strong></big><br>
+<br></li>
+<li><big><strong>多语言支持</strong></big><br>
+python、c++、java、R、javascript<br>
+<br></li>
+<li><big><strong>性能最优化</strong></big></li>
 </ul>
 ]]></content>
     </entry>
