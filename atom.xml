@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-11-13T07:57:20.781Z</updated>
+    <updated>2019-11-13T08:07:36.251Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -26,23 +26,21 @@
 <br>
 <hr>
 <br>
-<p>数据流图：<br>
-<img src="https://littlebuzi.github.io//post-images/1573563675094.png" alt=""></p>
+<h2 id="数据流图">数据流图：</h2>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573563675094.png" alt=""></figure>
 <ul>
-<li>
-<h2 id="节点-处理数据">节点 —— 处理数据</h2>
-对数据进行计算，每个框框（方形，圆形）都表示一个节点。</li>
-<li>
-<h2 id="线-节点输入输出的关系">线 —— 节点输入输出的关系</h2>
-节点与节点之间的数据依赖。（如偏最上面的三个绿色节点，Cross Entropy 依赖 Softmax 和Cross Labels 的输出，通过计算得出新的值，如果前两个节点没有计算完，后面的节点是无法计算的。）</li>
-<li>
-<h2 id="线上运输张量tensor">线上运输张量（tensor）</h2>
+<li><big><strong>节点 —— 处理数据</strong></big><br>
+对数据进行计算，每个框框（方形，圆形）都表示一个节点。<br>
+<br></li>
+<li><big><strong>线 —— 节点输入输出的关系</strong></big><br>
+节点与节点之间的数据依赖。（如偏最上面的三个绿色节点，Cross Entropy 依赖 Softmax 和Cross Labels 的输出，通过计算得出新的值，如果前两个节点没有计算完，后面的节点是无法计算的。）<br>
+<br></li>
+<li><big><strong>线上运输张量（tensor）</strong></big><br>
 线上运输的数据，所有的n维构成了数据的集合，0维数据 ——&gt; 数字，1维数据 ——&gt; 向量，二维<br>
 ——&gt; 矩阵，大于等于3维的数据 ——&gt; 高位矩阵。<br>
-让tensor（张量）在数据流图中flow（流动）——&gt;tensorflow</li>
-<li>
-<h2 id="节点被分配到各种计算设备上运行">节点被分配到各种计算设备上运行</h2>
-</li>
+让tensor（张量）在数据流图中flow（流动）——&gt;tensorflow<br>
+<br></li>
+<li><big><strong>节点被分配到各种计算设备上运行</strong></big></li>
 </ul>
 <br>
 <hr>
