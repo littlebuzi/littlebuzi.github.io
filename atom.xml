@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-11-13T08:45:27.336Z</updated>
+    <updated>2019-11-13T08:48:33.985Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -65,11 +65,17 @@ python、c++、java、R、javascript<br>
 <br>
 <hr>
 <br>
-<h1 id="tensorflow10-架构">Tensorflow1.0 — 架构：</h1>
+<h1 id="tf10-架构">TF1.0 — 架构：</h1>
 <figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573633217023.png" alt=""></figure>
-<h1 id="tensorflow20-架构">Tensorflow2.0 — 架构：</h1>
+<br>
+<hr>
+<br>
+<h1 id="tf20-架构">TF2.0 — 架构：</h1>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573633662430.png" alt=""></figure>
-<h1 id="tensorflow20-简化的模型开发流程">Tensorflow2.0 — 简化的模型开发流程：</h1>
+<br>
+<hr>
+<br>
+<h1 id="tf20-简化的模型开发流程">TF2.0 — 简化的模型开发流程：</h1>
 <ul>
 <li><big><strong>使用 tf.data 加载数据</strong></big><br>
 <br></li>
@@ -85,6 +91,9 @@ python、c++、java、R、javascript<br>
 <br></li>
 <li><big><strong>使用 Tensorflow Serve、Tensorflow Lite、Tensorflow.js 部署模型</strong></big></li>
 </ul>
+<br>
+<hr>
+<br>
 ]]></content>
     </entry>
     <entry>
