@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-11-13T08:48:33.985Z</updated>
+    <updated>2019-11-15T12:40:48.416Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -97,7 +97,7 @@ python、c++、java、R、javascript<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[liunx & Tenserflow]]></title>
+        <title type="html"><![CDATA[Liunx & Tenserflow]]></title>
         <id>https://littlebuzi.github.io//post/face_1</id>
         <link href="https://littlebuzi.github.io//post/face_1">
         </link>
@@ -263,6 +263,18 @@ cv2.destroyAllWindows()
 
 
 </code></pre>
+<br>
+<h2 id="可能遇到的问题-2">可能遇到的问题：</h2>
+<p>查看linux系统CPU和内存命令</p>
+<p>https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</p>
+<p>Python MemoryError</p>
+<p>https://blog.csdn.net/xiaopihaierletian/article/details/57416110</p>
+<p>在用Python处理大数据时，本来16G的内存，内存还没使用四分之一就开始报MemoryError的错误，后来才知道32bit的Python使用内存超过2G之后，就报这个错误，还没有其他的提示消息。果断换64bit的Python。</p>
+<p>https://blog.csdn.net/weixin_33928137/article/details/93646975</p>
+<p>https://blog.csdn.net/xovee/article/details/101077022</p>
+<p>linux 使用文件增加虚拟内存 swap</p>
+<p>https://msd.misuland.com/pd/3070888491219949990</p>
+<p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
 <p>之前使用：</p>
 <p>服务器：腾讯云<br>
 操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
