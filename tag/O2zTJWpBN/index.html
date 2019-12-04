@@ -1,294 +1,997 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-  
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<!-- 百度验证 -->
-<meta name="baidu-site-verification" content="1IkquSGR9Z"/>
-
-<title>buzi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<meta name="description" content="德丽莎世界第一可爱"/>
-<meta name="keywords" content="德丽莎世界第一可爱"/>
-
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico">
-
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    php | buzi
+</title>
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1575465333622">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
-<!-- Modernizr JS -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<scripts src="https://littlebuzi.github.io//media/scripts/_vendors/respond.min.js"></scripts>
-<![endif]-->
-
-<!-- Comment -->
-
-
-<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
-
-<link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
 
 </head>
+
 <body>
+    <div class="main">
+        <style>
 
-<div id="fh5co-offcanvas">
-    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
-        <span><i class="icon-cross3"></i> <span>Close</span></span>
-    </a>
-    <div class="fh5co-bio">
-        <figure>
-            <img src="https://littlebuzi.github.io//media/images/avatar.png" alt="buzi" class="img-responsive">
-        </figure>
-        <h3 class="heading">ABOUT ME</h3>
-        <h2>buzi</h2>
-        <p>德丽莎世界第一可爱</p>
-        <ul class="fh5co-social">
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-        </ul>
-    </div>
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
 
-    <div class="fh5co-menu">
-        <div class="fh5co-box">
-            <h3 class="heading">搜索</h3>
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" id="bdcsMain" class="form-control" placeholder="输入关键字">
-<!--                    <button type="submit" class="btn btn-sm btn-warning" style="margin-top: 6px; width: 100%">点击搜索</button>-->
-                </div>
-            </form>
-        </div>
-        <div class="fh5co-box">
-            <h3 class="heading">标签</h3>
-            <ul>
-                
-                    <li><a href="https://littlebuzi.github.io//tag/nKWkHExQP">python</a></li>
-                
-                    <li><a href="https://littlebuzi.github.io//tag/8GGDvwn5f">java</a></li>
-                
-                    <li><a href="https://littlebuzi.github.io//tag/lvR88CT5w">工具</a></li>
-                
-                    <li><a href="https://littlebuzi.github.io//tag/O2zTJWpBN">php</a></li>
-                
-                    <li><a href="https://littlebuzi.github.io//tag/N4SH6d1dT">科学</a></li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
+/* Slide transitions */
 
-<header id="fh5co-header">
-    <div class="container-fluid">
-        <div class="row">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-            <ul class="fh5co-social">
-                
-                    <li>
-                        <a href="/"
-                         >
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives"
-                         >
-                            时间线
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags"
-                         >
-                            分类
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/about"
-                         >
-                            关于
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://littlebuzi.github.io//post/Gallery/"
-                         >
-                            图廊
-                        </a>
-                    </li>
-                
-            </ul>
-            <div class="col-lg-12 col-md-12 text-center">
-                <h1 id="fh5co-logo">
-                    <a href="https://littlebuzi.github.io/">buzi </a>
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
+
+<div class="header" class="header-navigation" id="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://littlebuzi.github.io/">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1575465333622" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    buzi
                 </h1>
             </div>
         </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    时间线
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    分类
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="https://littlebuzi.github.io//post/Gallery/" class="menu">
+                                    图廊
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-</header>
-
-
-<div class="container-fluid">
-
-  <div class="col-lg-12 col-md-12 text-center tag-title">
-      <i class="fa fa-tag"></i> 标签: <h3>php</h3>
-  </div>
-
-  <div class="row fh5co-post-entry">
-
-    
-      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-        <figure class="img-box">
-          <a href="https://littlebuzi.github.io//post/xp_web">
-            
-              <img src="http://www.baofengjihuo.com/wp-content/uploads/2016/04/2016041114034372.jpg" alt="疑难杂症" class="img-responsive">
-            
-          </a>
-        </figure>
-        <span class="fh5co-meta">
-          
-            <div class="tag-container">
-              
-                <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="tag">php, </a>
-              
-            </div>
-          
-        </span>
-        <h3 class="fh5co-article-title">
-          <a href="https://littlebuzi.github.io//post/xp_web">疑难杂症</a>
-        </h3>
-        <span class="fh5co-meta fh5co-date">2019-10-21</span>
-      </article>
-    
-      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-        <figure class="img-box">
-          <a href="https://littlebuzi.github.io//post/typecho_theme">
-            
-              <img src="http://www.buzi.online/usr/uploads/2019/05/4222862894.jpg" alt="typecho博客主题修改" class="img-responsive">
-            
-          </a>
-        </figure>
-        <span class="fh5co-meta">
-          
-            <div class="tag-container">
-              
-                <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="tag">php, </a>
-              
-            </div>
-          
-        </span>
-        <h3 class="fh5co-article-title">
-          <a href="https://littlebuzi.github.io//post/typecho_theme">typecho博客主题修改</a>
-        </h3>
-        <span class="fh5co-meta fh5co-date">2019-10-21</span>
-      </article>
-    
-      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-        <figure class="img-box">
-          <a href="https://littlebuzi.github.io//post/mysql_web">
-            
-              <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571650404926&amp;di=0f55576199a347f2fffed81b6b24b141&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D1390309034%2C2555991170%26fm%3D214%26gp%3D0.jpg" alt="数据库&amp;PHP-问题合集" class="img-responsive">
-            
-          </a>
-        </figure>
-        <span class="fh5co-meta">
-          
-            <div class="tag-container">
-              
-                <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="tag">php, </a>
-              
-            </div>
-          
-        </span>
-        <h3 class="fh5co-article-title">
-          <a href="https://littlebuzi.github.io//post/mysql_web">数据库&amp;PHP-问题合集</a>
-        </h3>
-        <span class="fh5co-meta fh5co-date">2019-10-21</span>
-      </article>
-    
-      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-        <figure class="img-box">
-          <a href="https://littlebuzi.github.io//post/mysql_php">
-            
-              <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571649569504&amp;di=0a26c2aad18ce109f2d063419f972188&amp;imgtype=0&amp;src=http%3A%2F%2Fhf.php.tedu.cn%2Fupload%2F20180125%2F20180125112553_115.jpg" alt="php数据库的增删改查&amp;php与javascript之间的交互" class="img-responsive">
-            
-          </a>
-        </figure>
-        <span class="fh5co-meta">
-          
-            <div class="tag-container">
-              
-                <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="tag">php, </a>
-              
-            </div>
-          
-        </span>
-        <h3 class="fh5co-article-title">
-          <a href="https://littlebuzi.github.io//post/mysql_php">php数据库的增删改查&amp;php与javascript之间的交互</a>
-        </h3>
-        <span class="fh5co-meta fh5co-date">2019-10-21</span>
-      </article>
-    
-    <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
-
-  </div>
-
-  <div class="pagination-box animate-box">
-    
-    
-  </div>
 </div>
 
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
 
-<footer id="fh5co-footer">
-  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-</footer>
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
 
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
 
-<!-- jQuery -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.waypoints.min.js"></script>
-<!-- Main JS -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/main.js"></script>
-<!-- Md5 Min JS -->
-<script src="https://littlebuzi.github.io//media/scripts/_vendors/md5.min.js"></script>
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
 
-<script type="application/javascript">
-    hljs.initHighlightingOnLoad();
+    new_scroll_position = last_scroll_position;
+});
 </script>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+    <div class="i-card">
+        <b>标签：#
+        php</b>
+    </div>
+    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/xp_web">
+                        疑难杂症
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-10-21</time>
+                    
+                        <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
+                            i-tag-other_4">
+            #php
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/xp_web" class="post-feature-image" style="background-image:url(http://www.baofengjihuo.com/wp-content/uploads/2016/04/2016041114034372.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            xp的web之旅
+环境：
+用家里的xp系统，是之前用类似“番茄花园”的整合版安装的。
+在尝试各种wamp的版本屡屡碰壁后，试着用其他整合环境：
+1.phpstudy
+初次采用时，搭建z-blog感觉良好，界面也比较熟悉。
+而后的chanzhi与lzcms都同一个错误，you don’t have permisson to aseen it ! ;可能是lzcms的静态没开，但之后开了也没反应，并不能确认是否开成功。
+之后发现可能是之恩能够开在linux上！也可能第一次访问后，就默认了一个ip一个网站，再访问其他需要在配置文件里修改加上，但这个可能比较小，因为这违反了www的访问习惯，
+在这个目录下，就算是不同系统，如果把他们看成其中一个的分系统，那样也说得清。
+2.phpwamp
+就是因为phpstudy遇到了这个情况，所以采用phpwamp，感觉这个比他跟老式，不过更加适合我的xp。
+用着用着感觉也是和phpstudy差不多，类似于绑定访问的第一个，这次我不用lzcms，我用chanzhicms。也尝试着去改这改那，发现还是不行。
+最后，找到了wamp2.2/2.4（之前的假wamp浪费了很多时间），php版本和apache版本也刚好到chanzhi要求。
+所以用上了这个wamp，xp真的不容易，各种软件要兼容，在现在这个环境下。
+计划：用wamp学tp，最初的想法就是这样，为了混乱原有的环境，想在另一台电脑，xp上弄，结果也不省心。最后可以了
 
 
 
+写能执行cmd命令的bat文件
+每次运行jar文件时，我总是需要先打开cmd窗口，再切换到我jar文件保存的盘符，再执行java -jar test.jar，虽然操作不是很复杂，但是如果直接写一个bat文件，每次使用直接双击，这种傻瓜式的方式，估计更容易被大家所喜欢并能够方便使用。
+方式也很简单，比如：
+
+新建一个txt文本，输入如下：
+
+然后保存为bat文件即可，如果以后路径或者名称有变更的话，直接编辑修改，不用每次再去cmd中输入指令了。
+双击即可运行test1.jar的代码啦！
+又或者例如：
+
+更新hexo，同步缓存
+
+版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。本文链接：https://blog.csdn.net/qq_15158911/article/details/54613948
+
+
+
+
+云计算 docker
+参考：
+https://blog.csdn.net/qq_22211217/article/details/80414227
+https://blog.csdn.net/hehailiang_dream/article/details/79983229
+https://blog.csdn.net/yr12dong/article/details/80720690
+
+
+
+关于网络工程师
+考纲：
+【中国计算机技术职业资格网(软考)】
+2019年官网考纲：http://www.ruankao.org.cn/platform/details?code=02_24
+
+学习资源：
+【哔哩哔哩 (゜-゜)つロ 干杯~-bilibili】
+1.2019网络工程师【软考】
+2.网络工程师考试-视频教程-希赛
+下载途径：
+1.https://www.jijidown.com/
+2.b站手机版
+3.https://github.com/Henryhaohao/Bilibili_video_download
+
+
+
+简易桌面 v1.0 总结
+项目1：简易桌面1.0
+针对于mom使用eclipse为平台制作的第一代，简易桌面软件，目的在于用户的简易操作。
+问题：经验总结：
+第一：明确目的，时刻纠正方向，走走停停。
+第二：确定方向，用图画的方式将界面描绘好，利于以后的代码翻译编写。
+第三：在实际编程的过程中，会出现一些小改动，处于临时的灵感，就会对草稿图进行修改，想象计划与实际真的有很大的出入。真的不去实际做一做，可能你永远也不知道。
+第四：停留知识水平，框架的基础构建，只是皮毛，经过网上的百度学习，在错误值积累经验，蹒跚学步，跌跌撞撞。做出来还是可以看的，但是技术要求方面不高。达不到要求。
+第五：有必要进行一次完整的学习，零碎伴有一些错误的学习经历，危害甚大。一次不完整的学习经历的确可以对往后造成很大的危害。
+第六：遇到问题方面；是灵感想法创意的来源。认识到错误，提高自己。做好笔记。
+第七，固步自封，井底之蛙，最为致命；以上讨论的比较大概，会做更详细的分析（问题）。
+今天导出后 在xp上准备运行 先前研究过得知 需要运行环境jre才能运行可运行jar，在win10（有jre1.8的环境中运行可以）上ok，在xp上时，显示jar直接为一个zip，考虑问题，可能是环境jre安装错误，后面才意识到要安在c盘，还要注册表注册？主要是下载来的jre1.8u151是类似安装包安装在c盘上后的文件夹效果，应该下个安装包。再来试试。正在放到xp上的感觉，xp真的很久很久。以后考虑换成win7，再来，可能会轻松点
+
+
+
+简易桌面 v1.0 问题
+简易桌面v1.0
+问题1:（状态：已解决）
+解决：用new Enter（）的方法，比没有想象中的跳转画面，但是衍生出new后，布局排版乱了，按钮飞到最上面，经过移植斗地主的布局代码，经过调试修改，成功解决，ojbk）
+问题：以new Enter（）；的形式切换应用节目缺点，画面会跳一下，影响观感，使用体验。
+
+将DDX展开为全屏，原游戏窗口大小不变，流式布局下添加按钮btn，setbounds，背景Lable。
+问题二：（未解决）
+卡片式切换组件？
+文字+纯色背景→图片→组件→程序
+new Enter（）后，前个class会自动隐藏掉
+问题三：（simplewindow系统设计）
+主界面-音乐播放器
+
+音乐播放器考虑new后会重复播放，而且主界面在new后还在，所以计划把播放器仅仅镶在第一个主界面即可，有难度……应该ok
+斗地主界面
+
+推箱子界面
+
+魔兽
+
+相片浏览界面
+
+主菜单
+进度50%
+音乐界面修改作为主菜单
+看相册界面作为主界面与游戏按钮并列的按钮
+这两个项目进展可以，遇到的问题很多也解决了很多，github上的代码不错，要达到预期效果还需要经过不断调整，学习。
+进度85%
+
+
+
+简易桌面 v1.0 错误汇总
+问题1：【五子棋退出按钮后序出现多余画面】
+注意点1：
+【五子棋退出按钮后序出现多余画面】
+这是五子棋小游戏的游戏画面
+
+其他地方大致都调试好，运行都ok。
+出问题的是红色圈的按钮；“返回桌面”
+  if(event.getSource()==exitbtn){
+        dispose(); 
+//存在执行后，会继续弹出按钮和面板，再按一次吃咸的“确认”按钮，才能正常关闭
+ }
+
+详细如下：
+
+当按按钮“返回桌面”时，应该是执行“dispose（）”，一个很直接的关闭窗口命令。
+然而出现了这一幕，可能是关乎于:
+
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+this.setDefaultCloseOperation(JFrame.EXIT_ON_DISPOSE); //（这句dispose）
+
+不知道正确性，就是当关闭窗口时是否停止整个线程？的意思？
+这种情况是出现在用Star()启动时会出现，（frame之间切换的冲突？），单独运行这个五子棋Gobang（），关闭便不会出现这种情况。
+注意点2：
+【第？个ImagesVewier，尝试通过识别图片分辨率，长和宽来确定他的setbounds和size】
+通过识别图片的长和宽，如（图片）width+height&amp;gt;=1800（拟定大小，尽可能小），考虑图片比较小就将其定位于接近框架中间（框架为全屏），并且将其（照片）设为一个800*800（较小）的大小。若width+height&amp;lt;1800，考虑比较大的图片，将其设置为最大窗口大小，后续考虑，图片的长宽比例，进行图片size的调整。
+if(width+height&amp;gt;=1800){
+iconimage.setbounds(200,200,800,800)
+}
+if(width+height&amp;lt;1800){
+iconimage.setbounds(350,350,800,800)//拉扯
+}
+
+注意点3：按钮监听的两种模式
+按钮监听的两种模式：第一种可以监听事件里可以直接使用dispose();而第二种需要如：jFrame.dispose()；this.dispose();????还未100%肯定，待研究
+class entend ActionListener {
+
+//按钮布局，JButton；
+如果是在class里初始化声明了如：
+JButton DDZButton，BOXButton，WZQButton；
+后面接的直接可以是：
+
+DDZButton = new JButton(&amp;quot;斗地主&amp;quot;,new ImageIcon(&amp;quot;images/dizhu.gif&amp;quot;));
+BOXButton = new JButton(new ImageIcon(&amp;quot;image/bt.jpg&amp;quot;));
+WZQButton = new JButton(&amp;quot;五子棋&amp;quot;,new ImageIcon(&amp;quot;images/5son.png&amp;quot;));        
+
+DDZButton.setBounds(63,34,180,130);
+BOXButton.setBounds(64,180,180,133);
+WZQButton.setBounds(63,331,188,140);
+
+this.add(WZQButton);
+this.add(BOXButton);
+this.add(DDZButton);
+
+//装监听
+backButton.addActionListener(this);
+DDZButton.addActionListener(this);
+BOXButton.addActionListener(this);
+
+
+public ActionListener{
+
+if(ae.getSource()==DDZButton)
+             {
+                new Main();
+             }
+            if(ae.getSource()==BOXButton)
+             {
+                new LoginFrame();
+             }
+            if(ae.getSource()==WZQButton)
+             {
+                new Gobang();
+             }                   
+   }
+}
+而如果没有事先声明初始化的话
+这样：
+
+JButton DDZButton = new JButton(&amp;quot;斗地主&amp;quot;,new ImageIcon(&amp;quot;images/dizhu.gif&amp;quot;));
+JButton BOXButton = new JButton(new ImageIcon(&amp;quot;image/bt.jpg&amp;quot;));
+JButton WZQButton = new JButton(&amp;quot;五子棋&amp;quot;,new ImageIcon(&amp;quot;images/5son.png&amp;quot;));    
+DDZButton.xxxxx{
+xxxxxxx
+}
+//监听都好像不用
+
+注意点4：imagesviwer拥有的功能
+github上的这个imagesviwer拥有的功能与其他类型的图片浏览器相比。其具有多了按钮有图标，其他很相似。但意外发现“-&amp;gt;”这个符号。提示错误，是因为这个符号是jdk1.8的新特性。我得eclipse jdk开发环境最高是到1.7，所以。。然后为了解决这个问题，首先装上一个jdk1.8（这里补充jdk是开发环境，jre是运行环境，即导出成可运行jar后，需要先安装对应版本的jre。），关联eclipse后，依然是不行，（具体：依然提醒和之前一样的错误，没有变化）。然后上了eclipse的官网，Oracle上下了个网络安装包，安装了个应该是ee版本的eclipse，最高jdk版本达到1.9（最新），安装打开后，启动画面是什么otion（氧气的英文）。结果导入包后，运行结果：界面出来了，但是按按钮没反应。（图片并未出来，后面有说明）eclipse里提示错误：
+{
+Exception in thread &amp;quot;AWT-EventQueue-0&amp;quot; java.lang.NullPointerException
+     at github.ViewerAction.actionPerformed(ViewerAction.java:39)
+     at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+     at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+     at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+     at java.awt.Component.processMouseEvent(Unknown Source)
+     at javax.swing.JComponent.processMouseEvent(Unknown Source)
+     at java.awt.Component.processEvent(Unknown Source)
+     at java.awt.Container.processEvent(Unknown Source)
+     at java.awt.Component.dispatchEventImpl(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Window.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+     at java.awt.EventQueue.access$500(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue.dispatchEvent(Unknown Source)
+     at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.run(Unknown Source)
+Exception in thread &amp;quot;AWT-EventQueue-0&amp;quot; java.lang.NullPointerException
+     at github.ViewerAction.actionPerformed(ViewerAction.java:39)
+     at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+     at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+     at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+     at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+     at java.awt.Component.processMouseEvent(Unknown Source)
+     at javax.swing.JComponent.processMouseEvent(Unknown Source)
+     at java.awt.Component.processEvent(Unknown Source)
+     at java.awt.Container.processEvent(Unknown Source)
+     at java.awt.Component.dispatchEventImpl(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+     at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+     at java.awt.Container.dispatchEventImpl(Unknown Source)
+     at java.awt.Window.dispatchEventImpl(Unknown Source)
+     at java.awt.Component.dispatchEvent(Unknown Source)
+     at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+     at java.awt.EventQueue.access$500(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.awt.EventQueue$3.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.awt.EventQueue$4.run(Unknown Source)
+     at java.security.AccessController.doPrivileged(Native Method)
+     at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+     at java.awt.EventQueue.dispatchEvent(Unknown Source)
+     at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+     at java.awt.EventDispatchThread.run(Unknown Source)
+}
+
+但是以前曾经在通过改变里面的图片绝对路径后，显示图片后，按按钮好像第一次不行，之后再试就可以正常运行了。
+注意点5：进入斗地主反应（响应）慢
+问题一：进入“斗地主小游戏”的时候，反应速度接近7至8秒。其他的小游戏还行。
+
+
+
+
+import cv2 找不到 face
+AttributeError: module &#39;cv2.face&#39; has no attribute &#39;createEigenFaceRecognizer&#39; 解决办法
+原因：
+一.版本问题，目前使用版本cv2.face中createEigenFaceRecognizer更名或移除
+解决：请查看对应版本的说明文档，使用对应版本或属性名。
+二.未安装
+opencv_contrib，所以
+model = cv2.face.createEigenFaceRecognizer() 行找不到face
+解决：
+1.使用pip、源码安装方法
+pip install opencv-python opencv-contrib-python
+
+或
+https://blog.csdn.net/wyx100/article/details/78498609
+2.conda ：
+conda install opencv-python opencv-contrib-python
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/xp_web">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/typecho_theme">
+                        typecho博客主题修改
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-10-21</time>
+                    
+                        <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
+                            i-tag-success">
+            #php
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/typecho_theme" class="post-feature-image" style="background-image:url(http://www.buzi.online/usr/uploads/2019/05/4222862894.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            以下为修改主题，自定义的一些配置：
+原主题地址：
+Postbird-typecho-two-sidebar-block作者: postbird 版本: 0.0.1Postbird typecho 两栏博客简约主题
+了解详情：
+https://gitee.com/postbird/typecho-blog-theme-two-siderbar
+仿docs主题（改进）：
+1.导航栏颜色，背景。
+2.菜单折叠颜色。
+3.模板响应式。
+随缘找回来，因为以选择其他主题，有空换一下截个图（然而也没人看，主要是记录修改的规律嗯）
+自定义脚本：（百度统计）
+&amp;lt;script&amp;gt;
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the &amp;lt;link&amp;gt; tag
+        var x=document.getElementsByTagName(&amp;quot;link&amp;quot;);
+        //Find the last canonical URL
+        if(x.length &amp;gt; 0){
+            for (i=0;i&amp;lt;x.length;i++){
+                if(x[i].rel.toLowerCase() == &#39;canonical&#39; &amp;amp;&amp;amp; x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(&#39;:&#39;)[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(&#39;:&#39;)[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === &#39;https&#39;)?&amp;quot;https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif&amp;quot;:&amp;quot;//api.share.baidu.com/s.gif&amp;quot;;t?(n+=&amp;quot;?r=&amp;quot;+encodeURIComponent(document.referrer),r&amp;amp;&amp;amp;(n+=&amp;quot;&amp;amp;l=&amp;quot;+r)):r&amp;amp;&amp;amp;(n+=&amp;quot;?l=&amp;quot;+r);var i=new Image;i.src=n}}(window);})();
+&amp;lt;/script&amp;gt;
+
+自定义 stylesheet 样式：
+.widget {
+    margin-bottom: 0!important;
+}
+
+.list-group-item-info {
+    color: #fff;
+}
+
+#secondary .list-group-item.list-group-item-info {
+    background-color: #343a40!important;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/typecho_theme">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/mysql_web">
+                        数据库&amp;PHP-问题合集
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-10-21</time>
+                    
+                        <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
+                            i-tag-error">
+            #php
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/mysql_web" class="post-feature-image" style="background-image:url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571650404926&amp;di=0f55576199a347f2fffed81b6b24b141&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D1390309034%2C2555991170%26fm%3D214%26gp%3D0.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            #关于数据库-mysql账号密码login
+数据库——mysql
+忘记密码处理：
+主要分成两种情况：
+第一大种：（集成环境安装的，倾向php，mysql小型数据库）
+账号：root
+密码：
+免密；
+root；
+168168；
+123456
+等
+
+第二大种：（倾向mysql安装版或压缩版，半集成）
+账号：root
+密码：
+（一段字符英文加数字）默认给你设置好，第一次初始化需要手动修改（特色）  
+如：
+ABC123xyz
+Wx&amp;lt;&amp;lt;1Cfdd8&amp;amp;f
+
+新的理解:
+在阿里云上安装phpstudy后，第一次进入数据库密码不对，默认数据库密码应为root，所以phpstudy没用他自己的数据库，mysql也启动失败，最后手动启动“服务”里的mysql，查看原有mysql密码，可以了。
+
+#php查询sql 中文乱码“ ？”
+查询中文时出现乱码”？？？？1“
+编码检查都是utf-8
+之后按照这个，修改了mysql 的 my.ini 三个位置 ok
+https://blog.csdn.net/u014762625/article/details/80667115
+
+由上图可见database和server的字符集使用了latin1编码方式，不支持中文，即存储中文时会出现乱码。以下修改方法：
+Linux 系统
+(1)关闭mysql服务
+
+service mysql stop  
+
+(2)修改 /etc/mysql/my.cnf  （默认的安装路径）
+
+vim /etc/mysql/my.cnf  
+
+打开my.cnf后，在文件内的[mysqld]下增加如下两行设置:
+
+character_set_server=utf8  
+
+init_connect=&#39;SET NAMES utf8&#39;  
+
+保存退出
+
+(3) 重新启动mysql服务
+
+service mysql restart  
+
+完成修改，使用查询命令show variables like &#39;character%&#39;; 查看编码变为utf8的。
+
+windows系统
+打开mysql安装目录，有一个my-default.ini文件，复制一份修改名称my.ini
+
+打开my.ini,加入下面的内容：
+
+[mysqld]
+character-set-server=utf8 
+[mysql]
+default-character-set=utf8
+[client]
+
+default-character-set=utf8
+
+保存，重启mysql服务，完成修改。
+
+————————————————
+版权声明：本文为CSDN博主「宋宋Jimi」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u014762625/article/details/80667115
+以下与标题无关：
+（记一次记录ip，get ip php语句 安在菜单栏的加载里（数据库查询） 插进数据库 再后台读取）
+
+转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com
+
+
+文章标题:php数据库的增删改查及php与javascript之间的交互
+本文作者:Buzi
+发布时间:2019-07-30, 13:54:07
+最后更新:2019-09-18, 15:09:30
+原始链接:http://littlebuzi.github.io/2019/07/30/php/mysql_php/
+版权声明: &amp;quot;署名-非商用-相同方式共享 4.0&amp;quot; 转载请保留原文链接及作者。
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/mysql_web">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io//post/mysql_php">
+                        php数据库的增删改查&amp;php与javascript之间的交互
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-10-21</time>
+                    
+                        <a href="https://littlebuzi.github.io//tag/O2zTJWpBN" class="post-tag i-tag
+                            i-tag-other_1">
+            #php
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io//post/mysql_php" class="post-feature-image" style="background-image:url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571649569504&amp;di=0a26c2aad18ce109f2d063419f972188&amp;imgtype=0&amp;src=http%3A%2F%2Fhf.php.tedu.cn%2Fupload%2F20180125%2F20180125112553_115.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+这篇文章主要为大家详细介绍了php数据库的增删改查，以及php与javascript之间的交互，具有一定的参考价值，感兴趣的小伙伴们可以参考一下,原地址：https://www.jb51.net/article/122598.htm
+
+
+使用语言操作数据库是重中之重，如果一门语言你不懂得如何操作数据库，那么你还是没有学会这门语言。
+PHP操作数据库的方法并不难
+同时php的值还可以与JavaScript脚本之间进行控制
+一般是php的值传递到javascript中，一般不会反过来操作
+
+一、基本目标
+首先，在mysql中有一张用户信息表user，里面的字段分别是id,username与password，打开网页dbselect.php，首先就用php查出整张user表：
+
+然后，插入数据的一栏，输入数据，就可把数据插入到mysql中的user表当中
+
+在修改数据的一栏中，第一个下拉菜单是通过javascript来创建的，根据表中的数据多少，而给予多少的下拉选项。
+
+第二个下拉菜单让用户选择要修改的列
+第三个输入框就是让用户输入要修改的值
+
+至于为什么没有做删除数据，那是因为一来删除数据的操作与修改数据类似，二是因为在自增表中一般不删除数据的，仅仅是设置键值让这条数据隐藏
+二、基本思想
+程序入口是dbselect.php，操作数据库的过程分别是两个新页面，一个dbinsert.php，一个是dbupdate.php，这两个页面操作完数据库，马上通过javascript返回。
+
+三、制作过程
+（1）dbselect.php
+也是本实现过程中，最复杂的一个页面
+&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt; 
+&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 
+&amp;lt;head&amp;gt; 
+&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&amp;gt; 
+&amp;lt;title&amp;gt;dbselect&amp;lt;/title&amp;gt; 
+&amp;lt;/head&amp;gt; 
+  
+&amp;lt;body&amp;gt; 
+user表： 
+&amp;lt;table border=&amp;quot;1&amp;quot;&amp;gt; 
+    &amp;lt;tr&amp;gt; 
+        &amp;lt;td&amp;gt;id&amp;lt;/td&amp;gt; 
+        &amp;lt;td&amp;gt;username&amp;lt;/td&amp;gt; 
+        &amp;lt;td&amp;gt;password&amp;lt;/td&amp;gt; 
+    &amp;lt;/tr&amp;gt; 
+    &amp;lt;?php
+    //php连接数据库的指定动作，其中第一个root是数据库的用户名，第二个root是数据库的密码 
+    //如果连接失败，马上通过die语句打断后面的所有程序，只输出“连接失败” 
+    $con=mysql_connect(&amp;quot;localhost&amp;quot;,&amp;quot;root&amp;quot;,&amp;quot;root&amp;quot;); 
+    if(!$con){ 
+    die(&amp;quot;连接失败！&amp;quot;); 
+    } 
+    //要操作test数据库 
+    mysql_select_db(&amp;quot;test&amp;quot;,$con); 
+    //total变量是用来记录user记录条数的 
+    $total; 
+    //要在test数据库中操作select count(*) as total from user语句并且把结果放到result变量里 
+    $result=mysql_query(&amp;quot;select count(*) as total from user&amp;quot;); 
+    //result变量是个数据，$total=$row[&amp;quot;total&amp;quot;];把查询结果中的total列的值赋予给php中的total变量 
+    //$row=mysql_fetch_array($result)能够把当前行的值赋予给row数组，并把游标下移一行，游标并不需要初始化，自动完成 
+    while($row=mysql_fetch_array($result)){ 
+        $total=$row[&amp;quot;total&amp;quot;]; 
+    } 
+    
+    //输出整个表的过程与上面的过程类此 
+    $result=mysql_query(&amp;quot;select * from user&amp;quot;); 
+    while($row=mysql_fetch_array($result)){ 
+        echo &amp;quot;&amp;lt;tr&amp;gt;&amp;quot;; 
+        echo &amp;quot;&amp;lt;td&amp;gt;${row[&amp;quot;id&amp;quot;]}&amp;lt;/td&amp;gt;&amp;quot;; 
+        echo &amp;quot;&amp;lt;td&amp;gt;${row[&amp;quot;username&amp;quot;]}&amp;lt;/td&amp;gt;&amp;quot;; 
+        echo &amp;quot;&amp;lt;td&amp;gt;${row[&amp;quot;password&amp;quot;]}&amp;lt;/td&amp;gt;&amp;quot;; 
+        echo &amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;; 
+    } 
+    //查询完毕，记得人走带门 
+    mysql_close($con); 
+    
+    ?&amp;gt; 
+&amp;lt;/table&amp;gt; 
+&amp;lt;br /&amp;gt; 
+  
+&amp;lt;!--以下是两个表单，不再赘述了--&amp;gt;
+插入数据： 
+&amp;lt;form action=&amp;quot;dbinsert.php&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; 
+    username:&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;username&amp;quot; /&amp;gt; 
+    password:&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;password&amp;quot; /&amp;gt; 
+    &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;go!&amp;quot; /&amp;gt; 
+&amp;lt;/form&amp;gt; 
+  
+修改数据： 
+&amp;lt;form action=&amp;quot;dbupdate.php&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; 
+    &amp;lt;select id=&amp;quot;userid&amp;quot; name=&amp;quot;userid&amp;quot;&amp;gt;&amp;lt;/select&amp;gt; 
+    &amp;lt;script&amp;gt; 
+    //这是php与javascript交互部分，把上面求出来的php的$total变量，赋予给javascript的var total 
+    var total=&amp;lt;?php echo $total; ?&amp;gt;; 
+    var i=1; 
+    for(i=1;i&amp;lt;total+1;i++){ 
+    //javascript增加节点过程 
+    var selectnode=document.createElement(&amp;quot;option&amp;quot;); 
+    selectnode.value=i; 
+    selectnode.innerHTML=i; 
+    document.getElementById(&amp;quot;userid&amp;quot;).appendChild(selectnode); 
+    } 
+    &amp;lt;/script&amp;gt; 
+    &amp;lt;select name=&amp;quot;rowname&amp;quot;&amp;gt; 
+        &amp;lt;option value=&amp;quot;username&amp;quot;&amp;gt;username&amp;lt;/option&amp;gt; 
+        &amp;lt;option value=&amp;quot;password&amp;quot;&amp;gt;password&amp;lt;/option&amp;gt; 
+    &amp;lt;/select&amp;gt; 
+    &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;rowtext&amp;quot; /&amp;gt; 
+    &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;go!&amp;quot; /&amp;gt; 
+&amp;lt;/form&amp;gt; 
+  
+&amp;lt;/body&amp;gt; 
+&amp;lt;/html&amp;gt;
+
+javascript控制html节点的详细，可以参照我之前写的《【JavaScript】网页节点的增删改查》一文（点击打开链接）
+（2）dbinsert.php
+&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt; 
+&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 
+&amp;lt;head&amp;gt; 
+&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&amp;gt; 
+&amp;lt;title&amp;gt;dbinsert.php&amp;lt;/title&amp;gt; 
+&amp;lt;/head&amp;gt; 
+  
+&amp;lt;body&amp;gt; 
+&amp;lt;?php
+//首先从dbselect.php的表单中接受操作的数据 
+//dbselect.php故意用到get方法，只是想说明php中对get与post的处理同样可以通过$_REQUEST[&amp;quot;变量名&amp;quot;]来实现 
+$username=$_REQUEST[&amp;quot;username&amp;quot;]; 
+$password=$_REQUEST[&amp;quot;password&amp;quot;]; 
+//操作数据库的指定动作同dbselect.php。 
+$con=mysql_connect(&amp;quot;localhost&amp;quot;,&amp;quot;root&amp;quot;,&amp;quot;root&amp;quot;); 
+if(!$con){ 
+    die(&amp;quot;连接失败！&amp;quot;); 
+ } 
+mysql_select_db(&amp;quot;test&amp;quot;,$con); 
+//控制数据库比dbselect.php更加简单，因为不用对数据库的查询结果进行处理 
+//只是要注意，这里连接字符串是用到.的，而不是jsp的+，asp的&amp;amp;，请注意！ 
+mysql_query(&amp;quot;insert into user(username,password) values (&#39;&amp;quot;.$username.&amp;quot;&#39;,&#39;&amp;quot;.$password.&amp;quot;&#39;);&amp;quot;); 
+mysql_close($con); 
+?&amp;gt; 
+&amp;lt;script&amp;gt; 
+    alert(&amp;quot;添加成功&amp;quot;); 
+    window.location.href=&amp;quot;dbselect.php&amp;quot; rel=&amp;quot;external nofollow&amp;quot; rel=&amp;quot;external nofollow&amp;quot; ; 
+&amp;lt;/script&amp;gt; 
+&amp;lt;/body&amp;gt; 
+&amp;lt;/html&amp;gt;
+
+（3）dbupdate.php
+与dbinsert.php逻辑是一模一样的，只是mysql_query那个的查询语句，从insert into语句变成了update语句而已
+&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt; 
+&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 
+&amp;lt;head&amp;gt; 
+&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&amp;gt; 
+&amp;lt;title&amp;gt;无标题文档&amp;lt;/title&amp;gt; 
+&amp;lt;/head&amp;gt; 
+  
+&amp;lt;body&amp;gt; 
+&amp;lt;?php
+$userid=$_REQUEST[&amp;quot;userid&amp;quot;]; 
+$rowname=$_REQUEST[&amp;quot;rowname&amp;quot;]; 
+$rowtext=$_REQUEST[&amp;quot;rowtext&amp;quot;]; 
+$con=mysql_connect(&amp;quot;localhost&amp;quot;,&amp;quot;root&amp;quot;,&amp;quot;root&amp;quot;); 
+if(!$con){ 
+    die(&amp;quot;连接失败！&amp;quot;); 
+ } 
+mysql_select_db(&amp;quot;test&amp;quot;,$con); 
+mysql_query(&amp;quot;update user set &amp;quot;.$rowname.&amp;quot;=&#39;&amp;quot;.$rowtext.&amp;quot;&#39; where id=&amp;quot;.$userid.&amp;quot;;&amp;quot;); 
+mysql_close($con); 
+?&amp;gt; 
+&amp;lt;script&amp;gt; 
+    alert(&amp;quot;修改成功&amp;quot;); 
+    window.location.href=&amp;quot;dbselect.php&amp;quot; rel=&amp;quot;external nofollow&amp;quot; rel=&amp;quot;external nofollow&amp;quot; ; 
+&amp;lt;/script&amp;gt; 
+&amp;lt;/body&amp;gt; 
+&amp;lt;/html&amp;gt;
+
+以上，就是整个制作过程。
+
+转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com
+
+
+文章标题:php数据库的增删改查及php与javascript之间的交互
+本文作者:Buzi
+发布时间:2019-07-30, 13:54:07
+最后更新:2019-09-18, 15:09:30
+原始链接:http://littlebuzi.github.io/2019/07/30/php/mysql_php/
+版权声明: &amp;quot;署名-非商用-相同方式共享 4.0&amp;quot; 转载请保留原文链接及作者。
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io//post/mysql_php">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
+
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1575465333622)">
+        </div>
+        <h1 class="id_card-title">
+            buzi
+        </h1>
+        <h2 class="id_card-description">
+            德丽莎世界第一可爱
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                        <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-wechat"></i></a>
+                        
+                            <!-- weibo -->
+                            
+                                <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-qq"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
+                                        <a href="https://space.bilibili.com/160195259" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-youtube-play"></i></a>
+                                        
+
+        </div>
+    </div>
+    
+
+                        <!-- 公告栏 -->
+                        
+
+                </div>
+            </div>
+
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
 </body>
+
 </html>
