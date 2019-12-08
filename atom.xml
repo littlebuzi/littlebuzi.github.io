@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-08T13:46:47.095Z</updated>
+    <updated>2019-12-08T14:21:40.910Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -102,11 +102,19 @@ python、c++、java、R、javascript<br>
         <link href="https://littlebuzi.github.io//post/face_1">
         </link>
         <updated>2019-10-25T06:26:30.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="实现动漫人脸识别-建立动漫人脸数据库">实现动漫人脸识别、建立动漫人脸数据库：</h1>
+<p>【遇到问题❓/错误❌，请查看文末】</p>
+]]></summary>
         <content type="html"><![CDATA[<h1 id="实现动漫人脸识别-建立动漫人脸数据库">实现动漫人脸识别、建立动漫人脸数据库：</h1>
-<p>服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
-操作系统：CetenOS 6.5 (环境配置复杂度: Window &gt; Centos &gt; Ubuntu 但个人原因使用centos较多)<br>
+<p>【遇到问题❓/错误❌，请查看文末】</p>
+<!-- more -->
+<h1 id="1-目标封面所示效果标注图片中-动漫人物-的脸部-上图所示">1、目标：封面所示效果，标注图片中 “ 动漫人物 ” 的脸部 (上图所示)</h1>
+<p>环境：<br>
+服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
+操作系统：CetenOS 6.5 (环境配置复杂度: Window &gt; Centos &gt; Ubuntu 因个人原因使用centos较多)<br>
 python版本：3.5（自带2.6.6）<br>
 window端（客户端）工具：Xshell、Xftp</p>
+<h1 id="11-依赖下载">1.1、依赖下载：</h1>
 <p>① 动漫人脸分类器下载：</p>
 <p>https://github.com/nagadomi/lbpcascade_animeface/</p>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573551561230.png" alt=""></figure>
@@ -116,37 +124,8 @@ https://github.com/rezoo/illustration2vec/</p>
 <figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
 <figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
-<p>你会可能遇到的问题：</p>
-<h1 id="1下载速度太慢">1.下载速度太慢：</h1>
-<br>
-<h2 id="法一">法一：</h2>
-<p>liunx 下载 Github_Releases 下载提速：</p>
-<p>Linux系统下hosts文件的位置是 /etc/hosts ，以root用户登录Linux，使用vi编辑/etc/hosts文件，将附加的内容添加在其后面即可：</p>
-<p>修改hosts(liunx):<br>
-52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
-<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
-<pre><code class="language-linux">
-wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
-
-以此类推...
-
-</code></pre>
-<h2 id="法二">法二：</h2>
-<h3 id="修改hostswindow">修改hosts(window):</h3>
-<p>当我们需要本地调试网站或者屏蔽某个网站的时候可以手动将这个网站添加到系统hosts文件中，因为hosts文件的优先级高于DNS，所以可以达到你想要在浏览器里呈现的结果，当然这只在本地有用！<br>
-一、Windows中hosts文件一般在C:\Windows\System32\drivers\etc目录下，格式是</p>
-<pre><code>127.0.0.1 localhost
-::1 localhost
-52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com
-</code></pre>
-<p>可以用记事本修改，前面是IP地址，后面是域名。127.0.0.1这个是本地环回地址。<br>
-比如127.0.0.1 www.baidu.com就是把www.baidu.com这个域名指向127.0.0.1的地址。</p>
-<h3 id="xftp传上去云端">xftp传上去云端</h3>
-<p>当然这也需要很久 不多折合下来很大可能快50-100倍。如果像我一样有一台window云服务，那就让它来做这件事。下载，上传，都在云上进行。</p>
-<h3 id="详细请看">详细请看</h3>
-<p><a href="https://www.cmsky.com/linux-hosts/">https://www.cmsky.com/linux-hosts/</a></p>
-<hr>
-<p>先测试下linux服务器主机(centos)属性、环境：</p>
+<h1 id="12-test环境">1.2、Test环境：</h1>
+<p>准备下linux服务器主机(centos)属性、环境：</p>
 <p>1.<a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</a></p>
 <p>2.python -V</p>
 <p>3.安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）</p>
@@ -159,7 +138,7 @@ wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2v
 <a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a><br>
 或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</p>
 <hr>
-<h1 id="参数查询-环境调试结束开始测试功能">参数查询、环境调试结束，开始测试功能：</h1>
+<h1 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h1>
 <p>文件目录：<br>
 <img src="https://littlebuzi.github.io//post-images/1573551285992.png" alt=""></p>
 <p>动漫人脸检测并截取：<br>
@@ -197,26 +176,12 @@ cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
 
 </code></pre>
 <br>
-<h2 id="可能遇到的问题">可能遇到的问题：</h2>
-<pre><code>
-【Linux】 解决报错： 
-ImportError: libSM.so.6: cannot open shared object file: No such file or directory
-
-原因：
-libSM、libSM等不存在
-
-解决办法：
-yum install xxx
-
-详：https://www.cnblogs.com/richerdyoung/p/8458910.html
-
-</code></pre>
-<br>
 <hr>
+<h1 id="2-目标截取并保存视频一帧帧截取到的动漫人脸">2、目标：截取并保存视频一帧帧截取到的动漫人脸：</h1>
 <br>
-<p>文件目录：<br>
-<img src="https://littlebuzi.github.io//post-images/1573556199362.png" alt=""></p>
-<p>导入视频一帧帧截取动漫人脸：</p>
+<h1 id="21-文件目录">2.1、文件目录：</h1>
+<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573556199362.png" alt=""></figure>
+<h1 id="22-导入视频一帧帧截取动漫人脸">2.2、导入视频一帧帧截取动漫人脸：</h1>
 <pre><code class="language-python">
 #coding=utf-8
 import cv2
@@ -254,7 +219,7 @@ cap.release()
 cv2.destroyAllWindows()
 
 </code></pre>
-<p>图片分类：</p>
+<h1 id="22-训练图片">2.2、训练图片：</h1>
 <pre><code class="language-python">
 
 
@@ -264,7 +229,63 @@ cv2.destroyAllWindows()
 
 </code></pre>
 <br>
-<h2 id="可能遇到的问题-2">可能遇到的问题：</h2>
+<p>之前使用：</p>
+<p>服务器：腾讯云<br>
+操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
+类型：公共镜像（池）<br>
+内存：2 GB<br>
+CPU：1 核<br>
+硬盘：50 G<br>
+公网带宽：1 Mbps</p>
+<hr>
+<h2 id="步骤11中可能遇到的问题">步骤1.1中可能遇到的问题：</h2>
+<h1 id="1下载速度太慢">1.下载速度太慢：</h1>
+<br>
+<h2 id="法一">法一：</h2>
+<p>liunx 下载 Github_Releases 下载提速：</p>
+<p>Linux系统下hosts文件的位置是 /etc/hosts ，以root用户登录Linux，使用vi编辑/etc/hosts文件，将附加的内容添加在其后面即可：</p>
+<p>修改hosts(liunx):<br>
+52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
+<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt=""></figure>
+<pre><code class="language-linux">
+wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
+
+以此类推...
+
+</code></pre>
+<h2 id="法二">法二：</h2>
+<h3 id="修改hostswindow">修改hosts(window):</h3>
+<p>当我们需要本地调试网站或者屏蔽某个网站的时候可以手动将这个网站添加到系统hosts文件中，因为hosts文件的优先级高于DNS，所以可以达到你想要在浏览器里呈现的结果，当然这只在本地有用！<br>
+一、Windows中hosts文件一般在C:\Windows\System32\drivers\etc目录下，格式是</p>
+<pre><code>127.0.0.1 localhost
+::1 localhost
+52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com
+</code></pre>
+<p>可以用记事本修改，前面是IP地址，后面是域名。127.0.0.1这个是本地环回地址。<br>
+比如127.0.0.1 www.baidu.com就是把www.baidu.com这个域名指向127.0.0.1的地址。</p>
+<h3 id="xftp传上去云端">xftp传上去云端</h3>
+<p>当然这也需要很久 不多折合下来很大可能快50-100倍。如果像我一样有一台window云服务，那就让它来做这件事。下载，上传，都在云上进行。</p>
+<h3 id="详细请看">详细请看</h3>
+<p><a href="https://www.cmsky.com/linux-hosts/">https://www.cmsky.com/linux-hosts/</a></p>
+<hr>
+<br>
+<h2 id="步骤22中可能遇到的问题">步骤2.2中可能遇到的问题：</h2>
+<pre><code>
+【Linux】 解决报错： 
+ImportError: libSM.so.6: cannot open shared object file: No such file or directory
+
+原因：
+libSM、libSM等不存在
+
+解决办法：
+yum install xxx
+
+详：https://www.cnblogs.com/richerdyoung/p/8458910.html
+
+</code></pre>
+<hr>
+<br>
+<h2 id="步骤23中可能遇到的问题">步骤2.3中可能遇到的问题：</h2>
 <p>查看linux系统CPU和内存命令</p>
 <p>https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</p>
 <p>Python MemoryError</p>
@@ -275,15 +296,6 @@ cv2.destroyAllWindows()
 <p>linux 使用文件增加虚拟内存 swap</p>
 <p>https://msd.misuland.com/pd/3070888491219949990</p>
 <p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
-<p>之前使用：</p>
-<p>服务器：腾讯云<br>
-操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
-类型：公共镜像（池）<br>
-内存：2 GB<br>
-CPU：1 核<br>
-硬盘：50 G<br>
-公网带宽：1 Mbps</p>
-<hr>
 ]]></content>
     </entry>
     <entry>
@@ -871,12 +883,13 @@ model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[动漫人物人脸识别]]></title>
+        <title type="html"><![CDATA[基于tensorflow的动漫人物识别]]></title>
         <id>https://littlebuzi.github.io//post/dongman</id>
         <link href="https://littlebuzi.github.io//post/dongman">
         </link>
         <updated>2019-10-21T07:29:59.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/abcd740181246/article/details/89878613">https://blog.csdn.net/abcd740181246/article/details/89878613</a></p>
+        <content type="html"><![CDATA[<p>参考文献：</p>
+<p><a href="https://blog.csdn.net/abcd740181246/article/details/89878613">https://blog.csdn.net/abcd740181246/article/details/89878613</a></p>
 <p><a href="https://blog.csdn.net/zyxhangiian123456789/article/details/87911999">https://blog.csdn.net/zyxhangiian123456789/article/details/87911999</a></p>
 <p><a href="https://blog.csdn.net/qq_29007291/article/details/81103603">https://blog.csdn.net/qq_29007291/article/details/81103603</a></p>
 <p><a href="https://blog.csdn.net/mozf881/article/details/84929443">https://blog.csdn.net/mozf881/article/details/84929443</a></p>
