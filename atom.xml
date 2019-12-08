@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-08T14:26:59.752Z</updated>
+    <updated>2019-12-08T14:29:28.037Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -102,12 +102,12 @@ python、c++、java、R、javascript<br>
         <link href="https://littlebuzi.github.io//post/face_1">
         </link>
         <updated>2019-10-25T06:26:30.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="实现动漫人脸识别-建立动漫人脸数据库">实现动漫人脸识别、建立动漫人脸数据库：</h1>
-<p>【遇到问题❓/错误❌，请查看文末】</p>
-]]></summary>
         <content type="html"><![CDATA[<h1 id="实现动漫人脸识别-建立动漫人脸数据库">实现动漫人脸识别、建立动漫人脸数据库：</h1>
+<hr>
+<br>
 <p>【遇到问题❓/错误❌，请查看文末】</p>
-<!-- more -->
+<hr>
+<br>
 <h2 id="1-目标封面所示效果标注图片中-动漫人物-的脸部-上图所示">1、目标：封面所示效果，标注图片中 “ 动漫人物 ” 的脸部 (上图所示)</h2>
 <p>环境：<br>
 服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
@@ -140,6 +140,7 @@ https://github.com/rezoo/illustration2vec/</p>
 <a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a><br>
 或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</p>
 <hr>
+<br>
 <h2 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h2>
 <p>文件目录：<br>
 <img src="https://littlebuzi.github.io//post-images/1573551285992.png" alt=""></p>
@@ -177,8 +178,7 @@ cv2.waitKey(0)
 cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
 
 </code></pre>
-<br>
-<hr>
+<h2 id="br"><br></h2>
 <h2 id="2-目标截取并保存视频一帧帧截取到的动漫人脸">2、目标：截取并保存视频一帧帧截取到的动漫人脸：</h2>
 <br>
 <h2 id="21-文件目录">2.1、文件目录：</h2>
@@ -221,6 +221,8 @@ cap.release()
 cv2.destroyAllWindows()
 
 </code></pre>
+<hr>
+<br>
 <h2 id="22-训练图片">2.2、训练图片：</h2>
 <pre><code class="language-python">
 
@@ -240,6 +242,7 @@ CPU：1 核<br>
 硬盘：50 G<br>
 公网带宽：1 Mbps</p>
 <hr>
+<br>
 <h2 id="步骤11中可能遇到的问题">步骤1.1中可能遇到的问题：</h2>
 <h1 id="1下载速度太慢">1.下载速度太慢：</h1>
 <br>
@@ -298,6 +301,8 @@ yum install xxx
 <p>linux 使用文件增加虚拟内存 swap</p>
 <p>https://msd.misuland.com/pd/3070888491219949990</p>
 <p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
+<hr>
+<br>
 ]]></content>
     </entry>
     <entry>
