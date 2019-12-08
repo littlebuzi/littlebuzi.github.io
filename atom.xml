@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-08T14:22:09.448Z</updated>
+    <updated>2019-12-08T14:24:30.140Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -97,7 +97,7 @@ python、c++、java、R、javascript<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[基于tensorflow的动漫人物识别]]></title>
+        <title type="html"><![CDATA[基于 tensorflow 的动漫人物识别]]></title>
         <id>https://littlebuzi.github.io//post/face_1</id>
         <link href="https://littlebuzi.github.io//post/face_1">
         </link>
@@ -108,13 +108,13 @@ python、c++、java、R、javascript<br>
         <content type="html"><![CDATA[<h1 id="实现动漫人脸识别-建立动漫人脸数据库">实现动漫人脸识别、建立动漫人脸数据库：</h1>
 <p>【遇到问题❓/错误❌，请查看文末】</p>
 <!-- more -->
-<h1 id="1-目标封面所示效果标注图片中-动漫人物-的脸部-上图所示">1、目标：封面所示效果，标注图片中 “ 动漫人物 ” 的脸部 (上图所示)</h1>
+<h2 id="1-目标封面所示效果标注图片中-动漫人物-的脸部-上图所示">1、目标：封面所示效果，标注图片中 “ 动漫人物 ” 的脸部 (上图所示)</h2>
 <p>环境：<br>
 服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
 操作系统：CetenOS 6.5 (环境配置复杂度: Window &gt; Centos &gt; Ubuntu 因个人原因使用centos较多)<br>
 python版本：3.5（自带2.6.6）<br>
 window端（客户端）工具：Xshell、Xftp</p>
-<h1 id="11-依赖下载">1.1、依赖下载：</h1>
+<h2 id="11-依赖下载">1.1、依赖下载：</h2>
 <p>① 动漫人脸分类器下载：</p>
 <p>https://github.com/nagadomi/lbpcascade_animeface/</p>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573551561230.png" alt=""></figure>
@@ -124,7 +124,7 @@ https://github.com/rezoo/illustration2vec/</p>
 <figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
 <figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
-<h1 id="12-test环境">1.2、Test环境：</h1>
+<h2 id="12-test环境">1.2、Test环境：</h2>
 <p>准备下linux服务器主机(centos)属性、环境：</p>
 <p>1.<a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</a></p>
 <p>2.python -V</p>
@@ -138,7 +138,7 @@ https://github.com/rezoo/illustration2vec/</p>
 <a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a><br>
 或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</p>
 <hr>
-<h1 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h1>
+<h2 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h2>
 <p>文件目录：<br>
 <img src="https://littlebuzi.github.io//post-images/1573551285992.png" alt=""></p>
 <p>动漫人脸检测并截取：<br>
@@ -177,11 +177,11 @@ cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
 </code></pre>
 <br>
 <hr>
-<h1 id="2-目标截取并保存视频一帧帧截取到的动漫人脸">2、目标：截取并保存视频一帧帧截取到的动漫人脸：</h1>
+<h2 id="2-目标截取并保存视频一帧帧截取到的动漫人脸">2、目标：截取并保存视频一帧帧截取到的动漫人脸：</h2>
 <br>
-<h1 id="21-文件目录">2.1、文件目录：</h1>
+<h2 id="21-文件目录">2.1、文件目录：</h2>
 <figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573556199362.png" alt=""></figure>
-<h1 id="22-导入视频一帧帧截取动漫人脸">2.2、导入视频一帧帧截取动漫人脸：</h1>
+<h2 id="22-导入视频一帧帧截取动漫人脸">2.2、导入视频一帧帧截取动漫人脸：</h2>
 <pre><code class="language-python">
 #coding=utf-8
 import cv2
@@ -219,7 +219,7 @@ cap.release()
 cv2.destroyAllWindows()
 
 </code></pre>
-<h1 id="22-训练图片">2.2、训练图片：</h1>
+<h2 id="22-训练图片">2.2、训练图片：</h2>
 <pre><code class="language-python">
 
 
