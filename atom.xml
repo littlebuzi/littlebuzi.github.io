@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-08T14:29:28.037Z</updated>
+    <updated>2019-12-08T14:36:08.393Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -106,6 +106,7 @@ python、c++、java、R、javascript<br>
 <hr>
 <br>
 <p>【遇到问题❓/错误❌，请查看文末】</p>
+<br>
 <hr>
 <br>
 <h2 id="1-目标封面所示效果标注图片中-动漫人物-的脸部-上图所示">1、目标：封面所示效果，标注图片中 “ 动漫人物 ” 的脸部 (上图所示)</h2>
@@ -121,24 +122,39 @@ window端（客户端）工具：Xshell、Xftp</p>
 <p>https://github.com/nagadomi/lbpcascade_animeface/</p>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573551561230.png" alt=""></figure>
 <p>② i2v库的安装：</p>
-<p>Github：<br>
-https://github.com/rezoo/illustration2vec/</p>
+<p>Github：https://github.com/rezoo/illustration2vec/</p>
 <figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt=""></figure>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
 <figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
+<hr>
+<br>
 <h2 id="12-test环境">1.2、Test环境：</h2>
 <p>准备下linux服务器主机(centos)属性、环境：</p>
-<p>1.<a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</a></p>
+<ul>
+<li>
+<p>1.<a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">查看linux系统CPU和内存命令</a></p>
+</li>
+<li>
 <p>2.python -V</p>
-<p>3.安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）</p>
-<p><a href="https://blog.csdn.net/jh0218/article/details/85097061">CentOS 7安装Anaconda3</a></p>
+</li>
+<li>
+<p>3.安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）<br>
+<a href="https://blog.csdn.net/jh0218/article/details/85097061">CentOS 7安装Anaconda3</a></p>
+</li>
+<li>
 <p>4.import cv2</p>
+</li>
+</ul>
 <p>你可能会遇到以下问题：</p>
-<p>可能会遇到anaconda崩了，涉及python多重版本conda软链接指向出了问题等：<br>
-<a href="https://blog.csdn.net/hubinbinheda/article/details/81175263">修改软链接</a><br>
-<a href="https://codeday.me/bug/20190219/660678.html">修改.bashrc</a><br>
-<a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a><br>
-或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</p>
+<blockquote>
+<p>可能会遇到anaconda崩了，涉及python多重版本conda软链接指向出了问题等：</p>
+</blockquote>
+<ul>
+<li><a href="https://blog.csdn.net/hubinbinheda/article/details/81175263">修改软链接</a></li>
+<li><a href="https://codeday.me/bug/20190219/660678.html">修改.bashrc</a></li>
+<li><a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a></li>
+<li>或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</li>
+</ul>
 <hr>
 <br>
 <h2 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h2>
