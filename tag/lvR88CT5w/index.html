@@ -1,170 +1,263 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>工具 | buzi</title>
-<meta name="description" content="德丽莎世界第一可爱">
+<title>buzi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="德丽莎世界第一可爱"/>
+<meta name="keywords" content="德丽莎世界第一可爱"/>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1575726118153">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico">
+
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
 
+<!-- Modernizr JS -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<scripts src="https://littlebuzi.github.io//media/scripts/_vendors/respond.min.js"></scripts>
+<![endif]-->
+
+<!-- Comment -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- katex -->
+<!--<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet">-->
+
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://littlebuzi.github.io/">
-        <img src="https://littlebuzi.github.io//images/avatar.png?v=1575726118153" class="site-logo">
-        <h1 class="site-title">buzi</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+</head>
+<body>
+<div id="fh5co-offcanvas">
+    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
+        <span><i class="icon-cross3"></i> <span>Close</span></span>
+    </a>
+    <div class="fh5co-bio">
+        <figure>
+            <img src="https://littlebuzi.github.io//media/images/avatar.png" alt="buzi"
+                 class="img-responsive">
+        </figure>
+        <a href="https://littlebuzi.github.io//post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <h2>buzi</h2>
+        <p>德丽莎世界第一可爱</p>
+        <ul class="fh5co-social">
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+        </ul>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            时间线
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            分类
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/littlebuzi" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      德丽莎世界第一可爱
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </div>
-</div>
 
+    <div class="fh5co-menu">
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 工具</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://littlebuzi.github.io//post/github_learn">
-                  <h2 class="post-title">GitHub</h2>
-                </a>
-                <div class="post-date">
-                  2019-10-21
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://littlebuzi.github.io//post/github_learn">
-                  <div class="feature-container" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571672633014&amp;di=b922a3c6f996dfdc6d42c20239c4a13e&amp;imgtype=0&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171115%2F63c99c9e30734d8395ba70d8da90b3f7.gif')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://littlebuzi.github.io//post/emoji">
-                  <h2 class="post-title">emoji表情大全😁</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-18
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://littlebuzi.github.io//post/emoji">
-                  <div class="feature-container" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565860664287&amp;di=57ec1ed9a234c2a174152003a8d1a3f8&amp;imgtype=0&amp;src=http%3A%2F%2Fupload.mnw.cn%2F2016%2F0419%2F1461032094913.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-</div>
-
+        <!-- 标签 -->
+        <div class="fh5co-box">
+            <a href="https://littlebuzi.github.io//tags/"><h3 class="heading">👉标签</h3></a>
+            <ul>
+                
+                    <li><a href="https://littlebuzi.github.io//tag/nKWkHExQP">python</a></li>
+                
+                    <li><a href="https://littlebuzi.github.io//tag/8GGDvwn5f">java</a></li>
+                
+                    <li><a href="https://littlebuzi.github.io//tag/lvR88CT5w">工具</a></li>
+                
+                    <li><a href="https://littlebuzi.github.io//tag/O2zTJWpBN">php</a></li>
+                
+                    <li><a href="https://littlebuzi.github.io//tag/N4SH6d1dT">科学</a></li>
+                
+            </ul>
         </div>
-      </div>
     </div>
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<header id="fh5co-header">
+    <div class="container-fluid">
+        <div class="row">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+            <ul class="fh5co-social">
+                
+                    <li>
+                        <a href="/"
+                        
+                        >
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives"
+                        
+                        >
+                            时间线
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags"
+                        
+                        >
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/about"
+                        
+                        >
+                            关于
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="col-lg-12 col-md-12 text-center">
+                <h1 id="fh5co-logo">
+                    <a href="https://littlebuzi.github.io/">buzi </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="col-lg-12 col-md-12 text-center tag-title">
+      <i class="fa fa-tag"></i> 标签: <h3>工具</h3>
+  </div>
+
+  <div class="row fh5co-post-entry">
+
+    
+      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
+        <figure class="img-box">
+          <a href="https://littlebuzi.github.io//post/github_learn">
+            
+              <img data-original="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571672633014&amp;di=b922a3c6f996dfdc6d42c20239c4a13e&amp;imgtype=0&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171115%2F63c99c9e30734d8395ba70d8da90b3f7.gif" alt="GitHub" class="img-responsive img-rounded lazy">
+            
+          </a>
+        </figure>
+        <span class="fh5co-meta">
+          
+            <div class="tag-container">
+              
+                <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="tag">工具, </a>
+              
+            </div>
+          
+        </span>
+        <h3 class="fh5co-article-title">
+          <a href="https://littlebuzi.github.io//post/github_learn">GitHub</a>
+        </h3>
+        <span class="fh5co-meta fh5co-date">2019-10-21</span>
+      </article>
+    
+      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
+        <figure class="img-box">
+          <a href="https://littlebuzi.github.io//post/emoji">
+            
+              <img data-original="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565860664287&amp;di=57ec1ed9a234c2a174152003a8d1a3f8&amp;imgtype=0&amp;src=http%3A%2F%2Fupload.mnw.cn%2F2016%2F0419%2F1461032094913.jpg" alt="emoji表情大全😁" class="img-responsive img-rounded lazy">
+            
+          </a>
+        </figure>
+        <span class="fh5co-meta">
+          
+            <div class="tag-container">
+              
+                <a href="https://littlebuzi.github.io//tag/lvR88CT5w" class="tag">工具, </a>
+              
+            </div>
+          
+        </span>
+        <h3 class="fh5co-article-title">
+          <a href="https://littlebuzi.github.io//post/emoji">emoji表情大全😁</a>
+        </h3>
+        <span class="fh5co-meta fh5co-date">2019-07-18</span>
+      </article>
+    
+    <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+
+  </div>
+
+  <div class="pagination-box animate-box">
+    
+    
+  </div>
+</div>
+
+
+<footer id="fh5co-footer">
+  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+</footer>
+
+
+<!-- jQuery -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.min.js"></script>
+<!-- img lazy load -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.lazyload.min.js"></script>
+<!-- jQuery Easing -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/main.js"></script>
+<!-- Md5 Min JS -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/md5.min.js"></script>
+<!-- katex -->
+<!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
+<!-- highlight -->
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+
 
 <script type="application/javascript">
+    // 代码高亮
+    hljs.initHighlightingOnLoad();
 
-AOS.init();
+    // img 懒加载
+    $(function () {
+        $("img.lazy").lazyload({
+            effect: "fadeIn",  // 懒加载动画
+            threshold: 180  // 在图片距离屏幕180px时提前载入
+        });
+        // tooltip
+        $('[data-toggle="tooltip"]').tooltip();
 
-hljs.initHighlightingOnLoad()
+        // 目录
+        $('#tool-toc').click(function () {
+            $('.post-toc').toggle();
+        });
+    });
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+    
 </script>
 
 
 
 
-  </body>
+</body>
 </html>
