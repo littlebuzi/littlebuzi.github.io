@@ -174,8 +174,8 @@
             <h2 class="fh5co-article-title animate-box">基于 tensorflow 的动漫人物识别</h2>
             <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
                 <li>2019-10-25</li>
-                <li>1321字</li>
-                <li>6 min read</li>
+                <li>2736字</li>
+                <li>14 min read</li>
             </ol>
 
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
@@ -317,15 +317,296 @@ cv2.destroyAllWindows()
 </code></pre>
 <hr>
 <br>
-<h2 id="22-训练图片">2.2、训练图片：</h2>
+<h2 id="22-分类图片">2.2、分类图片：</h2>
+<p>将不同人物分类到属于他命名的文件夹下：</p>
 <pre><code class="language-python">
 
 
+</code></pre>
+<hr>
+<br>
+<h2 id="3-训练图片">3、训练图片：</h2>
+<p>开始制定、训练出模型：</p>
+<pre><code class="language-python">
+#coding=utf-8
+from skimage import io, transform
+import glob
+import os
+import tensorflow as tf
+import numpy as np
+import time
+import matplotlib.pyplot as plt
+
+# 训练验证数据集目录
+path = '/root/comic_reg/data/train-validation-set/'#最后少了个斜杠 读入失败
+# 模型保存地址，最后接的是模型名字
+model_path = '/root/comic_reg/model/model.ckpt'
+
+# 将所有的图片resize成100*100
+w = 100
+h = 100
+c = 3
 
 
+# 读取图片
+def read_img(path):
+    cate = [path+x for x in os.listdir(path) if os.path.isdir(path+x)]
+    imgs = []
+    labels = []
+    for idx, folder in enumerate(cate):
+        for im in glob.glob(folder+'/*.jpg')+glob.glob(folder+'/*.png'):#png和jpg需注意！！
+            print('reading the images:%s'%(im))
+            img = io.imread(im)
+            img = transform.resize(img,(w,h))
+            imgs.append(img)
+            labels.append(idx)
+    return np.asarray(imgs, np.float32), np.asarray(labels, np.int32)
 
+
+data, label = read_img(path)
+#print(data, label)
+
+
+# 打乱顺序
+num_example = data.shape[0]
+arr = np.arange(num_example)
+np.random.shuffle(arr)
+data = data[arr]
+label = label[arr]
+
+
+# 将所有数据分为训练集和验证集
+ratio = 0.7
+s = np.int(num_example*ratio)
+x_train = data[:s]
+y_train = label[:s]
+x_val = data[s:]
+y_val = label[s:]
+
+# -----------------构建网络----------------------
+# 占位符
+x = tf.placeholder(tf.float32, shape=[None, w, h, c], name='x')
+y_ = tf.placeholder(tf.int32, shape=[None, ], name='y_')
+
+# 第一个卷积层（100——&gt;50)
+conv1 = tf.layers.conv2d(
+    inputs=x,
+    filters=32,
+    kernel_size=[5, 5],
+    padding=&quot;same&quot;,
+    activation=tf.nn.relu,
+    kernel_initializer=tf.truncated_normal_initializer(stddev=0.01))
+pool1 = tf.layers.max_pooling2d(inputs=conv1, pool_size=[2, 2], strides=2)
+
+# 第二个卷积层(50-&gt;25)
+conv2 = tf.layers.conv2d(
+    inputs=pool1,
+    filters=64,
+    kernel_size=[5, 5],
+    padding=&quot;same&quot;,
+    activation=tf.nn.relu,
+    kernel_initializer=tf.truncated_normal_initializer(stddev=0.01))
+pool2 = tf.layers.max_pooling2d(inputs=conv2, pool_size=[2, 2], strides=2)
+
+# 第三个卷积层(25-&gt;12)
+conv3 = tf.layers.conv2d(
+    inputs=pool2,
+    filters=128,
+    kernel_size=[3, 3],
+    padding=&quot;same&quot;,
+    activation=tf.nn.relu,
+    kernel_initializer=tf.truncated_normal_initializer(stddev=0.01))
+pool3 = tf.layers.max_pooling2d(inputs=conv3, pool_size=[2, 2], strides=2)
+
+# 第四个卷积层(12-&gt;6)
+conv4 = tf.layers.conv2d(
+    inputs=pool3,
+    filters=128,
+    kernel_size=[3, 3],
+    padding=&quot;same&quot;,
+    activation=tf.nn.relu,
+    kernel_initializer=tf.truncated_normal_initializer(stddev=0.01))
+pool4 = tf.layers.max_pooling2d(inputs=conv4, pool_size=[2, 2], strides=2)
+
+re1 = tf.reshape(pool4, [-1, 6 * 6 * 128])
+
+# 全连接层
+dense1 = tf.layers.dense(inputs=re1, 
+                         units=1024,
+                         activation=tf.nn.relu,
+                         kernel_initializer=tf.truncated_normal_initializer(stddev=0.01),
+                         kernel_regularizer=tf.contrib.layers.l2_regularizer(0.003))
+dense2 = tf.layers.dense(inputs=dense1,
+                         units=512,
+                         activation=tf.nn.relu,
+                         kernel_initializer=tf.truncated_normal_initializer(stddev=0.01),
+                         kernel_regularizer=tf.contrib.layers.l2_regularizer(0.003))
+logits = tf.layers.dense(inputs=dense2,
+                         units=5,
+                         activation=None,
+                         kernel_initializer=tf.truncated_normal_initializer(stddev=0.01),
+                         kernel_regularizer=tf.contrib.layers.l2_regularizer(0.003))
+
+# ---------------------------网络结束---------------------------
+
+# (小处理)将logits乘以1赋值给logits_eval，定义name，方便在后续调用模型时通过tensor名字调用输出tensor
+b = tf.constant(value=1,dtype=tf.float32)
+logits_eval = tf.multiply(logits, b, name='logits_eval')
+
+loss = tf.losses.sparse_softmax_cross_entropy(labels=y_, logits=logits)
+train_op = tf.train.AdamOptimizer(learning_rate=0.001).minimize(loss)
+correct_prediction = tf.equal(tf.cast(tf.argmax(logits, 1), tf.int32), y_)
+acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+
+# 定义一个函数，按批次取数据
+def minibatches(inputs=None, targets=None, batch_size=None, shuffle=False):
+    assert len(inputs) == len(targets)
+    if shuffle:
+        indices = np.arange(len(inputs))
+        np.random.shuffle(indices)
+    for start_idx in range(0, len(inputs) - batch_size + 1, batch_size):
+        if shuffle:
+            excerpt = indices[start_idx:start_idx + batch_size]
+        else:
+            excerpt = slice(start_idx, start_idx + batch_size)
+        yield inputs[excerpt], targets[excerpt]
+
+
+# 训练和测试数据，可将n_epoch设置更大一些
+n_epoch = 50
+batch_size = 32
+saver = tf.train.Saver()
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# 自定义保存数据列表
+trainlosslist = []
+trainacclist = []
+validationlosslist = []
+validationacclist = []
+
+for epoch in range(n_epoch):
+    start_time = time.time()
+    
+    # training
+    train_loss, train_acc, n_batch = 0, 0, 0
+    for x_train_a, y_train_a in minibatches(x_train, y_train, batch_size, shuffle=True):
+        _, err, ac = sess.run([train_op,loss,acc], feed_dict={x: x_train_a, y_: y_train_a})
+        train_loss += err; train_acc += ac; n_batch += 1
+    print(&quot;   train loss: %f&quot; % (train_loss / n_batch))
+    print(&quot;   train acc: %f&quot; % (train_acc / n_batch))
+    # 添加到列表
+    trainlosslist.append(train_loss / n_batch)
+    trainacclist.append(train_acc / n_batch)
+
+    # validation
+    val_loss, val_acc, n_batch = 0, 0, 0
+    for x_val_a, y_val_a in minibatches(x_val, y_val, batch_size, shuffle=False):
+        err, ac = sess.run([loss, acc], feed_dict={x: x_val_a, y_: y_val_a})
+        val_loss += err; val_acc += ac; n_batch += 1
+    print(&quot;   validation loss: %f&quot; % (val_loss / n_batch))
+    print(&quot;   validation acc: %f&quot; % (val_acc / n_batch))
+    # 添加到列表
+    validationlosslist.append(val_loss / n_batch)
+    validationacclist.append(val_acc / n_batch)
+
+saver.save(sess,model_path)
+sess.close()
+
+# 绘图
+x = np.arange(1, n_epoch, 1)
+
+plt.plot(x, np.array(trainacclist)[x-1], label=&quot;train-acc&quot;)
+plt.plot(x, np.array(validationacclist)[x-1], label=&quot;validation-acc&quot;)
+plt.plot(x, np.array(trainlosslist)[x-1], label=&quot;train-loss&quot;)
+plt.plot(x, np.array(validationlosslist)[x-1], label=&quot;validation-loss&quot;)
+
+# 设置坐标轴名称
+plt.xlabel('epoch')
+
+# 画两条基准线
+plt.plot(x, x/x, label=&quot;one&quot;)
+plt.plot(x, x-x, label=&quot;zero&quot;)
+
+# 参数：loc设置显示的位置，0是自适应；ncol设置显示的列数
+plt.legend(loc=0, ncol=1)   
+#plt.show()
+plt.savefig(&quot;/root/comic_reg/out.png&quot;)
 
 </code></pre>
+<hr>
+<br>
+<h2 id="4-识别图片">4、识别图片：</h2>
+<pre><code class="language-python">from skimage import io,transform
+import tensorflow as tf
+import numpy as np
+import glob
+
+path = '/root/comic_reg/data/test-set/*.png'
+
+image_dict = {0: '一花',1:'二乃',2:'三玖',3:'四叶',4:'五月'}
+count_true=[]
+
+w=100
+h=100
+c=3
+
+def read_one_image(path):
+    img = io.imread(path)
+    img = transform.resize(img,(w,h))
+    return np.asarray(img)
+
+with tf.Session() as sess:
+    data = []
+  
+    # 目录列表
+    paths = glob.glob(path)
+    #print(paths)
+    for img in paths:
+        data.append(read_one_image(img))
+
+    saver = tf.train.import_meta_graph('/root/comic_reg/model/model.ckpt.meta')
+    saver.restore(sess,tf.train.latest_checkpoint('/root/comic_reg/model/'))
+
+    graph = tf.get_default_graph()
+    x = graph.get_tensor_by_name(&quot;x:0&quot;)
+    feed_dict = {x:data}
+
+    logits = graph.get_tensor_by_name(&quot;logits_eval:0&quot;)
+
+    classification_result = sess.run(logits,feed_dict)
+    
+
+    #打印出预测矩阵
+    print(&quot;\n预测矩阵:\n&quot;, classification_result)
+    #打印出预测矩阵每一行最大值的索引
+    print(&quot;\n简略结果:\n&quot;, tf.argmax(classification_result,1).eval(), '\n')
+    print(&quot;具体情况: &quot;)
+    #根据索引通过字典对应人物的分类
+    output = []
+    output = tf.argmax(classification_result,1).eval()
+    count = 0
+    for i in range(len(output)):
+        # output[i]是测试结果编码，paths[i])[-7]是原定图片编号（路飞1）
+        flag = False
+        if str(output[i]+1) == paths[i][-7]:
+            flag = True
+            if flag == True:
+                count_true.append(paths[i][-7:])
+            count += 1
+        print(&quot;第 &quot; + str(i+1) +  &quot; 张 (&quot; +   paths[i][-7:] + &quot;) 人物预测: &quot; + image_dict[output[i]]  + &quot; &quot; + str(flag))
+    print(&quot;\n准确率: {:.2f}%&quot;.format(count / len(output) * 100 ))
+
+print(count_true)
+
+</code></pre>
+<hr>
+<br>
+<p>结果：<br>
+<img src="https://littlebuzi.github.io//post-images/1575866273011.png" alt=""><br>
+因为只有第一个人物图片准备充足所以其他人物识别率会偏低</p>
+<hr>
 <br>
 <p>之前使用：</p>
 <p>服务器：腾讯云<br>
@@ -397,6 +678,8 @@ yum install xxx
 <p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
 <hr>
 <br>
+<p>问：博主你的代码有问题，你的项目文件夹怎么建的？<br>
+答：项目还在开发中，这是俺滴毕设所以还未完善，至于有个大概，谢谢大家~</p>
  </p>
                     </div>
                 </div>
@@ -459,7 +742,9 @@ yum install xxx
 <li><a href="#2-%E7%9B%AE%E6%A0%87%E6%88%AA%E5%8F%96%E5%B9%B6%E4%BF%9D%E5%AD%98%E8%A7%86%E9%A2%91%E4%B8%80%E5%B8%A7%E5%B8%A7%E6%88%AA%E5%8F%96%E5%88%B0%E7%9A%84%E5%8A%A8%E6%BC%AB%E4%BA%BA%E8%84%B8">2、目标：截取并保存视频一帧帧截取到的动漫人脸：</a></li>
 <li><a href="#21-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95">2.1、文件目录：</a></li>
 <li><a href="#22-%E5%AF%BC%E5%85%A5%E8%A7%86%E9%A2%91%E4%B8%80%E5%B8%A7%E5%B8%A7%E6%88%AA%E5%8F%96%E5%8A%A8%E6%BC%AB%E4%BA%BA%E8%84%B8">2.2、导入视频一帧帧截取动漫人脸：</a></li>
-<li><a href="#22-%E8%AE%AD%E7%BB%83%E5%9B%BE%E7%89%87">2.2、训练图片：</a></li>
+<li><a href="#22-%E5%88%86%E7%B1%BB%E5%9B%BE%E7%89%87">2.2、分类图片：</a></li>
+<li><a href="#3-%E8%AE%AD%E7%BB%83%E5%9B%BE%E7%89%87">3、训练图片：</a></li>
+<li><a href="#4-%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87">4、识别图片：</a></li>
 <li><a href="#%E6%AD%A5%E9%AA%A411%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤1.1中可能遇到的问题：</a></li>
 </ul>
 </li>
