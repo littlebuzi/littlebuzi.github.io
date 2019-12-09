@@ -768,8 +768,8 @@ figure figcaption {
 }
 /*# sourceMappingURL=style.css.map */
 .animate-box p {
-  font-size: 21px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
   line-height: 1.8em;
 }
 .next-post {
@@ -864,13 +864,13 @@ figure figcaption {
   color: #92abf5;
 }
 .article-box {
-  height: 18em;
+  height: 34em;
 }
 .post-content > blockquote {
   margin: 20px 0;
   padding: 1.5rem;
   border-left: 6px solid #ee6e73;
-  color: #6b778d;
+  color: #8796A8;
   word-break: break-all;
   position: relative;
   background: #f5f8fa;
@@ -888,139 +888,6 @@ figure figcaption {
   transform-origin: bottom right;
   border-bottom-left-radius: inherit;
   box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15);
-}
-.post-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-.post-content pre {
-  border: 0;
-  background-color: #1d1f21;
-}
-.post-content pre code {
-  line-height: 1.6em;
-}
-.back-to-top {
-  position: fixed;
-  bottom: 3%;
-  right: 2%;
-  font-size: 1.3em;
-}
-.back-to-top a {
-  color: #98A9F9;
-}
-.back-to-top a:hover {
-  opacity: 0.6;
-}
-.post-toc {
-  position: fixed;
-  top: 22%;
-  right: 2%;
-}
-.post-toc ul {
-  list-style: none;
-  width: 100%;
-  height: auto;
-}
-.post-toc ul li {
-  line-height: 2em;
-}
-.post-toc ul li a {
-  text-decoration: none;
-  color: #98A9F9;
-  font-weight: bolder;
-}
-.post-toc ul li a:hover {
-  color: #ff8a80;
-}
-.links-title a {
-  text-decoration: none;
-  line-height: 1.5em;
-  background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB 51%, #B993D6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.links-title a:hover {
-  background-position: right center;
-  text-decoration: none;
-}
-:root {
-  /* Base font size */
-  font-size: 10px;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body {
-  min-height: 100vh;
-  background-color: #fafafa;
-}
-.container {
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 0 2rem 2rem;
-}
-.album-heading {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: left;
-  padding: 3.5rem 0;
-  color: #1a1a1a;
-}
-.album-heading span {
-  display: block;
-}
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  /* Compensate for excess margin on outer gallery flex items */
-  margin: -1rem -1rem;
-}
-.gallery-item {
-  /* Minimum width of 24rem and grow to fit available space */
-  flex: 1 0 24rem;
-  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-  margin: 1rem;
-  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-}
-.gallery-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 400ms ease-out;
-}
-.gallery-image:hover {
-  transform: scale(1.15);
-}
-/*
-
-The following rule will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
-
-*/
-@supports (display: grid) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    grid-gap: 2rem;
-  }
-  .gallery,
-  .gallery-item {
-    margin: 0;
-  }
-}
-.album-hr {
-  border: 0;
-  height: 2px;
-  background: #98A9F9;
-  background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB 51%, #B993D6 100%);
 }
 /*!
 Animate.css - http://daneden.me/animate
@@ -4969,8 +4836,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 18px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   line-height: 1.42857;
   color: #333333;
   background-color: #fff;
