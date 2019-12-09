@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-<meta charset="utf-8">
+    <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<!-- 百度验证 -->
-<meta name="baidu-site-verification" content="1IkquSGR9Z"/>
 
 <title>buzi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -29,22 +25,26 @@
 <!-- Comment -->
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
-<link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
+<!-- katex -->
+<!--<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet">-->
+
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+
 
 </head>
 <body>
-
 <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
     <div class="fh5co-bio">
         <figure>
-            <img src="https://littlebuzi.github.io//media/images/avatar.png" alt="buzi" class="img-responsive">
+            <img src="https://littlebuzi.github.io//media/images/avatar.png" alt="buzi"
+                 class="img-responsive">
         </figure>
-        <h3 class="heading">ABOUT ME</h3>
+        <a href="https://littlebuzi.github.io//post/about/"><h3 class="heading">ABOUT ME</h3></a>
         <h2>buzi</h2>
         <p>德丽莎世界第一可爱</p>
         <ul class="fh5co-social">
@@ -73,17 +73,10 @@
     </div>
 
     <div class="fh5co-menu">
+
+        <!-- 标签 -->
         <div class="fh5co-box">
-            <h3 class="heading">搜索</h3>
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" id="bdcsMain" class="form-control" placeholder="输入关键字">
-<!--                    <button type="submit" class="btn btn-sm btn-warning" style="margin-top: 6px; width: 100%">点击搜索</button>-->
-                </div>
-            </form>
-        </div>
-        <div class="fh5co-box">
-            <h3 class="heading">标签</h3>
+            <a href="https://littlebuzi.github.io//tags/"><h3 class="heading">👉标签</h3></a>
             <ul>
                 
                     <li><a href="https://littlebuzi.github.io//tag/nKWkHExQP">python</a></li>
@@ -109,28 +102,32 @@
                 
                     <li>
                         <a href="/"
-                         >
+                        
+                        >
                             首页
                         </a>
                     </li>
                 
                     <li>
                         <a href="/archives"
-                         >
+                        
+                        >
                             时间线
                         </a>
                     </li>
                 
                     <li>
                         <a href="/tags"
-                         >
+                        
+                        >
                             分类
                         </a>
                     </li>
                 
                     <li>
                         <a href="/post/about"
-                         >
+                        
+                        >
                             关于
                         </a>
                     </li>
@@ -148,7 +145,7 @@
 
 <div class="container-fluid">
     <div class="row fh5co-post-entry single-entry">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0 animate-box">
 
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12 col-xs-offset-0 text-center content-article">
 
@@ -367,6 +364,8 @@
 
 <!-- jQuery -->
 <script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.min.js"></script>
+<!-- img lazy load -->
+<script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.lazyload.min.js"></script>
 <!-- jQuery Easing -->
 <script src="https://littlebuzi.github.io//media/scripts/_vendors/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
@@ -377,9 +376,32 @@
 <script src="https://littlebuzi.github.io//media/scripts/_vendors/main.js"></script>
 <!-- Md5 Min JS -->
 <script src="https://littlebuzi.github.io//media/scripts/_vendors/md5.min.js"></script>
+<!-- katex -->
+<!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
+<!-- highlight -->
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+
 
 <script type="application/javascript">
+    // 代码高亮
     hljs.initHighlightingOnLoad();
+
+    // img 懒加载
+    $(function () {
+        $("img.lazy").lazyload({
+            effect: "fadeIn",  // 懒加载动画
+            threshold: 180  // 在图片距离屏幕180px时提前载入
+        });
+        // tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // 目录
+        $('#tool-toc').click(function () {
+            $('.post-toc').toggle();
+        });
+    });
+
+    
 </script>
 
 
