@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-10T09:56:19.974Z</updated>
+    <updated>2019-12-10T11:15:53.891Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -1172,6 +1172,62 @@ model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
     background-color: #343a40!important;
 }
 </code></pre>
+<h1 id="gridea博客主题修改">Gridea博客主题修改</h1>
+<p>顶部导航栏会在纵向滚动条下拉时自动隐藏（淡出），在上拉时在弹出<br>
+（给出最大阅读空间，保留上拉出现导航栏，保证功能）</p>
+<p>找到Gridea的工作目录：</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1575976417955.png" alt=""></figure>
+<p>进入并打开：Gridea\themes\lemon\templates\includes\header.ejs</p>
+<p>开头添加：</p>
+<pre><code class="language-css">
+&lt;style&gt;
+
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
+
+/* Slide transitions */
+
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+&lt;/style&gt;
+
+</code></pre>
+<p>保存，刷新Gridea，查看效果</p>
 ]]></content>
     </entry>
 </feed>
