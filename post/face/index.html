@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="德丽莎世界第一可爱" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1575979268525">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1575979867094">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -24,7 +24,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1575979268525" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1575979867094" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -98,18 +98,11 @@
           <blockquote>
 <p>学校小学期项目：人脸识别签到系统</p>
 </blockquote>
-<br>
-<hr>
-<br>
 <h1 id="一-需求和计划">一、需求和计划：</h1>
-<br>
 <p>随着高科技的蓬勃发展，人体特征分析技术已经作为身份快速识别及视频监控等领域的最新增值点与应用点，在身份识别、智能安防、智能监控、出入管理、证卡认证等方面发挥巨大作用。面部检测识别技术，是利用计算机图像分析、模型理论、人工智能及模式识别技术的非接触性高端模式识别技术，其可完成从复杂的图像场景中检测、检出特征人像信息，并进行匹配识别的智能分析过程。<br>
 软件的发展给我们的经济带来了很大的推动作用，现在越来越多的软件技术运用于各行各业，市场经济作为经济发展的一部分，推行新的技术对其有很大的帮助作用，而人类面部识别智能化的应用，为工作及生产带来很大便利，提高了效益。比如日常工作中的面部考勤签到，vip客户面部识别，来访人员面部识别等，这些系统的应用为行业及单位带来了很大的收益，因此随着技术的进步，跟上时代的步伐显得尤为重要。</p>
-<br>
 <hr>
-<br>
 <h1 id="二-项目设计">二、项目设计：</h1>
-<br>
 <p>1、 人员脸部信息采集</p>
 <p>在学校集中进行学生和教师的人脸信息采集（现阶段），证件、部门、职务等信息登记（以后）。</p>
 <p>2、 人员基础信息管理</p>
@@ -134,13 +127,9 @@ Tkinter：<br>
 图形化界面，（简单按钮事件）链接各py文件，业务逻辑</p>
 <p>界面：</p>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803408485.png" alt=""></figure>
-<br>
 <hr>
-<br>
 <h1 id="三-项目实现过程">三、项目实现过程：</h1>
-<br>
 <figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803348963.png" alt=""></figure>
-<br>
 <p>人脸检测：</p>
 <p>使用OpenCV的人脸检测器进行人脸的初步检测，使haarcascade_frontalface_default.xml训练进行人脸的二分类判定，完成人脸检测。换调用摄像头：“cv2.VideoCapture(1)”，使用Python+OpenCV进行视频中的人脸检测，人脸关键点定位：关键点定位的目标是在确知人脸位置的基础上，精确定位面部的关键点，如下图示意：</p>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803533749.png" alt=""></figure>
@@ -155,17 +144,12 @@ Tkinter：<br>
 <blockquote>
 <p><a href="https://www.cnblogs.com/zhaoweiwei/p/LBPH.html">OpenCV人脸识别LBPH算法源码分析</a></p>
 </blockquote>
-<br>
 <p>注册成功：</p>
 <figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805892550.png" alt=""></figure>
-<br>
 <p>签到成功：</p>
 <figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805922061.png" alt=""></figure>
-<br>
 <hr>
-<br>
 <h1 id="四-项目总结和体会">四、项目总结和体会：</h1>
-<br>
 <p>要搞一个人脸识别程序，首先我们需要先用提前裁剪好的标注好的人脸照片训练一个识别器。比如说，我们的识别器需要识别两个人，一个人的id是1，而另一个的id是2，于是在数据集里面，1号人的所有照片会有id 1号，2号人同理。然后我们就会使用这些数据集照片去训练识别器，再从一个视频中识别出1号人。</p>
 <p>我们把要做的事分成三部分：</p>
 <p>1.创建数据集</p>
@@ -193,17 +177,11 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
 <img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805339521.png" alt=""><br>
 3.计算（欧式）距离，输出相似度<br>
 <img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805361705.png" alt=""></p>
-<br>
 <hr>
-<br>
 <h1 id="整体代码流程">整体代码流程：</h1>
-<br>
 <figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568806231175.png" alt=""></figure>
-<br>
 <hr>
-<br>
 <h1 id="完整代码">完整代码：</h1>
-<br>
 <p><a href="https://github.com/littlebuzi/FaceRecognition">Github: littlebuzi / FaceRecognition</a><br>
 <img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568807139089.png" alt=""></p>
 
