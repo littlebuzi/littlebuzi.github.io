@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-10T09:03:26.867Z</updated>
+    <updated>2019-12-10T09:05:59.158Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -105,6 +105,7 @@ python、c++、java、R、javascript<br>
         <content type="html"><![CDATA[<blockquote>
 <ul>
 <li>总目标：实现动漫人脸识别、建立动漫人脸数据库</li>
+<li>本文定位在有一定python、linux基础和我这样的学生阅读</li>
 <li>遇到问题❓/错误❌，请查看文末或文章间隙</li>
 </ul>
 </blockquote>
@@ -129,17 +130,17 @@ window端（客户端）工具：Xshell、Xftp</p>
 <p>准备下linux服务器主机(centos)属性、环境：</p>
 <ul>
 <li>
-<p>1.<a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">查看linux系统CPU和内存命令</a></p>
+<p><a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">查看linux系统CPU和内存命令</a></p>
 </li>
 <li>
-<p>2.python -V</p>
+<p>python -V</p>
 </li>
 <li>
-<p>3.安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）<br>
+<p>安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）<br>
 <a href="https://blog.csdn.net/jh0218/article/details/85097061">CentOS 7安装Anaconda3</a></p>
 </li>
 <li>
-<p>4.import cv2</p>
+<p>import cv2</p>
 </li>
 </ul>
 <blockquote>
