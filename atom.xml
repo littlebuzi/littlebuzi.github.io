@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-09T09:45:18.858Z</updated>
+    <updated>2019-12-10T08:31:48.279Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -102,23 +102,19 @@ python、c++、java、R、javascript<br>
         <link href="https://littlebuzi.github.io//post/face_1">
         </link>
         <updated>2019-10-25T06:26:30.000Z</updated>
-        <content type="html"><![CDATA[<hr>
-<blockquote>
+        <content type="html"><![CDATA[<blockquote>
 <ul>
 <li>总目标：实现动漫人脸识别、建立动漫人脸数据库</li>
 <li>遇到问题❓/错误❌，请查看文末或文章间隙</li>
 </ul>
 </blockquote>
-<hr>
-<br>
-<h2 id="1-标注图片中动漫人物的脸部目标">1、标注图片中动漫人物的脸部(目标)</h2>
+<h1 id="1-标注图片中动漫人物的脸部">1、标注图片中动漫人物的脸部</h1>
 <p>环境：<br>
 服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
 操作系统：CetenOS 6.5 (环境配置复杂度: Window &gt; Centos &gt; Ubuntu 因个人原因使用centos较多)<br>
 python版本：3.5（自带2.6.6）<br>
 window端（客户端）工具：Xshell、Xftp</p>
 <hr>
-<br>
 <h2 id="11-依赖下载">1.1、依赖下载：</h2>
 <p>① 动漫人脸分类器下载：</p>
 <p>https://github.com/nagadomi/lbpcascade_animeface/</p>
@@ -129,7 +125,6 @@ window端（客户端）工具：Xshell、Xftp</p>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt=""></figure>
 <figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt=""></figure>
 <hr>
-<br>
 <h2 id="12-test环境">1.2、Test环境：</h2>
 <p>准备下linux服务器主机(centos)属性、环境：</p>
 <ul>
@@ -157,7 +152,6 @@ window端（客户端）工具：Xshell、Xftp</p>
 </ul>
 </blockquote>
 <hr>
-<br>
 <h2 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h2>
 <p>文件目录：<br>
 <img src="https://littlebuzi.github.io//post-images/1573551285992.png" alt=""></p>
@@ -194,11 +188,9 @@ for (x, y, w, h) in faces:
 cv2.waitKey(0)
 cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
 
-
 </code></pre>
-<h2 id="br"><br></h2>
-<h2 id="2-截取并保存视频一帧帧截取到的动漫人脸目标">2、截取并保存视频一帧帧截取到的动漫人脸(目标)：</h2>
-<br>
+<hr>
+<h1 id="2-截取并保存视频一帧帧截取到的动漫人脸目标">2、截取并保存视频一帧帧截取到的动漫人脸(目标)：</h1>
 <h2 id="21-文件目录">2.1、文件目录：</h2>
 <figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573556199362.png" alt=""></figure>
 <h2 id="22-导入视频一帧帧截取动漫人脸">2.2、导入视频一帧帧截取动漫人脸：</h2>
@@ -240,7 +232,6 @@ cv2.destroyAllWindows()
 
 </code></pre>
 <hr>
-<br>
 <h2 id="22-分类图片">2.2、分类图片：</h2>
 <p>将不同人物分类到属于他命名的文件夹下：</p>
 <pre><code class="language-python">
@@ -248,8 +239,7 @@ cv2.destroyAllWindows()
 
 </code></pre>
 <hr>
-<br>
-<h2 id="3-训练图片">3、训练图片：</h2>
+<h1 id="3-训练图片">3、训练图片：</h1>
 <p>开始制定、训练出模型(代码太长影响观感,完整代码<a href="https://github.com/littlebuzi/">github</a>)：</p>
 <pre><code class="language-python">
 #coding=utf-8
@@ -365,8 +355,7 @@ plt.savefig(&quot;/root/comic_reg/out.png&quot;)
 
 </code></pre>
 <hr>
-<br>
-<h2 id="4-识别图片">4、识别图片：</h2>
+<h1 id="4-识别图片">4、识别图片：</h1>
 <pre><code class="language-python">
 from skimage import io,transform
 import tensorflow as tf
@@ -434,7 +423,6 @@ print(count_true)
 
 </code></pre>
 <hr>
-<br>
 <p>结果：<br>
 <img src="https://littlebuzi.github.io//post-images/1575866273011.png" alt=""><br>
 因为只有第一个人物图片准备充足所以其他人物识别率会偏低</p>
@@ -449,9 +437,8 @@ CPU：1 核<br>
 硬盘：50 G<br>
 公网带宽：1 Mbps</p>
 <hr>
-<br>
 <h2 id="步骤11中可能遇到的问题">步骤1.1中可能遇到的问题：</h2>
-<h1 id="1下载速度太慢">1.下载速度太慢：</h1>
+<p>1.下载速度太慢：</p>
 <br>
 <h2 id="法一">法一：</h2>
 <p>liunx 下载 Github_Releases 下载提速：</p>
@@ -466,7 +453,7 @@ wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2v
 
 </code></pre>
 <h2 id="法二">法二：</h2>
-<h3 id="修改hostswindow">修改hosts(window):</h3>
+<p>修改hosts(window):</p>
 <p>当我们需要本地调试网站或者屏蔽某个网站的时候可以手动将这个网站添加到系统hosts文件中，因为hosts文件的优先级高于DNS，所以可以达到你想要在浏览器里呈现的结果，当然这只在本地有用！<br>
 一、Windows中hosts文件一般在C:\Windows\System32\drivers\etc目录下，格式是</p>
 <pre><code>127.0.0.1 localhost
@@ -475,12 +462,11 @@ wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2v
 </code></pre>
 <p>可以用记事本修改，前面是IP地址，后面是域名。127.0.0.1这个是本地环回地址。<br>
 比如127.0.0.1 www.baidu.com就是把www.baidu.com这个域名指向127.0.0.1的地址。</p>
-<h3 id="xftp传上去云端">xftp传上去云端</h3>
+<h2 id="xftp传上去云端">xftp传上去云端</h2>
 <p>当然这也需要很久 不多折合下来很大可能快50-100倍。如果像我一样有一台window云服务，那就让它来做这件事。下载，上传，都在云上进行。</p>
-<h3 id="详细请看">详细请看</h3>
+<h2 id="详细请看">详细请看</h2>
 <p><a href="https://www.cmsky.com/linux-hosts/">https://www.cmsky.com/linux-hosts/</a></p>
 <hr>
-<br>
 <h2 id="步骤22中可能遇到的问题">步骤2.2中可能遇到的问题：</h2>
 <pre><code>
 【Linux】 解决报错： 
@@ -496,7 +482,6 @@ yum install xxx
 
 </code></pre>
 <hr>
-<br>
 <h2 id="步骤23中可能遇到的问题">步骤2.3中可能遇到的问题：</h2>
 <p>查看linux系统CPU和内存命令</p>
 <p>https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</p>
