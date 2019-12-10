@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-10T09:06:48.862Z</updated>
+    <updated>2019-12-10T09:07:32.078Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -103,9 +103,13 @@ python、c++、java、R、javascript<br>
         </link>
         <updated>2019-10-31T06:26:30.000Z</updated>
         <content type="html"><![CDATA[<br>
-> - 总目标：实现动漫人脸识别、建立动漫人脸数据库
-> - 本文定位在有一定python、linux基础和我这样的学生阅读
-> - 遇到问题❓/错误❌，请查看文末或文章间隙
+<blockquote>
+<ul>
+<li>总目标：实现动漫人脸识别、建立动漫人脸数据库</li>
+<li>本文定位在有一定python、linux基础和我这样的学生阅读</li>
+<li>遇到问题❓/错误❌，请查看文末或文章间隙</li>
+</ul>
+</blockquote>
 <h1 id="1-标注图片中动漫人物的脸部">1、标注图片中动漫人物的脸部</h1>
 <p>环境：<br>
 服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
