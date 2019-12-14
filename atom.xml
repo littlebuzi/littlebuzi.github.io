@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-10T13:08:18.155Z</updated>
+    <updated>2019-12-14T10:36:49.537Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://littlebuzi.github.io//images/avatar.png</logo>
     <icon>https://littlebuzi.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[Win 搭建 Go + Beego + Idea]]></title>
+        <id>https://littlebuzi.github.io//post/go1</id>
+        <link href="https://littlebuzi.github.io//post/go1">
+        </link>
+        <updated>2019-12-14T10:25:55.000Z</updated>
+        <content type="html"><![CDATA[<p>1.安装Go</p>
+<p>选择window版本：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p>
+<p>2.安装idea</p>
+<p>下载：[IntelliJ IDEA 2018.3 安装+永久激活]：(https://www.cnblogs.com/horvey/p/10173706.html)（版本需小于2019,有可能plugins商店使用异常）</p>
+<p>3.idea中配置安装go</p>
+<p><a href="https://blog.csdn.net/cui_yonghua/article/details/90900336">https://blog.csdn.net/cui_yonghua/article/details/90900336</a></p>
+<p>4.idea中安装bee</p>
+<p>IDEA打开命令行快捷键：Alt + F12</p>
+<pre><code class="language-go">输入：
+
+go version （检验）
+
+go get -u github.com/astaxie/beego
+go get -u github.com/beego/bee
+
+//等待片刻
+
+下载完后：
+
+go bee version（检验）
+
+//成功
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[基于 tensorflow 的动漫人物识别]]></title>
         <id>https://littlebuzi.github.io//post/face_1</id>
@@ -1478,27 +1510,6 @@ model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
 <p>2.conda ：</p>
 <pre><code class="language-python">conda install opencv-python opencv-contrib-python
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python & Minecraft]]></title>
-        <id>https://littlebuzi.github.io//post/minecraft_python</id>
-        <link href="https://littlebuzi.github.io//post/minecraft_python">
-        </link>
-        <updated>2019-10-21T07:04:18.000Z</updated>
-        <content type="html"><![CDATA[<p>1.用python学习minecraft<br>
-原理：用python2.7.6接入mc游戏接口，利用python语句调试mc游戏。<br>
-异常：控制台（开服器cmd）有时会出现python调试后（已经开始执行运行一个py时），无反应，游戏也是。按下回车后即可（类似于刷新），才有反应（恢复正常）</p>
-<p>最为基础的是这个“将pythonGUI和mc游戏连接起来”具体是python链接进mc提供的接口： 创建一个py格式文件，在myadventure目录下例：buildHouse.py<br>
-1.导入需要的模块：【类似于Java的Import】import mcpi.minecraft as minecraftimport mcpi.block as block(还有时间方面的import time)</p>
-<p>2.连接Minecraft游戏：【注意大小写，英文冒号以及python语言格式】mc=minecraft.Minecraft.create()</p>
-<p>一.<br>
-1.在这个网站下载“入门包”：<a href="https://www.wiley.com/WileyCDA/Section/id-823690.html">https://www.wiley.com/WileyCDA/Section/id-823690.html</a><br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/learn_mc_1/1568084356167.png" alt=""><br>
-2.python2.7.6下载：<a href="https://www.python.org/download/releases/2.7.6/">https://www.python.org/download/releases/2.7.6/</a><br>
-二.</p>
-<p>1.打开 开服器cmd，开服localhost，使用mc1.6.4客户端连上localhost</p>
-<p>…</p>
 ]]></content>
     </entry>
 </feed>
