@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2019-12-14T12:05:31.706Z</updated>
+    <updated>2019-12-14T13:02:00.258Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io//atom.xml"/>
@@ -16,15 +16,20 @@
         <link href="https://littlebuzi.github.io//post/go1">
         </link>
         <updated>2019-12-14T10:25:55.000Z</updated>
-        <content type="html"><![CDATA[<p>1.安装Go</p>
-<p>选择window版本：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p>
-<p>2.安装idea</p>
-<p>下载：[IntelliJ IDEA 2018.3 安装+永久激活]：(https://www.cnblogs.com/horvey/p/10173706.html)（版本需小于2019,有可能plugins商店使用异常）</p>
-<p>3.idea中配置安装go</p>
-<p><a href="https://blog.csdn.net/cui_yonghua/article/details/90900336">https://blog.csdn.net/cui_yonghua/article/details/90900336</a></p>
-<p>4.idea中安装bee</p>
-<p>IDEA打开命令行快捷键：Alt + F12</p>
-<pre><code class="language-go">输入：
+        <content type="html"><![CDATA[<p>1.安装Go<br>
+选择window版本：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p>
+<br>
+<p>2.安装idea<br>
+下载：[IntelliJ IDEA 2018.3 安装+永久激活]：(https://www.cnblogs.com/horvey/p/10173706.html)（版本需小于2019,有可能plugins商店使用异常）</p>
+<br>
+<p>3.idea中配置安装go<br>
+<a href="https://blog.csdn.net/cui_yonghua/article/details/90900336">https://blog.csdn.net/cui_yonghua/article/details/90900336</a></p>
+<br>
+<p>4.idea中安装bee<br>
+IDEA打开命令行快捷键：Alt + F12</p>
+<br>
+<pre><code class="language-go">
+输入：
 
 go version （检验）
 
