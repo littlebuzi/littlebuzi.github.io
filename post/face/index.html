@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="德丽莎世界第一可爱" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1576330303937">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1577701689807">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -24,7 +24,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1576330303937" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1577701689807" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -126,13 +126,13 @@
 Tkinter：<br>
 图形化界面，（简单按钮事件）链接各py文件，业务逻辑</p>
 <p>界面：</p>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803408485.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803408485.png" alt="" loading="lazy"></figure>
 <hr>
 <h1 id="三-项目实现过程">三、项目实现过程：</h1>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803348963.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803348963.png" alt="" loading="lazy"></figure>
 <p>人脸检测：</p>
 <p>使用OpenCV的人脸检测器进行人脸的初步检测，使haarcascade_frontalface_default.xml训练进行人脸的二分类判定，完成人脸检测。换调用摄像头：“cv2.VideoCapture(1)”，使用Python+OpenCV进行视频中的人脸检测，人脸关键点定位：关键点定位的目标是在确知人脸位置的基础上，精确定位面部的关键点，如下图示意：</p>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803533749.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568803533749.png" alt="" loading="lazy"></figure>
 <p>图像采集：<br>
 采集1000张图片，转换为灰度图并报错，以自己设定好的规律命名图片文件，易于之后的读取后训练。</p>
 <p>获得面部关键点的目的是进行人脸的对齐和标准化。标准化的人脸输入可以获得更高的人脸识别精度。</p>
@@ -145,9 +145,9 @@ Tkinter：<br>
 <p><a href="https://www.cnblogs.com/zhaoweiwei/p/LBPH.html">OpenCV人脸识别LBPH算法源码分析</a></p>
 </blockquote>
 <p>注册成功：</p>
-<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805892550.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805892550.png" alt="" loading="lazy"></figure>
 <p>签到成功：</p>
-<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805922061.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805922061.png" alt="" loading="lazy"></figure>
 <hr>
 <h1 id="四-项目总结和体会">四、项目总结和体会：</h1>
 <p>要搞一个人脸识别程序，首先我们需要先用提前裁剪好的标注好的人脸照片训练一个识别器。比如说，我们的识别器需要识别两个人，一个人的id是1，而另一个的id是2，于是在数据集里面，1号人的所有照片会有id 1号，2号人同理。然后我们就会使用这些数据集照片去训练识别器，再从一个视频中识别出1号人。</p>
@@ -172,23 +172,23 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
 <p>LBPH算法：</p>
 <p>原理：通过已知条件，利用特定关系逐步递推，最终得到结果。</p>
 <p>1.提取特征值并转换<br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805324851.png" alt=""><br>
+<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805324851.png" alt="" loading="lazy"><br>
 2.生成数据集，训练，生成yml文件<br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805339521.png" alt=""><br>
+<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805339521.png" alt="" loading="lazy"><br>
 3.计算（欧式）距离，输出相似度<br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805361705.png" alt=""></p>
+<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568805361705.png" alt="" loading="lazy"></p>
 <hr>
 <h1 id="整体代码流程">整体代码流程：</h1>
-<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568806231175.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568806231175.png" alt="" loading="lazy"></figure>
 <hr>
 <h1 id="完整代码">完整代码：</h1>
 <p><a href="https://github.com/littlebuzi/FaceRecognition">Github: littlebuzi / FaceRecognition</a><br>
-<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568807139089.png" alt=""></p>
+<img src="https://littlebuzi.github.io//post-images/2019/08/09/python/face/1568807139089.png" alt="" loading="lazy"></p>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io//tag/nKWkHExQP">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/tag/nKWkHExQP">
             <span class="flex-auto">python</span>
           </a>
         
@@ -197,7 +197,7 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://littlebuzi.github.io//post/face_1">
+              <a href="https://littlebuzi.github.io/post/face_1">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   基于 tensorflow 的动漫人物识别
@@ -208,7 +208,7 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
 
           
             <div class="next-post">
-              <a href="https://littlebuzi.github.io//post/manhua">
+              <a href="https://littlebuzi.github.io/post/manhua">
                 <h3 class="post-title">
                   制作“漫画网站”爬虫 1.0
                   <i class="remixicon-arrow-right-line"></i>
