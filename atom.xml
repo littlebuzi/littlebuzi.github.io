@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-13T16:45:28.721Z</updated>
+    <updated>2020-02-15T10:05:02.356Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -10,6 +10,143 @@
     <logo>https://littlebuzi.github.io/images/avatar.png</logo>
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[Tensorflow利用inception_v3模型和retrain实现图像分类训练]]></title>
+        <id>https://littlebuzi.github.io/post/tensorflow2</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow2">
+        </link>
+        <updated>2020-02-15T09:22:17.000Z</updated>
+        <content type="html"><![CDATA[<p>参考文献：<br>
+https://blog.csdn.net/ZeyiRTangent/article/details/87886445</p>
+<p>#准备：</p>
+<p>1.五个分类好存有各自类别的文件夹【文件夹及其内图片的名称全小写，绝对路径名中不能包含中文】</p>
+<p>2.inception_v3模型下载，无需解压【http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz】</p>
+<p>3.克隆/下载 https://github.com/tensorflow/tensorflow &amp; https://github.com/tensorflow/hub （在~hub-master\examples\image_retraining中找到retrain.py文件，待会需要定位文件位置）</p>
+<p>。。。</p>
+<hr>
+<h1 id="可能遇到的问题">可能遇到的问题：</h1>
+<ol>
+<li></li>
+</ol>
+<p>查看Windows下TensorFlow对python版本的要求<br>
+https://blog.csdn.net/sinat_23619409/article/details/84202596</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>windows10 conda python多版本切换<br>
+https://www.cnblogs.com/simuhunluo/p/8540459.html</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>windows 怎么更新 Python 版本（现有 Python 版本装了很多库）卸载重装，工作量就大了，有没有什么直接更新的方式，不会删库那种办法<br>
+https://www.v2ex.com/amp/t/477473</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>conda（anaconda）删除清华源，改回原源<br>
+https://blog.csdn.net/qinglingLS/article/details/89363368</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>PackagesNotFoundError: The following packages are not available from current channels:<br>
+https://blog.csdn.net/miao0967020148/article/details/85230430</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>迁移学习关于下载不了inception-v3，自己网络又加载不了的问题<br>
+https://blog.csdn.net/nationalline450/article/details/82085007</p>
+<p>原址：<br>
+https://tfhub.dev/google/imagenet/inception_v3/feature_vector/3</p>
+<ol start="7">
+<li></li>
+</ol>
+<p>出现以下报错：</p>
+<pre><code class="language-python">Warning! ***HDF5 library version mismatched error***
+The HDF5 header files used to compile this application do not match
+the version used by the HDF5 library to which this application is linked.
+Data corruption or segmentation faults may occur if the application continues.
+This can happen when an application was compiled by one version of HDF5 but
+linked with a different version of static or shared HDF5 library.
+You should recompile the application or check your shared library related
+settings such as 'LD_LIBRARY_PATH'.
+You can, at your own risk, disable this warning by setting the environment
+variable 'HDF5_DISABLE_VERSION_CHECK' to a value of '1'.
+Setting it to 2 or higher will suppress the warning messages totally.
+Headers are 1.10.4, library is 1.10.5
+        SUMMARY OF THE HDF5 CONFIGURATION
+        =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.10.5
+                  Configured on: 2019-03-04
+  
+... ... ... 
+... ... ... 
+ 
+          Function Stack Tracing: OFF
+       Strict File Format Checks: OFF
+    Optimization Instrumentation:
+Bye...
+
+</code></pre>
+<p>（多版本导致冲突）pip uninstall h5py<br>
+Ubuntu: HDF5报错: HDF5 header version与HDF5 library不匹配<br>
+https://www.cnblogs.com/platero/p/4077934.html</p>
+<p>Python环境中HDF5报错：HDF5 library version mismatched error<br>
+https://blog.csdn.net/zhaoyin214/article/details/104095227</p>
+<p>使用conda装完plt/pillow后，错误又出来了，详细看，conda在安装pillow时帮你安装hdf5版本了：<br>
+再卸载一次h5py，然后可能提示：</p>
+<p>ModuleNotFoundError: No module named 'matplotlib' ， python导入'matplotlib'包报错</p>
+<p>解决：https://blog.csdn.net/weixin_43670105/article/details/87911820</p>
+<p>【不能解决】 UserWarning: h5py is running against HDF5 1.10.2 when it was built against 1.10.3, this may ca...<br>
+https://www.jianshu.com/p/c248bbea1da7</p>
+<ol start="8">
+<li></li>
+</ol>
+<p>tensorflow版本：2.0过高怎么办？</p>
+<p>解决：</p>
+<p>适当回退tensorflow版本：<br>
+pip install tensorflow==1.13.1</p>
+<p>安装Tensorflow 2.0后的坑has no attribute 'contrib'<br>
+https://blog.51cto.com/cfy10/2446977?source=dra</p>
+<p>ModuleNotFoundError: No module named 'tensorflow.contrib.rnn'<br>
+https://blog.csdn.net/u014742995/article/details/86496292</p>
+<ol start="9">
+<li></li>
+</ol>
+<p>提示python版本过高、冲突（tensorflow版本）怎么办？</p>
+<p>conda install python=3.6</p>
+<p>Anaconda中将python 3.7版本退回python 3.6版本<br>
+https://blog.csdn.net/Fhujinwu/article/details/85851587</p>
+<h1 id="参考文献">参考文献：</h1>
+<p>https://blog.csdn.net/ZeyiRTangent/article/details/87886445</p>
+<h1 id="相似推荐有助思考">相似推荐，有助思考：</h1>
+<p>https://blog.csdn.net/weixin_38663832/article/details/80555341<br>
+https://blog.csdn.net/EZ_guachong/article/details/90048846<br>
+https://github.com/sourcedexter/tfClassifier<br>
+https://stackoverflow.com/questions/45076911/tensorflow-failed-to-create-a-newwriteablefile-when-retraining-inception</p>
+<h2 id="迁移学习">迁移学习</h2>
+<p>https://blog.csdn.net/chaipp0607/article/details/73380390<br>
+https://blog.csdn.net/Night___Raid/article/details/102975023</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TensorFlow支持的动漫人物识别网站的存储库]]></title>
+        <id>https://littlebuzi.github.io/post/tensorflow3</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow3">
+        </link>
+        <updated>2020-02-15T09:22:17.000Z</updated>
+        <content type="html"><![CDATA[<p>开始：<br>
+在知乎上偶然阅读到这位作者的文章：https://zhuanlan.zhihu.com/p/70511070</p>
+<p>参考：<br>
+https://github.com/freedomofkeima/MoeFlow<br>
+https://github.com/freedomofkeima/transfer-learning-anime<br>
+https://github.com/nagadomi/animeface-2009<br>
+https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
+<p>我也试着弄，放弃了</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[About Download]]></title>
         <id>https://littlebuzi.github.io/post/download1</id>
@@ -1074,167 +1211,5 @@ if __name__==&quot;__main__&quot;:
 <p>不能自动重启❌</p>
 <p>基本百分之95的功能实现，项目可宣布成功完成！✅</p>
 <br>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tensorflow]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow1</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow1">
-        </link>
-        <updated>2019-11-13T07:10:24.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="tensorflow是什么">Tensorflow是什么？</h1>
-<p>Google的开源软件库：</p>
-<ul>
-<li>采取数据流，用于数值计算。</li>
-<li>支持多种平台 —— GPU、CPU、移动设备。（方便的无缝切换，不用更改大部分的代码）</li>
-<li>最初用于深度学习，变得越来越通用。（tensorflow并不只是适用于深度学习，大部分还是深度学习，只要是能抽象为数据流图的问题，都能使用它来解决）</li>
-</ul>
-<br>
-<hr>
-<br>
-<h2 id="数据流图">数据流图：</h2>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573563675094.png" alt="" loading="lazy"></figure>
-<ul>
-<li><big><strong>节点 —— 处理数据</strong></big><br>
-对数据进行计算，每个框框（方形，圆形）都表示一个节点。<br>
-<br></li>
-<li><big><strong>线 —— 节点输入输出的关系</strong></big><br>
-节点与节点之间的数据依赖。（如偏最上面的三个绿色节点，Cross Entropy 依赖 Softmax 和Cross Labels 的输出，通过计算得出新的值，如果前两个节点没有计算完，后面的节点是无法计算的。）<br>
-<br></li>
-<li><big><strong>线上运输张量（tensor）</strong></big><br>
-线上运输的数据，所有的n维构成了数据的集合，0维数据 ——&gt; 数字，1维数据 ——&gt; 向量，二维<br>
-——&gt; 矩阵，大于等于3维的数据 ——&gt; 高位矩阵。<br>
-让tensor（张量）在数据流图中flow（流动）——&gt;tensorflow<br>
-<br></li>
-<li><big><strong>节点被分配到各种计算设备上运行</strong></big></li>
-</ul>
-<br>
-<hr>
-<br>
-<h2 id="特性">特性：</h2>
-<ul>
-<li><big><strong>高度的灵活性</strong></big><br>
-可以表示为数据流图的都可使用，主要同于神经网络，卷积等都使用了封装。也可写自己的封装，就像panda函数那样。<br>
-<br></li>
-<li><big><strong>真正的可移植性</strong></big><br>
-可在很多设备上执行，如 CPU、GPU、移动设备。你在电脑里训练了一个model，可部署在服务器上，手机上，Docker上。<br>
-<br></li>
-<li><big><strong>多语言支持</strong></big><br>
-python、c++、java、R、javascript<br>
-<br></li>
-<li><big><strong>产品和科研结合</strong></big><br>
-<br></li>
-<li><big><strong>自动求微分</strong></big><br>
-<br></li>
-<li><big><strong>性能最优化</strong></big></li>
-</ul>
-<br>
-<hr>
-<br>
-<h1 id="tf10-架构">TF1.0 — 架构：</h1>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573633217023.png" alt="" loading="lazy"></figure>
-<br>
-<hr>
-<br>
-<h1 id="tf20-架构">TF2.0 — 架构：</h1>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573633662430.png" alt="" loading="lazy"></figure>
-<br>
-<hr>
-<br>
-<h1 id="tf20-简化的模型开发流程">TF2.0 — 简化的模型开发流程：</h1>
-<ul>
-<li><big><strong>使用 tf.data 加载数据</strong></big><br>
-<br></li>
-<li><big><strong>使用 tf.keras 构建模型，也可以使用 premade estimator 来验证模型</strong></big><br>
-<br></li>
-<li><big><strong>使用 tensorflow hub 进行迁移学习</strong></big><br>
-<br></li>
-<li><big><strong>使用 eager mode 进行运行和调试</strong></big><br>
-<br></li>
-<li><big><strong>使用分发策略来进行分布式训练</strong></big><br>
-<br></li>
-<li><big><strong>导出到 SavedModel</strong></big><br>
-<br></li>
-<li><big><strong>使用 Tensorflow Serve、Tensorflow Lite、Tensorflow.js 部署模型</strong></big></li>
-</ul>
-<br>
-<hr>
-<br>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python二三事]]></title>
-        <id>https://littlebuzi.github.io/post/pip</id>
-        <link href="https://littlebuzi.github.io/post/pip">
-        </link>
-        <updated>2019-10-25T05:06:10.000Z</updated>
-        <content type="html"><![CDATA[<br>
-<h1 id="一-pip源地址">一、pip源（地址）：</h1>
-<pre><code>（1）阿里云 : http://mirrors.aliyun.com/pypi/simple/
-（2）豆瓣 : http://pypi.douban.com/simple/
-（3）清华大学 : https://pypi.tuna.tsinghua.edu.cn/simple/
-（4）中国科学技术大学 : http://pypi.mirrors.ustc.edu.cn/simple/
-（5）华中科技大学 : http://pypi.hustunique.com/
-</code></pre>
-<h2 id="1普通使用">1.普通使用：</h2>
-<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
-</code></pre>
-<blockquote>
-<p>pip_install_-i_源的地址_包/库名<br>
-'_'符号代表空格</p>
-</blockquote>
-<h2 id="2清华源使用介绍">2.<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华源使用介绍：</a></h2>
-<p>pypi 镜像使用帮助<br>
-pypi 镜像每 5 分钟同步一次。</p>
-<p>临时使用</p>
-<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-</code></pre>
-<p>注意，simple 不能少, 是 https 而不是 http<br>
-设为默认<br>
-升级 pip 到最新的版本 (&gt;=10.0.0) 后进行配置：</p>
-<pre><code>pip install pip -U
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-</code></pre>
-<p>如果您到 pip 默认源的网络连接较差，临时使用本镜像站来升级 pip：</p>
-<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
-</code></pre>
-<h2 id="3关于一键修改源-linux">3.<a href="https://blog.csdn.net/sinat_21591675/article/details/82770360">关于一键修改源、Linux</a></h2>
-<hr>
-<h1 id="二-anacondaconda-切换为国内源">二、anaconda/conda 切换为国内源</h1>
-<h2 id="windows下">windows下</h2>
-<p>在清华源和中科大源之间自行选择</p>
-<p>添加清华源<br>
-命令行中直接使用以下命令</p>
-<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-</code></pre>
-<h3 id="设置搜索时显示通道地址">设置搜索时显示通道地址</h3>
-<pre><code>conda config --set show_channel_urls yes
-</code></pre>
-<p>注意如果需要pytorch, 还需要添加pytorch的镜像</p>
-<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-</code></pre>
-<p>添加中科大源</p>
-<pre><code>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
-conda config --set show_channel_urls yes
-</code></pre>
-<h2 id="linux下">Linux下</h2>
-<p>将以上配置文件写在~/.condarc中</p>
-<blockquote>
-<p>vim ~/.condarc</p>
-</blockquote>
-<pre><code>channels:
- - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
- - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
- - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
- - defaults
-show_channel_urls: true
-</code></pre>
-]]></content>
     </entry>
 </feed>
