@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-15T10:05:02.356Z</updated>
+    <updated>2020-02-15T11:44:04.631Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -159,14 +159,14 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Python 爬虫 beautifulsoup4 基础]]></title>
+        <title type="html"><![CDATA[Python基操]]></title>
         <id>https://littlebuzi.github.io/post/pacong</id>
         <link href="https://littlebuzi.github.io/post/pacong">
         </link>
         <updated>2020-01-31T12:06:10.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="pycharm-python环境搭建好后">pycharm、python环境搭建好后</h1>
-<h1 id="装载html文档">装载html文档</h1>
-<p>使用beautifulsoup的第一步是把html文档装载到beautifulsoup中，使其形成一个beautifulsoup对象。</p>
+        <content type="html"><![CDATA[<h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
+<h2 id="pycharm-python环境搭建好后">pycharm、python环境搭建好后</h2>
+<p>装载html文档，使用beautifulsoup的第一步是把html文档装载到beautifulsoup中，使其形成一个beautifulsoup对象。</p>
 <pre><code>import requests
 from bs4 import BeautifulSoup
 url = &quot;xxxx&quot;
@@ -176,7 +176,7 @@ htmls = r.text
 soup = BeautifulSoup(htmls, 'html.parser')
 </code></pre>
 <p>初始化BeautifulSoup类时，需要加入两个参数，第一个参数即是我们爬到html源码，第二个参数是html解析器，常用的有三个解析器，分别是”html.parser”,”lxml”,”html5lib”，官网推荐用lxml，因为效率高，当然需要pip install lxml一下。</p>
-<h1 id="例子">例子</h1>
+<h2 id="例子">例子</h2>
 <p>html对象：</p>
 <pre><code>uls='''
 &lt;h3&gt;Header3 (Start here)&lt;/h3&gt;
@@ -207,11 +207,21 @@ lis = []
 
 </code></pre>
 <p>https://www.jb51.net/article/156907.htm</p>
-<h1 id="百度图片爬虫">百度图片爬虫：</h1>
+<h2 id="百度图片爬虫">百度图片爬虫：</h2>
 <p>https://blog.csdn.net/qq_40774175/article/details/81273198</p>
-<h1 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h1>
+<h2 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h2>
 <p>检查路劲是否有中文，有则换成英文或数字</p>
 <p>https://zhidao.baidu.com/question/1309336445243832299.html</p>
+<hr>
+<h1 id="python-读取和输出到-txt-文件">Python 读取和输出到 txt 文件</h1>
+<pre><code class="language-python">with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开文件
+    data = f.read()  # 读取文件
+    print(data)
+</code></pre>
+<p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<p>Python读取文件时出现UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position xx: 解决方案:</p>
+<p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<hr>
 ]]></content>
     </entry>
     <entry>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="德丽莎世界第一可爱" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1581761080178">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1581767035334">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -24,7 +24,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1581761080178" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1581767035334" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -35,11 +35,15 @@
           </p>
           <div class="toc-container hidden lg:block">
             <ul class="markdownIt-TOC">
+<li><a href="#python-%E7%88%AC%E8%99%AB-beautifulsoup4-%E5%9F%BA%E7%A1%80">Python 爬虫 beautifulsoup4 基础</a>
+<ul>
 <li><a href="#pycharm-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A5%BD%E5%90%8E">pycharm、python环境搭建好后</a></li>
-<li><a href="#%E8%A3%85%E8%BD%BDhtml%E6%96%87%E6%A1%A3">装载html文档</a></li>
 <li><a href="#%E4%BE%8B%E5%AD%90">例子</a></li>
 <li><a href="#%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB">百度图片爬虫：</a></li>
 <li><a href="#python%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99-fileexistserror-winerror-183-%E5%BD%93%E6%96%87%E4%BB%B6%E5%B7%B2%E5%AD%98%E5%9C%A8%E6%97%B6%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E8%AF%A5%E6%96%87%E4%BB%B6">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</a></li>
+</ul>
+</li>
+<li><a href="#python-%E8%AF%BB%E5%8F%96%E5%92%8C%E8%BE%93%E5%87%BA%E5%88%B0-txt-%E6%96%87%E4%BB%B6">Python 读取和输出到 txt 文件</a></li>
 </ul>
 
           </div>
@@ -86,17 +90,17 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Python 爬虫 beautifulsoup4 基础</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">Python基操</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-01-31 / 2 min read
+          2020-01-31 / 3 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/pacong.jpg" alt="">
         
         <div class="post-content yue">
-          <h1 id="pycharm-python环境搭建好后">pycharm、python环境搭建好后</h1>
-<h1 id="装载html文档">装载html文档</h1>
-<p>使用beautifulsoup的第一步是把html文档装载到beautifulsoup中，使其形成一个beautifulsoup对象。</p>
+          <h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
+<h2 id="pycharm-python环境搭建好后">pycharm、python环境搭建好后</h2>
+<p>装载html文档，使用beautifulsoup的第一步是把html文档装载到beautifulsoup中，使其形成一个beautifulsoup对象。</p>
 <pre><code>import requests
 from bs4 import BeautifulSoup
 url = &quot;xxxx&quot;
@@ -106,7 +110,7 @@ htmls = r.text
 soup = BeautifulSoup(htmls, 'html.parser')
 </code></pre>
 <p>初始化BeautifulSoup类时，需要加入两个参数，第一个参数即是我们爬到html源码，第二个参数是html解析器，常用的有三个解析器，分别是”html.parser”,”lxml”,”html5lib”，官网推荐用lxml，因为效率高，当然需要pip install lxml一下。</p>
-<h1 id="例子">例子</h1>
+<h2 id="例子">例子</h2>
 <p>html对象：</p>
 <pre><code>uls='''
 &lt;h3&gt;Header3 (Start here)&lt;/h3&gt;
@@ -137,11 +141,21 @@ lis = []
 
 </code></pre>
 <p>https://www.jb51.net/article/156907.htm</p>
-<h1 id="百度图片爬虫">百度图片爬虫：</h1>
+<h2 id="百度图片爬虫">百度图片爬虫：</h2>
 <p>https://blog.csdn.net/qq_40774175/article/details/81273198</p>
-<h1 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h1>
+<h2 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h2>
 <p>检查路劲是否有中文，有则换成英文或数字</p>
 <p>https://zhidao.baidu.com/question/1309336445243832299.html</p>
+<hr>
+<h1 id="python-读取和输出到-txt-文件">Python 读取和输出到 txt 文件</h1>
+<pre><code class="language-python">with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开文件
+    data = f.read()  # 读取文件
+    print(data)
+</code></pre>
+<p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<p>Python读取文件时出现UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position xx: 解决方案:</p>
+<p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<hr>
 
         </div>
 
