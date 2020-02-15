@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-15T11:54:57.298Z</updated>
+    <updated>2020-02-15T12:40:46.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -238,6 +238,12 @@ https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
 <p>Python读取文件时出现UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position xx: 解决方案:</p>
 <p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
 <hr>
+<p>Python 正则表达式 re 中出现'str' object has no attribute 'findall'<br>
+https://www.v2ex.com/t/476712</p>
+<p>出现TypeError: 'list' object is not callable异常的情况与解决方法<br>
+https://blog.csdn.net/DansonC/article/details/88860936</p>
+<p>利用python将中文名转换为英文名<br>
+https://blog.csdn.net/Dr_mark/article/details/82853827</p>
 ]]></content>
     </entry>
     <entry>
