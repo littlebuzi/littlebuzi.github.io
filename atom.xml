@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-15T15:23:41.568Z</updated>
+    <updated>2020-02-15T15:40:24.373Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -219,12 +219,12 @@ lis = []
     print(data)
 </code></pre>
 <p>读入这种文件时：<br>
-···<br>
-樱之宫莓香<br>
-轰焦冻<br>
-鬼灯<br>
-和泉守兼定<br>
-···</p>
+test.txt</p>
+<pre><code>樱之宫莓香
+轰焦冻
+鬼灯
+和泉守兼定
+</code></pre>
 <pre><code class="language-python">str=[]
 with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开文件
     data = f.readlines()
@@ -234,16 +234,13 @@ with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开�
     print(str)
 </code></pre>
 <p>参考：<br>
-https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<a href="https://blog.csdn.net/zhang__shuang_/article/details/82527314">https://blog.csdn.net/zhang__shuang_/article/details/82527314</a></p>
 <p>Python读取文件时出现UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position xx: 解决方案:</p>
-<p>https://blog.csdn.net/zhang__shuang_/article/details/82527314</p>
+<p><a href="https://blog.csdn.net/zhang__shuang_/article/details/82527314">https://blog.csdn.net/zhang__shuang_/article/details/82527314</a></p>
 <hr>
-<p>Python 正则表达式 re 中出现'str' object has no attribute 'findall'<br>
-https://www.v2ex.com/t/476712</p>
-<p>出现TypeError: 'list' object is not callable异常的情况与解决方法<br>
-https://blog.csdn.net/DansonC/article/details/88860936</p>
-<p>利用python将中文名转换为英文名<br>
-https://blog.csdn.net/Dr_mark/article/details/82853827</p>
+<p>①：<a href="https://www.v2ex.com/t/476712">Python 正则表达式 re 中出现'str' object has no attribute 'findall'</a></p>
+<p>②：<a href="https://blog.csdn.net/DansonC/article/details/88860936">出现TypeError: 'list' object is not callable异常的情况与解决方法</a></p>
+<p>③：<a href="https://blog.csdn.net/Dr_mark/article/details/82853827">利用python将中文名转换为英文名</a></p>
 ]]></content>
     </entry>
     <entry>
