@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-15T17:07:24.098Z</updated>
+    <updated>2020-02-16T15:09:15.187Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -206,7 +206,8 @@ lis = []
         #print(li.text.encode(&quot;utf-8&quot;))
 
 </code></pre>
-<p>https://www.jb51.net/article/156907.htm</p>
+<p>https://www.jb51.net/article/156907.htm<br>
+https://blog.csdn.net/huxiny/article/details/79679066</p>
 <h2 id="百度图片爬虫">百度图片爬虫：</h2>
 <p>https://blog.csdn.net/qq_40774175/article/details/81273198</p>
 <h2 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h2>
