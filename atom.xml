@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-16T15:09:15.187Z</updated>
+    <updated>2020-02-18T07:32:11.954Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -11,9 +11,41 @@
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
     <entry>
+        <title type="html"><![CDATA[PHP、JS、CSS基操]]></title>
+        <id>https://littlebuzi.github.io/post/php_jicao_1/</id>
+        <link href="https://littlebuzi.github.io/post/php_jicao_1/">
+        </link>
+        <updated>2020-02-18T06:23:45.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<h1 id="php">PHP</h1>
+<p>PHP生成随机数的几种方法<br>
+https://www.cnblogs.com/jjxhp/p/9601147.html</p>
+<p>... ...</p>
+<hr>
+<h1 id="javascript">JavaScript</h1>
+<p>报错TypeError: $(...).live is not a function</p>
+<p>解决：用  .on  代替  .live  , 旧的版本被替换了</p>
+<p>https://blog.csdn.net/qq_36370731/article/details/79016451</p>
+<p>报错TypeError: $(…).ajaxForm is not a function</p>
+<p>可能：<br>
+1.jquery版本和bootstrap冲突<br>
+2.同时加载了两次jquery</p>
+<p>https://stackoverflow.com/questions/35261239/ajaxform-is-not-a-function#</p>
+<p>【JavaScript】按钮绑定点击事件-onCliek事件<br>
+https://blog.csdn.net/kye055947/article/details/79619538</p>
+<p>... ...</p>
+<hr>
+<h1 id="css-前端">CSS 前端</h1>
+<p>css input[type=file] 样式美化，input上传按钮美化<br>
+https://blog.csdn.net/cuilei210/article/details/78842231</p>
+<p>菜鸟教程：CSS 按钮示范<br>
+https://www.runoob.com/css3/css3-buttons.html</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Tensorflow利用inception_v3模型和retrain实现图像分类训练]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow2</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow2">
+        <id>https://littlebuzi.github.io/post/tensorflow2/</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow2/">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>参考文献：<br>
@@ -133,8 +165,8 @@ https://blog.csdn.net/Night___Raid/article/details/102975023</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[TensorFlow支持的动漫人物识别网站的存储库]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow3</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow3">
+        <id>https://littlebuzi.github.io/post/tensorflow3/</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow3/">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>开始：<br>
@@ -149,8 +181,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[About Download]]></title>
-        <id>https://littlebuzi.github.io/post/download1</id>
-        <link href="https://littlebuzi.github.io/post/download1">
+        <id>https://littlebuzi.github.io/post/download1/</id>
+        <link href="https://littlebuzi.github.io/post/download1/">
         </link>
         <updated>2020-02-13T05:15:48.000Z</updated>
         <content type="html"><![CDATA[<h1 id="下载">下载</h1>
@@ -160,8 +192,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Python基操]]></title>
-        <id>https://littlebuzi.github.io/post/pacong</id>
-        <link href="https://littlebuzi.github.io/post/pacong">
+        <id>https://littlebuzi.github.io/post/pacong/</id>
+        <link href="https://littlebuzi.github.io/post/pacong/">
         </link>
         <updated>2020-01-31T12:06:10.000Z</updated>
         <content type="html"><![CDATA[<h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
@@ -242,12 +274,14 @@ with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开�
 <p>①：<a href="https://www.v2ex.com/t/476712">Python 正则表达式 re 中出现'str' object has no attribute 'findall'</a></p>
 <p>②：<a href="https://blog.csdn.net/DansonC/article/details/88860936">出现TypeError: 'list' object is not callable异常的情况与解决方法</a></p>
 <p>③：<a href="https://blog.csdn.net/Dr_mark/article/details/82853827">利用python将中文名转换为英文名</a></p>
+<h1 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h1>
+<p>https://zhidao.baidu.com/question/936329819153763892.html</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[【MMD】MikuMikuDance入门]]></title>
-        <id>https://littlebuzi.github.io/post/mmd1</id>
-        <link href="https://littlebuzi.github.io/post/mmd1">
+        <id>https://littlebuzi.github.io/post/mmd1/</id>
+        <link href="https://littlebuzi.github.io/post/mmd1/">
         </link>
         <updated>2020-01-05T04:23:24.000Z</updated>
         <content type="html"><![CDATA[<p>1.下载<br>
@@ -264,8 +298,8 @@ https://tieba.baidu.com/p/5020448822?pn=1</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Win 搭建 Go + Beego + Idea]]></title>
-        <id>https://littlebuzi.github.io/post/go1</id>
-        <link href="https://littlebuzi.github.io/post/go1">
+        <id>https://littlebuzi.github.io/post/go1/</id>
+        <link href="https://littlebuzi.github.io/post/go1/">
         </link>
         <updated>2019-12-14T10:25:55.000Z</updated>
         <content type="html"><![CDATA[<br>
@@ -313,8 +347,8 @@ go bee version（检验）
     </entry>
     <entry>
         <title type="html"><![CDATA[基于 tensorflow 的动漫人物识别]]></title>
-        <id>https://littlebuzi.github.io/post/face_1</id>
-        <link href="https://littlebuzi.github.io/post/face_1">
+        <id>https://littlebuzi.github.io/post/face_1/</id>
+        <link href="https://littlebuzi.github.io/post/face_1/">
         </link>
         <updated>2019-12-10T06:26:30.000Z</updated>
         <content type="html"><![CDATA[<br>
@@ -717,8 +751,8 @@ yum install xxx
     </entry>
     <entry>
         <title type="html"><![CDATA[基于opencv的人脸识别签到系统 ]]></title>
-        <id>https://littlebuzi.github.io/post/face</id>
-        <link href="https://littlebuzi.github.io/post/face">
+        <id>https://littlebuzi.github.io/post/face/</id>
+        <link href="https://littlebuzi.github.io/post/face/">
         </link>
         <updated>2019-12-09T12:26:32.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -814,8 +848,8 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[制作“漫画网站”爬虫 1.0]]></title>
-        <id>https://littlebuzi.github.io/post/manhua</id>
-        <link href="https://littlebuzi.github.io/post/manhua">
+        <id>https://littlebuzi.github.io/post/manhua/</id>
+        <link href="https://littlebuzi.github.io/post/manhua/">
         </link>
         <updated>2019-12-01T10:05:22.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -1021,225 +1055,5 @@ for item in soup.select('.d_menu&gt;ul&gt;li'):
 <p>整站漫画半自动化爬取（停止需手动启动一次）✅</p>
 <p>全自动下载网站漫画 （会被网站截停）❌</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[制作“漫画网站”爬虫 2.0]]></title>
-        <id>https://littlebuzi.github.io/post/manhua2</id>
-        <link href="https://littlebuzi.github.io/post/manhua2">
-        </link>
-        <updated>2019-12-01T05:33:46.000Z</updated>
-        <content type="html"><![CDATA[<br>
-<center>
-<p>2.0优化版</p>
-</center>
-<br>
-<hr>
-<br>
-<h1 id="特点">特点</h1>
-<br>
-<p>ui界面添加✅</p>
-<p>网站截停后 播放音乐提醒 接近半自动重启 ✅</p>
-<p>各个细节爬取优化，优化接近自身无报错 ✅</p>
-<p>cmd输出界面优化✅</p>
-<p>计时器检测添加中（待）</p>
-<p>全自动重启（待）</p>
-<br>
-<hr>
-<br>
-<h1 id="逻辑">逻辑</h1>
-<br>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/manhua/1565871675669.png" alt="" loading="lazy"></figure>
-<br>
-<hr>
-<br>
-<h1 id="代码">代码</h1>
-<br>
-<h2 id="启动代码">启动代码：</h2>
-<pre><code>
-import os
-
-os.system(r&quot;python D:\manhua\这里是网址\manhua4.py&quot;)
-
-os.system(r&quot;F:\CloudMusic\是萝莉控真是太好了.mp3&quot;)
-
-</code></pre>
-<h2 id="爬取代码">爬取代码：</h2>
-<pre><code>
-import requests
-from bs4 import BeautifulSoup
-import re
-import os
-
-from PyQt5.QtWidgets import QApplication, QWidget, QLineEdit, QInputDialog, QGridLayout, QLabel, QPushButton, QFrame, QProgressBar
-
-first=1
-
-class InputDialog(QWidget):
-
-    def __init__(self):
-        super(InputDialog,self).__init__()
-        self.initUi()
-
-    def initUi(self):
-        self.setWindowTitle(&quot;漫画爬取&quot;)
-        self.setGeometry(50,50,1200,600)
-
-        label1=QLabel(&quot;第一本:&quot;)
-        label2=QLabel(&quot;最后一本:&quot;)
-
-        self.nameLable = QLabel(&quot;1&quot;)#1
-        self.first=int(self.nameLable.text())
-        self.nameLable.setText(str(self.first))
-        self.nameLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
-        self.styleLable = QLabel(&quot;1&quot;)#1030
-        self.last=self.styleLable.text()
-        self.styleLable.setText(str(self.last))
-        self.styleLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
-
-        # 设置进度条(弃用)
-
-        nameButton=QPushButton(&quot;更改&quot;)
-        nameButton.clicked.connect(self.selectName)
-        styleButton=QPushButton(&quot;更改&quot;)
-        styleButton.clicked.connect(self.selectStyle)
-        okButton = QPushButton(&quot;OK&quot;)
-        okButton.clicked.connect(self.selectOk)
-
-        mainLayout=QGridLayout()
-        mainLayout.addWidget(label1,0,0)
-        mainLayout.addWidget(self.nameLable,0,1)
-        mainLayout.addWidget(nameButton,0,2)
-        mainLayout.addWidget(label2,1,0)
-        mainLayout.addWidget(self.styleLable,1,1)
-        mainLayout.addWidget(styleButton,1,2)
-        mainLayout.addWidget(okButton,2,1)
-
-        self.setLayout(mainLayout)
-
-    #爬取代码
-		
-    def ManHua(self):
-
-        for num1 in range(first,1030):
-            import urllib.request  # url包
-
-            def openUrl(circle):
-                headers = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
-                    'Host': 'jandan.net'
-                }
-                req = urllib.request.Request(circle, headers=headers)
-                response = urllib.request.urlopen(req)  # 请求
-                html = response.read()  # 获取
-                html = html.decode(&quot;utf-8&quot;)  # 解码
-                print(html)  # 打印
-
-            if __name__ == &quot;__main__&quot;:
-                circle = requests.get('https://这里是网址/book/' + str(num1))
-
-            count = []
-            soup = BeautifulSoup(circle.text, 'lxml')
-
-            for item_book in soup.select('.d_bg_t'):
-                for book_name in item_book.select('a')[0]:
-                    book_name_clean = book_name.string
-                    print('')
-                    print(&quot;正在下载：&quot;,num1, book_name_clean)
-                    aa=0
-                    #print(aa,num1)
-                    if num1&gt;aa:
-                        aa=num1
-                        #print(aa)
-                        for i in range(int(num1*(100/1030))+1):
-                            print('\r'+'总进度：' + '▇' * (i // 2) + str(i) + '%', end='')
-                            print('')
-
-            for item in soup.select('.d_menu&gt;ul&gt;li'):
-                for a in item.find_all('a'):
-                    menu_path = 'https://这里是网址/' + a.get('href')
-                    # count.append(menu_path)
-                    # menu_path_num.append(re.findall(r&quot;\d+\.?\d*&quot;, menu_path))
-                    menu_path_num = re.findall(r&quot;\d+\.?\d*&quot;, menu_path)
-
-                    # 当前一部书爬取循环，从上面得到每一章地址后，遍历这么多“章”次
-
-                    # for num in menu_path_num:
-                    #print('book_url:', menu_path)
-
-
-                    circle = requests.get(menu_path)
-                    count = []
-                    soup = BeautifulSoup(circle.text, 'lxml')
-                    #print(menu_path)
-                    print('.', end='')
-
-                    for title in soup.select('div.fl.r_tab_l'):
-                        for title in title.find_all('span'):
-                            #print('title:', title.text)
-                            title = title.text
-
-                    for item in soup.select('.r_img'):
-                        for img in item.find_all('img'):
-                            #print('img_url:', img)
-                            img_path = img.get('data-original')
-                            count.append(img_path)
-
-                    #自动识别'文件夹+文件'重复后跳过下载如何continue
-                    if(os.path.exists('D:/manhua/manhuatest/' + book_name_clean + '/' + str(title) + '/')):
-                        continue
-                    else:
-                        os.makedirs('D:/manhua/manhuatest/' + book_name_clean + '/' + str(title) + '/')
-
-                        for i, v in enumerate(count):
-                            image = requests.get(v)
-                            if (os.path.exists('D:/manhua/manhuatest/' + book_name_clean + '/' + str(title) + '/' + str(i) + '.jpg')):
-                                continue
-                            else:
-                                with open('D:/manhua/manhuatest/' + book_name_clean + '/' + str(title) + '/' + str(i) + '.jpg', 'wb') as file:
-                                    file.write(image.content)
-                                #print(i)
-                                continue
-                        continue
-
-
-    def selectName(self):
-        name,ok = QInputDialog.getText(self,&quot;第一本&quot;,&quot;第一本序号:&quot;,
-                                       QLineEdit.Normal,self.nameLable.text())
-        if ok and (len(name)!=0):
-            self.nameLable.setText(name)
-    def selectStyle(self):
-        style, ok = QInputDialog.getText(self, &quot;最后一本&quot;, &quot;最后一本序号:&quot;,
-                                        QLineEdit.Normal, self.nameLable.text())
-        if ok and (len(style)!=0):
-            self.styleLable.setText(style)
-    def selectOk(self):
-        self.ManHua()
-
-if __name__==&quot;__main__&quot;:
-    import sys
-    app=QApplication(sys.argv)
-    myshow=InputDialog()
-    myshow.show()
-    sys.exit(app.exec_())
-
-
-</code></pre>
-<br>
-<hr>
-<br>
-<h1 id="过程">过程</h1>
-<br>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/manhua/1565763309680.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/manhua/1565763331643.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/2019/08/09/python/manhua/1565763348226.png" alt="" loading="lazy"></figure>
-<br>
-<hr>
-<br>
-<h1 id="总结">总结</h1>
-<br>
-<p>整站漫画全自动化爬取✅</p>
-<p>不能自动重启❌</p>
-<p>基本百分之95的功能实现，项目可宣布成功完成！✅</p>
-<br>]]></content>
     </entry>
 </feed>
