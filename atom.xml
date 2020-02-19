@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-18T07:32:11.954Z</updated>
+    <updated>2020-02-19T04:47:49.334Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -20,6 +20,12 @@
 <h1 id="php">PHP</h1>
 <p>PHP生成随机数的几种方法<br>
 https://www.cnblogs.com/jjxhp/p/9601147.html</p>
+<p>PHP 升级到5.5后MySQL的代替法<br>
+https://blog.csdn.net/apple_llb/article/details/51406648</p>
+<p>使用PHP实现用户注册登录的功能<br>
+https://github.com/Micanss/PHP-Register-Login</p>
+<p>php调用exe一直加载怎么回事？<br>
+https://ask.csdn.net/questions/231711</p>
 <p>... ...</p>
 <hr>
 <h1 id="javascript">JavaScript</h1>
@@ -33,6 +39,8 @@ https://www.cnblogs.com/jjxhp/p/9601147.html</p>
 <p>https://stackoverflow.com/questions/35261239/ajaxform-is-not-a-function#</p>
 <p>【JavaScript】按钮绑定点击事件-onCliek事件<br>
 https://blog.csdn.net/kye055947/article/details/79619538</p>
+<p>iframe 自适应高度，更改内容时iframe高度怎么根据新的内容高度自动改变<br>
+https://blog.csdn.net/txqd1989/article/details/78551943</p>
 <p>... ...</p>
 <hr>
 <h1 id="css-前端">CSS 前端</h1>
@@ -40,6 +48,10 @@ https://blog.csdn.net/kye055947/article/details/79619538</p>
 https://blog.csdn.net/cuilei210/article/details/78842231</p>
 <p>菜鸟教程：CSS 按钮示范<br>
 https://www.runoob.com/css3/css3-buttons.html</p>
+<hr>
+<h1 id="cmd">cmd</h1>
+<p>运行CMD里面，怎么把得到的结果数据保存为文本文件<br>
+https://zhidao.baidu.com/question/596846191.html</p>
 ]]></content>
     </entry>
     <entry>
