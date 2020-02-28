@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-02-19T04:47:49.334Z</updated>
+    <updated>2020-02-28T13:59:09.093Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, buzi</rights>
     <entry>
         <title type="html"><![CDATA[PHP、JS、CSS基操]]></title>
-        <id>https://littlebuzi.github.io/post/php_jicao_1/</id>
-        <link href="https://littlebuzi.github.io/post/php_jicao_1/">
+        <id>https://littlebuzi.github.io/post/php_jicao_1</id>
+        <link href="https://littlebuzi.github.io/post/php_jicao_1">
         </link>
         <updated>2020-02-18T06:23:45.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -56,8 +56,8 @@ https://zhidao.baidu.com/question/596846191.html</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Tensorflow利用inception_v3模型和retrain实现图像分类训练]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow2/</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow2/">
+        <id>https://littlebuzi.github.io/post/tensorflow2</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow2">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>参考文献：<br>
@@ -177,8 +177,8 @@ https://blog.csdn.net/Night___Raid/article/details/102975023</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[TensorFlow支持的动漫人物识别网站的存储库]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow3/</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow3/">
+        <id>https://littlebuzi.github.io/post/tensorflow3</id>
+        <link href="https://littlebuzi.github.io/post/tensorflow3">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>开始：<br>
@@ -193,8 +193,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[About Download]]></title>
-        <id>https://littlebuzi.github.io/post/download1/</id>
-        <link href="https://littlebuzi.github.io/post/download1/">
+        <id>https://littlebuzi.github.io/post/download1</id>
+        <link href="https://littlebuzi.github.io/post/download1">
         </link>
         <updated>2020-02-13T05:15:48.000Z</updated>
         <content type="html"><![CDATA[<h1 id="下载">下载</h1>
@@ -204,8 +204,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Python基操]]></title>
-        <id>https://littlebuzi.github.io/post/pacong/</id>
-        <link href="https://littlebuzi.github.io/post/pacong/">
+        <id>https://littlebuzi.github.io/post/pacong</id>
+        <link href="https://littlebuzi.github.io/post/pacong">
         </link>
         <updated>2020-01-31T12:06:10.000Z</updated>
         <content type="html"><![CDATA[<h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
@@ -292,8 +292,8 @@ with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开�
     </entry>
     <entry>
         <title type="html"><![CDATA[【MMD】MikuMikuDance入门]]></title>
-        <id>https://littlebuzi.github.io/post/mmd1/</id>
-        <link href="https://littlebuzi.github.io/post/mmd1/">
+        <id>https://littlebuzi.github.io/post/mmd1</id>
+        <link href="https://littlebuzi.github.io/post/mmd1">
         </link>
         <updated>2020-01-05T04:23:24.000Z</updated>
         <content type="html"><![CDATA[<p>1.下载<br>
@@ -310,8 +310,8 @@ https://tieba.baidu.com/p/5020448822?pn=1</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Win 搭建 Go + Beego + Idea]]></title>
-        <id>https://littlebuzi.github.io/post/go1/</id>
-        <link href="https://littlebuzi.github.io/post/go1/">
+        <id>https://littlebuzi.github.io/post/go1</id>
+        <link href="https://littlebuzi.github.io/post/go1">
         </link>
         <updated>2019-12-14T10:25:55.000Z</updated>
         <content type="html"><![CDATA[<br>
@@ -359,8 +359,8 @@ go bee version（检验）
     </entry>
     <entry>
         <title type="html"><![CDATA[基于 tensorflow 的动漫人物识别]]></title>
-        <id>https://littlebuzi.github.io/post/face_1/</id>
-        <link href="https://littlebuzi.github.io/post/face_1/">
+        <id>https://littlebuzi.github.io/post/face_1</id>
+        <link href="https://littlebuzi.github.io/post/face_1">
         </link>
         <updated>2019-12-10T06:26:30.000Z</updated>
         <content type="html"><![CDATA[<br>
@@ -763,8 +763,8 @@ yum install xxx
     </entry>
     <entry>
         <title type="html"><![CDATA[基于opencv的人脸识别签到系统 ]]></title>
-        <id>https://littlebuzi.github.io/post/face/</id>
-        <link href="https://littlebuzi.github.io/post/face/">
+        <id>https://littlebuzi.github.io/post/face</id>
+        <link href="https://littlebuzi.github.io/post/face">
         </link>
         <updated>2019-12-09T12:26:32.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -860,8 +860,8 @@ recognizer = cv2.face.FisherFaceRecognizer_create()</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[制作“漫画网站”爬虫 1.0]]></title>
-        <id>https://littlebuzi.github.io/post/manhua/</id>
-        <link href="https://littlebuzi.github.io/post/manhua/">
+        <id>https://littlebuzi.github.io/post/manhua</id>
+        <link href="https://littlebuzi.github.io/post/manhua">
         </link>
         <updated>2019-12-01T10:05:22.000Z</updated>
         <content type="html"><![CDATA[<hr>
