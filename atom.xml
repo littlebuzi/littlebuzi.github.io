@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-09T15:21:23.276Z</updated>
+    <updated>2020-03-12T13:40:09.127Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -84,6 +84,13 @@ https://www.runoob.com/css3/css3-buttons.html</p>
 <h1 id="cmd">cmd</h1>
 <p>运行CMD里面，怎么把得到的结果数据保存为文本文件<br>
 https://zhidao.baidu.com/question/596846191.html</p>
+<h1 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h1>
+<pre><code class="language-bat">
+@Echo off
+dir /b&gt;test.txt
+
+</code></pre>
+<p>https://zhidao.baidu.com/question/936329819153763892.html</p>
 ]]></content>
     </entry>
     <entry>
@@ -318,8 +325,28 @@ with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开�
 <p>①：<a href="https://www.v2ex.com/t/476712">Python 正则表达式 re 中出现'str' object has no attribute 'findall'</a></p>
 <p>②：<a href="https://blog.csdn.net/DansonC/article/details/88860936">出现TypeError: 'list' object is not callable异常的情况与解决方法</a></p>
 <p>③：<a href="https://blog.csdn.net/Dr_mark/article/details/82853827">利用python将中文名转换为英文名</a></p>
-<h1 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h1>
-<p>https://zhidao.baidu.com/question/936329819153763892.html</p>
+<h1 id="python递归遍历目录和子目录下的所有文件并将文件目录存入列表">python递归遍历目录和子目录下的所有文件，并将文件目录存入列表</h1>
+<pre><code class="language-python">
+import os
+
+def get_file(root_path,all_files=[]):
+    '''
+    递归函数，遍历该文档目录和子目录下的所有文件，获取其path
+    '''
+    files = os.listdir(root_path)
+    for file in files:
+        if not os.path.isdir(root_path + '/' + file):   # not a dir
+            all_files.append(root_path + '/' + file)
+        else:  # is a dir
+            get_file((root_path+'/'+file),all_files)
+    return all_files
+
+# example
+path = './raw_data'
+print(get_file(path))
+
+</code></pre>
+<p>https://blog.csdn.net/weixin_39858881/article/details/86543689</p>
 ]]></content>
     </entry>
     <entry>
@@ -750,6 +777,8 @@ wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2v
 </code></pre>
 <p>可以用记事本修改，前面是IP地址，后面是域名。127.0.0.1这个是本地环回地址。<br>
 比如127.0.0.1 www.baidu.com就是把www.baidu.com这个域名指向127.0.0.1的地址。</p>
+<p>##法三：<br>
+Github镜像网站：http://github-mirror.bugkiller.org/</p>
 <h2 id="xftp传上去云端">xftp传上去云端</h2>
 <p>当然这也需要很久 不多折合下来很大可能快50-100倍。如果像我一样有一台window云服务，那就让它来做这件事。下载，上传，都在云上进行。</p>
 <h2 id="详细请看">详细请看</h2>
