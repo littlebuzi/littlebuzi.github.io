@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-12T15:18:42.843Z</updated>
+    <updated>2020-03-12T15:20:19.733Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -84,13 +84,12 @@ https://blog.csdn.net/cuilei210/article/details/78842231</p>
 https://www.runoob.com/css3/css3-buttons.html</p>
 <hr>
 <h1 id="cmd">cmd</h1>
-<p>运行CMD里面，怎么把得到的结果数据保存为文本文件<br>
+<p>##运行CMD里面，怎么把得到的结果数据保存为文本文件<br>
 https://zhidao.baidu.com/question/596846191.html</p>
-<h1 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h1>
-<pre><code class="language-bat">
-@Echo off
+<h2 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h2>
+<p>创建test.bat，双击运行内容如下：</p>
+<pre><code class="language-bat">@Echo off
 dir /b&gt;test.txt
-
 </code></pre>
 <p>https://zhidao.baidu.com/question/936329819153763892.html</p>
 ]]></content>
