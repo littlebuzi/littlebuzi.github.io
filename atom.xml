@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-12T15:04:15.506Z</updated>
+    <updated>2020-03-12T15:15:18.285Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -58,6 +58,8 @@ https://blog.csdn.net/apple_llb/article/details/51406648</p>
 https://github.com/Micanss/PHP-Register-Login</p>
 <p>php调用exe一直加载怎么回事？<br>
 https://ask.csdn.net/questions/231711</p>
+<p>还有可能是在exec()后面给予了任务，导致一直加载。<br>
+cmd命令语句还在后台运行中，没有黑框弹出来，需等待更长时间。</p>
 <p>... ...</p>
 <hr>
 <h1 id="javascript">JavaScript</h1>
