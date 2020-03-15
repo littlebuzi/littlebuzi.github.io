@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-12T15:30:22.629Z</updated>
+    <updated>2020-03-15T10:00:21.498Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -10,6 +10,54 @@
     <logo>https://littlebuzi.github.io/images/avatar.png</logo>
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[目前流行的9大前端框架]]></title>
+        <id>https://littlebuzi.github.io/post/前端_1</id>
+        <link href="https://littlebuzi.github.io/post/前端_1">
+        </link>
+        <updated>2020-03-15T09:52:01.000Z</updated>
+        <content type="html"><![CDATA[<p>1.Vue</p>
+<p>https://cn.vuejs.org</p>
+<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p>2.React<br>
+https://react.docschina.org/</p>
+<p>React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
+<p>3.Angular<br>
+https://angular.io</p>
+<p>AngularJS诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVVM、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。</p>
+<p>4.QucikUI<br>
+http://www.uileader.com/product_quickui</p>
+<p>QucikUI 4.0是一套完整的企业级web前端开发解决方案，由基础框架、UI组件库、皮肤包、示例工程和文档等组成。底层基于jquery构建。使用QucikUI 开发者可以极大地减少工作量，提高开发效率，快速构建功能强大、美观、兼容的web应用系统。</p>
+<p>5.Layui<br>
+https://www.layui.com/</p>
+<p>layui（谐音：类UI) 是一款采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写与组织形式，门槛极低，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到 API 的每一处细节都经过精心雕琢，非常适合界面的快速开发。layui 首个版本发布于2016年金秋，她区别于那些基于 MVVM 底层的 UI 框架，却并非逆道而行，而是信奉返璞归真之道。准确地说，她更多是为服务端程序员量身定做，你无需涉足各种前端工具的复杂配置，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。</p>
+<p>6.Avalon<br>
+http://avalonjs.coding.me/</p>
+<p>avalon2是一款基于虚拟DOM与属性劫持的 迷你、 易用、 高性能 的 前端MVVM框架， 拥有超优秀的兼容性, 支持移动开发, 后端渲染, WEB Component式组件开发, 无需编译, 开箱即用。</p>
+<p>7.Dojo<br>
+https://dojo.io/</p>
+<p>Dojo致力于实现最大的互操作性。Web组件提供了一种机制，可以在Dojo应用程序中利用非Dojo组件，并在非Dojo应用程序中轻松使用基于Dojo的小部件。Dojo为Web组件提供一流的支持。您今天做出的决定不应该将您锁定在未来的决策中。</p>
+<p>8.Ember<br>
+https://emberjs.com/</p>
+<p>Ember.js可能是最固执己见的主流框架，这也是其最大的优势。它有创建Ember.js应用程序的正确方法，通常只有一种方法来创建应用程序。Ember.js更类似于一个产品或平台，在那里你会到一个供应商的长期支持和维护。Ember.js提供了对其平台的全面版本管理，升级工具以及对API升级的强大指导和工具。成熟，是对Ember.js的一个很好的总结。</p>
+<p>9.Aurelia<br>
+https://aurelia.io/</p>
+<p>Aurelia是一个令人惊叹的框架，它在不牺牲功能的情况下采用简单而干净的代码。在本教程中，我们将通过构建“Todo”应用程序向您介绍Aurelia的简单性。您将看到应用程序代码的简洁程度，您将学习Aurelia的几个基本概念和功能。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pytorch预训练的Resnet模型 Danbooru2018]]></title>
+        <id>https://littlebuzi.github.io/post/face_4</id>
+        <link href="https://littlebuzi.github.io/post/face_4">
+        </link>
+        <updated>2020-03-12T15:39:33.000Z</updated>
+        <content type="html"><![CDATA[<p>原作者：https://github.com/RF5/danbooru-pretrained</p>
+<h1 id="准备环境">准备环境</h1>
+<p>Pytorch (&gt;1.0)</p>
+<h1 id="提取图片的以下特征">提取图片的以下特征：</h1>
+<figure data-type="image" tabindex="1"><img src="" alt="https://gitee.com/littlebuzi/danbooru-pretrained/raw/master/img/danbooru_resnet2.png" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[二次元识图工具网站]]></title>
         <id>https://littlebuzi.github.io/post/amine_reg_1</id>
@@ -207,6 +255,7 @@ https://blog.csdn.net/Fhujinwu/article/details/85851587</p>
 如 提示：</p>
 <pre><code>CRITICAL:tensorflow:Label 51 has no images in the category validation.
 Tensorflow - No valid folders of images found at XXXXX #10104
+ERROR:tensorflow:No valid folders of images found at
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1584022703568.PNG" alt="" loading="lazy"></figure>
 <p>https://github.com/tensorflow/tensorflow/issues/10104<br>
@@ -232,11 +281,11 @@ https://blog.csdn.net/Night___Raid/article/details/102975023</p>
         <content type="html"><![CDATA[<p>开始：<br>
 在知乎上偶然阅读到这位作者的文章：https://zhuanlan.zhihu.com/p/70511070</p>
 <p>参考：<br>
+https://gitee.com/littlebuzi/danbooru-pretrained<br>
 https://github.com/freedomofkeima/MoeFlow<br>
 https://github.com/freedomofkeima/transfer-learning-anime<br>
 https://github.com/nagadomi/animeface-2009<br>
 https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
-<p>我也试着弄，放弃了</p>
 ]]></content>
     </entry>
     <entry>
@@ -383,461 +432,6 @@ http://tieba.baidu.com/p/5868731425<br>
 http://blog.sina.com.cn/s/blog_15fe57f4d0102x66y.html<br>
 https://zhidao.baidu.com/question/488239911574372932.html<br>
 https://tieba.baidu.com/p/5020448822?pn=1</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Win 搭建 Go + Beego + Idea]]></title>
-        <id>https://littlebuzi.github.io/post/go1</id>
-        <link href="https://littlebuzi.github.io/post/go1">
-        </link>
-        <updated>2019-12-14T10:25:55.000Z</updated>
-        <content type="html"><![CDATA[<br>
-<p>1.安装 Go<br>
-选择window版本：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p>
-<br>
-<p>2.安装 idea<br>
-下载：<a href="https://www.cnblogs.com/horvey/p/10173706.html">IntelliJ IDEA 2018.3 安装+永久激活:</a>（版本需小于2019,有可能plugins商店使用异常）</p>
-<br>
-<ol start="3">
-<li>idea 中配置安装 go<br>
-<a href="https://blog.csdn.net/cui_yonghua/article/details/90900336">https://blog.csdn.net/cui_yonghua/article/details/90900336</a></li>
-</ol>
-<br>
-<ol start="4">
-<li>idea 中安装 bee<br>
-IDEA打开命令行快捷键：Alt + F12</li>
-</ol>
-<br>
-<p>5.安装 beego</p>
-<pre><code class="language-go">
-输入：
-
-//检验
-go version 
-
-//下载beego框架
-go get -u github.com/astaxie/beego
-go get -u github.com/beego/bee
-
-//等待片刻
-
-下载完后：
-
-go bee version（检验）
-
-//成功
-
-</code></pre>
-<br>
-<p>6.第一个 go 项目</p>
-<p><a href="https://blog.csdn.net/cui_yonghua/article/details/96964653">在windows环境下搭建beego环境 以及第一个项目</a></p>
-<br>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[基于 tensorflow 的动漫人物识别]]></title>
-        <id>https://littlebuzi.github.io/post/face_1</id>
-        <link href="https://littlebuzi.github.io/post/face_1">
-        </link>
-        <updated>2019-12-10T06:26:30.000Z</updated>
-        <content type="html"><![CDATA[<br>
-<blockquote>
-<ul>
-<li>总目标：实现动漫人脸识别、建立动漫人脸数据库</li>
-<li>本文定位在有一定python、linux基础和我这样的学生阅读</li>
-<li>遇到问题❓/错误❌，请查看文末或文章间隙</li>
-</ul>
-</blockquote>
-<h1 id="1-标注图片中动漫人物的脸部">1、标注图片中动漫人物的脸部</h1>
-<p>环境：<br>
-服务器：腾讯云（新用户优惠，阿里云之前使用了）<br>
-操作系统：CetenOS 6.5 (环境配置复杂度: Window &gt; Centos &gt; Ubuntu 因个人原因使用centos较多)<br>
-python版本：3.5（自带2.6.6）<br>
-window端（客户端）工具：Xshell、Xftp</p>
-<h2 id="11-依赖下载">1.1、依赖下载：</h2>
-<p>① 动漫人脸分类器下载：</p>
-<p>https://github.com/nagadomi/lbpcascade_animeface/</p>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573551561230.png" alt="" loading="lazy"></figure>
-<p>② i2v库的安装：</p>
-<p>Github：https://github.com/rezoo/illustration2vec/</p>
-<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573048673712.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573051147771.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://littlebuzi.github.io//post-images/1573051210275.png" alt="" loading="lazy"></figure>
-<h2 id="12-test环境">1.2、Test环境：</h2>
-<p>准备下linux服务器主机(centos)属性、环境：</p>
-<ul>
-<li>
-<p><a href="https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html">查看linux系统CPU和内存命令</a></p>
-</li>
-<li>
-<p>python -V</p>
-</li>
-<li>
-<p>安装anaconda（推荐安装中等较新版本，尽量避免未知错误）/ 安装pip（可能后续会出问题）<br>
-<a href="https://blog.csdn.net/jh0218/article/details/85097061">CentOS 7安装Anaconda3</a></p>
-</li>
-<li>
-<p>import cv2</p>
-</li>
-</ul>
-<blockquote>
-<p>可能会遇到anaconda崩了，涉及python多重版本conda软链接指向出了问题等：</p>
-<ul>
-<li><a href="https://blog.csdn.net/hubinbinheda/article/details/81175263">修改软链接</a></li>
-<li><a href="https://codeday.me/bug/20190219/660678.html">修改.bashrc</a></li>
-<li><a href="https://blog.csdn.net/qian2213762498/article/details/87385193">重新安装anaconda</a></li>
-<li>或者使用了<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源</a>或其他源的旧版本，或<a href="https://www.anaconda.com/distribution/">官方版</a>的最新，尝试anaconda版本回退一点点</li>
-</ul>
-</blockquote>
-<h2 id="13-参数查询-环境调试结束开始测试功能">1.3、参数查询、环境调试结束，开始测试功能：</h2>
-<p>文件目录：<br>
-<img src="https://littlebuzi.github.io//post-images/1573551285992.png" alt="" loading="lazy"></p>
-<p>动漫人脸检测并截取：<br>
-(尝试进行从一张图片中识别并截取人脸进行保存的操作)</p>
-<pre><code class="language-python">
-#coding=utf-8
-import cv2
-import sys
-import os.path
-
-cascade = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')  # 引入xml
-image = cv2.imread('/root/comic/test.jpg', cv2.IMREAD_COLOR)  # 读入一幅彩色图片
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 色彩空间转换
-gray = cv2.equalizeHist(gray)  # 图像直方图均衡化
-
-faces = cascade.detectMultiScale(gray,
-                                 # detector options
-                                 scaleFactor=1.1,
-                                 minNeighbors=5,
-                                 minSize=(24, 24))
-
-i = 0
-for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
-
-    face = image[y: y + h, x:x + w, :]
-    face = cv2.resize(face, (96, 96))
-    save_filename = '%s_%d.png' % (os.path.basename('/root/comic/faces/').split('.')[0], i)
-    cv2.imwrite(&quot;/root/comic/faces/&quot; + save_filename, face)
-    i = i + 1
-
-#cv2.imshow(&quot;AnimeFaceDetect&quot;, image)
-cv2.waitKey(0)
-cv2.imwrite(&quot;/root/comic/out.png&quot;, image)
-
-</code></pre>
-<hr>
-<h1 id="2-截取并保存视频一帧帧截取到的动漫人脸目标">2、截取并保存视频一帧帧截取到的动漫人脸(目标)：</h1>
-<h2 id="21-文件目录">2.1、文件目录：</h2>
-<figure data-type="image" tabindex="5"><img src="https://littlebuzi.github.io//post-images/1573556199362.png" alt="" loading="lazy"></figure>
-<h2 id="22-导入视频一帧帧截取动漫人脸">2.2、导入视频一帧帧截取动漫人脸：</h2>
-<pre><code class="language-python">
-#coding=utf-8
-import cv2
-import os
-
-face_id = 1
-count = 0
-cap = cv2.VideoCapture('/root/comic/1.mp4')
-face_detector = cv2.CascadeClassifier('/root/comic/lbpcascade_animeface.xml')
-
-while True:
-
-    # 从摄像头读取图片
-    sucess, img = cap.read()
-    # 转为灰度图片
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # 检测人脸
-    faces = face_detector.detectMultiScale(gray, 1.3, 5)
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+w), (255, 0, 0))
-        count += 1
-        font = cv2.FONT_HERSHEY_TRIPLEX
-        cv2.putText(img, 'num:%d' % (count), (x + 30, y + 30), font, 1, (255, 0, 255), 4)
-        # 保存图像
-        cv2.imwrite(&quot;/root/comic/characters/User.&quot; + str(face_id) + '.' + str(count) + '.jpg', gray[y: y + h, x: x + w])
-        #cv2.imshow('image', img)
-    # 保持画面的持续。
-    k = cv2.waitKey(1)
-
-    if k == 27:   # 通过esc键退出摄像
-        break
-
-# 关闭摄像头
-cap.release()
-cv2.destroyAllWindows()
-
-</code></pre>
-<hr>
-<h2 id="22-分类图片">2.2、分类图片：</h2>
-<p>将不同人物分类到属于他命名的文件夹下：</p>
-<pre><code class="language-python">
-#开发中
-
-</code></pre>
-<hr>
-<h1 id="3-训练图片">3、训练图片：</h1>
-<p>开始制定、训练出模型(代码太长影响观感,完整代码<a href="https://github.com/littlebuzi/">github</a>)：</p>
-<pre><code class="language-python">
-#coding=utf-8
-from skimage import io, transform
-import glob
-import os
-import tensorflow as tf
-import numpy as np
-import time
-import matplotlib.pyplot as plt
-
-# 训练验证数据集目录
-path = '/root/comic_reg/data/train-validation-set/'#最后少了个斜杠 读入失败
-# 模型保存地址，最后接的是模型名字
-model_path = '/root/comic_reg/model/model.ckpt'
-
-# 将所有的图片resize成100*100
-
-# 读取图片
-
-# 打乱顺序
-
-# 将所有数据分为训练集和验证集
-ratio = 0.7
-s = np.int(num_example*ratio)
-x_train = data[:s]
-y_train = label[:s]
-x_val = data[s:]
-y_val = label[s:]
-
-# -----------------构建网络----------------------
-# 占位符
-x = tf.placeholder(tf.float32, shape=[None, w, h, c], name='x')
-y_ = tf.placeholder(tf.int32, shape=[None, ], name='y_')
-
-# 第一个卷积层（100——&gt;50)
-
-# 第二个卷积层(50-&gt;25)
-
-# 第三个卷积层(25-&gt;12)
-
-# 第四个卷积层(12-&gt;6)
-
-# 全连接层
-
-# ---------------------------网络结束---------------------------
-
-# (小处理)将logits乘以1赋值给logits_eval，定义name，方便在后续调用模型时通过tensor名字调用输出tensor
-
-# 定义一个函数，按批次取数据
-
-# 训练和测试数据，可将n_epoch设置更大一些
-n_epoch = 50
-batch_size = 32
-saver = tf.train.Saver()
-sess = tf.Session()
-sess.run(tf.global_variables_initializer())
-
-# 自定义保存数据列表
-trainlosslist = []
-trainacclist = []
-validationlosslist = []
-validationacclist = []
-
-
-for epoch in range(n_epoch):
-    start_time = time.time()
-    
-    # training
-    train_loss, train_acc, n_batch = 0, 0, 0
-    for x_train_a, y_train_a in minibatches(x_train, y_train, batch_size, shuffle=True):
-        _, err, ac = sess.run([train_op,loss,acc], feed_dict={x: x_train_a, y_: y_train_a})
-        train_loss += err; train_acc += ac; n_batch += 1
-    print(&quot;   train loss: %f&quot; % (train_loss / n_batch))
-    print(&quot;   train acc: %f&quot; % (train_acc / n_batch))
-    # 添加到列表
-    trainlosslist.append(train_loss / n_batch)
-    trainacclist.append(train_acc / n_batch)
-
-    # validation
-    val_loss, val_acc, n_batch = 0, 0, 0
-    for x_val_a, y_val_a in minibatches(x_val, y_val, batch_size, shuffle=False):
-        err, ac = sess.run([loss, acc], feed_dict={x: x_val_a, y_: y_val_a})
-        val_loss += err; val_acc += ac; n_batch += 1
-    print(&quot;   validation loss: %f&quot; % (val_loss / n_batch))
-    print(&quot;   validation acc: %f&quot; % (val_acc / n_batch))
-    # 添加到列表
-    validationlosslist.append(val_loss / n_batch)
-    validationacclist.append(val_acc / n_batch)
-
-saver.save(sess,model_path)
-sess.close()
-
-# 绘图
-x = np.arange(1, n_epoch, 1)
-
-plt.plot(x, np.array(trainacclist)[x-1], label=&quot;train-acc&quot;)
-plt.plot(x, np.array(validationacclist)[x-1], label=&quot;validation-acc&quot;)
-plt.plot(x, np.array(trainlosslist)[x-1], label=&quot;train-loss&quot;)
-plt.plot(x, np.array(validationlosslist)[x-1], label=&quot;validation-loss&quot;)
-
-# 设置坐标轴名称
-plt.xlabel('epoch')
-
-# 画两条基准线
-plt.plot(x, x/x, label=&quot;one&quot;)
-plt.plot(x, x-x, label=&quot;zero&quot;)
-
-# 参数：loc设置显示的位置，0是自适应；ncol设置显示的列数
-plt.legend(loc=0, ncol=1)   
-#plt.show()
-plt.savefig(&quot;/root/comic_reg/out.png&quot;)
-
-</code></pre>
-<hr>
-<h1 id="4-识别图片">4、识别图片：</h1>
-<pre><code class="language-python">
-from skimage import io,transform
-import tensorflow as tf
-import numpy as np
-import glob
-
-path = '/root/comic_reg/data/test-set/*.png'
-
-image_dict = {0: '一花',1:'二乃',2:'三玖',3:'四叶',4:'五月'}
-count_true=[]
-
-w=100
-h=100
-c=3
-
-def read_one_image(path):
-    img = io.imread(path)
-    img = transform.resize(img,(w,h))
-    return np.asarray(img)
-
-with tf.Session() as sess:
-    data = []
-  
-    # 目录列表
-    paths = glob.glob(path)
-    #print(paths)
-    for img in paths:
-        data.append(read_one_image(img))
-
-    saver = tf.train.import_meta_graph('/root/comic_reg/model/model.ckpt.meta')
-    saver.restore(sess,tf.train.latest_checkpoint('/root/comic_reg/model/'))
-
-    graph = tf.get_default_graph()
-    x = graph.get_tensor_by_name(&quot;x:0&quot;)
-    feed_dict = {x:data}
-
-    logits = graph.get_tensor_by_name(&quot;logits_eval:0&quot;)
-
-    classification_result = sess.run(logits,feed_dict)
-    
-
-    #打印出预测矩阵
-    print(&quot;\n预测矩阵:\n&quot;, classification_result)
-    #打印出预测矩阵每一行最大值的索引
-    print(&quot;\n简略结果:\n&quot;, tf.argmax(classification_result,1).eval(), '\n')
-    print(&quot;具体情况: &quot;)
-    #根据索引通过字典对应人物的分类
-    output = []
-    output = tf.argmax(classification_result,1).eval()
-    count = 0
-    for i in range(len(output)):
-        # output[i]是测试结果编码，paths[i])[-7]是原定图片编号（路飞1）
-        flag = False
-        if str(output[i]+1) == paths[i][-7]:
-            flag = True
-            if flag == True:
-                count_true.append(paths[i][-7:])
-            count += 1
-        print(&quot;第 &quot; + str(i+1) +  &quot; 张 (&quot; +   paths[i][-7:] + &quot;) 人物预测: &quot; + image_dict[output[i]]  + &quot; &quot; + str(flag))
-    print(&quot;\n准确率: {:.2f}%&quot;.format(count / len(output) * 100 ))
-
-print(count_true)
-
-</code></pre>
-<hr>
-<p>结果：<br>
-<img src="https://littlebuzi.github.io//post-images/1575866273011.png" alt="" loading="lazy"><br>
-因为只有第一个人物图片准备充足所以其他人物识别率会偏低</p>
-<hr>
-<p>之前使用：</p>
-<p>服务器：腾讯云<br>
-操作系统：Ubuntu Server 18.04.1 LTS 64位<br>
-类型：公共镜像（池）<br>
-内存：2 GB<br>
-CPU：1 核<br>
-硬盘：50 G<br>
-公网带宽：1 Mbps</p>
-<hr>
-<h2 id="步骤11中可能遇到的问题">步骤1.1中可能遇到的问题：</h2>
-<p>1.下载速度太慢：</p>
-<h2 id="法一">法一：</h2>
-<p>liunx 下载 Github_Releases 下载提速：</p>
-<p>Linux系统下hosts文件的位置是 /etc/hosts ，以root用户登录Linux，使用vi编辑/etc/hosts文件，将附加的内容添加在其后面即可：</p>
-<p>修改hosts(liunx):<br>
-52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com</p>
-<figure data-type="image" tabindex="6"><img src="https://littlebuzi.github.io//post-images/1573051669990.png" alt="" loading="lazy"></figure>
-<pre><code class="language-linux">
-wget https://github.com/rezoo/illustration2vec/releases/download/v2.0.0/illust2vec_tag_ver200.caffemodel
-
-以此类推...
-
-</code></pre>
-<h2 id="法二">法二：</h2>
-<p>修改hosts(window):</p>
-<p>当我们需要本地调试网站或者屏蔽某个网站的时候可以手动将这个网站添加到系统hosts文件中，因为hosts文件的优先级高于DNS，所以可以达到你想要在浏览器里呈现的结果，当然这只在本地有用！<br>
-一、Windows中hosts文件一般在C:\Windows\System32\drivers\etc目录下，格式是</p>
-<pre><code>127.0.0.1 localhost
-::1 localhost
-52.216.186.155 github-production-release-asset-2e65be.s3.amazonaws.com
-</code></pre>
-<p>可以用记事本修改，前面是IP地址，后面是域名。127.0.0.1这个是本地环回地址。<br>
-比如127.0.0.1 www.baidu.com就是把www.baidu.com这个域名指向127.0.0.1的地址。</p>
-<p>##法三：<br>
-Github镜像网站：http://github-mirror.bugkiller.org/</p>
-<h2 id="xftp传上去云端">xftp传上去云端</h2>
-<p>当然这也需要很久 不多折合下来很大可能快50-100倍。如果像我一样有一台window云服务，那就让它来做这件事。下载，上传，都在云上进行。</p>
-<h2 id="详细请看">详细请看</h2>
-<p><a href="https://www.cmsky.com/linux-hosts/">https://www.cmsky.com/linux-hosts/</a></p>
-<hr>
-<h2 id="步骤22中可能遇到的问题">步骤2.2中可能遇到的问题：</h2>
-<pre><code>
-【Linux】 解决报错： 
-ImportError: libSM.so.6: cannot open shared object file: No such file or directory
-
-原因：
-libSM、libSM等不存在
-
-解决办法：
-yum install xxx
-
-详：https://www.cnblogs.com/richerdyoung/p/8458910.html
-
-</code></pre>
-<hr>
-<h2 id="步骤23中可能遇到的问题">步骤2.3中可能遇到的问题：</h2>
-<p>查看linux系统CPU和内存命令</p>
-<p>https://jingyan.baidu.com/article/fdbd4277b16d1cb89e3f48e4.html</p>
-<p>Python MemoryError</p>
-<p>https://blog.csdn.net/xiaopihaierletian/article/details/57416110</p>
-<p>在用Python处理大数据时，本来16G的内存，内存还没使用四分之一就开始报MemoryError的错误，后来才知道32bit的Python使用内存超过2G之后，就报这个错误，还没有其他的提示消息。果断换64bit的Python。</p>
-<p>https://blog.csdn.net/weixin_33928137/article/details/93646975</p>
-<p>https://blog.csdn.net/xovee/article/details/101077022</p>
-<p>linux 使用文件增加虚拟内存 swap</p>
-<p>https://msd.misuland.com/pd/3070888491219949990</p>
-<p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
-<hr>
-<br>
-<p>问：博主你的代码有问题，你的项目文件夹怎么建的？<br>
-答：项目还在开发中，这是俺滴毕设所以还未完善，只有个大概，望体谅<sub>谢谢大家</sub></p>
-<p>工具：xftp、xshell：<a href="https://www.netsarang.com/zh/free-for-home-school/">https://www.netsarang.com/zh/free-for-home-school/</a></p>
-<h1 id="参考文献">参考文献：</h1>
-<p><a href="https://blog.csdn.net/abcd740181246/article/details/89878613">https://blog.csdn.net/abcd740181246/article/details/89878613</a></p>
-<p><a href="https://blog.csdn.net/zyxhangiian123456789/article/details/87911999">https://blog.csdn.net/zyxhangiian123456789/article/details/87911999</a></p>
-<p><a href="https://blog.csdn.net/qq_29007291/article/details/81103603">https://blog.csdn.net/qq_29007291/article/details/81103603</a></p>
-<p><a href="https://blog.csdn.net/mozf881/article/details/84929443">https://blog.csdn.net/mozf881/article/details/84929443</a></p>
 ]]></content>
     </entry>
 </feed>
