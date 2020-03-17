@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-17T09:24:04.185Z</updated>
+    <updated>2020-03-17T09:27:13.671Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -19,8 +19,9 @@
         <content type="html"><![CDATA[<h1 id="vue">Vue</h1>
 <p>https://cn.vuejs.org</p>
 <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<h2 id="vuejsphp-mysql数据转json传值到前端">[Vuejs+php] MySQL数据转JSON传值到前端</h2>
-<p>https://www.cnblogs.com/cc1997/p/10522678.html</p>
+<h2 id="php">php</h2>
+<p>https://www.cnblogs.com/cc1997/p/10522678.html<br>
+[Vuejs+php] MySQL数据转JSON传值到前端</p>
 <h1 id="react">React</h1>
 <p>https://react.docschina.org/</p>
 <p>React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
@@ -33,14 +34,16 @@
 <h1 id="layui">Layui</h1>
 <p>https://www.layui.com/</p>
 <p>layui（谐音：类UI) 是一款采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写与组织形式，门槛极低，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到 API 的每一处细节都经过精心雕琢，非常适合界面的快速开发。layui 首个版本发布于2016年金秋，她区别于那些基于 MVVM 底层的 UI 框架，却并非逆道而行，而是信奉返璞归真之道。准确地说，她更多是为服务端程序员量身定做，你无需涉足各种前端工具的复杂配置，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。</p>
-<h2 id="开始使用-组件-详细说明">开始使用、组件、详细说明：</h2>
-<p>https://www.layui.com/doc/<br>
-https://www.layui.com/demo/<br>
-https://www.layui.com/doc/element/layout.html</p>
-<h2 id="为-layui-的广大用户提供免费的cdn静态库非常稳定-快速-免费的-layui开源组件项目-国内cdn加速服务">为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务：</h2>
-<p>https://www.layuicdn.com/</p>
-<h2 id="php后台怎么写才能使返回的数据渲染layui表格呢">PHP后台怎么写才能使返回的数据渲染layui表格呢</h2>
-<p>https://fly.layui.com/jie/32688/</p>
+<h2 id="入门">入门：</h2>
+<p>开始使用：https://www.layui.com/doc/<br>
+组件：https://www.layui.com/demo/<br>
+详细说明：https://www.layui.com/doc/element/layout.html</p>
+<h2 id="cdn">CDN</h2>
+<p>https://www.layuicdn.com/<br>
+为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务：</p>
+<h2 id="php-2">PHP</h2>
+<p>https://fly.layui.com/jie/32688/<br>
+PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
 <h1 id="avalon">Avalon</h1>
 <p>http://avalonjs.coding.me/</p>
 <p>avalon2是一款基于虚拟DOM与属性劫持的 迷你、 易用、 高性能 的 前端MVVM框架， 拥有超优秀的兼容性, 支持移动开发, 后端渲染, WEB Component式组件开发, 无需编译, 开箱即用。</p>
