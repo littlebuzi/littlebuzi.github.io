@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="德丽莎世界第一可爱" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1584266393636">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1584437037363">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -24,7 +24,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1584266393636" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1584437037363" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -34,7 +34,28 @@
             文章目录
           </p>
           <div class="toc-container hidden lg:block">
-            
+            <ul class="markdownIt-TOC">
+<li><a href="#vue">Vue</a>
+<ul>
+<li><a href="#vuejsphp-mysql%E6%95%B0%E6%8D%AE%E8%BD%ACjson%E4%BC%A0%E5%80%BC%E5%88%B0%E5%89%8D%E7%AB%AF">[Vuejs+php] MySQL数据转JSON传值到前端</a></li>
+</ul>
+</li>
+<li><a href="#react">React</a></li>
+<li><a href="#angular">Angular</a></li>
+<li><a href="#qucikui">QucikUI</a></li>
+<li><a href="#layui">Layui</a>
+<ul>
+<li><a href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8-%E7%BB%84%E4%BB%B6-%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E">开始使用、组件、详细说明：</a></li>
+<li><a href="#%E4%B8%BA-layui-%E7%9A%84%E5%B9%BF%E5%A4%A7%E7%94%A8%E6%88%B7%E6%8F%90%E4%BE%9B%E5%85%8D%E8%B4%B9%E7%9A%84cdn%E9%9D%99%E6%80%81%E5%BA%93%E9%9D%9E%E5%B8%B8%E7%A8%B3%E5%AE%9A-%E5%BF%AB%E9%80%9F-%E5%85%8D%E8%B4%B9%E7%9A%84-layui%E5%BC%80%E6%BA%90%E7%BB%84%E4%BB%B6%E9%A1%B9%E7%9B%AE-%E5%9B%BD%E5%86%85cdn%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1">为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务：</a></li>
+<li><a href="#php%E5%90%8E%E5%8F%B0%E6%80%8E%E4%B9%88%E5%86%99%E6%89%8D%E8%83%BD%E4%BD%BF%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93layui%E8%A1%A8%E6%A0%BC%E5%91%A2">PHP后台怎么写才能使返回的数据渲染layui表格呢</a></li>
+</ul>
+</li>
+<li><a href="#avalon">Avalon</a></li>
+<li><a href="#dojo">Dojo</a></li>
+<li><a href="#ember">Ember</a></li>
+<li><a href="#aurelia">Aurelia</a></li>
+</ul>
+
           </div>
         </div>
       
@@ -81,38 +102,48 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">目前流行的9大前端框架</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-03-15 / 4 min read
+          2020-03-15 / 5 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/前端_1.jpg" alt="">
         
         <div class="post-content yue">
-          <p>1.Vue</p>
+          <h1 id="vue">Vue</h1>
 <p>https://cn.vuejs.org</p>
 <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p>2.React<br>
-https://react.docschina.org/</p>
+<h2 id="vuejsphp-mysql数据转json传值到前端">[Vuejs+php] MySQL数据转JSON传值到前端</h2>
+<p>https://www.cnblogs.com/cc1997/p/10522678.html</p>
+<h1 id="react">React</h1>
+<p>https://react.docschina.org/</p>
 <p>React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
-<p>3.Angular<br>
-https://angular.io</p>
+<h1 id="angular">Angular</h1>
+<p>https://angular.io</p>
 <p>AngularJS诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVVM、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。</p>
-<p>4.QucikUI<br>
-http://www.uileader.com/product_quickui</p>
+<h1 id="qucikui">QucikUI</h1>
+<p>http://www.uileader.com/product_quickui</p>
 <p>QucikUI 4.0是一套完整的企业级web前端开发解决方案，由基础框架、UI组件库、皮肤包、示例工程和文档等组成。底层基于jquery构建。使用QucikUI 开发者可以极大地减少工作量，提高开发效率，快速构建功能强大、美观、兼容的web应用系统。</p>
-<p>5.Layui<br>
-https://www.layui.com/</p>
+<h1 id="layui">Layui</h1>
+<p>https://www.layui.com/</p>
 <p>layui（谐音：类UI) 是一款采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写与组织形式，门槛极低，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到 API 的每一处细节都经过精心雕琢，非常适合界面的快速开发。layui 首个版本发布于2016年金秋，她区别于那些基于 MVVM 底层的 UI 框架，却并非逆道而行，而是信奉返璞归真之道。准确地说，她更多是为服务端程序员量身定做，你无需涉足各种前端工具的复杂配置，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。</p>
-<p>6.Avalon<br>
-http://avalonjs.coding.me/</p>
+<h2 id="开始使用-组件-详细说明">开始使用、组件、详细说明：</h2>
+<p>https://www.layui.com/doc/<br>
+https://www.layui.com/demo/<br>
+https://www.layui.com/doc/element/layout.html</p>
+<h2 id="为-layui-的广大用户提供免费的cdn静态库非常稳定-快速-免费的-layui开源组件项目-国内cdn加速服务">为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务：</h2>
+<p>https://www.layuicdn.com/</p>
+<h2 id="php后台怎么写才能使返回的数据渲染layui表格呢">PHP后台怎么写才能使返回的数据渲染layui表格呢</h2>
+<p>https://fly.layui.com/jie/32688/</p>
+<h1 id="avalon">Avalon</h1>
+<p>http://avalonjs.coding.me/</p>
 <p>avalon2是一款基于虚拟DOM与属性劫持的 迷你、 易用、 高性能 的 前端MVVM框架， 拥有超优秀的兼容性, 支持移动开发, 后端渲染, WEB Component式组件开发, 无需编译, 开箱即用。</p>
-<p>7.Dojo<br>
-https://dojo.io/</p>
+<h1 id="dojo">Dojo</h1>
+<p>https://dojo.io/</p>
 <p>Dojo致力于实现最大的互操作性。Web组件提供了一种机制，可以在Dojo应用程序中利用非Dojo组件，并在非Dojo应用程序中轻松使用基于Dojo的小部件。Dojo为Web组件提供一流的支持。您今天做出的决定不应该将您锁定在未来的决策中。</p>
-<p>8.Ember<br>
-https://emberjs.com/</p>
+<h1 id="ember">Ember</h1>
+<p>https://emberjs.com/</p>
 <p>Ember.js可能是最固执己见的主流框架，这也是其最大的优势。它有创建Ember.js应用程序的正确方法，通常只有一种方法来创建应用程序。Ember.js更类似于一个产品或平台，在那里你会到一个供应商的长期支持和维护。Ember.js提供了对其平台的全面版本管理，升级工具以及对API升级的强大指导和工具。成熟，是对Ember.js的一个很好的总结。</p>
-<p>9.Aurelia<br>
-https://aurelia.io/</p>
+<h1 id="aurelia">Aurelia</h1>
+<p>https://aurelia.io/</p>
 <p>Aurelia是一个令人惊叹的框架，它在不牺牲功能的情况下采用简单而干净的代码。在本教程中，我们将通过构建“Todo”应用程序向您介绍Aurelia的简单性。您将看到应用程序代码的简洁程度，您将学习Aurelia的几个基本概念和功能。</p>
 
         </div>
