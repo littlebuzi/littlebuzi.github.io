@@ -1,0 +1,344 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>buzi</title>
+<meta name="description" content="记录平凡的修炼之路" />
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1584938433427">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="buzi - Atom Feed" href="https://littlebuzi.github.io//atom.xml">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://littlebuzi.github.io/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1584938433427" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#tensorflow%E6%98%AF%E4%BB%80%E4%B9%88">Tensorflow是什么？</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE">数据流图：</a></li>
+<li><a href="#%E7%89%B9%E6%80%A7">特性：</a></li>
+</ul>
+</li>
+<li><a href="#tf10-%E6%9E%B6%E6%9E%84">TF1.0 — 架构：</a></li>
+<li><a href="#tf20-%E6%9E%B6%E6%9E%84">TF2.0 — 架构：</a></li>
+<li><a href="#tf20-%E7%AE%80%E5%8C%96%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B">TF2.0 — 简化的模型开发流程：</a></li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          时间线
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          分类
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Tensorflow</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-11-13 / 2 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://static.leiphone.com/uploads/new/article/740_740/201801/5a4f212b47ddf.png" alt="">
+        
+        <div class="post-content yue">
+          <h1 id="tensorflow是什么">Tensorflow是什么？</h1>
+<p>Google的开源软件库：</p>
+<ul>
+<li>采取数据流，用于数值计算。</li>
+<li>支持多种平台 —— GPU、CPU、移动设备。（方便的无缝切换，不用更改大部分的代码）</li>
+<li>最初用于深度学习，变得越来越通用。（tensorflow并不只是适用于深度学习，大部分还是深度学习，只要是能抽象为数据流图的问题，都能使用它来解决）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="数据流图">数据流图：</h2>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1573563675094.png" alt="" loading="lazy"></figure>
+<ul>
+<li><big><strong>节点 —— 处理数据</strong></big><br>
+对数据进行计算，每个框框（方形，圆形）都表示一个节点。<br>
+<br></li>
+<li><big><strong>线 —— 节点输入输出的关系</strong></big><br>
+节点与节点之间的数据依赖。（如偏最上面的三个绿色节点，Cross Entropy 依赖 Softmax 和Cross Labels 的输出，通过计算得出新的值，如果前两个节点没有计算完，后面的节点是无法计算的。）<br>
+<br></li>
+<li><big><strong>线上运输张量（tensor）</strong></big><br>
+线上运输的数据，所有的n维构成了数据的集合，0维数据 ——&gt; 数字，1维数据 ——&gt; 向量，二维<br>
+——&gt; 矩阵，大于等于3维的数据 ——&gt; 高位矩阵。<br>
+让tensor（张量）在数据流图中flow（流动）——&gt;tensorflow<br>
+<br></li>
+<li><big><strong>节点被分配到各种计算设备上运行</strong></big></li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="特性">特性：</h2>
+<ul>
+<li><big><strong>高度的灵活性</strong></big><br>
+可以表示为数据流图的都可使用，主要同于神经网络，卷积等都使用了封装。也可写自己的封装，就像panda函数那样。<br>
+<br></li>
+<li><big><strong>真正的可移植性</strong></big><br>
+可在很多设备上执行，如 CPU、GPU、移动设备。你在电脑里训练了一个model，可部署在服务器上，手机上，Docker上。<br>
+<br></li>
+<li><big><strong>多语言支持</strong></big><br>
+python、c++、java、R、javascript<br>
+<br></li>
+<li><big><strong>产品和科研结合</strong></big><br>
+<br></li>
+<li><big><strong>自动求微分</strong></big><br>
+<br></li>
+<li><big><strong>性能最优化</strong></big></li>
+</ul>
+<br>
+<hr>
+<br>
+<h1 id="tf10-架构">TF1.0 — 架构：</h1>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1573633217023.png" alt="" loading="lazy"></figure>
+<br>
+<hr>
+<br>
+<h1 id="tf20-架构">TF2.0 — 架构：</h1>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1573633662430.png" alt="" loading="lazy"></figure>
+<br>
+<hr>
+<br>
+<h1 id="tf20-简化的模型开发流程">TF2.0 — 简化的模型开发流程：</h1>
+<ul>
+<li><big><strong>使用 tf.data 加载数据</strong></big><br>
+<br></li>
+<li><big><strong>使用 tf.keras 构建模型，也可以使用 premade estimator 来验证模型</strong></big><br>
+<br></li>
+<li><big><strong>使用 tensorflow hub 进行迁移学习</strong></big><br>
+<br></li>
+<li><big><strong>使用 eager mode 进行运行和调试</strong></big><br>
+<br></li>
+<li><big><strong>使用分发策略来进行分布式训练</strong></big><br>
+<br></li>
+<li><big><strong>导出到 SavedModel</strong></big><br>
+<br></li>
+<li><big><strong>使用 Tensorflow Serve、Tensorflow Lite、Tensorflow.js 部署模型</strong></big></li>
+</ul>
+<br>
+<hr>
+<br>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/nKWkHExQP">
+            <span class="flex-auto">python</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://littlebuzi.github.io/manhua2">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  制作“漫画网站”爬虫 2.0
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://littlebuzi.github.io/pip">
+                <h3 class="post-title">
+                  Python二三事
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'e7c2b33da7e627d57c5a',
+    clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+    repo: 'littlebuzi.github.io',
+    owner: 'littlebuzi',
+    admin: ['littlebuzi'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://littlebuzi.github.io//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

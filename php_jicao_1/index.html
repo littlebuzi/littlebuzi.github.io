@@ -31,30 +31,20 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            记录平凡的修炼之路
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#php">PHP</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#css-%E5%89%8D%E7%AB%AF">CSS 前端</a></li>
+<li><a href="#cmd">cmd</a>
+<ul>
+<li><a href="#%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E7%A7%B0">用批处理命令获取文件夹名称</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -98,48 +88,117 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-2-line"></i> 标签云
-        </h2>
-        <div class="tags-container">
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">PHP、JS、CSS基操</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-02-18 / 2 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/php_jicao_1.jpg" alt="">
+        
+        <div class="post-content yue">
+          <hr>
+<h1 id="php">PHP</h1>
+<p>PHP生成随机数的几种方法<br>
+https://www.cnblogs.com/jjxhp/p/9601147.html</p>
+<p>PHP 升级到5.5后MySQL的代替法<br>
+https://blog.csdn.net/apple_llb/article/details/51406648</p>
+<p>使用PHP实现用户注册登录的功能<br>
+https://github.com/Micanss/PHP-Register-Login</p>
+<p>php调用exe一直加载怎么回事？<br>
+https://ask.csdn.net/questions/231711</p>
+<p>还有可能是在exec()后面给予了任务，导致一直加载。<br>
+cmd命令语句还在后台运行中，没有黑框弹出来，需等待更长时间。</p>
+<p>... ...</p>
+<hr>
+<h1 id="javascript">JavaScript</h1>
+<p>报错TypeError: $(...).live is not a function</p>
+<p>解决：用  .on  代替  .live  , 旧的版本被替换了</p>
+<p>https://blog.csdn.net/qq_36370731/article/details/79016451</p>
+<p>报错TypeError: $(…).ajaxForm is not a function</p>
+<p>可能：<br>
+1.jquery版本和bootstrap冲突<br>
+2.同时加载了两次jquery</p>
+<p>https://stackoverflow.com/questions/35261239/ajaxform-is-not-a-function#</p>
+<p>【JavaScript】按钮绑定点击事件-onCliek事件<br>
+https://blog.csdn.net/kye055947/article/details/79619538</p>
+<p>iframe 自适应高度，更改内容时iframe高度怎么根据新的内容高度自动改变<br>
+https://blog.csdn.net/txqd1989/article/details/78551943</p>
+<p>... ...</p>
+<hr>
+<h1 id="css-前端">CSS 前端</h1>
+<p>css input[type=file] 样式美化，input上传按钮美化<br>
+https://blog.csdn.net/cuilei210/article/details/78842231</p>
+<p>菜鸟教程：CSS 按钮示范<br>
+https://www.runoob.com/css3/css3-buttons.html</p>
+<hr>
+<h1 id="cmd">cmd</h1>
+<p>##运行CMD里面，怎么把得到的结果数据保存为文本文件<br>
+https://zhidao.baidu.com/question/596846191.html</p>
+<h2 id="用批处理命令获取文件夹名称">用批处理命令获取文件夹名称</h2>
+<p>创建test.bat，双击运行内容如下：</p>
+<pre><code class="language-bat">@Echo off
+dir /b&gt;test.txt
+</code></pre>
+<p>https://zhidao.baidu.com/question/936329819153763892.html</p>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/5HUxCw9id" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-              <span class="flex-auto">前端</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
-            </a>
+            <div class="prev-post">
+              <a href="https://littlebuzi.github.io/dongman_1">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  动漫人物数据集
+                </h3>
+              </a>
+            </div>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/nKWkHExQP" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-              <span class="flex-auto">python</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">9</span>
-            </a>
+
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/lvR88CT5w" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-              <span class="flex-auto">工具</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">3</span>
-            </a>
-          
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/K_ze8Bu2v" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-              <span class="flex-auto">go</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
-            </a>
-          
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/8GGDvwn5f" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-              <span class="flex-auto">java</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
-            </a>
-          
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/O2zTJWpBN" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-              <span class="flex-auto">php</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">4</span>
-            </a>
-          
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://littlebuzi.github.io/N4SH6d1dT" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-              <span class="flex-auto">科学</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
-            </a>
+            <div class="next-post">
+              <a href="https://littlebuzi.github.io/tensorflow2">
+                <h3 class="post-title">
+                  Tensorflow利用inception_v3模型和retrain实现图像分类训练
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
           
         </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'e7c2b33da7e627d57c5a',
+    clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+    repo: 'littlebuzi.github.io',
+    owner: 'littlebuzi',
+    admin: ['littlebuzi'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
       </div>
     </div>
 

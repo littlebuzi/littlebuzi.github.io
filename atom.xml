@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-23T04:32:11.159Z</updated>
+    <updated>2020-03-23T04:40:38.576Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, buzi</rights>
     <entry>
         <title type="html"><![CDATA[目前流行的9大前端框架]]></title>
-        <id>https://littlebuzi.github.io/post/前端_1</id>
-        <link href="https://littlebuzi.github.io/post/前端_1">
+        <id>https://littlebuzi.github.io/前端_1</id>
+        <link href="https://littlebuzi.github.io/前端_1">
         </link>
         <updated>2020-03-15T09:52:01.000Z</updated>
         <content type="html"><![CDATA[<h1 id="vue">Vue</h1>
@@ -60,8 +60,8 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Pytorch预训练的Resnet模型 Danbooru2018]]></title>
-        <id>https://littlebuzi.github.io/post/face_4</id>
-        <link href="https://littlebuzi.github.io/post/face_4">
+        <id>https://littlebuzi.github.io/face_4</id>
+        <link href="https://littlebuzi.github.io/face_4">
         </link>
         <updated>2020-03-12T15:39:33.000Z</updated>
         <content type="html"><![CDATA[<p>原作者：https://github.com/RF5/danbooru-pretrained</p>
@@ -73,8 +73,8 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[二次元识图工具网站]]></title>
-        <id>https://littlebuzi.github.io/post/amine_reg_1</id>
-        <link href="https://littlebuzi.github.io/post/amine_reg_1">
+        <id>https://littlebuzi.github.io/amine_reg_1</id>
+        <link href="https://littlebuzi.github.io/amine_reg_1">
         </link>
         <updated>2020-03-09T10:57:23.000Z</updated>
         <content type="html"><![CDATA[<p>1、 https://trace.moe/ 找番剧网站，有大量日番资源<br>
@@ -96,8 +96,8 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[动漫人物数据集]]></title>
-        <id>https://littlebuzi.github.io/post/dongman_1</id>
-        <link href="https://littlebuzi.github.io/post/dongman_1">
+        <id>https://littlebuzi.github.io/dongman_1</id>
+        <link href="https://littlebuzi.github.io/dongman_1">
         </link>
         <updated>2020-03-09T10:57:23.000Z</updated>
         <content type="html"><![CDATA[<p>1.https://www.gwern.net/Danbooru2019</p>
@@ -105,8 +105,8 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[PHP、JS、CSS基操]]></title>
-        <id>https://littlebuzi.github.io/post/php_jicao_1</id>
-        <link href="https://littlebuzi.github.io/post/php_jicao_1">
+        <id>https://littlebuzi.github.io/php_jicao_1</id>
+        <link href="https://littlebuzi.github.io/php_jicao_1">
         </link>
         <updated>2020-02-18T06:23:45.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -157,8 +157,8 @@ dir /b&gt;test.txt
     </entry>
     <entry>
         <title type="html"><![CDATA[Tensorflow利用inception_v3模型和retrain实现图像分类训练]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow2</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow2">
+        <id>https://littlebuzi.github.io/tensorflow2</id>
+        <link href="https://littlebuzi.github.io/tensorflow2">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>参考文献：<br>
@@ -287,8 +287,8 @@ https://blog.csdn.net/Night___Raid/article/details/102975023</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[TensorFlow支持的动漫人物识别网站的存储库]]></title>
-        <id>https://littlebuzi.github.io/post/tensorflow3</id>
-        <link href="https://littlebuzi.github.io/post/tensorflow3">
+        <id>https://littlebuzi.github.io/tensorflow3</id>
+        <link href="https://littlebuzi.github.io/tensorflow3">
         </link>
         <updated>2020-02-15T09:22:17.000Z</updated>
         <content type="html"><![CDATA[<p>开始：<br>
@@ -303,8 +303,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[About Download]]></title>
-        <id>https://littlebuzi.github.io/post/download1</id>
-        <link href="https://littlebuzi.github.io/post/download1">
+        <id>https://littlebuzi.github.io/download1</id>
+        <link href="https://littlebuzi.github.io/download1">
         </link>
         <updated>2020-02-13T05:15:48.000Z</updated>
         <content type="html"><![CDATA[<h1 id="下载">下载</h1>
@@ -314,8 +314,8 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Python基操]]></title>
-        <id>https://littlebuzi.github.io/post/pacong</id>
-        <link href="https://littlebuzi.github.io/post/pacong">
+        <id>https://littlebuzi.github.io/pacong</id>
+        <link href="https://littlebuzi.github.io/pacong">
         </link>
         <updated>2020-01-31T12:06:10.000Z</updated>
         <content type="html"><![CDATA[<h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
@@ -431,8 +431,8 @@ shutil.copyfile('C:\\1.txt', 'D:\\1.txt')
     </entry>
     <entry>
         <title type="html"><![CDATA[【MMD】MikuMikuDance入门]]></title>
-        <id>https://littlebuzi.github.io/post/mmd1</id>
-        <link href="https://littlebuzi.github.io/post/mmd1">
+        <id>https://littlebuzi.github.io/mmd1</id>
+        <link href="https://littlebuzi.github.io/mmd1">
         </link>
         <updated>2020-01-05T04:23:24.000Z</updated>
         <content type="html"><![CDATA[<p>1.下载<br>
