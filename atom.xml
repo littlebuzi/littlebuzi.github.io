@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-03-26T14:51:11.463Z</updated>
+    <updated>2020-04-03T15:50:50.522Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -121,7 +121,11 @@ https://github.com/Micanss/PHP-Register-Login</p>
 https://ask.csdn.net/questions/231711</p>
 <p>还有可能是在exec()后面给予了任务，导致一直加载。<br>
 cmd命令语句还在后台运行中，没有黑框弹出来，需等待更长时间。</p>
-<p>... ...</p>
+<p>免费快速学习php？<br>
+PHP入门篇：https://www.imooc.com/learn/54<br>
+PHP进阶篇：https://www.imooc.com/learn/26<br>
+更多：https://www.imooc.com/search/?words=php<br>
+... ...</p>
 <hr>
 <h1 id="javascript">JavaScript</h1>
 <p>报错TypeError: $(...).live is not a function</p>
