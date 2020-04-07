@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-07T04:15:38.637Z</updated>
+    <updated>2020-04-07T10:42:06.266Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://littlebuzi.github.io/images/avatar.png</logo>
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[慕课网PHP学习笔记]]></title>
+        <id>https://littlebuzi.github.io/learn_php_1</id>
+        <link href="https://littlebuzi.github.io/learn_php_1">
+        </link>
+        <updated>2020-04-07T10:02:34.000Z</updated>
+        <content type="html"><![CDATA[<p>学习一门新的计算机语言，对于基础基础不能丢三落四、模凌两可，这是一定要过关的。这对于以后遇到问题，能事半功倍，快人一步。不然会处处碰壁，事倍功半。假如你不是特别优秀的人，那可以选择像我一样，重复再重复吧<sub>加油💪</sub></p>
+<p>内容持续更新中。。。</p>
+<p>为什么有了这么完备的“慕课网学习系统”，还要做个复制粘贴呢？<br>
+1.这是一个笔记，是慕课课程的提炼，为学精一门语言而开辟的一个学习笔记文章。<br>
+2.再好的学习平台，也可能会有结束的一天，所以我现在做的事情，可能可以为优秀的平台在茫茫的互联网长河中留下一点点痕迹。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[目前流行的9大前端框架]]></title>
         <id>https://littlebuzi.github.io/前端_1</id>
@@ -475,24 +488,6 @@ os.system(&quot;xcopy C:\\1.txt D:&quot;)
 import shutil
 shutil.copyfile('C:\\1.txt', 'D:\\1.txt')
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【MMD】MikuMikuDance入门]]></title>
-        <id>https://littlebuzi.github.io/mmd1</id>
-        <link href="https://littlebuzi.github.io/mmd1">
-        </link>
-        <updated>2020-01-05T04:23:24.000Z</updated>
-        <content type="html"><![CDATA[<p>1.下载<br>
-https://www.bilibili.com/video/av20662019/<br>
-http://blog.sina.com.cn/s/blog_15fe57f4d0102x6g9.html<br>
-http://www.3322.cc/search.asp?wd=miku</p>
-<p>2.教程<br>
-http://blog.sina.com.cn/s/blog_15fe57f4d0102x7mm.html<br>
-http://tieba.baidu.com/p/5868731425<br>
-http://blog.sina.com.cn/s/blog_15fe57f4d0102x66y.html<br>
-https://zhidao.baidu.com/question/488239911574372932.html<br>
-https://tieba.baidu.com/p/5020448822?pn=1</p>
 ]]></content>
     </entry>
 </feed>

@@ -78,99 +78,19 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">数据库&amp;PHP-问题合集</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">慕课网PHP学习笔记</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-10-21 / 3 min read
+          2020-04-07 / 1 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571650404926&amp;di=0f55576199a347f2fffed81b6b24b141&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D1390309034%2C2555991170%26fm%3D214%26gp%3D0.jpg" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_1.jpg" alt="">
         
         <div class="post-content yue">
-          <p>#关于数据库-mysql账号密码login</p>
-<p>数据库——mysql<br>
-忘记密码处理：<br>
-主要分成两种情况：<br>
-第一大种：（集成环境安装的，倾向php，mysql小型数据库）<br>
-账号：root<br>
-密码：</p>
-<pre><code>免密；
-root；
-168168；
-123456
-等
-</code></pre>
-<p>第二大种：（倾向mysql安装版或压缩版，半集成）<br>
-账号：root<br>
-密码：</p>
-<pre><code>（一段字符英文加数字）默认给你设置好，第一次初始化需要手动修改（特色）  
-如：
-ABC123xyz
-Wx&lt;&lt;1Cfdd8&amp;f
-</code></pre>
-<p>新的理解:</p>
-<p>在阿里云上安装phpstudy后，第一次进入数据库密码不对，默认数据库密码应为root，所以phpstudy没用他自己的数据库，mysql也启动失败，最后手动启动“服务”里的mysql，查看原有mysql密码，可以了。</p>
-<hr>
-<p>#php查询sql 中文乱码“ ？”</p>
-<p>查询中文时出现乱码”？？？？1“<br>
-编码检查都是utf-8<br>
-之后按照这个，修改了mysql 的 my.ini 三个位置 ok<br>
-<a href="https://blog.csdn.net/u014762625/article/details/80667115">https://blog.csdn.net/u014762625/article/details/80667115</a><br>
-<img src="https://img-blog.csdn.net/20180612161942439" alt="" loading="lazy"><br>
-由上图可见database和server的字符集使用了latin1编码方式，不支持中文，即存储中文时会出现乱码。以下修改方法：</p>
-<p>Linux 系统</p>
-<pre><code class="language-mysql">(1)关闭mysql服务
-
-service mysql stop  
-
-(2)修改 /etc/mysql/my.cnf  （默认的安装路径）
-
-vim /etc/mysql/my.cnf  
-
-打开my.cnf后，在文件内的[mysqld]下增加如下两行设置:
-
-character_set_server=utf8  
-
-init_connect='SET NAMES utf8'  
-
-保存退出
-
-(3) 重新启动mysql服务
-
-service mysql restart  
-
-完成修改，使用查询命令show variables like 'character%'; 查看编码变为utf8的。
-</code></pre>
-<p>windows系统</p>
-<pre><code class="language-mysql">打开mysql安装目录，有一个my-default.ini文件，复制一份修改名称my.ini
-
-打开my.ini,加入下面的内容：
-
-[mysqld]
-character-set-server=utf8 
-[mysql]
-default-character-set=utf8
-[client]
-
-default-character-set=utf8
-
-保存，重启mysql服务，完成修改。
-</code></pre>
-<p>————————————————<br>
-版权声明：本文为CSDN博主「宋宋Jimi」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>
-原文链接：https://blog.csdn.net/u014762625/article/details/80667115</p>
-<p>以下与标题无关：</p>
-<p>（记一次记录ip，get ip php语句 安在菜单栏的加载里（数据库查询） 插进数据库 再后台读取）</p>
-<blockquote>
-<p>转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 501596098@qq.com</p>
-</blockquote>
-<blockquote>
-<p>文章标题:php数据库的增删改查及php与javascript之间的交互<br>
-本文作者:Buzi<br>
-发布时间:2019-07-30, 13:54:07<br>
-最后更新:2019-09-18, 15:09:30<br>
-原始链接:http://littlebuzi.github.io/2019/07/30/php/mysql_php/<br>
-版权声明: &quot;署名-非商用-相同方式共享 4.0&quot; 转载请保留原文链接及作者。</p>
-</blockquote>
+          <p>学习一门新的计算机语言，对于基础基础不能丢三落四、模凌两可，这是一定要过关的。这对于以后遇到问题，能事半功倍，快人一步。不然会处处碰壁，事倍功半。假如你不是特别优秀的人，那可以选择像我一样，重复再重复吧<sub>加油💪</sub></p>
+<p>内容持续更新中。。。</p>
+<p>为什么有了这么完备的“慕课网学习系统”，还要做个复制粘贴呢？<br>
+1.这是一个笔记，是慕课课程的提炼，为学精一门语言而开辟的一个学习笔记文章。<br>
+2.再好的学习平台，也可能会有结束的一天，所以我现在做的事情，可能可以为优秀的平台在茫茫的互联网长河中留下一点点痕迹。</p>
 
         </div>
 
@@ -183,21 +103,12 @@ default-character-set=utf8
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="https://littlebuzi.github.io/typecho_theme">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  关于博客主题
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="https://littlebuzi.github.io/mysql_php">
+              <a href="https://littlebuzi.github.io/前端_1">
                 <h3 class="post-title">
-                  php数据库的增删改查&amp;php与javascript之间的交互
+                  目前流行的9大前端框架
                   <i class="ri-arrow-right-line"></i>
                 </h3>
               </a>
