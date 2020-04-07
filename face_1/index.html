@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586232356267">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586232934439">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586232356267" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586232934439" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -58,6 +58,7 @@
 <li><a href="#%E8%AF%A6%E7%BB%86%E8%AF%B7%E7%9C%8B">详细请看</a></li>
 <li><a href="#%E6%AD%A5%E9%AA%A422%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤2.2中可能遇到的问题：</a></li>
 <li><a href="#%E6%AD%A5%E9%AA%A423%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤2.3中可能遇到的问题：</a></li>
+<li><a href="#import-cv2-%E6%89%BE%E4%B8%8D%E5%88%B0-face">import cv2 找不到 face</a></li>
 </ul>
 </li>
 <li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献：</a></li>
@@ -503,6 +504,23 @@ yum install xxx
 <p>linux 使用文件增加虚拟内存 swap</p>
 <p>https://msd.misuland.com/pd/3070888491219949990</p>
 <p>https://www.cnblogs.com/ling-yu-amen/p/10819879.html</p>
+<h2 id="import-cv2-找不到-face">import cv2 找不到 face</h2>
+<p>AttributeError: module 'cv2.face' has no attribute 'createEigenFaceRecognizer' 解决办法</p>
+<p>原因：</p>
+<p>一.版本问题，目前使用版本cv2.face中createEigenFaceRecognizer更名或移除<br>
+解决：请查看对应版本的说明文档，使用对应版本或属性名。</p>
+<p>二.未安装<br>
+opencv_contrib，所以<br>
+model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
+解决：<br>
+1.使用pip、源码安装方法</p>
+<pre><code class="language-python">pip install opencv-python opencv-contrib-python
+</code></pre>
+<p>或<br>
+<a href="https://blog.csdn.net/wyx100/article/details/78498609">https://blog.csdn.net/wyx100/article/details/78498609</a></p>
+<p>2.conda ：</p>
+<pre><code class="language-python">conda install opencv-python opencv-contrib-python
+</code></pre>
 <hr>
 <br>
 <p>问：博主你的代码有问题，你的项目文件夹怎么建的？<br>

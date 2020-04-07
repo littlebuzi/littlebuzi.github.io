@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586232356267">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586232934439">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586232356267" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586232934439" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -47,7 +47,6 @@
 <li><a href="#%E7%AE%80%E6%98%93%E6%A1%8C%E9%9D%A2-v10-%E6%80%BB%E7%BB%93">简易桌面 v1.0 总结</a></li>
 <li><a href="#%E7%AE%80%E6%98%93%E6%A1%8C%E9%9D%A2-v10-%E9%97%AE%E9%A2%98">简易桌面 v1.0 问题</a></li>
 <li><a href="#%E7%AE%80%E6%98%93%E6%A1%8C%E9%9D%A2-v10-%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB">简易桌面 v1.0 错误汇总</a></li>
-<li><a href="#import-cv2-%E6%89%BE%E4%B8%8D%E5%88%B0-face">import cv2 找不到 face</a></li>
 </ul>
 
           </div>
@@ -96,7 +95,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">疑难杂症</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-10-21 / 15 min read
+          2019-10-21 / 14 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://img95.699pic.com/xsj/0p/hb/bt.jpg!/fw/700/watermark/url/L3hzai93YXRlcl9kZXRhaWwyLnBuZw/align/southeast" alt="">
@@ -383,23 +382,6 @@ Exception in thread &quot;AWT-EventQueue-0&quot; java.lang.NullPointerException
 <br>
 <hr>
 <br>
-<h1 id="import-cv2-找不到-face">import cv2 找不到 face</h1>
-<p>AttributeError: module 'cv2.face' has no attribute 'createEigenFaceRecognizer' 解决办法</p>
-<p>原因：</p>
-<p>一.版本问题，目前使用版本cv2.face中createEigenFaceRecognizer更名或移除<br>
-解决：请查看对应版本的说明文档，使用对应版本或属性名。</p>
-<p>二.未安装<br>
-opencv_contrib，所以<br>
-model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
-解决：<br>
-1.使用pip、源码安装方法</p>
-<pre><code class="language-python">pip install opencv-python opencv-contrib-python
-</code></pre>
-<p>或<br>
-<a href="https://blog.csdn.net/wyx100/article/details/78498609">https://blog.csdn.net/wyx100/article/details/78498609</a></p>
-<p>2.conda ：</p>
-<pre><code class="language-python">conda install opencv-python opencv-contrib-python
-</code></pre>
 
         </div>
 
