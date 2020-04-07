@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-06T08:08:53.613Z</updated>
+    <updated>2020-04-07T03:49:45.363Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -100,17 +100,7 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
         <link href="https://littlebuzi.github.io/dongman_1">
         </link>
         <updated>2020-03-09T10:57:23.000Z</updated>
-        <content type="html"><![CDATA[<p>1.https://www.gwern.net/Danbooru2019</p>
-<p>第一个，niconico上仅限于学术目的的图。需要科研机构申请才可以下载。【放弃~】<br>
-nico-opendata：<a href="https://nico-opendata.jp/en/index.html">https://nico-opendata.jp/en/index.html</a><br>
-At Niconico, we are providing a wide variety of data from our services,<br>
-to be used for academic purposes. 仅限用于学术目的。<br>
-包含：<br>
-Nico-Illust    超过40万张图像（插图）<br>
-This dataset contains over 400,000 images (illustraions) from Niconico Seiga and Niconico Shunga.<br>
-<a href="http://seiga.nicovideo.jp/">Niconico Seiga</a> is a community for posting illustrations.  一个发布插图的社区。<br>
-<a href="http://seiga.nicovideo.jp/shunga/">Niconico Shunga</a> is a community for posting illustrations, where submission of explicit content is allowed. Viewers under age 18 are prohibited in this website.  本网站禁止18岁以下观众观看。2018.10.31，动漫图像数据集</p>
-<p>第二个，Danbooru，https://safebooru.donmai.us/<br>
+        <content type="html"><![CDATA[<p>第一个，Danbooru，https://safebooru.donmai.us/<br>
 A LARGE-SCALE CROWDSOURCED AND TAGGED ANIME ILLUSTRATION DATASET<br>
 一个大规模的众包和标记动画插图数据集</p>
 <p>Danbooru2017：<br>
@@ -119,8 +109,24 @@ https://www.gwern.net/Danbooru2019#danbooru2017</p>
 https://www.gwern.net/Danbooru2019#danbooru2018</p>
 <p>Danbooru2019：<br>
 https://www.gwern.net/Danbooru2019</p>
-<p>第三个，getchu，科学上网访问。<br>
+<p>第二个，getchu，科学上网访问。<br>
 https://www.getchu.com/</p>
+<p>csdn：<br>
+https://blog.csdn.net/ONE_SIX_MIX/article/details/95935010</p>
+<p>github 仓库：<br>
+https://github.com/One-sixth/getchu_character_picture_grabber</p>
+<p>百度云：<br>
+https://pan.baidu.com/s/1bTWoEcJRzXJaMM8jELPCBA</p>
+<p>第三个，niconico上仅限于学术目的的图。需要科研机构申请才可以下载。【放弃~】<br>
+nico-opendata：<a href="https://nico-opendata.jp/en/index.html">https://nico-opendata.jp/en/index.html</a><br>
+At Niconico, we are providing a wide variety of data from our services,<br>
+to be used for academic purposes. 仅限用于学术目的。<br>
+包含：<br>
+Nico-Illust    超过40万张图像（插图）<br>
+This dataset contains over 400,000 images (illustraions) from Niconico Seiga and Niconico Shunga.<br>
+<a href="http://seiga.nicovideo.jp/">Niconico Seiga</a> is a community for posting illustrations.  一个发布插图的社区。<br>
+<a href="http://seiga.nicovideo.jp/shunga/">Niconico Shunga</a> is a community for posting illustrations, where submission of explicit content is allowed. Viewers under age 18 are prohibited in this website.  本网站禁止18岁以下观众观看。</p>
+<p>其他：</p>
 <p>IIIT-CFW<br>
 https://zhuanlan.zhihu.com/p/25138563<br>
 集合了各种类型的数据集（好多没见过的，感觉很全？可能有用，得再看看。），<br>
@@ -141,21 +147,25 @@ http://www.robots.ox.ac.uk/~vgg/data/vgg_face2/index.html#about<br>
         <updated>2020-02-18T06:23:45.000Z</updated>
         <content type="html"><![CDATA[<hr>
 <h1 id="php">PHP</h1>
+<p>免费快速学习php<br>
+PHP入门篇：https://www.imooc.com/learn/54<br>
+PHP进阶篇：https://www.imooc.com/learn/26<br>
+更多：https://www.imooc.com/search/?words=php</p>
+<p>PHP环境LAMP/LNMP安装与配置<br>
+https://www.imooc.com/learn/703</p>
+<p>PHP+Mysql+Ajax实现分页<br>
+https://www.imooc.com/learn/1117</p>
 <p>PHP生成随机数的几种方法<br>
 https://www.cnblogs.com/jjxhp/p/9601147.html</p>
 <p>PHP 升级到5.5后MySQL的代替法<br>
 https://blog.csdn.net/apple_llb/article/details/51406648</p>
-<p>使用PHP实现用户注册登录的功能<br>
-https://github.com/Micanss/PHP-Register-Login</p>
 <p>php调用exe一直加载怎么回事？<br>
 https://ask.csdn.net/questions/231711</p>
 <p>还有可能是在exec()后面给予了任务，导致一直加载。<br>
 cmd命令语句还在后台运行中，没有黑框弹出来，需等待更长时间。</p>
-<p>免费快速学习php？<br>
-PHP入门篇：https://www.imooc.com/learn/54<br>
-PHP进阶篇：https://www.imooc.com/learn/26<br>
-更多：https://www.imooc.com/search/?words=php<br>
-... ...</p>
+<p>使用PHP实现用户注册登录的功能<br>
+https://github.com/Micanss/PHP-Register-Login</p>
+<p>... ...</p>
 <hr>
 <h1 id="javascript">JavaScript</h1>
 <p>报错TypeError: $(...).live is not a function</p>
