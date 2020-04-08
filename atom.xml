@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-08T04:14:44.311Z</updated>
+    <updated>2020-04-08T15:40:06.519Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -93,13 +93,60 @@ $num_float = 7.0E-10;     //科学计数法，大写E ，0.007
 <pre><code class="language-php">“$str_string1 = '我是字符串';”
 // 字符和字节一样，所以一共有256种不同字符的可能性。
 // 三种方法定义：单引号形式、双引号形式和Heredoc结构形式。
+
+// 单双引号嵌入与转义符“\”
+$str_string1 = '甲问：&quot;你在哪里学的PHP？&quot;';
+$str_string2 = &quot;乙毫不犹豫地回答：'当然是慕课网咯！'&quot;;
+$str_string3 = '甲问:\'能告诉我网址吗？\'';
+$str_string4 = &quot;乙答道:\&quot;www.imooc.com\&quot;&quot;;
+
+// 美元符号标识的变量与单双引号
+$love = &quot;I love you!&quot;; 
+$string1 = &quot;慕课网,$love&quot;;    输出：慕课网,I love you!
+$string2 = '慕课网,$love';     输出：慕课网,$love
+
+// Heredoc结构形式，很长的字符串
+$string1 = &lt;&lt;&lt;GOD
+我有一只小毛驴，我从来也不骑。
+有一天我心血来潮，骑着去赶集。
+我手里拿着小皮鞭，我心里正得意。
+不知怎么哗啦啦啦啦，我摔了一身泥.
+GOD;
+
 </code></pre>
 <p>2.两种符合类型：<br>
 <code>array 数组</code><br>
-<code>object 对象</code><br>
-3.特殊类型：<br>
+<code>object 对象</code></p>
+<p>3.特殊类型：<br>
 <code>resource 资源</code><br>
-<code>null</code></p>
+资源是由专门的函数来建立和使用的，</p>
+<pre><code class="language-php">// 例如打开文件、数据连接、图形画布。
+$file=fopen(&quot;f.txt&quot;,&quot;r&quot;);   //打开文件
+$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;);  //连接数据库
+$img=imagecreate(100,100);//图形画布
+
+// 对资源进行创建、使用和释放
+$file_handle = fopen(&quot;/data/webroot/resource/php/f.txt&quot;,&quot;r&quot;);
+if ($file_handle){
+    //接着采用while循环（后面语言结构语句中的循环结构会详细介绍）一行行地读取文件，然后输出每行的文字
+    while (!feof($file_handle)) { //判断是否到最后一行
+        $line = fgets($file_handle); //读取一行文本
+        echo $line; //输出一行文本
+        echo &quot;&lt;br /&gt;&quot;; //换行
+    }
+}
+fclose($file_handle);//关闭文件
+
+// 任何资源，在不需要的时候应该被及时释放。
+// 忘记了释放资源，系统自动启用垃圾回收机制，在页面执行完毕后回收资源，以避免内存被消耗殆尽。
+
+</code></pre>
+<p><code>null</code><br>
+NULL是空类型，对大小写不敏感，NULL类型只有一个取值，表示一个变量没有值，<br>
+①当被赋值为NULL：var1 = null;/var1 = NULL;<br>
+②或者尚未被赋值：var_dump( <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mn>2</mn><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">③</mi><mi mathvariant="normal">或</mi><mi mathvariant="normal">者</mi><mi mathvariant="normal">被</mi><mi>u</mi><mi>n</mi><mi>s</mi><mi>e</mi><mi>t</mi><mo>(</mo><mo>)</mo><mi mathvariant="normal">：</mi></mrow><annotation encoding="application/x-tex">var2);
+③或者被unset()：</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">③</span><span class="mord cjk_fallback">或</span><span class="mord cjk_fallback">者</span><span class="mord cjk_fallback">被</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mclose">)</span><span class="mord cjk_fallback">：</span></span></span></span>var3 = &quot;节日快乐！&quot;;unset($var3);<br>
+这三种情况下变量被认为为NULL。</p>
 <pre><code class="language-php">echo $m1 = memory_get_usage(); 
 // 获取当前PHP消耗的内存，结果：624432，
 // 在变量中，由于变量占用的空间单元不一样（占的地盘大小不一样），分成几种数据类型。
