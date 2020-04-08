@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-07T14:42:05.312Z</updated>
+    <updated>2020-04-08T04:14:44.311Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -65,28 +65,53 @@ var_dump($n);
 <code>“$my_book”</code><br>
 <code>“$my_Book”</code><br>
 代表两个不同的变量。</p>
-<p>四、变量的数据类型</p>
-<pre><code class="language-php">echo $m1 = memory_get_usage(); 
-// 结果：624432
+<p>四、变量的数据类型<br>
+php支持八种原始类型：<br>
+1.四种标量类型：<br>
+<code>boolean 布尔型</code></p>
+<pre><code class="language-php">①只有两个值，一个是TRUE，另一个FALSE。即为是或否/真或假。
+②不区分大小写， &quot;TRUE&quot; = &quot;true &quot;
+③主要用在条件结构。
+④用”echo”输出时，“true”则输出“1”，“false”不输出。
+所以需要注意变量的类型，“1”可能是整型也可能是true，所以需要var_dump输出一下，
+如：https://www.imooc.com/code/745
 </code></pre>
-<p>详细：<a href="https://www.imooc.com/code/743">https://www.imooc.com/code/743</a></p>
-<p>php支持八种原始类型：<br>
-四种标量类型：<br>
-<code>boolean 布尔型</code><br>
-<code>integer 整型</code><br>
-<code>float 浮点型（也称double）</code><br>
-<code>string (字符串)</code><br>
-两种符合类型：<br>
+<p><code>integer 整型</code></p>
+<pre><code class="language-php">$data_int = 123;   // 十进制数  ，123
+$data_int = -123;    // 一个负数  ，-123
+$data_int = 0123;    // 八进制数（等于十进制的 83）  ，83
+$data_int = 0x123;    // 十六进制数（等于十进制的 26）  ，291
+// 十进制、八进制（数字前“0”）、十六进制（数字前“0x”）。(0是阿拉伯数字0，不是英文字母&quot;欧/o&quot;)
+</code></pre>
+<p><code>float 浮点型（也称double）</code></p>
+<pre><code class="language-php">$num_float = 1.234;    //小数点  ，1.234
+$num_float = 1.2e3;    //科学计数法，小写e  ，1200
+$num_float = 7.0E-10;     //科学计数法，大写E ，0.007
+// 支持小数点、科学计数法小写的e，大写的E表示。
+</code></pre>
+<p><code>string (字符串)</code></p>
+<pre><code class="language-php">“$str_string1 = '我是字符串';”
+// 字符和字节一样，所以一共有256种不同字符的可能性。
+// 三种方法定义：单引号形式、双引号形式和Heredoc结构形式。
+</code></pre>
+<p>2.两种符合类型：<br>
 <code>array 数组</code><br>
 <code>object 对象</code><br>
-特殊类型：<br>
+3.特殊类型：<br>
 <code>resource 资源</code><br>
 <code>null</code></p>
+<pre><code class="language-php">echo $m1 = memory_get_usage(); 
+// 获取当前PHP消耗的内存，结果：624432，
+// 在变量中，由于变量占用的空间单元不一样（占的地盘大小不一样），分成几种数据类型。
+</code></pre>
+<p>详见：<a href="https://www.imooc.com/code/743">https://www.imooc.com/code/743</a></p>
 <p>内容持续更新中。。。</p>
 <hr>
+<blockquote>
 <p>为什么有了这么完备的“慕课网学习系统”，还要做个复制粘贴呢？<br>
 1.这是一个笔记，是慕课课程的提炼，为学精一门语言而开辟的一个学习笔记文章。<br>
 2.再好的学习平台，也可能会有结束的一天，所以我现在做的事情，可能可以为优秀的平台在茫茫的互联网长河中留下一点点痕迹。</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
