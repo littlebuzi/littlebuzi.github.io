@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-09T04:41:25.780Z</updated>
+    <updated>2020-04-09T06:01:35.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -115,10 +115,10 @@ $string1 = &lt;&lt;&lt;GOD
 GOD;
 
 </code></pre>
-<p>2.两种符合类型：</p>
+<h2 id="2两种符合类型">2.两种符合类型：</h2>
 <h2 id="array-数组">array 数组</h2>
 <h2 id="object-对象">object 对象</h2>
-<p>3.特殊类型：</p>
+<h2 id="3特殊类型">3.特殊类型：</h2>
 <h2 id="resource-资源">resource 资源</h2>
 <p>资源是由专门的函数来建立和使用的，</p>
 <pre><code class="language-php">// 例如打开文件、数据连接、图形画布。
