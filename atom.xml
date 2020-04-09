@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-09T08:08:56.792Z</updated>
+    <updated>2020-04-09T10:08:41.269Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -67,8 +67,8 @@ var_dump($n);
 <code>“$my_Book”</code><br>
 代表两个不同的变量。</p>
 <h2 id="四-变量的数据类型">四、变量的数据类型</h2>
-<p>php支持八种原始类型：<br>
-1.四种标量类型：</p>
+<p>php支持八种原始类型：</p>
+<h2 id="1四种标量类型">1.四种标量类型：</h2>
 <h2 id="boolean-布尔型">boolean 布尔型</h2>
 <pre><code class="language-php">①只有两个值，一个是TRUE，另一个FALSE。即为是或否/真或假。
 ②不区分大小写， &quot;TRUE&quot; = &quot;true &quot;
@@ -148,6 +148,45 @@ fclose($file_handle);//关闭文件
 ②或者尚未被赋值：var_dump(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mn>2</mn><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">③</mi><mi mathvariant="normal">或</mi><mi mathvariant="normal">者</mi><mi mathvariant="normal">被</mi><mi>u</mi><mi>n</mi><mi>s</mi><mi>e</mi><mi>t</mi><mo>(</mo><mo>)</mo><mi mathvariant="normal">：</mi></mrow><annotation encoding="application/x-tex">var2);
 ③或者被unset()：</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">③</span><span class="mord cjk_fallback">或</span><span class="mord cjk_fallback">者</span><span class="mord cjk_fallback">被</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mclose">)</span><span class="mord cjk_fallback">：</span></span></span></span>var3 = &quot;节日快乐！&quot;;unset($var3);<br>
 这三种情况下变量被认为为NULL。</p>
+<h1 id="常量">常量</h1>
+<p>常量可以理解为值不变的量（如圆周率）；<br>
+或者是常量值被定义后，在脚本的其他任何地方都不可以被改变。分为自定义常量和系统常量</p>
+<h2 id="自定义常量">自定义常量</h2>
+<p>根据我们开发的需要，而定义的常量，它通过使用PHP中的函数define()定义。<br>
+（注：函数，我们可以理解为一个混凝土搅拌机，亦或是一个筛子，通过入口提供原料，然后出口产出结果，在函数中也允许入口不提供任何数据，出口也允许不返回任何值。）</p>
+<pre><code class="language-php">// define()函数的语法格式为(3个参数)：
+bool define(string $constant_name, mixed $value[, $case_sensitive = true])
+//“constant_name”为必选参数，常量名称,即标志符，常量的命名规则与变量的一致，但是要注意哦，它可不带美元符号哦。
+//“value”为必选参数，它是常量的值。
+//“case_sensitive”为可选参数，指定是否大小写敏感，设定为true表示不敏感，一般不指定第三个参数的情况下，默认第三个参数的值为false。
+
+注：
+ string表示参数类型为字符串类型，
+mixed表示参数类型可以接受为多种不同的类型，
+case_sensitive = true表示默认为布尔类型TRUE
+
+如：
+$p = &quot;PII&quot;;
+define(&quot;PI&quot;,3.14);
+define($p,3.14);
+echo PI;
+echo &quot;&lt;br /&gt;&quot;;
+echo PII;
+
+结果：
+3.14
+3.14
+
+</code></pre>
+<h2 id="常量的作用">常量的作用</h2>
+<p>常量主要功效是可以避免重复定义，篡改变量值。在我们进行团队开发时，或者代码量很大的时候，对于一些第一次定义后不改变的量，如果我们使用变量，在不知情的情况下，使用同一变量名时，变量值就会被替换掉，从而会引发服务器执行错误的任务。</p>
+<p>此外，使用常量还能提高代码的可维护性。如果由于某些原因，常量的值需要变更时候，我们只需要修改一个地方。例如在做计算中，起初我们取圆周率为3.14，于是很多计算中我们都使用3.14进行计算，当要求计算精度提高，圆周率需要取3.142的时候，我们不得不修改所有使用3.14的代码，倘若代码量比较多时，不仅工作量大，还可能遗漏。</p>
+<h2 id="系统常量">系统常量</h2>
+<p>系统常量是PHP已经定义好的常量，我们可以直接拿来使用，常见的系统常量有：</p>
+<p>（1）<strong>FILE</strong> :php程序文件名。它可以帮助我们获取<code>当前文件在服务器的物理位置</code>。<br>
+（2）<strong>LINE</strong> :PHP程序文件行数。它可以告诉我们，<code>当前代码在第几行</code>。<br>
+（3）PHP_VERSION:当前解析器的版本号。可以提前知道<code>PHP代码是否可被该PHP解析器解析</code>。<br>
+（4）PHP_OS：执行当前PHP版本的操作系统名称。<code>服务器所用的操作系统名称</code>，可以根据该操作系统优化我们的代码。</p>
 <pre><code class="language-php">echo $m1 = memory_get_usage(); 
 // 获取当前PHP消耗的内存，结果：624432，
 // 在变量中，由于变量占用的空间单元不一样（占的地盘大小不一样），分成几种数据类型。
