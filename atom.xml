@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-09T10:57:11.216Z</updated>
+    <updated>2020-04-10T07:03:44.228Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -253,6 +253,46 @@ bool(false)
 </code></pre>
 <p>bool defined(string constants_name)<br>
 它只有参数constant_name，指的是要获取常量的名称，若存在则返回布尔类型true，否则返回布尔类型false; （注：bool表示函数返回值类型为布尔类型）</p>
+<hr>
+<h1 id="运算符">运算符</h1>
+<p>分为算术运算符、赋值运算符、比较运算符、三元运算符、逻辑运算符、字符串连接运算符、错误控制运算符。</p>
+<h2 id="算术运算符">算术运算符：</h2>
+<p>加法运算、减法运算、乘法运算、除法运算</p>
+<h2 id="赋值运算符">赋值运算符：</h2>
+<p>(1)“=”：把右边表达式的值赋给左边的运算数。它将右边表达式值复制一份，交给左边的运算数。<br>
+换而言之，首先给左边的运算数申请了一块内存，然后把复制的值放到这个内存中。</p>
+<p>(2)“&amp;”：引用赋值，意味着两个变量都指向同一个数据。<br>
+它将使两个变量共享一块内存，如果这个内存存储的数据变了，那么两个变量的值都会发生变化。</p>
+<pre><code class="language-php">$a = &quot;学习PHP！&quot;;
+$b = $a;
+$c = &amp;$a;
+$a = &quot;我天天在学习PHP！&quot;;
+echo $b.&quot;&lt;br /&gt;&quot;;
+echo $c.&quot;&lt;br /&gt;&quot;;
+
+结果：
+学习PHP！
+我天天在学习PHP！
+</code></pre>
+<h2 id="比较运算符">比较运算符</h2>
+<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1586501035649.jpg" alt="" loading="lazy"></figure>
+<h2 id="三元运算符">三元运算符</h2>
+<p>(“?:”)三元运算符也是一个比较运算符，<br>
+对于表达式(expr1)?(expr2):(expr3)，如果expr1的值为true，则此表达式的值为expr2，否则为expr3。</p>
+<pre><code class="language-php">$a = 78;//成绩
+	$b = $a &gt;= 60 ? &quot;及格&quot;: &quot;不及格&quot;; 
+	echo $b;
+
+结果：及格
+</code></pre>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<figure data-type="image" tabindex="2"><img src="https://littlebuzi.github.io//post-images/1586502150083.jpg" alt="" loading="lazy"></figure>
+<p>1、逻辑与：要求所有人都投票同意，才会通过某协议；<br>
+2、逻辑或：只要求一个人投票同意就行；<br>
+3、逻辑异或：只能有且只能有一个人投票同意；<br>
+4、逻辑非：某个人要反对，但是通过逻辑非，使其反对无效；</p>
+<p>“与”和“或”有两种不同形式运算符的原因是它们运算的优先级（就是运算的有限顺序，比如我们小学的时候学习四则运算，加减乘除混合在一起啦，优先计算乘除，再计算加减）不同。</p>
+<figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1586502214728.jpg" alt="" loading="lazy"></figure>
 <p>内容持续更新中。。。</p>
 <hr>
 <blockquote>
