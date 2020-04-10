@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586502217998">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586517332698">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586502217998" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586517332698" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -78,6 +78,18 @@
 <li><a href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6">比较运算符</a></li>
 <li><a href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6">三元运算符</a></li>
 <li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">逻辑运算符</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E8%BF%90%E7%AE%97%E7%AC%A6">字符串连接运算符</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6%E8%BF%90%E7%AE%97%E7%AC%A6">错误控制运算符</a></li>
+<li><a href="#%E5%8F%96%E6%95%B4%E5%87%BD%E6%95%B0">取整函数</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84">顺序结构</a>
+<ul>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84">条件结构:</a></li>
+<li><a href="#ifelse">if…else…</a></li>
+<li><a href="#ifelse-if">if…else if…</a></li>
+<li><a href="#ifelse-ifelse">if…else if…else…</a></li>
+<li><a href="#switchcase">switch…case…</a></li>
 </ul>
 </li>
 </ul>
@@ -128,7 +140,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">慕课网PHP学习笔记</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-07 / 13 min read
+          2020-04-07 / 16 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_1.jpg" alt="">
@@ -411,6 +423,138 @@ echo $c.&quot;&lt;br /&gt;&quot;;
 4、逻辑非：某个人要反对，但是通过逻辑非，使其反对无效；</p>
 <p>“与”和“或”有两种不同形式运算符的原因是它们运算的优先级（就是运算的有限顺序，比如我们小学的时候学习四则运算，加减乘除混合在一起啦，优先计算乘除，再计算加减）不同。</p>
 <figure data-type="image" tabindex="3"><img src="https://littlebuzi.github.io//post-images/1586502214728.jpg" alt="" loading="lazy"></figure>
+<h2 id="字符串连接运算符">字符串连接运算符</h2>
+<p>（1）连接运算符(“.”)：它返回将右参数附加到左参数后面所得的字符串。</p>
+<pre><code class="language-php">$a = &quot;张先生&quot;;
+$tip = $a.&quot;,欢迎您在慕课网学习PHP！&quot;;
+echo  $tip.&quot;&lt;br /&gt;&quot;;
+
+结果：
+张先生,欢迎您在慕课网学习PHP！
+
+</code></pre>
+<p>（2）连接赋值运算符(“.=”)：它将右边参数附加到左边的参数后。</p>
+<pre><code class="language-php">$b = &quot;东边日出西边雨&quot;;	
+$b .= &quot;,道是无晴却有晴&quot;;
+$c = &quot;东边日出西边雨&quot;;	
+$c = $c.&quot;,道是无晴却有晴&quot;;
+echo  $b.&quot;&lt;br /&gt;&quot;;
+echo  $c.&quot;&lt;br /&gt;&quot;;
+
+结果：
+东边日出西边雨,道是无晴却有晴
+东边日出西边雨,道是无晴却有晴
+
+</code></pre>
+<h2 id="错误控制运算符">错误控制运算符</h2>
+<p>PHP中提供了一个错误控制运算符“@”，对于一些可能会在运行过程中出错的表达式时，我们不希望出错的时候给客户显示错误信息，这样对用户不友好。于是，可以将@放置在一个PHP表达式之前，该表达式可能产生的任何错误信息都被忽略掉；</p>
+<p>如果激活了track_error（这个玩意在php.ini中设置）特性，表达式所产生的任何错误信息都被存放在变量$php_errormsg中，此变量在每次出错时都会被覆盖，所以如果想用它的话必须尽早检查。</p>
+<p>需要注意的是：错误控制前缀“@”不会屏蔽解析错误的信息，不能把它放在函数或类的定义之前，也不能用于条件结构例如if和foreach等。</p>
+<pre><code class="language-php">$conn = @mysql_connect(&quot;localhost&quot;,&quot;username&quot;,&quot;password&quot;);
+// 这样就不会报错并打印出来
+</code></pre>
+<h2 id="取整函数">取整函数</h2>
+<p>ceil() 函数向上舍入为最接近的整数。</p>
+<pre><code class="language-php">echo(ceil(0.60);
+echo(ceil(0.40);
+echo(ceil(5);
+echo(ceil(5.1);
+echo(ceil(-5.1);
+echo(ceil(-5.9));
+
+输出：
+1
+1
+5
+6
+-5
+-5
+
+</code></pre>
+<hr>
+<h1 id="顺序结构">顺序结构</h1>
+<p>顺序结构就像一条直线，按着顺序一直往下执行。我们编写的代码默认都是按照顺序结构执行的。</p>
+<h2 id="条件结构">条件结构:</h2>
+<h2 id="ifelse">if…else…</h2>
+<pre><code class="language-php">if(条件){
+     //分配服务器干的任务A
+}else{
+     //分配服务器干的任务B
+}
+</code></pre>
+<h2 id="ifelse-if">if…else if…</h2>
+<pre><code class="language-php">if(条件一){
+     //分配服务器干的任务A
+}else if(条件二){
+     //分配服务器干的任务B
+}
+</code></pre>
+<h2 id="ifelse-ifelse">if…else if…else…</h2>
+<pre><code class="language-php">if(条件一){
+     //分配服务器干的任务A
+}else if(条件二){
+     //分配服务器干的任务B
+}else{
+     //分配服务器干的任务C
+}
+</code></pre>
+<p>当两个条件对立时用if…else，当两个条件不存在对立关系时用if…else if…</p>
+<h2 id="switchcase">switch…case…</h2>
+<pre><code class="language-php">switch (条件)
+{
+case 条件值一:
+  //任务一
+  break; 
+case 条件值二:
+  //任务二
+  break;
+default:
+  //默认任务
+}
+</code></pre>
+<p>switch…case…中的break：<br>
+break的作用是结束switch，亦可以避免冗长的 “if..else if..else”代码块。</p>
+<pre><code class="language-php">
+//A例子
+$num = 2;
+$sum  = 10; 
+switch($num){
+    case 1:
+		$sum = $sum  + 10;
+		break;
+	case 2:
+		$sum = $sum  + 10;
+		break;
+ 	case 3:
+		$sum = $sum  + 10;
+		break;
+	default:
+		$sum = $sum  + 10;
+}
+ echo &quot;A例子的值是：&quot;.$sum.&quot;&lt;br /&gt;&quot;;
+
+ 结果：A例子的值是：20
+ // 直接查询到num为2，sum加10后即刻break，跳出查找。
+
+//B例子
+$num = 2;
+$sum  = 10; 
+switch($num){
+	case 1:
+		$sum = $sum  + 10;
+	case 2:
+		$sum = $sum  + 10;
+	case 3:
+		$sum = $sum  + 10;
+	default:
+		$sum = $sum  + 10;
+}
+ echo &quot;B例子的值是：&quot;.$sum.&quot;&lt;br /&gt;&quot;;
+
+ 结果：B例子的值是：40
+//查询到num为2后，sum加10，因为没break，继续执行case3，加了10，再执行了defailt。 
+
+</code></pre>
 <p>内容持续更新中。。。</p>
 <hr>
 <blockquote>
