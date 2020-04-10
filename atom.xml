@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-10T11:26:42.056Z</updated>
+    <updated>2020-04-10T14:11:02.441Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -425,7 +425,123 @@ switch($num){
 //查询到num为2后，sum加10，因为没break，继续执行case3，加了10，再执行了defailt。 
 
 </code></pre>
-<p>内容持续更新中。。。</p>
+<h2 id="while循环语句">while循环语句</h2>
+<pre><code class="language-php">while(条件){ 
+     //执行任务
+}
+</code></pre>
+<p>首先判断某个条件是否符合（条件返回值是否为TRUE），<br>
+若符合则执行任务，执行完毕任务，再判断条件是否满足要求，符合则重复执行此任务，否则结束任务。</p>
+<h2 id="do-while循环语句">do while循环语句</h2>
+<pre><code class="language-php">do{ 
+     //执行任务
+}while(条件)
+</code></pre>
+<p>首先执行任务（while语句是先判断条件是否成立，再执行任务），执行任务完毕，判断某个条件是否符合（条件返回值是否为TRUE），若符合则再次执行任务，执行完毕任务，继续判定条件。</p>
+<p>while与do…while循环语句的区别：<br>
+while先判断条件是否成立，后执行循环，do...while先执行一次任务，再判断是否继续执行循环，也就是说do...while至少会执行一次任务。当条件为FALSE时，while中的任务会一次也不执行，do...while中的任务会执行1次。</p>
+<h2 id="for循环语句">for循环语句</h2>
+<pre><code class="language-php">for(初始化;循环条件;递增项){
+      //执行任务
+}
+
+for($i = 1,$i&lt;=100;$i++){
+    echo &quot;666&quot;;
+}
+</code></pre>
+<p>for 语句中，“初始化”在循环开始前无条件求值一次，“循环条件”在每次循环开始前求值。如果值为 TRUE，则继续循环，执行循环体语句（执行任务）。如果值为 FALSE，则终止循环。“递增项”在每次循环之后被求值（执行）。其常用于循环执行代码块指定的次数。</p>
+<h2 id="foreach循环语句">foreach循环语句</h2>
+<p>常用于遍历数组，一般有两种使用方式:不取下标、取下标。</p>
+<pre><code class="language-php">
+//eg
+$students = array(
+'2010'=&gt;'令狐冲',
+... ...
+... ...
+'2019'=&gt;'宁中则',
+);//10个学生的学号和姓名，用数组存储
+
+（1）只取值，不取下标
+
+ foreach (数组 as 值){
+//执行的任务
+}
+
+//使用循环结构遍历数组,获取学号和姓名  
+foreach($students as  $v)
+{ 
+    echo $v;//输出（打印）姓名
+	echo &quot;&lt;br /&gt;&quot;;
+}
+
+（2）同时取下标和值
+
+foreach (数组 as 下标 =&gt; 值){
+ //执行的任务
+}
+
+//使用循环结构遍历数组,获取学号和姓名  
+foreach($students as $key =&gt;$v)
+{ 
+    echo $key.&quot;:&quot;.$v;//输出（打印）学号：姓名
+	echo &quot;&lt;br /&gt;&quot;;
+}
+?&gt;
+
+</code></pre>
+<h2 id="结构嵌套">结构嵌套</h2>
+<h2 id="条件嵌套">条件嵌套</h2>
+<p>if里加if，<br>
+if($sex == &quot;男&quot;)</p>
+<p>if($noHouse)</p>
+<p>else if($sex == &quot;女&quot;)<br>
+4、第20行输入：</p>
+<p>if($isPregnancy)</p>
+<h2 id="循环嵌套">循环嵌套</h2>
+<p>常用于遍历二维数组。</p>
+<pre><code class="language-php">
+ $students = array(
+'2010'=&gt;array('令狐冲',&quot;59&quot;),
+... ...
+... ...
+'2019'=&gt;array('宁中则',&quot;90&quot;),
+);//10个学生的学号、姓名、分数，用数组存储
+ 
+foreach($students as $key=&gt;$val)
+{ //使用循环结构遍历数组,获取学号 
+     echo $key; //输出学号
+	 echo &quot;:&quot;;
+	 //循环输出姓名和分数
+    foreach($val as $v)
+	{
+		echo $v; 
+	 }
+	 echo &quot;&lt;br /&gt;&quot;;
+}
+
+</code></pre>
+<p>#循环结构与条件结构嵌套</p>
+<pre><code class="language-php"> $students = array(
+'2010'=&gt;'令狐冲',
+... ...
+... ...
+'2019'=&gt;'宁中则',
+);//10个学生的学号和姓名，用数组存储
+$query = '2014';
+//使用循环结构遍历数组,获取学号和姓名
+foreach($students as $key =&gt;$v)
+{ 
+    //使用条件结构，判断是否为该学号
+	if($key == $query)
+	{ 
+		echo $v;//输出（打印）姓名
+		break;//结束循环（跳出循环）
+	}
+}
+
+</code></pre>
+<p>在执行任务时，对于一些特殊的任务进行额外处理。</p>
+<p>内容持续更新中...</p>
 <hr>
 <blockquote>
 <p>为什么有了这么完备的“慕课网学习系统”，还要做个复制粘贴呢？<br>
