@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-10T16:12:09.832Z</updated>
+    <updated>2020-04-11T10:56:57.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://littlebuzi.github.io/images/avatar.png</logo>
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[PHP学习笔记(下)]]></title>
+        <id>https://littlebuzi.github.io/q5J9sqif-</id>
+        <link href="https://littlebuzi.github.io/q5J9sqif-">
+        </link>
+        <updated>2020-04-11T04:27:38.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文章是继PHP学习笔记（上）的下篇，资源整合自慕课网。</p>
+</blockquote>
+<hr>
+<h1 id="一-php数组定义">一、PHP数组定义</h1>
+<p>数组就是一个键值对组成的语言结构，键类似于酒店的房间号，值类似于酒店房间里存储的东西。</p>
+<pre><code class="language-php">$arr = array();
+</code></pre>
+<p>表示创建一个空数组，并把创建的空数组赋值给变量$arr。</p>
+<h2 id="索引数组初始化">索引数组初始化</h2>
+<p>PHP有两种数组：索引数组、关联数组。<br>
+索引和关联两个词都是针对数组的键而言的。</p>
+<p>索引数组是指数组的键是整数的数组，并且键的整数顺序是从0开始，依次类推。</p>
+<pre><code class="language-php">
+fruit
+|香蕉|苹果|雪梨|
+|:-|:-:|-:|
+|0|1|2|
+
+$fruit = array(&quot;苹果&quot;,&quot;香蕉&quot;,&quot;菠萝&quot;); 
+print_r($fruit);
+
+</code></pre>
+<h2 id="索引数组赋值">索引数组赋值</h2>
+<p>赋值有三种方式:<br>
+$arr[0]='苹果';<br>
+array('0'=&gt;'苹果');</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[PHP学习笔记(上)]]></title>
         <id>https://littlebuzi.github.io/learn_php_1</id>
@@ -898,123 +933,6 @@ https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
         <content type="html"><![CDATA[<h1 id="下载">下载</h1>
 <p>https://www.4kdownload.com/zh-cn/downloads</p>
 <p>https://github.com/soimort/you-get</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python基操]]></title>
-        <id>https://littlebuzi.github.io/pacong</id>
-        <link href="https://littlebuzi.github.io/pacong">
-        </link>
-        <updated>2020-01-31T12:06:10.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="python-爬虫-beautifulsoup4-基础">Python 爬虫 beautifulsoup4 基础</h1>
-<h2 id="pycharm-python环境搭建好后">pycharm、python环境搭建好后</h2>
-<p>装载html文档，使用beautifulsoup的第一步是把html文档装载到beautifulsoup中，使其形成一个beautifulsoup对象。</p>
-<pre><code>import requests
-from bs4 import BeautifulSoup
-url = &quot;xxxx&quot;
-r = requests.get(url)
-htmls = r.text
-#print(htmls)
-soup = BeautifulSoup(htmls, 'html.parser')
-</code></pre>
-<p>初始化BeautifulSoup类时，需要加入两个参数，第一个参数即是我们爬到html源码，第二个参数是html解析器，常用的有三个解析器，分别是”html.parser”,”lxml”,”html5lib”，官网推荐用lxml，因为效率高，当然需要pip install lxml一下。</p>
-<h2 id="例子">例子</h2>
-<p>html对象：</p>
-<pre><code>uls='''
-&lt;h3&gt;Header3 (Start here)&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;List items&lt;/li&gt;
-    &lt;li&gt;Etc...&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Header 3&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;List items&lt;/li&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Nested list items&lt;/li&gt;
-        &lt;li&gt;Nested list items&lt;/li&gt;&lt;/ul&gt;
-    &lt;li&gt;List items&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Header 2 (end here)&lt;/h2&gt;
-
-lis = []
-    for ul in uls:
-        for li in ul.findAll('li'):
-            if li.find('ul'):
-                break
-            lis.append(li)
-
-    for li in lis:
-        print(li.text)
-        #print(li.text.encode(&quot;utf-8&quot;))
-
-</code></pre>
-<p>https://www.jb51.net/article/156907.htm<br>
-https://blog.csdn.net/huxiny/article/details/79679066</p>
-<h2 id="百度图片爬虫">百度图片爬虫：</h2>
-<p>https://blog.csdn.net/qq_40774175/article/details/81273198</p>
-<h2 id="python代码报错-fileexistserror-winerror-183-当文件已存在时无法创建该文件">Python代码报错 FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。</h2>
-<p>检查路劲是否有中文，有则换成英文或数字</p>
-<p>https://zhidao.baidu.com/question/1309336445243832299.html</p>
-<hr>
-<h1 id="python-读取和输出到-txt-文件">Python 读取和输出到 txt 文件</h1>
-<pre><code class="language-python">with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开文件
-    data = f.read()  # 读取文件
-    print(data)
-</code></pre>
-<p>读入这种文件时：<br>
-test.txt</p>
-<pre><code>樱之宫莓香
-轰焦冻
-鬼灯
-和泉守兼定
-</code></pre>
-<pre><code class="language-python">str=[]
-with open(&quot;test.txt&quot;, &quot;r&quot;,encoding='UTF-8') as f:  # 打开文件
-    data = f.readlines()
-    for line in data:
-        line = line.strip('\n')  # 去掉列表中每一个元素的换行符
-        str.append(line)
-    print(str)
-</code></pre>
-<p>参考：<br>
-<a href="https://blog.csdn.net/zhang__shuang_/article/details/82527314">https://blog.csdn.net/zhang__shuang_/article/details/82527314</a></p>
-<p>Python读取文件时出现UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position xx: 解决方案:</p>
-<p><a href="https://blog.csdn.net/zhang__shuang_/article/details/82527314">https://blog.csdn.net/zhang__shuang_/article/details/82527314</a></p>
-<hr>
-<p>①：<a href="https://www.v2ex.com/t/476712">Python 正则表达式 re 中出现'str' object has no attribute 'findall'</a></p>
-<p>②：<a href="https://blog.csdn.net/DansonC/article/details/88860936">出现TypeError: 'list' object is not callable异常的情况与解决方法</a></p>
-<p>③：<a href="https://blog.csdn.net/Dr_mark/article/details/82853827">利用python将中文名转换为英文名</a></p>
-<h1 id="python递归遍历目录和子目录下的所有文件并将文件目录存入列表">python递归遍历目录和子目录下的所有文件，并将文件目录存入列表</h1>
-<pre><code class="language-python">
-import os
-
-def get_file(root_path,all_files=[]):
-    '''
-    递归函数，遍历该文档目录和子目录下的所有文件，获取其path
-    '''
-    files = os.listdir(root_path)
-    for file in files:
-        if not os.path.isdir(root_path + '/' + file):   # not a dir
-            all_files.append(root_path + '/' + file)
-        else:  # is a dir
-            get_file((root_path+'/'+file),all_files)
-    return all_files
-
-# example
-path = './raw_data'
-print(get_file(path))
-
-</code></pre>
-<p>https://blog.csdn.net/weixin_39858881/article/details/86543689</p>
-<h1 id="python中复制文件的两种简单方式">Python中复制文件的两种简单方式</h1>
-<pre><code class="language-python">方法一：借助操作系统中本身的拷贝命令
-import os
-os.system(&quot;xcopy C:\\1.txt D:&quot;)
-
-方法二：借助shutil模块来完成拷贝操作
-import shutil
-shutil.copyfile('C:\\1.txt', 'D:\\1.txt')
-</code></pre>
 ]]></content>
     </entry>
 </feed>
