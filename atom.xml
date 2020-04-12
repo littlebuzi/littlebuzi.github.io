@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T05:53:10.329Z</updated>
+    <updated>2020-04-12T07:17:20.629Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -88,7 +88,31 @@ foreach($fruit as $k=&gt;$v){
     echo '&lt;br&gt;水果的英文键名：'.$k.'，对应的值是：'.$v;
 
 </code></pre>
-<h1 id="类和对象">类和对象</h1>
+<h1 id="二-类和对象">二、类和对象</h1>
+<p>类是面向对象程序设计的基本概念，通俗的理解类就是对现实中某一个种类的东西的抽象。<br>
+如汽车可以抽象为一个类，<br>
+属性：名字、轮胎、速度、重量等，<br>
+操作方法：换挡、前进、后退等。</p>
+<pre><code class="language-php">// 定义一个汽车类的方法为
+class Car {
+    $name = '汽车';
+    function getName() {
+        return $this-&gt;name;
+    }
+}
+// 类是一类东西的结构描述，而对象则是一类东西的一个具体实例，
+例如汽车这个名词可以理解为汽车的总类，但这辆汽车则是一个具体的汽车对象。
+
+// 对象通过new关键字进行实例化：
+$car = new Car();
+$car-&gt;name = '奥迪A6'; //设置对象的属性值
+echo $car-&gt;getName();  //调用对象的方法 输出对象的名字
+
+//类与对象看起来比较相似，但实际上有本质的区别，
+//类是抽象的概念，对象是具体的实例。
+//类可以使程序具有可重用性。
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
