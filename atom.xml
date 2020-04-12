@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T05:10:15.987Z</updated>
+    <updated>2020-04-12T05:53:10.329Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -40,9 +40,55 @@ print_r($fruit);
 
 </code></pre>
 <h2 id="索引数组赋值">索引数组赋值</h2>
-<p>赋值有三种方式:<br>
-$arr[0]='苹果';<br>
-array('0'=&gt;'苹果');</p>
+<p>赋值有三种方式:</p>
+<pre><code class="language-php">$arr[0]='苹果';
+array('0'=&gt;'苹果');
+$arr = array('0'=&gt;'苹果');
+if( isset($arr) ) {print_r($arr);}
+</code></pre>
+<p>isset（） 函数是检查 括号内的是否被定义了，定义为null 也表示true。</p>
+<h2 id="索引数组内容">索引数组内容</h2>
+<pre><code class="language-php">$fruit = array('苹果','香蕉');
+$fruit0 = $fruit['0'];
+print_r($fruit0);//结果为苹果
+</code></pre>
+<h2 id="循环访问索引数组里的值">循环访问索引数组里的值</h2>
+<pre><code class="language-php">// for循环
+
+$fruit=array('苹果','香蕉','菠萝');
+for($i=0; $i&lt;3; $i++){
+    echo '&lt;br&gt;数组第'.$i.'值是：'.$fruit[$i];
+}
+</code></pre>
+<p>访问索引数组里的值</p>
+<pre><code class="language-php">//foreach循环
+
+$fruit=array('苹果','香蕉','菠萝');
+foreach($fruit as $key=&gt;$value){
+    echo '&lt;br&gt;第'.$key.'值是：';
+}
+
+</code></pre>
+<h2 id="关联数组初始化">关联数组初始化</h2>
+<p>关联数组定义</p>
+<pre><code class="language-php">// 创建一个关联数组，关联数组的键“orange”，值是“橘子”
+$fruit = array(
+    // 关联数组赋值
+    'apple'=&gt;&quot;苹果&quot;,
+    'banana'=&gt;&quot;香蕉&quot;,
+    'pineapple'=&gt;&quot;菠萝&quot;
+); 
+
+// 访问关联数组内容
+$fruit0 = $fruit['banana'];
+print_r($fruit0);
+
+// foreach循环访问关联数组里的值
+foreach($fruit as $k=&gt;$v){
+    echo '&lt;br&gt;水果的英文键名：'.$k.'，对应的值是：'.$v;
+
+</code></pre>
+<h1 id="类和对象">类和对象</h1>
 ]]></content>
     </entry>
     <entry>
