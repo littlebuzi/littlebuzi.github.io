@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T07:17:39.227Z</updated>
+    <updated>2020-04-12T07:29:15.838Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -17,7 +17,7 @@
         </link>
         <updated>2020-04-11T04:27:38.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>本文章是继PHP学习笔记（上）的下篇，资源整合自慕课网。</p>
+<p>本文章是继PHP基础学习笔记（上）的下篇，主要记录php基础知识，资源整合自慕课网。</p>
 </blockquote>
 <hr>
 <h1 id="一-php数组定义">一、PHP数组定义</h1>
@@ -29,15 +29,13 @@
 <p>PHP有两种数组：索引数组、关联数组。<br>
 索引和关联两个词都是针对数组的键而言的。</p>
 <p>索引数组是指数组的键是整数的数组，并且键的整数顺序是从0开始，依次类推。</p>
-<pre><code class="language-php">
-fruit
+<pre><code class="language-php">fruit
 |香蕉|苹果|雪梨|
 |:-|:-:|-:|
 |0|1|2|
 
 $fruit = array(&quot;苹果&quot;,&quot;香蕉&quot;,&quot;菠萝&quot;); 
 print_r($fruit);
-
 </code></pre>
 <h2 id="索引数组赋值">索引数组赋值</h2>
 <p>赋值有三种方式:</p>
@@ -53,24 +51,19 @@ $fruit0 = $fruit['0'];
 print_r($fruit0);//结果为苹果
 </code></pre>
 <h2 id="循环访问索引数组里的值">循环访问索引数组里的值</h2>
-<pre><code class="language-php">// for循环
+<pre><code class="language-php">$fruit=array('苹果','香蕉','菠萝');
 
-$fruit=array('苹果','香蕉','菠萝');
+// for循环
 for($i=0; $i&lt;3; $i++){
     echo '&lt;br&gt;数组第'.$i.'值是：'.$fruit[$i];
 }
-</code></pre>
-<p>访问索引数组里的值</p>
-<pre><code class="language-php">//foreach循环
 
-$fruit=array('苹果','香蕉','菠萝');
+//foreach循环
 foreach($fruit as $key=&gt;$value){
     echo '&lt;br&gt;第'.$key.'值是：';
 }
-
 </code></pre>
 <h2 id="关联数组初始化">关联数组初始化</h2>
-<p>关联数组定义</p>
 <pre><code class="language-php">// 创建一个关联数组，关联数组的键“orange”，值是“橘子”
 $fruit = array(
     // 关联数组赋值
@@ -86,7 +79,6 @@ print_r($fruit0);
 // foreach循环访问关联数组里的值
 foreach($fruit as $k=&gt;$v){
     echo '&lt;br&gt;水果的英文键名：'.$k.'，对应的值是：'.$v;
-
 </code></pre>
 <h1 id="二-类和对象">二、类和对象</h1>
 <p>类是面向对象程序设计的基本概念，通俗的理解类就是对现实中某一个种类的东西的抽象。<br>
@@ -101,7 +93,7 @@ class Car {
     }
 }
 // 类是一类东西的结构描述，而对象则是一类东西的一个具体实例，
-例如汽车这个名词可以理解为汽车的总类，但这辆汽车则是一个具体的汽车对象。
+// 例如汽车这个名词可以理解为汽车的总类，但这辆汽车则是一个具体的汽车对象。
 
 // 对象通过new关键字进行实例化：
 $car = new Car();
@@ -111,7 +103,6 @@ echo $car-&gt;getName();  //调用对象的方法 输出对象的名字
 //类与对象看起来比较相似，但实际上有本质的区别，
 //类是抽象的概念，对象是具体的实例。
 //类可以使程序具有可重用性。
-
 </code></pre>
 ]]></content>
     </entry>
