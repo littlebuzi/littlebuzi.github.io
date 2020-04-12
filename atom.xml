@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T07:49:18.645Z</updated>
+    <updated>2020-04-12T08:10:02.102Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -147,6 +147,9 @@ class Car{
 <p>方法就是在类中的function，很多时候我们分不清方法与函数有什么差别，<br>
 在面向过程的程序设计中function叫做<code>函数</code>，在面向对象中function则被称之为<code>方法</code>。</p>
 <p>同属性一样，类的方法也具有public，protected 以及 private 的访问控制。</p>
+<p>被定义为公有的类成员可以在任何地方被访问。<br>
+被定义为受保护的类成员则可以被其自身以及其子类和父类访问。<br>
+被定义为私有的类成员则只能被其定义所在的类访问。</p>
 <pre><code class="language-php">class Car {
     public function getName() {
         return '汽车';
@@ -254,7 +257,94 @@ echo '使用后，准备销毁car对象 \n';
 unset($car); //销毁时会调用析构函数
 </code></pre>
 <p>当PHP代码执行完毕以后，会自动回收与销毁对象，因此一般情况下不需要显式的去销毁对象。</p>
-<h2 id="static静态关键字">Static静态关键字</h2>
+<h2 id="访问控制">访问控制</h2>
+<p>类属性必须定义为公有、受保护、私有之一。<br>
+为兼容PHP5以前的版本，如果采用 var 定义，则被视为公有。</p>
+<pre><code class="language-php">class Car {
+    $speed = 10; //错误 属性必须定义访问控制
+    public $name;   //定义共有属性
+}
+</code></pre>
+<p>类中的方法可以被定义为公有、私有或受保护。<br>
+如果没有设置这些关键字，则该方法默认为<code>公有</code>。</p>
+<pre><code class="language-php">class Car {
+​    //默认为共有方法
+    function turnLeft() {
+    }
+}
+</code></pre>
+<p>如果构造函数定义成了私有方法，则不允许直接实例化对象了，<br>
+这时候一般通过静态方法进行实例化，在设计模式中会经常使用这样的方法来控制对象的创建，<br>
+比如单例模式只允许有一个全局唯一的对象。</p>
+<pre><code class="language-php">class Car {
+    private function __construct() {
+        echo 'object create';
+    }
+
+    private static $_object = null;
+    public static function getInstance() {
+        if (empty(self::$_object)) {
+            self::$_object = new Car(); //内部方法可以调用私有方法，因此这里可以创建对象
+        }
+        return self::$_object;
+    }
+}
+//$car = new Car(); //这里不允许直接实例化对象
+$car = Car::getInstance(); //通过静态方法来获得一个实例
+</code></pre>
+<h2 id="对象继承">对象继承</h2>
+<p>继承是面向对象程序设计中常用的一个特性，汽车是一个比较大的类，我们也可以称之为基类，<br>
+除此之外，汽车还分为卡车、轿车、东风、宝马等，因为这些子类具有很多相同的属性和方法，<br>
+可以采用继承汽车类来共享这些属性与方法，实现代码的复用。</p>
+<pre><code class="language-php">class Car {
+    public $speed = 0; //汽车的起始速度是0
+    
+    public function speedUp() {
+        $this-&gt;speed += 10;
+        return $this-&gt;speed;
+    }
+}
+//定义继承于Car的Truck类
+class Truck extends Car {
+    public function speedUp(){
+        $this-&gt;speed = parent::speedUp() + 50;
+    }
+}
+
+$car = new Truck();
+$car-&gt;speedUp();
+echo $car-&gt;speed;
+
+//结果：60
+</code></pre>
+<h2 id="重载">重载</h2>
+<p>PHP中的重载指的是<code>动态</code>的创建属性与方法，是通过魔术方法来实现的。</p>
+<p>__set，对不存在属性赋值<br>
+__get，对不存在属性读取<br>
+__isset，判断属性是否设置<br>
+__unset，销毁属性</p>
+<p>方法的重载通过__call来实现，当调用不存在的方法的时候，<br>
+将会转为参数调用__call方法，当调用不存在的静态方法时会使用__callStatic重载。</p>
+<p>class Car {<br>
+public $speed = 10;</p>
+<pre><code>//在这里使用重载实现speedDown方法
+public function __call($name, $args) {
+    if ($name == 'speedDown') {
+        $this-&gt;speed -= 10;
+    }
+}
+</code></pre>
+<p>}<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>a</mi><mi>r</mi><mo>=</mo><mi>n</mi><mi>e</mi><mi>w</mi><mi>C</mi><mi>a</mi><mi>r</mi><mo>(</mo><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">car = new Car();
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mclose">)</span><span class="mpunct">;</span></span></span></span>car-&gt;speedDown(); //调用不存在的speedDown方法<br>
+echo $car-&gt;speed;</p>
+<p>// $name 参数是要调用的方法名称。<br>
+// $arg 参数是一个枚举数组，包含着要传递给方法 $name 的参数。<br>
+// 所有的重载方法都必须被声明为 public。<br>
+//这些魔术方法的参数都不能通过引用传递。<br>
+//属性重载只能在对象中进行。在静态方式中，这些魔术方法将不会被调用。所以这些方法都不能被声明为 static。</p>
+<p>详细：https://www.imooc.com/code/546</p>
+<h2 id="高级特性">高级特性</h2>
 ]]></content>
     </entry>
     <entry>
