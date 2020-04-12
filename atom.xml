@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T07:17:20.629Z</updated>
+    <updated>2020-04-12T07:17:39.227Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
     <entry>
-        <title type="html"><![CDATA[PHP学习笔记(下)]]></title>
+        <title type="html"><![CDATA[PHP基础学习笔记(下)]]></title>
         <id>https://littlebuzi.github.io/learn_php_2</id>
         <link href="https://littlebuzi.github.io/learn_php_2">
         </link>
@@ -116,7 +116,7 @@ echo $car-&gt;getName();  //调用对象的方法 输出对象的名字
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[PHP学习笔记(上)]]></title>
+        <title type="html"><![CDATA[PHP基础学习笔记(上)]]></title>
         <id>https://littlebuzi.github.io/learn_php_1</id>
         <link href="https://littlebuzi.github.io/learn_php_1">
         </link>
