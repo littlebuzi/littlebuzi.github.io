@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586676551036">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586677754464">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586676551036" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586677754464" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -43,7 +43,14 @@
 <li><a href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96">关联数组初始化</a></li>
 </ul>
 </li>
-<li><a href="#%E4%BA%8C-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1">二、类和对象</a></li>
+<li><a href="#%E4%BA%8C-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1">二、类和对象</a>
+<ul>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E4%B9%8B%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7">对象之类的属性</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95">定义类的方法</a></li>
+<li><a href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0">构造函数和析构函数</a></li>
+<li><a href="#static%E9%9D%99%E6%80%81%E5%85%B3%E9%94%AE%E5%AD%97">Static静态关键字</a></li>
+</ul>
+</li>
 </ul>
 
           </div>
@@ -92,7 +99,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">PHP基础学习笔记(下)</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-11 / 3 min read
+          2020-04-11 / 7 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_2.jpg" alt="">
@@ -169,9 +176,9 @@ foreach($fruit as $k=&gt;$v){
 操作方法：换挡、前进、后退等。</p>
 <pre><code class="language-php">// 定义一个汽车类的方法为
 class Car {
-    $name = '汽车';
-    function getName() {
-        return $this-&gt;name;
+    $name = '汽车'; //定义属性
+    function getName() { //定义方法
+        return $this-&gt;name; //方法内部可以使用$this伪变量调用对象的属性或者方法
     }
 }
 // 类是一类东西的结构描述，而对象则是一类东西的一个具体实例，
@@ -182,10 +189,161 @@ $car = new Car();
 $car-&gt;name = '奥迪A6'; //设置对象的属性值
 echo $car-&gt;getName();  //调用对象的方法 输出对象的名字
 
+//也可以采用变量来创建
+$className = 'Car';
+$car = new $className();
+
 //类与对象看起来比较相似，但实际上有本质的区别，
 //类是抽象的概念，对象是具体的实例。
 //类可以使程序具有可重用性。
 </code></pre>
+<h2 id="对象之类的属性">对象之类的属性</h2>
+<p>在类中定义的变量称之为属性，<br>
+通常属性跟数据库中的字段有一定的关联，因此也可以称作“字段”。<br>
+属性声明是由以下关键字开头。<br>
+<code>public：公开的</code><br>
+<code>protected：受保护的</code><br>
+<code>private：私有的</code></p>
+<pre><code class="language-php">class Car {
+    //定义公共属性
+    public $name = '汽车';
+
+    //定义受保护的属性
+    protected $color = '白色';
+
+    //定义私有属性
+    private $price = '100000';
+}
+</code></pre>
+<p>默认都为public，外部可以访问。<br>
+一般通过-&gt;对象操作符来访问对象的属性或者方法，对于静态属性则使用::双冒号进行访问。<br>
+当在类成员方法内部调用的时候，可以使用$this伪变量调用当前对象的属性。</p>
+<pre><code class="language-php">$car = new Car();
+echo $car-&gt;name;   //调用对象的属性
+echo $car-&gt;color;  //错误 受保护的属性不允许外部调用
+echo $car-&gt;price;  //错误 私有属性不允许外部调用
+
+受保护的属性与私有属性不允许外部调用，在类的成员方法内部是可以调用的。
+
+class Car{
+    private $price = '1000';
+    public function getPrice() {
+        return $this-&gt;price; //内部访问私有属性
+​    }
+}
+</code></pre>
+<h2 id="定义类的方法">定义类的方法</h2>
+<p>方法就是在类中的function，很多时候我们分不清方法与函数有什么差别，<br>
+在面向过程的程序设计中function叫做<code>函数</code>，在面向对象中function则被称之为<code>方法</code>。</p>
+<p>同属性一样，类的方法也具有public，protected 以及 private 的访问控制。</p>
+<pre><code class="language-php">class Car {
+    public function getName() {
+        return '汽车';
+    }
+​}
+$car = new Car();
+echo $car-&gt;getName();
+</code></pre>
+<p>使用关键字static修饰的，称之为静态方法。<br>
+静态方法不需要实例化对象，可以通过类名直接调用，操作符为双冒号::。</p>
+<pre><code class="language-php">class Car {
+    public static function getName() {
+        return '汽车';
+    }
+​}
+echo Car::getName(); //结果为“汽车”
+
+// 静态方法也可以通过变量来进行动态调用
+
+$func = 'getSpeed';
+$className = 'Car';
+echo $className::$func();  //动态调用静态方法
+
+静态方法中，$this伪变量不允许使用。
+可以使用self，parent，static在内部调用静态方法与属性。
+
+class Car {
+    private static $speed = 10;
+    
+    public static function getSpeed() {
+        return self::$speed;
+    }
+    
+    public static function speedUp() {
+        return self::$speed+=10;
+    }
+}
+class BigCar extends Car {
+    public static function start() {
+        parent::speedUp();
+    }
+}
+
+BigCar::start();
+echo BigCar::getSpeed();
+
+车辆加速
+
+class Car {
+    private static $speed = 10;
+    
+    public function getSpeed() {
+        return self::$speed;
+    }
+    
+    //在这里定义一个静态方法，实现速度累加10
+
+public static function speedUp() {
+    return self::$speed+=10;
+}
+
+}
+
+$car = new Car();
+Car::speedUp();  //调用静态方法加速
+echo $car-&gt;getSpeed();  //调用共有方法输出当前的速度值
+</code></pre>
+<h2 id="构造函数和析构函数">构造函数和析构函数</h2>
+<p>__construct()定义一个构造函数，具有构造函数的类，<br>
+会在每次对象创建的时候调用该函数，因此常用来在对象创建的时候进行一些<code>初始化工作</code>。</p>
+<pre><code class="language-php">class Car {
+   function __construct() {
+       print &quot;构造函数被调用\n&quot;;
+   }
+}
+$car = new Car(); //实例化的时候 会自动调用构造函数__construct，这里会输出一个字符串
+</code></pre>
+<p>在子类中如果定义了__construct则不会调用父类的__construct，<br>
+如果需要同时调用父类的构造函数，需要使用parent::__construct()显式的调用。</p>
+<pre><code class="language-php">class Car {
+   function __construct() {
+       print &quot;父类构造函数被调用\n&quot;;
+   }
+}
+class Truck extends Car {
+   function __construct() {
+       print &quot;子类构造函数被调用\n&quot;;
+       parent::__construct();
+   }
+}
+$car = new Truck();
+</code></pre>
+<p>同样，PHP5支持析构函数，使用__destruct()进行定义,<br>
+析构函数指的是当某个对象的所有引用被删除，或者对象被显式的销毁时会执行的函数。</p>
+<pre><code class="language-php">class Car {
+   function __construct() {
+       print &quot;构造函数被调用 \n&quot;;
+   }
+   function __destruct() {
+       print &quot;析构函数被调用 \n&quot;;
+   }
+}
+$car = new Car(); //实例化时会调用构造函数
+echo '使用后，准备销毁car对象 \n';
+unset($car); //销毁时会调用析构函数
+</code></pre>
+<p>当PHP代码执行完毕以后，会自动回收与销毁对象，因此一般情况下不需要显式的去销毁对象。</p>
+<h2 id="static静态关键字">Static静态关键字</h2>
 
         </div>
 
