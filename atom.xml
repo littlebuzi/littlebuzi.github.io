@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T15:19:58.462Z</updated>
+    <updated>2020-04-12T15:21:30.937Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -366,7 +366,7 @@ var_dump($c);
 </code></pre>
 <p>详细：https://www.imooc.com/code/547</p>
 <hr>
-<h1 id="正则表达式">正则表达式</h1>
+<h1 id="三-正则表达式">三、正则表达式</h1>
 <p>正则表达式是对字符串进行操作的一种逻辑公式，<br>
 就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。</p>
 <pre><code class="language-php">$p = '/apple/';
@@ -553,7 +553,7 @@ if (!preg_match('/^1\d{10}$/i', $user['mobile'])) {
 echo '用户信息验证成功';
 </code></pre>
 <hr>
-<h1 id="cookie简介">cookie简介</h1>
+<h1 id="四-cookie">四、cookie</h1>
 <p>Cookie是存储在客户端浏览器中的数据，我们通过Cookie来跟踪与存储用户数据。<br>
 一般情况下，Cookie通过HTTP headers从服务端返回到客户端。<br>
 多数web程序都支持Cookie的操作，因为Cookie是存在于HTTP的标头之中，<br>
