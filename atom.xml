@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-12T08:10:02.102Z</updated>
+    <updated>2020-04-12T15:19:18.290Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -345,6 +345,258 @@ echo $car-&gt;speed;</p>
 //属性重载只能在对象中进行。在静态方式中，这些魔术方法将不会被调用。所以这些方法都不能被声明为 static。</p>
 <p>详细：https://www.imooc.com/code/546</p>
 <h2 id="高级特性">高级特性</h2>
+<pre><code class="language-php">class Car {
+    public $name = 'car';
+    
+    public function __clone() {
+        $obj = new Car();
+        $obj-&gt;name = $this-&gt;name;
+    }
+}
+$a = new Car();
+$a-&gt;name = 'new car';
+$b = clone $a;
+if ($a == $b) echo '==';   //true
+if ($a === $b) echo '==='; //false
+
+$str = serialize($a); //对象序列化成字符串
+echo $str.'&lt;br&gt;';
+$c = unserialize($str); //反序列化为对象
+var_dump($c);
+</code></pre>
+<p>详细：https://www.imooc.com/code/547</p>
+<hr>
+<h1 id="正则表达式">正则表达式</h1>
+<p>正则表达式是对字符串进行操作的一种逻辑公式，<br>
+就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。</p>
+<pre><code class="language-php">$p = '/apple/';
+$str = &quot;apple banna&quot;;
+if (preg_match($p, $str)) {
+    echo 'matched';
+}
+</code></pre>
+<p>其中字符串'/apple/'就是一个正则表达式，用于匹配源字符串中是否存在apple字符串。</p>
+<p>PHP中使用PCRE库函数进行正则匹配，比如上例中的preg_match用于执行一个正则匹配，<br>
+常用来判断一类字符模式是否存在。</p>
+<h2 id="基本语法">基本语法</h2>
+<p>PCRE库函数中，正则匹配模式使用分隔符与元字符组成，分隔符可以是非数字、非反斜线、非空格的任意字符。经常使用的分隔符是正斜线(/)、hash符号(#) 以及取反符号(~)，例如：</p>
+<pre><code class="language-php">/foo bar/
+#^[^0-9]$#
+~php~
+
+//如果模式中包含分隔符，则分隔符需要使用反斜杠（\）进行转义。
+
+/http:\/\//
+
+//如果模式中包含较多的分割字符，建议更换其他的字符作为分隔符，也可以采用preg_quote进行转义。
+
+$p = 'http://';
+$p = '/'.preg_quote($p, '/').'/';
+echo $p;
+
+//分隔符后面可以使用模式修饰符，模式修饰符包括：i, m, s, x等，
+//例如使用i修饰符可以忽略大小写匹配：
+
+$str = &quot;Http://www.imooc.com/&quot;;
+if (preg_match('/http/i', $str)) {
+    echo '匹配成功';
+}
+
+// 忽略大小写匹配BBC
+$p = '/bbc/i';
+$str = &quot;BBC是英国的一个电视台&quot;;
+if (preg_match($p, $str)) {
+    echo '匹配成功';
+}
+
+</code></pre>
+<h2 id="元字符与转义">元字符与转义</h2>
+<p>正则表达式中具有特殊含义的字符称之为元字符，常用的元字符有：</p>
+<p>\ 一般用于转义字符<br>
+^ 断言目标的开始位置(或在多行模式下是行首)<br>
+$ 断言目标的结束位置(或在多行模式下是行尾)<br>
+. 匹配除换行符外的任何字符(默认)<br>
+[ 开始字符类定义<br>
+] 结束字符类定义<br>
+| 开始一个可选分支<br>
+( 子组的开始标记<br>
+) 子组的结束标记<br>
+? 作为量词，表示 0 次或 1 次匹配。位于量词后面用于改变量词的贪婪特性。 (查阅量词)</p>
+<ul>
+<li>量词，0 次或多次匹配</li>
+</ul>
+<ul>
+<li>量词，1 次或多次匹配<br>
+{ 自定义量词开始标记<br>
+} 自定义量词结束标记</li>
+</ul>
+<p>//下面的\s匹配任意的空白符，包括空格，制表符，换行符。[<sup>\s]代表非空白符。[</sup>\s]+表示一次或多次匹配非空白符。</p>
+<pre><code class="language-php">$p = '/^我[^\s]+(苹果|香蕉)$/';
+$str = &quot;我喜欢吃苹果&quot;;
+if (preg_match($p, $str)) {
+    echo '匹配成功';
+}
+</code></pre>
+<p>元字符具有两种使用场景，一种是可以在任何地方都能使用，另一种是只能在方括号内使用，在方括号内使用的有：</p>
+<p>\ 转义字符<br>
+^ 仅在作为第一个字符(方括号内)时，表明字符类取反</p>
+<ul>
+<li>标记字符范围</li>
+</ul>
+<p>其中^在反括号外面，表示断言目标的开始位置，但在方括号内部则代表字符类取反，方括号内的减号-可以标记字符范围，例如0-9表示0到9之间的所有数字。</p>
+<pre><code class="language-php">//下面的\w匹配字母或数字或下划线。
+$p = '/[\w\.\-]+@[a-z0-9\-]+\.(com|cn)/';
+$str = &quot;我的邮箱是Spark.eric@imooc.com&quot;;
+preg_match($p, $str, $match);
+echo $match[0];
+
+//匹配str中的电话
+$p = '/\d+\-\d+/';
+$str = &quot;我的电话是010-12345678&quot;;
+preg_match($p, $str, $match);
+echo $match[0];
+</code></pre>
+<h2 id="贪婪模式与懒惰模式">贪婪模式与懒惰模式</h2>
+<p>正则表达式中每个元字符匹配一个字符，当使用+之后将会变的贪婪，它将匹配尽可能多的字符，<br>
+但使用问号?字符时，它将尽可能少的匹配字符，既是懒惰模式。</p>
+<p>贪婪模式：在可匹配与可不匹配的时候，优先匹配</p>
+<pre><code class="language-php">//下面的\d表示匹配数字
+$p = '/\d+\-\d+/';
+$str = &quot;我的电话是010-12345678&quot;;
+preg_match($p, $str, $match);
+echo $match[0]; //结果为：010-12345678
+</code></pre>
+<p>懒惰模式：在可匹配与可不匹配的时候，优先不匹配</p>
+<pre><code class="language-php">$p = '/\d?\-\d?/';
+$str = &quot;我的电话是010-12345678&quot;;
+preg_match($p, $str, $match);
+echo $match[0];  //结果为：0-1
+</code></pre>
+<p>当我们确切的知道所匹配的字符长度的时候，可以使用{}指定匹配字符数</p>
+<pre><code class="language-php">$p = '/\d{3}\-\d{8}/';
+$str = &quot;我的电话是010-12345678&quot;;
+preg_match($p, $str, $match);
+echo $match[0]; //结果为：010-12345678
+</code></pre>
+<p>匹配str中的姓名</p>
+<pre><code class="language-php">$p = '/name:([\w\s]+)/';
+$str = &quot;name:steven jobs&quot;;
+preg_match($p, $str, $match);
+echo $match[1]; //结果为：steven jobs
+</code></pre>
+<h2 id="正则表达式匹配">正则表达式匹配</h2>
+<pre><code class="language-php">//正则匹配，并输出邮箱地址,匹配email的方法还有有很多
+$subject = &quot;my email is spark@imooc.com&quot;;
+$pattern = '/[\w\-]+@\w+\.\w+/';
+preg_match($pattern, $subject, $matches);
+echo $matches[0];
+</code></pre>
+<p>详细：https://www.imooc.com/code/562</p>
+<h2 id="查找所有匹配结果">查找所有匹配结果</h2>
+<p>preg_match只能匹配一次结果，但很多时候我们需要匹配所有的结果，<br>
+preg_match_all可以循环获取一个列表的匹配结果数组。</p>
+<pre><code class="language-php">$str = &quot;&lt;ul&gt;
+            &lt;li&gt;item 1&lt;/li&gt;
+            &lt;li&gt;item 2&lt;/li&gt;
+        &lt;/ul&gt;&quot;;
+//在这里补充代码，实现正则匹配所有li中的数据
+
+$p = &quot;/&lt;li&gt;(.*)&lt;\/li&gt;/i&quot;;//解释下这个正则：
+//后面的i表示不区分大小写，&lt;li&gt;(.*?)&lt;\/li&gt;表示li标签内的匹配的()内的值有多少，
+括号内的.表示所有单字符,*表示数量为0个或者多个。也就是li标签内有字符就显示出来
+preg_match_all($p, $str, $matches);
+print_r($matches[1]);
+
+结果：
+Array
+(
+    [0] =&gt; item 1
+    [1] =&gt; item 2
+)
+</code></pre>
+<p>详细：https://www.imooc.com/code/563</p>
+<h2 id="正则表达式的搜索和替换">正则表达式的搜索和替换</h2>
+<pre><code class="language-php">$str = '主要有以下几个文件：index.php, style.css, common.js';
+//将目标字符串$str中的文件名替换后增加em标签
+
+$p = '/\w+\.\w+/i';
+$str = preg_replace($p, '&lt;em&gt;$0&lt;/em&gt;', $str);
+echo $str;
+结果：
+主要有以下几个文件：index.php, style.css, common.js
+</code></pre>
+<h2 id="常用案例">常用案例</h2>
+<pre><code class="language-php">$user = array(
+    'name' =&gt; 'spark1985',
+    'email' =&gt; 'spark@imooc.com',
+    'mobile' =&gt; '13312345678'
+);
+//进行一般性验证
+if (empty($user)) {
+    die('用户信息不能为空');
+}
+if (strlen($user['name']) &lt; 6) {
+    die('用户名长度最少为6位');
+}
+//用户名必须为字母、数字与下划线
+if (!preg_match('/^\w+$/i', $user['name'])) {
+    die('用户名不合法');
+}
+//验证邮箱格式是否正确
+if (!preg_match('/^[\w\.]+@\w+\.\w+$/i', $user['email'])) {
+    die('邮箱不合法');
+}
+//手机号必须为11位数字，且为1开头
+if (!preg_match('/^1\d{10}$/i', $user['mobile'])) {
+    die('手机号不合法');
+}
+echo '用户信息验证成功';
+</code></pre>
+<hr>
+<h1 id="cookie简介">cookie简介</h1>
+<p>Cookie是存储在客户端浏览器中的数据，我们通过Cookie来跟踪与存储用户数据。<br>
+一般情况下，Cookie通过HTTP headers从服务端返回到客户端。<br>
+多数web程序都支持Cookie的操作，因为Cookie是存在于HTTP的标头之中，<br>
+所以必须在其他信息输出以前进行设置，类似于header函数的使用限制。</p>
+<p>PHP通过setcookie函数进行Cookie的设置，任何从浏览器发回的Cookie，PHP都会自动的将他存储在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow></mrow><mi>C</mi></msub><mi>O</mi><mi>O</mi><mi>K</mi><mi>I</mi><mi>E</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">全</mi><mi mathvariant="normal">局</mi><mi mathvariant="normal">变</mi><mi mathvariant="normal">量</mi><mi mathvariant="normal">之</mi><mi mathvariant="normal">中</mi><mi mathvariant="normal">，</mi><mi mathvariant="normal">因</mi><mi mathvariant="normal">此</mi><mi mathvariant="normal">我</mi><mi mathvariant="normal">们</mi><mi mathvariant="normal">可</mi><mi mathvariant="normal">以</mi><mi mathvariant="normal">通</mi><mi mathvariant="normal">过</mi></mrow><annotation encoding="application/x-tex">_COOKIE的全局变量之中，因此我们可以通过</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">全</span><span class="mord cjk_fallback">局</span><span class="mord cjk_fallback">变</span><span class="mord cjk_fallback">量</span><span class="mord cjk_fallback">之</span><span class="mord cjk_fallback">中</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">因</span><span class="mord cjk_fallback">此</span><span class="mord cjk_fallback">我</span><span class="mord cjk_fallback">们</span><span class="mord cjk_fallback">可</span><span class="mord cjk_fallback">以</span><span class="mord cjk_fallback">通</span><span class="mord cjk_fallback">过</span></span></span></span>_COOKIE['key']的形式来读取某个Cookie值。</p>
+<p>PHP中的Cookie具有非常广泛的使用，经常用来存储用户的登录信息，购物车等，且在使用会话Session时通常使用Cookie来存储会话id来识别用户，Cookie具备有效期，当有效期结束之后，Cookie会自动的从客户端删除。同时为了进行安全控制，Cookie还可以设置域跟路径，我们会在稍后的章节中详细的讲解他们。</p>
+<pre><code class="language-php">setcookie('test', time());
+ob_start();
+print_r($_COOKIE); 
+$content = ob_get_contents();
+$content = str_replace(&quot; &quot;, '&amp;nbsp;', $content);
+ob_clean();
+header(&quot;content-type:text/html; charset=utf-8&quot;);
+echo '当前的Cookie为：&lt;br&gt;';
+echo nl2br($content);
+</code></pre>
+<h2 id="设置cookie">设置cookie</h2>
+<p>PHP设置Cookie最常用的方法就是使用setcookie函数，setcookie具有7个可选参数，</p>
+<p>我们常用到的为前5个：</p>
+<p>name（ Cookie名）可以通过$_COOKIE['name'] 进行访问<br>
+value（Cookie的值）<br>
+expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效<br>
+path（有效路径）如果路径设置为'/'，则整个网站都有效<br>
+domain（有效域）默认整个域名都有效，如果设置了'www.imooc.com',则只在www子域中有效</p>
+<pre><code class="language-php">$value = 'test';
+setcookie(&quot;TestCookie&quot;, $value);
+setcookie(&quot;TestCookie&quot;, $value, time()+3600);  //有效期一小时
+setcookie(&quot;TestCookie&quot;, $value, time()+3600, &quot;/path/&quot;, &quot;imooc.com&quot;); //设置路径与域
+</code></pre>
+<p>PHP中还有一个设置Cookie的函数setrawcookie，setrawcookie跟setcookie基本一样，<br>
+唯一的不同就是value值不会自动的进行urlencode，因此在需要的时候要手动的进行urlencode。</p>
+<pre><code class="language-php">setrawcookie('cookie_name', rawurlencode($value), time()+60*60*24*365); 
+</code></pre>
+<p>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</p>
+<pre><code class="language-php">header(&quot;Set-Cookie:cookie_name=value&quot;);
+</code></pre>
+<p>设置一个名为test的Cookie</p>
+<pre><code class="language-php">$value = time();
+setcookie('test', $value); 
+if (isset($_COOKIE['test'])) {
+    echo 'success';
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
