@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586704943963">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586928147139">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586704943963" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586928147139" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -68,6 +68,9 @@
 <li><a href="#%E5%9B%9B-cookie">四、cookie</a>
 <ul>
 <li><a href="#%E8%AE%BE%E7%BD%AEcookie">设置cookie</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E4%B8%8E%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4">删除与过期时间</a></li>
+<li><a href="#%E6%9C%89%E6%95%88%E8%B7%AF%E5%BE%84">有效路径</a></li>
+<li><a href="#session%E4%B8%8Ecookie%E7%9A%84%E5%BC%82%E5%90%8C">session与cookie的异同</a></li>
 </ul>
 </li>
 </ul>
@@ -118,7 +121,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">PHP基础学习笔记(下)</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-11 / 20 min read
+          2020-04-11 / 23 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_2.jpg" alt="">
@@ -705,6 +708,61 @@ if (isset($_COOKIE['test'])) {
     echo 'success';
 }
 </code></pre>
+<h2 id="删除与过期时间">删除与过期时间</h2>
+<pre><code class="language-php">setcookie('test', time());
+//在这里试着删除test的cookie值
+setcookie('test', '', time()-1); 
+var_dump($_COOKIE);
+</code></pre>
+<p>将cookie的过期时间设置到当前时间之前，则该cookie会自动失效，也就达到了删除cookie的目的。<br>
+之所以这么设计是因为cookie是通过HTTP的标头来传递的，客户端根据服务端返回的Set-Cookie段来进行cookie的设置，如果删除cookie需要使用新的Del-Cookie来实现，则HTTP头就会变得复杂，<br>
+实际上仅通过Set-Cookie就可以简单明了的实现Cookie的设置、更新与删除。</p>
+<p>了解原理以后，我们也可以直接通过header来删除cookie。</p>
+<p>header(&quot;Set-Cookie:test=1393832059; expires=&quot;.gmdate('D, d M Y H:i:s \G\M\T', time()-1));</p>
+<p>这里用到了gmdate，用来生成格林威治标准时间，以便排除时差的影响。</p>
+<h2 id="有效路径">有效路径</h2>
+<p>cookie中的路径用来控制设置的cookie在哪个路径下有效，默认为'/'，<br>
+在所有路径下都有，当设定了其他路径之后，则只在设定的路径以及子路径下有效，例如：</p>
+<p>setcookie('test', time(), 0, '/path');</p>
+<p>上面的设置会使test在/path以及子路径/path/abc下都有效，但是在根目录下就读取不到test的cookie值。</p>
+<p>一般情况下，大多是使用所有路径的，只有在极少数有特殊需求的时候，会设置路径，<br>
+这种情况下只在指定的路径中才会传递cookie值，可以节省数据的传输，增强安全性以及提高性能。</p>
+<p>当我们设置了有效路径的时候，不在当前路径的时候则看不到当前cookie。</p>
+<p>setcookie('test', '1',0, '/path');<br>
+var_dump($_COOKIE['test']);</p>
+<h2 id="session与cookie的异同">session与cookie的异同</h2>
+<p>cookie将数据存储在客户端，建立起用户与服务器之间的联系，<br>
+通常可以解决很多问题，但是cookie仍然具有一些局限：</p>
+<p>cookie相对不是太安全，容易被盗用导致cookie欺骗<br>
+单个cookie的值最大只能存储4k<br>
+每次请求都要进行网络传输，占用带宽</p>
+<p>session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别，PHP默认情况下session id是通过cookie来保存的，因此从某种程度上来说，seesion依赖于cookie。但这不是绝对的，session id也可以通过参数来实现，只要能将session id传递到服务端进行识别的机制都可以使用session。</p>
+<pre><code class="language-php">使用session
+
+//先执行session_start方法开启session
+session_start();
+//设置一个session，然后通过全局变量$_SESSION进行session的读写
+$_SESSION['test'] = time();
+//显示当前的session_id
+echo &quot;session_id:&quot;.session_id();
+echo &quot;&lt;br&gt;&quot;;
+
+//读取session值
+echo $_SESSION['test'];
+// var_dump($_SESSION);
+
+//销毁一个session
+unset($_SESSION['test']);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($_SESSION);
+</code></pre>
+<p>ession会自动的对要设置的值进行encode与decode，<br>
+因此session可以支持任意数据类型，包括数据与对象等。</p>
+<p>session_start();<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow></mrow><mi>S</mi></msub><mi>E</mi><mi>S</mi><mi>S</mi><mi>I</mi><mi>O</mi><mi>N</mi><msup><mo>[</mo><mo mathvariant="normal">′</mo></msup><mi>a</mi><mi>r</mi><msup><mi>y</mi><mo mathvariant="normal">′</mo></msup><mo>]</mo><mo>=</mo><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><mi>y</mi><msup><mo>(</mo><mo mathvariant="normal">′</mo></msup><mi>n</mi><mi>a</mi><mi>m</mi><msup><mi>e</mi><mo mathvariant="normal">′</mo></msup><mo>=</mo><msup><mo>&gt;</mo><mo mathvariant="normal">′</mo></msup><mi>j</mi><mi>o</mi><mi>b</mi><msup><mi>s</mi><mo mathvariant="normal">′</mo></msup><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">_SESSION[&#x27;ary&#x27;] = array(&#x27;name&#x27; =&gt; &#x27;jobs&#x27;);
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen"><span class="mopen">[</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mopen"><span class="mopen">(</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mrel"><span class="mrel">&gt;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">;</span></span></span></span>_SESSION['obj'] = new stdClass();<br>
+var_dump($_SESSION);<br>
+默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题，</p>
 
         </div>
 
