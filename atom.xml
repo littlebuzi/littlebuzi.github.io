@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-15T07:34:14.665Z</updated>
+    <updated>2020-04-15T07:49:11.059Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -1203,8 +1203,8 @@ foreach($students as $key =&gt;$v)
         <content type="html"><![CDATA[<h1 id="vue">Vue</h1>
 <p>https://cn.vuejs.org</p>
 <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<h2 id="php">php</h2>
-<p>https://www.cnblogs.com/cc1997/p/10522678.html<br>
+<p>php交互：<br>
+https://www.cnblogs.com/cc1997/p/10522678.html<br>
 [Vuejs+php] MySQL数据转JSON传值到前端</p>
 <h1 id="react">React</h1>
 <p>https://react.docschina.org/</p>
@@ -1218,15 +1218,15 @@ foreach($students as $key =&gt;$v)
 <h1 id="layui">Layui</h1>
 <p>https://www.layui.com/</p>
 <p>layui（谐音：类UI) 是一款采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写与组织形式，门槛极低，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到 API 的每一处细节都经过精心雕琢，非常适合界面的快速开发。layui 首个版本发布于2016年金秋，她区别于那些基于 MVVM 底层的 UI 框架，却并非逆道而行，而是信奉返璞归真之道。准确地说，她更多是为服务端程序员量身定做，你无需涉足各种前端工具的复杂配置，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。</p>
-<h2 id="入门">入门：</h2>
-<p>开始使用：https://www.layui.com/doc/<br>
+<p>入门：<br>
+开始使用：https://www.layui.com/doc/<br>
 组件：https://www.layui.com/demo/<br>
 详细说明：https://www.layui.com/doc/element/layout.html</p>
-<h2 id="cdn">CDN</h2>
-<p>https://www.layuicdn.com/<br>
-为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务：</p>
-<h2 id="php-2">PHP</h2>
-<p>https://fly.layui.com/jie/32688/<br>
+<p>CDN引入：<br>
+https://www.layuicdn.com/<br>
+为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务</p>
+<p>PHP交互：<br>
+https://fly.layui.com/jie/32688/<br>
 PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
 <h1 id="avalon">Avalon</h1>
 <p>http://avalonjs.coding.me/</p>
@@ -1256,12 +1256,13 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[二次元识图工具网站]]></title>
+        <title type="html"><![CDATA[工具网站]]></title>
         <id>https://littlebuzi.github.io/amine_reg_1</id>
         <link href="https://littlebuzi.github.io/amine_reg_1">
         </link>
         <updated>2020-03-09T10:57:23.000Z</updated>
-        <content type="html"><![CDATA[<p>1、 https://trace.moe/ 找番剧网站，有大量日番资源<br>
+        <content type="html"><![CDATA[<h1 id="二次元识图工具网站">二次元识图工具网站</h1>
+<p>1、 https://trace.moe/ 找番剧网站，有大量日番资源<br>
 优点：找到图片番剧后可实时预览<br>
 缺点：只能识别番剧，魔改、加水印、模糊等图片不可用<br>
 2、 https://saucenao.com/ 找画网站，接入p站等数据<br>
@@ -1276,6 +1277,9 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
 6.各种搜索引擎，某度，某狗，某歌等等……<br>
 优点：谷歌搜索更广更专业<br>
 缺点：国内没有，可尝试这个第三方国内版https://gfsoso.fcczp.com/image.html</p>
+<h1 id="线上-pdf-工具">线上 PDF 工具</h1>
+<p>https://smallpdf.com/cn/<br>
+优点：功能一应俱全、简单好用</p>
 ]]></content>
     </entry>
     <entry>
