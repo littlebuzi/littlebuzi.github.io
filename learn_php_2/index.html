@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586954366682">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586955393365">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586954366682" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586955393365" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -78,6 +78,17 @@
 <ul>
 <li><a href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9">读取文件内容</a></li>
 <li><a href="#%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8">判断文件是否存在</a></li>
+<li><a href="#%E5%8F%96%E5%BE%97%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4">取得文件的修改时间</a></li>
+<li><a href="#%E5%8F%96%E5%BE%97%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%A7%E5%B0%8F">取得文件的大小</a></li>
+<li><a href="#%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9%E5%88%B0%E6%96%87%E4%BB%B6">写入内容到文件</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6">删除文件</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AD-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">六、异常处理</a>
+<ul>
+<li><a href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB">异常处理类</a></li>
+<li><a href="#%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF">捕获异常信息</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E9%94%99%E8%AF%AF%E5%8F%91%E7%94%9F%E7%9A%84%E6%89%80%E5%9C%A8%E8%A1%8C">获取错误发生的所在行</a></li>
 </ul>
 </li>
 </ul>
@@ -126,9 +137,9 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">PHP基础学习笔记(下)</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">PHP基础学习笔记(中)</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-11 / 27 min read
+          2020-04-11 / 32 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_2.jpg" alt="">
@@ -880,6 +891,7 @@ if (file_exists($filename)) {
 }
 
 is_file:
+
 //is_file是确切的判断给定的路径是否是一个文件,从函数名可以看出
 $filename = './test.txt';
 if (is_file($filename)) {
@@ -896,6 +908,155 @@ if (is_writeable($filename)) {
 //可读
 if (is_readable($filename)) {
     echo file_get_contents($filename);
+}
+</code></pre>
+<h2 id="取得文件的修改时间">取得文件的修改时间</h2>
+<p>文件有很多元属性，包括：文件的所有者、创建时间、修改时间、最后的访问时间等。</p>
+<p>fileowner：获得文件的所有者<br>
+filectime：获取文件的创建时间<br>
+filemtime：获取文件的修改时间<br>
+fileatime：获取文件的访问时间</p>
+<p>其中最常用的是文件的修改时间，通过文件的修改时间，<br>
+可以判断文件的时效性，经常用在静态文件或者缓存数据的更新。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>=</mo><mi>f</mi><mi>i</mi><mi>l</mi><mi>e</mi><mi>m</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>(</mo></mrow><annotation encoding="application/x-tex">mtime = filemtime(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">m</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mopen">(</span></span></span></span>filename);<br>
+echo '修改时间：'.date('Y-m-d H:i:s', filemtime($filename));</p>
+<pre><code class="language-php">$filename = '/data/webroot/usercode/code/resource/test.txt';
+echo '所有者：'.fileowner($filename).'&lt;br&gt;';
+echo '创建时间：'.filectime($filename).'&lt;br&gt;';
+echo '修改时间：'.filemtime($filename).'&lt;br&gt;';
+echo '最后访问时间：'.fileatime($filename).'&lt;br&gt;';
+
+//给$mtime赋值为文件的修改时间
+$mtime = filemtime($filename);
+//通过计算时间差 来判断文件内容是否有效
+if (time() - $mtime &gt; 3600) {
+    echo '&lt;br&gt;缓存已过期';
+} else {
+    echo file_get_contents($filename);
+}
+</code></pre>
+<h2 id="取得文件的大小">取得文件的大小</h2>
+<pre><code class="language-php">$filename = '/data/webroot/usercode/resource/test.txt';
+echo filesize($filename);
+//没法通过简单的函数来取得目录的大小，目录的大小是该目录下所有子目录以及文件大小的总和，
+//因此需要通过递归的方法来循环计算目录的大小。
+</code></pre>
+<p>详细：https://www.imooc.com/code/578</p>
+<h2 id="写入内容到文件">写入内容到文件</h2>
+<pre><code class="language-php">$filename = '/data/webroot/usercode/code/test2.txt';
+$fp = fopen($filename, 'w');
+fwrite($fp, 'hello world'); 
+fclose($fp); 
+
+// 或者
+$fp = fopen('./test.txt', 'w');
+fwrite($fp, 'hello');
+fwrite($fp, 'world');
+fclose($fp);
+</code></pre>
+<h2 id="删除文件">删除文件</h2>
+<p>跟Unix系统命令类似，PHP使用unlink函数进行文件删除。</p>
+<pre><code class="language-php">unlink($filename);
+</code></pre>
+<p>删除文件夹使用rmdir函数，文件夹必须为空，如果不为空或者没有权限则会提示失败。</p>
+<pre><code class="language-php">rmdir($dir);
+</code></pre>
+<p>如果文件夹中存在文件，可以先循环删除目录中的所有文件，然后再删除该目录，循环删除可以使用glob函数遍历所有文件。</p>
+<pre><code class="language-php">foreach (glob(&quot;*&quot;) as $filename) {
+   unlink($filename);
+}
+</code></pre>
+<h1 id="六-异常处理">六、异常处理</h1>
+<p>从PHP5开始，PHP支持异常处理，异常抛出之后，后面的代码将不会再被执行。<br>
+当代码中使用了try catch的时候，抛出的异常会在catch中捕获，否则会直接中断。</p>
+<pre><code class="language-php">基本语法
+        try{
+            //可能出现错误或异常的代码
+            //catch表示捕获，Exception是php已定义好的异常类
+        } catch(Exception $e){
+            //对异常处理，方法：
+                //1、自己处理
+                //2、不处理，将其再次抛出
+        }
+
+//每一个 &quot;throw&quot; 必须对应至少一个 &quot;catch&quot;，当然可以对应多个&quot;catch&quot;
+//Catch - &quot;catch&quot; 代码块会捕获异常，并创建一个包含异常信息的对象。
+
+创建可抛出一个异常的函数
+function checkNum($number){
+     if($number&gt;1){
+         throw new Exception(&quot;异常提示-数字必须小于等于1&quot;);
+     }
+     return true;
+ }
+
+//在 &quot;try&quot; 代码块中触发异常
+ try{
+     checkNum(2);
+     //如果异常被抛出，那么下面一行代码将不会被输出
+     echo '如果能看到这个提示，说明你的数字小于等于1';
+ }catch(Exception $e){
+     //捕获异常
+     echo '捕获异常: ' .$e-&gt;getMessage();
+ }
+
+ 检测文件是否存在
+$filename = 'test.txt';
+try {
+    if (!file_exists($filename)) {
+      throw new Exception('文件不存在');
+    }
+} catch(Exception $e) {
+    echo $e-&gt;getMessage();
+}
+</code></pre>
+<h2 id="异常处理类">异常处理类</h2>
+<p>Exception具有几个基本属性与方法，其中包括了：</p>
+<p>message 异常消息内容<br>
+code 异常代码<br>
+file 抛出异常的文件名<br>
+line 抛出异常在该文件的行数</p>
+<p>其中常用的方法有：</p>
+<p>getTrace 获取异常追踪信息<br>
+getTraceAsString 获取异常追踪信息的字符串<br>
+getMessage 获取出错信息</p>
+<pre><code class="language-php">class MyException extends Exception {
+    function getInfo() {
+        return '自定义错误信息';
+    }
+}
+
+try {
+    throw new MyException('error');
+} catch(Exception $e) {
+    echo $e-&gt;getInfo();
+}
+</code></pre>
+<p>详细：https://www.imooc.com/code/601</p>
+<h2 id="捕获异常信息">捕获异常信息</h2>
+<p>在实际应用中，不会轻易的抛出异常，只有在极端情况或者非常重要的情况下，才会抛出异常，<br>
+抛出异常，可以保障程序的正确性与安全，避免导致不可预知的bug。</p>
+<pre><code class="language-php">//一般的异常处理流程代码为：
+try {
+    throw new Exception('wrong');
+} catch(Exception $ex) {
+    echo 'Error:'.$ex-&gt;getMessage().'&lt;br&gt;';
+    echo $ex-&gt;getTraceAsString().'&lt;br&gt;';
+}
+echo '异常处理后，继续执行其他代码';
+</code></pre>
+<h2 id="获取错误发生的所在行">获取错误发生的所在行</h2>
+<p>在实际应用中，我们通常会获取足够多的异常信息，然后写入到错误日志中。<br>
+通过我们需要将报错的文件名、行号、错误信息、异常追踪信息等记录到日志中，以便调试与修复问题。</p>
+<pre><code class="language-php">try {
+    throw new Exception('wrong');
+} catch(Exception $ex) {
+    $msg = 'Error:'.$ex-&gt;getMessage().&quot;\n&quot;;
+    $msg.= $ex-&gt;getTraceAsString().&quot;\n&quot;;
+    $msg.= '异常行号：'.$ex-&gt;getLine().&quot;\n&quot;;
+    $msg.= '所在文件：'.$ex-&gt;getFile().&quot;\n&quot;;
+    //将异常信息记录到日志中
+ PHP异常处理之   file_put_contents('error.log', $msg);
 }
 </code></pre>
 
