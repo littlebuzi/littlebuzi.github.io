@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-15T07:49:11.059Z</updated>
+    <updated>2020-04-15T12:39:31.928Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -640,18 +640,146 @@ echo &quot;&lt;br&gt;&quot;;
 echo $_SESSION['test'];
 // var_dump($_SESSION);
 
-//销毁一个session
+//删除与销毁一个session
 unset($_SESSION['test']);
 echo &quot;&lt;br&gt;&quot;;
 var_dump($_SESSION);
+//如果要删除所有的session，可以使用session_destroy函数销毁当前session，
+//session_destroy会删除所有数据，但是session_id仍然存在。
+
+session_start();
+$_SESSION['name'] = 'jobs';
+$_SESSION['time'] = time();
+session_destroy();
+
+//session_destroy并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，
+//$_SESSION才为空，因此如果需要立即销毁$_SESSION，可以使用unset函数。
+
+session_start();
+$_SESSION['name'] = 'jobs';
+$_SESSION['time'] = time();
+unset($_SESSION);
+session_destroy(); 
+var_dump($_SESSION); //此时已为空
+
+//如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，
+//则还需要显式的调用setcookie方法删除session_id的cookie值。
 </code></pre>
-<p>ession会自动的对要设置的值进行encode与decode，<br>
+<p>session会自动的对要设置的值进行encode与decode，<br>
 因此session可以支持任意数据类型，包括数据与对象等。</p>
 <p>session_start();<br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow></mrow><mi>S</mi></msub><mi>E</mi><mi>S</mi><mi>S</mi><mi>I</mi><mi>O</mi><mi>N</mi><msup><mo>[</mo><mo mathvariant="normal">′</mo></msup><mi>a</mi><mi>r</mi><msup><mi>y</mi><mo mathvariant="normal">′</mo></msup><mo>]</mo><mo>=</mo><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><mi>y</mi><msup><mo>(</mo><mo mathvariant="normal">′</mo></msup><mi>n</mi><mi>a</mi><mi>m</mi><msup><mi>e</mi><mo mathvariant="normal">′</mo></msup><mo>=</mo><msup><mo>&gt;</mo><mo mathvariant="normal">′</mo></msup><mi>j</mi><mi>o</mi><mi>b</mi><msup><mi>s</mi><mo mathvariant="normal">′</mo></msup><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">_SESSION[&#x27;ary&#x27;] = array(&#x27;name&#x27; =&gt; &#x27;jobs&#x27;);
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen"><span class="mopen">[</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mopen"><span class="mopen">(</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mrel"><span class="mrel">&gt;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">;</span></span></span></span>_SESSION['obj'] = new stdClass();<br>
 var_dump($_SESSION);<br>
 默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题，</p>
+<h2 id="session来存储用户的登录信息">session来存储用户的登录信息</h2>
+<p>session可以用来存储多种类型的数据，因此具有很多的用途，<br>
+常用来存储用户的登录信息，购物车数据，或者一些临时使用的暂存数据等。</p>
+<p>用户在登录成功以后，通常可以将用户的信息存储在session中，<br>
+一般的会单独的将一些重要的字段单独存储，然后所有的用户信息独立存储。</p>
+<pre><code class="language-php">$_SESSION['uid'] = $userinfo['uid'];
+$_SESSION['userinfo'] = $userinfo;
+</code></pre>
+<p>一般来说，登录信息既可以存储在sessioin中，也可以存储在cookie中，<br>
+他们之间的差别在于session可以方便的存取多种数据类型，而cookie只支持字符串类型，<br>
+同时对于一些安全性比较高的数据，cookie需要进行格式化与加密存储，而session存储在服务端则安全性较高。</p>
+<pre><code class="language-php">session_start();
+//假设用户登录成功获得了以下用户数据
+$userinfo = array(
+    'uid'  =&gt; 10000,
+    'name' =&gt; 'spark',
+    'email' =&gt; 'spark@imooc.com',
+    'sex'  =&gt; 'man',
+    'age'  =&gt; '18'
+);
+header(&quot;content-type:text/html; charset=utf-8&quot;);
+
+/* 将用户信息保存到session中 */
+$_SESSION['uid'] = $userinfo['uid'];
+$_SESSION['name'] = $userinfo['name'];
+$_SESSION['userinfo'] = $userinfo;
+
+//* 将用户数据保存到cookie中的一个简单方法 */
+$secureKey = 'imooc'; //加密密钥
+$str = serialize($userinfo); //将用户信息序列化
+//用户信息加密前
+$str = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), $str, MCRYPT_MODE_ECB));
+//用户信息加密后
+//将加密后的用户数据存储到cookie中
+setcookie('userinfo', $str);
+
+//当需要使用时进行解密
+$str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), base64_decode($str), MCRYPT_MODE_ECB);
+$uinfo = unserialize($str);
+echo &quot;解密后的用户信息：&lt;br&gt;&quot;;
+print_r($uinfo);
+
+结果：
+解密后的用户信息：
+Array
+(
+    [uid] =&gt; 10000
+    [name] =&gt; spark
+    [email] =&gt; spark@imooc.com
+    [sex] =&gt; man
+    [age] =&gt; 18
+)
+</code></pre>
+<h1 id="五-文件系统">五、文件系统</h1>
+<h2 id="读取文件内容">读取文件内容</h2>
+<pre><code class="language-php">$content = file_get_contents('./test.txt');
+// file_get_contents，可以将整个文件全部读取到一个字符串中
+
+$content = file_get_contents('./test.txt', null, null, 100, 500);
+//可通过参数控制读取内容的开始点以及长度。
+
+echo $content;
+</code></pre>
+<p>PHP也提供类似于C语言操作文件的方法，使用fopen，fgets，fread等方法，<br>
+fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。</p>
+<pre><code class="language-php">$fp = fopen('./text.txt', 'rb');
+while(!feof($fp)) {
+    echo fgets($fp); //读取一行
+}
+fclose($fp);
+ 
+$fp = fopen('./text.txt', 'rb');
+$contents = '';
+while(!feof($fp)) {
+    $contents .= fread($fp, 4096); //一次读取4096个字符
+}
+fclose($fp);
+</code></pre>
+<p>使用fopen打开的文件，最好使用fclose关闭文件指针，以避免文件句柄被占用。</p>
+<h2 id="判断文件是否存在">判断文件是否存在</h2>
+<p>is_file与file_exists.</p>
+<pre><code class="language-php">file_exists:
+
+//判断文件是否存在，同时也可以判断目录是否存在
+$filename = './test.txt';
+if (file_exists($filename)) {
+    echo file_get_contents($filename);
+}
+
+is_file:
+//is_file是确切的判断给定的路径是否是一个文件,从函数名可以看出
+$filename = './test.txt';
+if (is_file($filename)) {
+    echo file_get_contents($filename);
+}
+</code></pre>
+<p>is_readable与is_writeable更加精确<br>
+在文件是否存在的基础上，判断文件是否可读与可写。</p>
+<pre><code class="language-php">//可写
+$filename = './test.txt';
+if (is_writeable($filename)) {
+    file_put_contents($filename, 'test');
+}
+//可读
+if (is_readable($filename)) {
+    echo file_get_contents($filename);
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
