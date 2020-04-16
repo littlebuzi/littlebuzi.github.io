@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-16T11:55:05.720Z</updated>
+    <updated>2020-04-16T12:26:21.257Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://littlebuzi.github.io/images/avatar.png</logo>
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
+    <entry>
+        <title type="html"><![CDATA[PHP学习路线]]></title>
+        <id>https://littlebuzi.github.io/QyXCDfM9s</id>
+        <link href="https://littlebuzi.github.io/QyXCDfM9s">
+        </link>
+        <updated>2020-04-16T12:03:49.000Z</updated>
+        <content type="html"><![CDATA[<p>免费php学习课程：<br>
+https://www.imooc.com/course/list?c=php</p>
+<p>PHP基础篇上、中、下（归纳编辑于）：<br>
+已收录：<br>
+1.PHP入门篇：https://www.imooc.com/view/54<br>
+2.PHP进阶篇：https://www.imooc.com/view/26<br>
+未收录：<br>
+PHP7的基本变量：https://www.imooc.com/learn/1085<br>
+PHP+Mysql+Ajax实现分页：https://www.imooc.com/learn/1117<br>
+PHP-面向对象：https://www.imooc.com/learn/887<br>
+PHP函数篇：https://www.imooc.com/learn/827<br>
+PHP扩展安装指南：https://www.imooc.com/learn/757<br>
+PHP进阶篇-字符串操作：https://www.imooc.com/learn/726</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PHP学习路线]]></title>
+        <id>https://littlebuzi.github.io/learn_php</id>
+        <link href="https://littlebuzi.github.io/learn_php">
+        </link>
+        <updated>2020-04-16T12:03:49.000Z</updated>
+        <content type="html"><![CDATA[<p>免费php学习课程：<br>
+https://www.imooc.com/course/list?c=php</p>
+<p>PHP基础篇上、中、下（归纳编辑于）：<br>
+已收录：<br>
+1.PHP入门篇：https://www.imooc.com/view/54<br>
+2.PHP进阶篇：https://www.imooc.com/view/26<br>
+未收录：<br>
+PHP7的基本变量：https://www.imooc.com/learn/1085<br>
+PHP+Mysql+Ajax实现分页：https://www.imooc.com/learn/1117<br>
+PHP-面向对象：https://www.imooc.com/learn/887<br>
+PHP函数篇：https://www.imooc.com/learn/827<br>
+PHP扩展安装指南：https://www.imooc.com/learn/757<br>
+PHP进阶篇-字符串操作：https://www.imooc.com/learn/726</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[PHP基础学习笔记(下)]]></title>
         <id>https://littlebuzi.github.io/learn_php_3</id>
@@ -152,6 +194,12 @@ if (mysql_query($sql)) {
 <pre><code class="language-php">$link = mysql_connect($host, $user, $pass);
 mysql_close($link);
 </code></pre>
+<h1 id="phpmysqlajax实现分页">PHP+Mysql+Ajax实现分页</h1>
+<p>https://www.imooc.com/learn/1117</p>
+<h1 id="php环境lamplnmp安装与配置">PHP环境LAMP/LNMP安装与配置</h1>
+<p>LAMP是Linux + Apache/Nginx + Mysql + PHP的简称。<br>
+目前，国内外，无论一线互联网企业还是创业公司，LAMP都是Web开发的主流，以其高性能、特稳定、开源免费等特性闻名于世。</p>
+<p>https://www.imooc.com/learn/703</p>
 <p>扩展学习：<br>
 PHP进阶篇-GD库图像处理：http://www.imooc.com/learn/701</p>
 <hr>
@@ -1826,152 +1874,6 @@ https://zhidao.baidu.com/question/596846191.html</p>
 dir /b&gt;test.txt
 </code></pre>
 <p>https://zhidao.baidu.com/question/936329819153763892.html</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tensorflow利用inception_v3模型和retrain实现图像分类训练]]></title>
-        <id>https://littlebuzi.github.io/tensorflow2</id>
-        <link href="https://littlebuzi.github.io/tensorflow2">
-        </link>
-        <updated>2020-02-15T09:22:17.000Z</updated>
-        <content type="html"><![CDATA[<p>参考文献：<br>
-https://blog.csdn.net/ZeyiRTangent/article/details/87886445</p>
-<p>#准备：</p>
-<p>1.五个分类好存有各自类别的文件夹【文件夹及其内图片的名称全小写，绝对路径名中不能包含中文】</p>
-<p>2.inception_v3模型下载，无需解压【http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz】</p>
-<p>3.克隆/下载 https://github.com/tensorflow/tensorflow &amp; https://github.com/tensorflow/hub （在~hub-master\examples\image_retraining中找到retrain.py文件，待会需要定位文件位置）</p>
-<p>。。。</p>
-<hr>
-<h1 id="可能遇到的问题">可能遇到的问题：</h1>
-<ol>
-<li></li>
-</ol>
-<p>查看Windows下TensorFlow对python版本的要求<br>
-https://blog.csdn.net/sinat_23619409/article/details/84202596</p>
-<ol start="2">
-<li></li>
-</ol>
-<p>windows10 conda python多版本切换<br>
-https://www.cnblogs.com/simuhunluo/p/8540459.html</p>
-<ol start="3">
-<li></li>
-</ol>
-<p>windows 怎么更新 Python 版本（现有 Python 版本装了很多库）卸载重装，工作量就大了，有没有什么直接更新的方式，不会删库那种办法<br>
-https://www.v2ex.com/amp/t/477473</p>
-<ol start="4">
-<li></li>
-</ol>
-<p>conda（anaconda）删除清华源，改回原源<br>
-https://blog.csdn.net/qinglingLS/article/details/89363368</p>
-<ol start="5">
-<li></li>
-</ol>
-<p>PackagesNotFoundError: The following packages are not available from current channels:<br>
-https://blog.csdn.net/miao0967020148/article/details/85230430</p>
-<ol start="6">
-<li></li>
-</ol>
-<p>迁移学习关于下载不了inception-v3，自己网络又加载不了的问题<br>
-https://blog.csdn.net/nationalline450/article/details/82085007</p>
-<p>原址：<br>
-https://tfhub.dev/google/imagenet/inception_v3/feature_vector/3</p>
-<ol start="7">
-<li></li>
-</ol>
-<p>出现以下报错：</p>
-<pre><code class="language-python">Warning! ***HDF5 library version mismatched error***
-The HDF5 header files used to compile this application do not match
-the version used by the HDF5 library to which this application is linked.
-Data corruption or segmentation faults may occur if the application continues.
-This can happen when an application was compiled by one version of HDF5 but
-linked with a different version of static or shared HDF5 library.
-You should recompile the application or check your shared library related
-settings such as 'LD_LIBRARY_PATH'.
-You can, at your own risk, disable this warning by setting the environment
-variable 'HDF5_DISABLE_VERSION_CHECK' to a value of '1'.
-Setting it to 2 or higher will suppress the warning messages totally.
-Headers are 1.10.4, library is 1.10.5
-        SUMMARY OF THE HDF5 CONFIGURATION
-        =================================
-
-General Information:
--------------------
-                   HDF5 Version: 1.10.5
-                  Configured on: 2019-03-04
-  
-... ... ... 
-... ... ... 
- 
-          Function Stack Tracing: OFF
-       Strict File Format Checks: OFF
-    Optimization Instrumentation:
-Bye...
-
-</code></pre>
-<p>（多版本导致冲突）pip uninstall h5py<br>
-Ubuntu: HDF5报错: HDF5 header version与HDF5 library不匹配<br>
-https://www.cnblogs.com/platero/p/4077934.html</p>
-<p>Python环境中HDF5报错：HDF5 library version mismatched error<br>
-https://blog.csdn.net/zhaoyin214/article/details/104095227</p>
-<p>使用conda装完plt/pillow后，错误又出来了，详细看，conda在安装pillow时帮你安装hdf5版本了：<br>
-再卸载一次h5py，然后可能提示：</p>
-<p>ModuleNotFoundError: No module named 'matplotlib' ， python导入'matplotlib'包报错</p>
-<p>解决：https://blog.csdn.net/weixin_43670105/article/details/87911820</p>
-<p>【不能解决】 UserWarning: h5py is running against HDF5 1.10.2 when it was built against 1.10.3, this may ca...<br>
-https://www.jianshu.com/p/c248bbea1da7</p>
-<ol start="8">
-<li></li>
-</ol>
-<p>tensorflow版本：2.0过高怎么办？</p>
-<p>解决：</p>
-<p>适当回退tensorflow版本：<br>
-pip install tensorflow==1.13.1</p>
-<p>安装Tensorflow 2.0后的坑has no attribute 'contrib'<br>
-https://blog.51cto.com/cfy10/2446977?source=dra</p>
-<p>ModuleNotFoundError: No module named 'tensorflow.contrib.rnn'<br>
-https://blog.csdn.net/u014742995/article/details/86496292</p>
-<ol start="9">
-<li></li>
-</ol>
-<p>提示python版本过高、冲突（tensorflow版本）怎么办？</p>
-<p>conda install python=3.6</p>
-<p>Anaconda中将python 3.7版本退回python 3.6版本<br>
-https://blog.csdn.net/Fhujinwu/article/details/85851587</p>
-<p>遇到 label xxx no image found 类问题：<br>
-如 提示：</p>
-<pre><code>CRITICAL:tensorflow:Label 51 has no images in the category validation.
-Tensorflow - No valid folders of images found at XXXXX #10104
-ERROR:tensorflow:No valid folders of images found at
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1584022703568.PNG" alt="" loading="lazy"></figure>
-<p>https://github.com/tensorflow/tensorflow/issues/10104<br>
-http://www.codeclip.com/4141.html</p>
-<h1 id="参考文献">参考文献：</h1>
-<p>https://blog.csdn.net/ZeyiRTangent/article/details/87886445</p>
-<h1 id="相似推荐有助思考">相似推荐，有助思考：</h1>
-<p>https://blog.csdn.net/weixin_38663832/article/details/80555341<br>
-https://blog.csdn.net/EZ_guachong/article/details/90048846<br>
-https://github.com/sourcedexter/tfClassifier<br>
-https://stackoverflow.com/questions/45076911/tensorflow-failed-to-create-a-newwriteablefile-when-retraining-inception</p>
-<h2 id="迁移学习">迁移学习</h2>
-<p>https://blog.csdn.net/chaipp0607/article/details/73380390<br>
-https://blog.csdn.net/Night___Raid/article/details/102975023</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[TensorFlow支持的动漫人物识别网站的存储库]]></title>
-        <id>https://littlebuzi.github.io/tensorflow3</id>
-        <link href="https://littlebuzi.github.io/tensorflow3">
-        </link>
-        <updated>2020-02-15T09:22:17.000Z</updated>
-        <content type="html"><![CDATA[<p>开始：<br>
-在知乎上偶然阅读到这位作者的文章：https://zhuanlan.zhihu.com/p/70511070</p>
-<p>参考：<br>
-https://gitee.com/littlebuzi/danbooru-pretrained<br>
-https://github.com/freedomofkeima/MoeFlow<br>
-https://github.com/freedomofkeima/transfer-learning-anime<br>
-https://github.com/nagadomi/animeface-2009<br>
-https://github.com/KichangKim/DeepDanbooru/releases/tag/v1-20191108-sgd-e30</p>
 ]]></content>
     </entry>
 </feed>
