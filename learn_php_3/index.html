@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>buzi</title>
 <meta name="description" content="记录平凡的修炼之路" />
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1586966058527">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1587037682247">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://littlebuzi.github.io/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1586966058527" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://littlebuzi.github.io//images/avatar.png?v=1587037682247" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">buzi</h1>
       </div>
@@ -42,6 +42,10 @@
 <li><a href="#%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93">连接MySQL数据库</a></li>
 <li><a href="#%E6%89%A7%E8%A1%8Cmysql%E6%9F%A5%E8%AF%A2">执行MySQL查询</a></li>
 <li><a href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%B0mysql">插入数据到MySQL</a></li>
+<li><a href="#%E5%8F%96%E5%BE%97%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C">取得数据查询结果</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E5%88%86%E9%A1%B5%E6%95%B0%E6%8D%AE">查询分页数据</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE">更新与删除数据</a></li>
+<li><a href="#%E5%85%B3%E9%97%ADmysql%E8%BF%9E%E6%8E%A5">关闭MySQL连接</a></li>
 </ul>
 </li>
 </ul>
@@ -92,7 +96,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">PHP基础学习笔记(下)</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-15 / 3 min read
+          2020-04-15 / 6 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://littlebuzi.github.io//post-images/learn_php_3.jpg" alt="">
@@ -165,6 +169,76 @@ mysql_query(</annotation></semantics></math></span><span class="katex-html" aria
 <p>//mysql_insert_id函数可以获取自增的主键id。<br>
 $uid = mysql_insert_id();<br>
 //可以用来判断是否插入成功，或者作为关联ID进行其他的数据操作。</p>
+<h2 id="取得数据查询结果">取得数据查询结果</h2>
+<p>PHP有多个函数可以获取数据集中的一行数据，最常用的是mysql_fetch_array，<br>
+可以通过设定参数来更改行数据的下标，默认的会包含数字索引的下标以及字段名的关联索引下标。</p>
+<pre><code class="language-php">$sql = &quot;select * from user limit 1&quot;;
+$result = mysql_query($sql);
+$row = mysql_fetch_array($result);
+</code></pre>
+<p>可以通过设定参数MYSQL_NUM只获取数字索引数组，等同于mysql_fetch_row函数，<br>
+如果设定参数为MYSQL_ASSOC则只获取关联索引数组，等同于mysql_fetch_assoc函数。</p>
+<pre><code class="language-php">$row = mysql_fetch_row($result);
+$row = mysql_fetch_array($result, MYSQL_NUM); //这两个方法获取的数据是一样的
+$row = mysql_fetch_assoc($result);
+$row = mysql_fetch_array($result, MYSQL_ASSOC);
+</code></pre>
+<p>如果要获取数据集中的所有数据，我们通过循环来遍历整个结果集。</p>
+<pre><code class="language-php">$data = array();
+while ($row = mysql_fetch_array($result)) {
+    $data[] = $row;
+}
+</code></pre>
+<h2 id="查询分页数据">查询分页数据</h2>
+<p>通过mysql的limit可以很容易的实现分页，limit m,n表示从m行后取n行数据，要构造m与n来实现获取某一页的所有数据。</p>
+<p>假定当前页为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>g</mi><mi>e</mi><mi mathvariant="normal">，</mi><mi mathvariant="normal">每</mi><mi mathvariant="normal">页</mi><mi mathvariant="normal">显</mi><mi mathvariant="normal">示</mi></mrow><annotation encoding="application/x-tex">page，每页显示</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">每</span><span class="mord cjk_fallback">页</span><span class="mord cjk_fallback">显</span><span class="mord cjk_fallback">示</span></span></span></span>n条数据，那么m为当前页前面所有的数据，<br>
+既<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>(</mo></mrow><annotation encoding="application/x-tex">m = (</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span></span></span></span>page-1) * $n，通过构造SQL语句在PHP中实现数据翻页。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>g</mi><mi>e</mi><mo>=</mo><mn>2</mn><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">page = 2;
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">;</span></span></span></span>n = 2;<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>(</mo></mrow><annotation encoding="application/x-tex">m = (</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span></span></span></span>page - 1) * <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">n;
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">;</span></span></span></span>sql = &quot;select * from user limit $m, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">&quot;</mi><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">n&quot;;
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mord">&quot;</span><span class="mpunct">;</span></span></span></span>result = mysql_query(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>q</mi><mi>l</mi><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">循</mi><mi mathvariant="normal">环</mi><mi mathvariant="normal">获</mi><mi mathvariant="normal">取</mi><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">页</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">据</mi></mrow><annotation encoding="application/x-tex">sql);
+//循环获取当前页的数据
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">/</span><span class="mord">/</span><span class="mord cjk_fallback">循</span><span class="mord cjk_fallback">环</span><span class="mord cjk_fallback">获</span><span class="mord cjk_fallback">取</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">页</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span></span></span></span>data = array();<br>
+while (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>w</mi><mo>=</mo><mi>m</mi><mi>y</mi><mi>s</mi><mi>q</mi><msub><mi>l</mi><mi>f</mi></msub><mi>e</mi><mi>t</mi><mi>c</mi><msub><mi>h</mi><mi>a</mi></msub><mi>s</mi><mi>s</mi><mi>o</mi><mi>c</mi><mo>(</mo></mrow><annotation encoding="application/x-tex">row = mysql_fetch_assoc(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault">c</span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mopen">(</span></span></span></span>result)) {<br>
+$data[] = $row;<br>
+}</p>
+<p>使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi mathvariant="normal">与</mi></mrow><annotation encoding="application/x-tex">m与</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord cjk_fallback">与</span></span></span></span>n变量来表示偏移量与每页数据条数，但推荐使用更有意义的变量名来表示，<br>
+比如$pagesize, $start, $offset等，这样更容易理解，有助于团队协作开发。</p>
+<h2 id="更新与删除数据">更新与删除数据</h2>
+<pre><code class="language-php">// 更新
+$sql = &quot;update user set name = '曹操' where id=2 limit 1&quot;;
+if (mysql_query($sql)) {
+    echo '更新成功';
+}
+
+// 删除
+$sql = &quot;delete from user where id=2 limit 1&quot;;
+if (mysql_query($sql)) {
+    echo '删除成功';
+}
+
+对于删除与更新操作，可以通过mysql_affected_rows函数来获取更新过的数据行数，
+如果数据没有变化，则结果为0。
+
+$sql = &quot;update user set name = '曹操' where id=2 limit 1&quot;;
+if (mysql_query($sql)) {
+    echo mysql_affected_rows();
+}
+</code></pre>
+<h2 id="关闭mysql连接">关闭MySQL连接</h2>
+<pre><code class="language-php">mysql_close();
+</code></pre>
+<p>虽然PHP会自动关闭数据库连接，一般情况下已经满足需求，但是在对性能要求比较高的情况下，<br>
+可以在进行完数据库操作之后尽快关闭数据库连接，以节省资源，提高性能。</p>
+<p>在存在多个数据库连接的情况下，可以设定连接资源参数来关闭指定的数据库连接。</p>
+<pre><code class="language-php">$link = mysql_connect($host, $user, $pass);
+mysql_close($link);
+</code></pre>
+<p>扩展学习：<br>
+PHP进阶篇-GD库图像处理：http://www.imooc.com/learn/701</p>
+<hr>
+<p>来源：慕课网，内容持续更新中...</p>
 
         </div>
 
