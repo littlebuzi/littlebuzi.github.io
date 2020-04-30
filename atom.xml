@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-16T13:45:08.763Z</updated>
+    <updated>2020-04-30T09:50:41.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -1726,24 +1726,25 @@ PHP后台怎么写才能使返回的数据渲染layui表格呢</p>
         </link>
         <updated>2020-03-09T10:57:23.000Z</updated>
         <content type="html"><![CDATA[<h1 id="二次元识图工具网站">二次元识图工具网站</h1>
-<p>1、 https://trace.moe/ 找番剧网站，有大量日番资源<br>
-优点：找到图片番剧后可实时预览<br>
-缺点：只能识别番剧，魔改、加水印、模糊等图片不可用<br>
-2、 https://saucenao.com/ 找画网站，接入p站等数据<br>
-优点：识别很多画师原创图及同人图<br>
-缺点：查找结果为英文、日文、罗马音等。需要借助翻译工具<br>
-3、 https://www.baidu.com/ 搜索引擎类，百度谷歌等<br>
-优点：可找的范围很广，包括但不限于：动漫、各类MV、影视剧等等，全中文<br>
-缺点：结果并不是很精确需要进一步搜索，可能出现奇怪的结果<br>
-4、人肉识别@凉风Kaze[doge]<br>
-优点：快 准 狠<br>
-缺点：消耗一个三连（误）<br>
-6.各种搜索引擎，某度，某狗，某歌等等……<br>
-优点：谷歌搜索更广更专业<br>
+<h2 id="httpstracemoe-找番剧网站有大量日番资源">https://trace.moe/ 找番剧网站，有大量日番资源</h2>
+<p>优点：找到图片番剧后可实时预览<br>
+缺点：只能识别番剧，魔改、加水印、模糊等图片不可用</p>
+<h2 id="httpssaucenaocom-找画网站接入p站等数据">https://saucenao.com/ 找画网站，接入p站等数据</h2>
+<p>优点：识别很多画师原创图及同人图<br>
+缺点：查找结果为英文、日文、罗马音等。需要借助翻译工具</p>
+<h2 id="httpswwwbaiducom-搜索引擎类百度谷歌等">https://www.baidu.com/ 搜索引擎类，百度谷歌等</h2>
+<p>优点：可找的范围很广，包括但不限于：动漫、各类MV、影视剧等等，全中文<br>
+缺点：结果并不是很精确需要进一步搜索，可能出现奇怪的结果</p>
+<h2 id="人肉识别凉风kazedoge">人肉识别@凉风Kaze[doge]</h2>
+<p>优点：快 准 狠<br>
+缺点：消耗一个三连（误）</p>
+<h2 id="各种搜索引擎某度某狗某歌等等">各种搜索引擎，某度，某狗，某歌等等……</h2>
+<p>优点：谷歌搜索更广更专业<br>
 缺点：国内没有，可尝试这个第三方国内版https://gfsoso.fcczp.com/image.html</p>
 <h1 id="线上-pdf-工具">线上 PDF 工具</h1>
-<p>https://smallpdf.com/cn/<br>
-优点：功能一应俱全、简单好用</p>
+<h2 id="httpssmallpdfcomcn">https://smallpdf.com/cn/</h2>
+<p>优点：功能一应俱全、简单好用<br>
+缺点：免费次数有限</p>
 ]]></content>
     </entry>
     <entry>
