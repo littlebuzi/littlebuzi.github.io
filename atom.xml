@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-04-30T09:51:30.668Z</updated>
+    <updated>2020-05-30T15:32:26.711Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -1597,12 +1597,20 @@ foreach($students as $key =&gt;$v)
 </code></pre>
 <h2 id="结构嵌套">结构嵌套</h2>
 <h2 id="条件嵌套">条件嵌套</h2>
-<p>if里加if，<br>
-if($sex == &quot;男&quot;)</p>
-<p>if($noHouse)</p>
-<p>else if($sex == &quot;女&quot;)<br>
-4、第20行输入：</p>
-<p>if($isPregnancy)</p>
+<p>if里加if，</p>
+<pre><code class="language-php">if (条件)
+{
+    if 条件成立时执行的代码;
+}
+elseif (条件)
+{
+    elseif 条件成立时执行的代码;
+}
+else
+{
+    条件不成立时执行的代码;
+}
+</code></pre>
 <h2 id="循环嵌套">循环嵌套</h2>
 <p>常用于遍历二维数组。</p>
 <pre><code class="language-php">
