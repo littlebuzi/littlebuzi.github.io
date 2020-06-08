@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-06-08T15:57:54.337Z</updated>
+    <updated>2020-06-08T16:10:55.372Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://littlebuzi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, buzi</rights>
     <entry>
-        <title type="html"><![CDATA[我的世界服务器]]></title>
+        <title type="html"><![CDATA[Minecraft服务器]]></title>
         <id>https://littlebuzi.github.io/mc_online_1</id>
         <link href="https://littlebuzi.github.io/mc_online_1">
         </link>
@@ -20,12 +20,22 @@
 <h2 id="玩法">玩法：</h2>
 <p>https://space.bilibili.com/686127/favlist?fid=761086911&amp;ftype=collect</p>
 <h2 id="下载教程篇">下载教程篇:</h2>
+<p>#没有我的世界正版账号：<br>
+选择以下任一网页中的帖子，进群下载客户端，即可游玩</p>
+<p>https://tieba.baidu.com/f?kw=我的世界行尸走肉<br>
+https://www.secretmine.net/tag/xszr-fwq/<br>
+https://www.baidu.com/s?ie=UTF-8&amp;wd=我的世界行尸走肉服务器</p>
+<p>单人模式：<br>
+进入单人游戏，创建新地图，世界类型选择，Crafting Dead，创建世界。<br>
+多人模式：<br>
+进入多人模式，双击进入已经输入好的服务器或输入ip地址。</p>
+<p>#拥有我的世界正版账号：</p>
 <p>科技启动器下载地址：https://www.technicpack.net/<br>
 整合包名称：Official Crafting Dead<br>
 详见：https://www.bilibili.com/video/BV1Et411b7wn</p>
 <p>你可能会遇到：<br>
 <img src="https://littlebuzi.github.io//post-images/1591624608447.png" alt="卡顿在这一步" loading="lazy"><br>
-当你下载完TechnicLauncher，并找到official-crafting-dead，开始下载安装到此步卡住。</p>
+当你下载完“TechnicLauncher”，并找到“official-crafting-dead”，然后开始下载安装到此步卡住，接下来你需要点击“”找到这个位置：</p>
 ]]></content>
     </entry>
     <entry>
