@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebuzi.github.io/</id>
     <title>buzi</title>
-    <updated>2020-06-08T17:37:09.179Z</updated>
+    <updated>2020-06-08T17:42:50.791Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebuzi.github.io/"/>
     <link rel="self" href="https://littlebuzi.github.io/atom.xml"/>
@@ -57,8 +57,10 @@
 <img src="https://littlebuzi.github.io//post-images/1591636506053.png" alt="" loading="lazy"><br>
 红框地址为：<code>C:\Users\计算机登录帐户名\AppData\Roaming\.minecraft</code>，与步骤1位置一致。安装完成后，打开游戏，选择对于版本启动即可。</p>
 <h3 id="没有mc正版账号但喜欢折腾">没有mc正版账号，但喜欢折腾：</h3>
-<p>在网络上获取到文件夹<code>craftingdead</code>及<code>mods</code>里面的文件，再准备一个“1.6.4盗版启动器”，重复上面正版操作的第二步，给现有客户端打<code>forge</code>，启动游戏，它会自动下载，最后启动成功。</p>
+<p>在网络上获取到文件夹<code>craftingdead</code>及<code>mods</code>里面的文件，再准备一个“1.6.4盗版启动器”，重复上面正版操作的第二步，给现有客户端打<code>forge</code>，启动游戏，它会自动下载，最后启动成功。<br>
+<img src="https://littlebuzi.github.io//post-images/1591638139009.png" alt="" loading="lazy"></p>
 <hr>
+<br>
 <center>喜欢作者，感谢、支持作者一波，可以扫下方二维码，请小弟喝杯茶~</center>
 <figure data-type="image" tabindex="1"><img src="https://littlebuzi.github.io//post-images/1591637716105.png" alt="" loading="lazy"></figure>
 <center>还有疑问可直接评论回复或发送邮件到作者邮箱~</center>
