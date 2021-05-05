@@ -1,110 +1,198 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>阿尔法狗的工作原理及核心技术 | buzi</title>
-<meta name="description" content="记录平凡的修炼之路">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620226926695">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    阿尔法狗的工作原理及核心技术 | buzi
+</title>
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620229439110">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://littlebuzi.github.io/">
-        <img src="https://littlebuzi.github.io//images/avatar.png?v=1620226926695" class="site-logo">
-        <h1 class="site-title">buzi</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <style>
+
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
+
+/* Slide transitions */
+
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
+
+<div class="header" class="header-navigation" id="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://littlebuzi.github.io/">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1620229439110" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    buzi
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    时间线
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    分类
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="https://littlebuzi.github.io/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            时间线
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            分类
-          </a>
-        
-      
-        
-          <a href="https://littlebuzi.github.io/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      记录平凡的修炼之路
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </div>
 </div>
 
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">阿尔法狗的工作原理及核心技术</h2>
-            <div class="post-date">2019-07-29</div>
-            
-              <div class="feature-container" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565870241986&amp;di=383ccd2d847fedd599e3da0101ad465b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.mydrivers.com%2Fimg%2F20170517%2F1cc234d8d8374d52af0041518537835a.jpg')">
-              </div>
-            
-            <div class="post-content">
-              <p>阿尔法围棋（AlphaGo）是第一个击败人类职业围棋选手、第一个战胜围棋世界冠军的人工智能程序，由谷歌（Google）旗下DeepMind公司戴密斯·哈萨比斯领衔的团队开发。</p>
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
+
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
+
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
+
+    new_scroll_position = last_scroll_position;
+});
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            阿尔法狗的工作原理及核心技术
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-07-29</time>
+                            
+                                <a href="https://littlebuzi.github.io/N4SH6d1dT/" class="post-tag i-tag
+                            i-tag-banana">
+                            #科学
+                        </a>
+                                
+                        </div>
+                        
+                            <div class="post-feature-image" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565870241986&amp;di=383ccd2d847fedd599e3da0101ad465b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.mydrivers.com%2Fimg%2F20170517%2F1cc234d8d8374d52af0041518537835a.jpg')"></div>
+                            
+                                <div class="post-content">
+                                    <p>阿尔法围棋（AlphaGo）是第一个击败人类职业围棋选手、第一个战胜围棋世界冠军的人工智能程序，由谷歌（Google）旗下DeepMind公司戴密斯·哈萨比斯领衔的团队开发。</p>
 <figure data-type="image" tabindex="1"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565869684301&amp;di=ccccf3de2ab4799226a3d04d675c2b02&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D857300518%2C626260855%26fm%3D214%26gp%3D0.jpg" alt="img" loading="lazy"></figure>
 <p>那么阿尔法狗的工作原理是什么？相关技术又有哪些呢？下面让我们一起来看看。</p>
 <h1 id="工作原理">工作原理</h1>
@@ -146,83 +234,112 @@
 <p>这三大技术都不是AlphaGo或者DeepMind团队首创的技术。但是强大的团队将这些结合在一起，配合Google公司强大的计算资源，成就了历史性的飞跃。</p>
 <figure data-type="image" tabindex="6"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1565870222258&amp;di=a20450ac8a150317128e91ab4319cbea&amp;imgtype=0&amp;src=http%3A%2F%2Fe-images.juwaistatic.com%2F2017%2F10%2Falphago-zero-e1508483004369.jpg" alt="img" loading="lazy"></figure>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://littlebuzi.github.io/N4SH6d1dT/" class="tag">
-                    科学
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://littlebuzi.github.io/emoji/">
-                  <h3 class="post-title">
-                    emoji表情大全😁
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://littlebuzi.github.io/emoji/">
+                                <h3 class="post-title">
+                                    emoji表情大全😁
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">工作原理</a></li>
+<li><a href="#%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF">三大核心技术</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
 
         </div>
-      </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
+    
+                            
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                </div>
 
-<script type="application/javascript">
 
-AOS.init();
 
-hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+            </div>
 
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
-  
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    </div>
     <script>
-
-      var gitalk = new Gitalk({
-        clientID: 'e7c2b33da7e627d57c5a',
-        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
-        repo: 'littlebuzi.github.io',
-        owner: 'littlebuzi',
-        admin: ['littlebuzi'],
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
     </script>
-  
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: 'e7c2b33da7e627d57c5a',
+            clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+            repo: 'littlebuzi.github.io',
+            owner: 'littlebuzi',
+            admin: ['littlebuzi'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
 
+                    
+                                
+</body>
 
-
-
-  </body>
 </html>

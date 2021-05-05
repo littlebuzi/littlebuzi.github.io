@@ -1,146 +1,319 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>前端 | buzi</title>
-<meta name="description" content="记录平凡的修炼之路">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620226926695">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    前端 | buzi
+</title>
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620229439110">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
+</head>
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://littlebuzi.github.io/">
-        <img src="https://littlebuzi.github.io//images/avatar.png?v=1620226926695" class="site-logo">
-        <h1 class="site-title">buzi</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            时间线
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            分类
-          </a>
-        
-      
-        
-          <a href="https://littlebuzi.github.io/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      记录平凡的修炼之路
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </div>
-</div>
+<body>
+    <div class="main">
+        <style>
 
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 前端</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://littlebuzi.github.io/前端_1/">
-                  <h2 class="post-title">目前流行的9大前端框架</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-15
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://littlebuzi.github.io/前端_1/">
-                  <div class="feature-container" style="background-image: url('https://littlebuzi.github.io//post-images/前端_1.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
+/* Slide transitions */
 
-          <div class="pagination-container">
-  
-  
-</div>
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
 
+<div class="header" class="header-navigation" id="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://littlebuzi.github.io/">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1620229439110" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    buzi
+                </h1>
+            </div>
         </div>
-      </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    时间线
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    分类
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="https://littlebuzi.github.io/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
 
-<script type="application/javascript">
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
 
-AOS.init();
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
 
-hljs.initHighlightingOnLoad()
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+    new_scroll_position = last_scroll_position;
+});
 </script>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+    <div class="i-card">
+        <b>标签：#
+        前端</b>
+    </div>
+    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://littlebuzi.github.io/前端_1/">
+                        目前流行的9大前端框架
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-03-15</time>
+                    
+                        <a href="https://littlebuzi.github.io/5HUxCw9id/" class="post-tag i-tag
+                            i-tag-other_1">
+            #前端
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://littlebuzi.github.io/前端_1/" class="post-feature-image" style="background-image:url(https://littlebuzi.github.io//post-images/前端_1.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Vue
+https://cn.vuejs.org
+Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
+php交互：
+https://www.cnblogs.com/cc1997/p/10522678.html
+[Vuejs+php] MySQL数据转JSON传值到前端
+React
+https://react.docschina.org/
+React 是一个用于构建用户界面的 JAVASCRIPT 库。React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。
+Angular
+https://angular.io
+AngularJS诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVVM、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。
+QucikUI
+http://www.uileader.com/product_quickui
+QucikUI 4.0是一套完整的企业级web前端开发解决方案，由基础框架、UI组件库、皮肤包、示例工程和文档等组成。底层基于jquery构建。使用QucikUI 开发者可以极大地减少工作量，提高开发效率，快速构建功能强大、美观、兼容的web应用系统。
+Layui
+https://www.layui.com/
+layui（谐音：类UI) 是一款采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写与组织形式，门槛极低，拿来即用。其外在极简，却又不失饱满的内在，体积轻盈，组件丰盈，从核心代码到 API 的每一处细节都经过精心雕琢，非常适合界面的快速开发。layui 首个版本发布于2016年金秋，她区别于那些基于 MVVM 底层的 UI 框架，却并非逆道而行，而是信奉返璞归真之道。准确地说，她更多是为服务端程序员量身定做，你无需涉足各种前端工具的复杂配置，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。
+入门：
+开始使用：https://www.layui.com/doc/
+组件：https://www.layui.com/demo/
+详细说明：https://www.layui.com/doc/element/layout.html
+CDN引入：
+https://www.layuicdn.com/
+为 Layui 的广大用户提供免费的CDN静态库，非常稳定、快速、免费的 Layui开源组件项目 国内CDN加速服务
+PHP交互：
+https://fly.layui.com/jie/32688/
+PHP后台怎么写才能使返回的数据渲染layui表格呢
+Avalon
+http://avalonjs.coding.me/
+avalon2是一款基于虚拟DOM与属性劫持的 迷你、 易用、 高性能 的 前端MVVM框架， 拥有超优秀的兼容性, 支持移动开发, 后端渲染, WEB Component式组件开发, 无需编译, 开箱即用。
+Dojo
+https://dojo.io/
+Dojo致力于实现最大的互操作性。Web组件提供了一种机制，可以在Dojo应用程序中利用非Dojo组件，并在非Dojo应用程序中轻松使用基于Dojo的小部件。Dojo为Web组件提供一流的支持。您今天做出的决定不应该将您锁定在未来的决策中。
+Ember
+https://emberjs.com/
+Ember.js可能是最固执己见的主流框架，这也是其最大的优势。它有创建Ember.js应用程序的正确方法，通常只有一种方法来创建应用程序。Ember.js更类似于一个产品或平台，在那里你会到一个供应商的长期支持和维护。Ember.js提供了对其平台的全面版本管理，升级工具以及对API升级的强大指导和工具。成熟，是对Ember.js的一个很好的总结。
+Aurelia
+https://aurelia.io/
+Aurelia是一个令人惊叹的框架，它在不牺牲功能的情况下采用简单而干净的代码。在本教程中，我们将通过构建“Todo”应用程序向您介绍Aurelia的简单性。您将看到应用程序代码的简洁程度，您将学习Aurelia的几个基本概念和功能。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://littlebuzi.github.io/前端_1/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
+
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://littlebuzi.github.io//images/avatar.png?v=1620229439110)">
+        </div>
+        <h1 class="id_card-title">
+            buzi
+        </h1>
+        <h2 class="id_card-description">
+            记录平凡的修炼之路
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                        <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-wechat"></i></a>
+                        
+                            <!-- weibo -->
+                            
+                                <a href="https://github.com/littlebuzi" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-qq"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
+                                        <a href="https://space.bilibili.com/160195259" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-youtube-play"></i></a>
+                                        
+
+        </div>
+    </div>
+    
+
+                        <!-- 公告栏 -->
+                        
+
+                </div>
+            </div>
 
 
 
-  </body>
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
+
 </html>

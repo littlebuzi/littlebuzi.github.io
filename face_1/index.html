@@ -1,110 +1,198 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>基于 tensorflow 的动漫人物识别 | buzi</title>
-<meta name="description" content="记录平凡的修炼之路">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620226926695">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    基于 tensorflow 的动漫人物识别 | buzi
+</title>
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620229439110">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://littlebuzi.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://littlebuzi.github.io/">
-        <img src="https://littlebuzi.github.io//images/avatar.png?v=1620226926695" class="site-logo">
-        <h1 class="site-title">buzi</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <style>
+
+.header-navigation {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	background-color:#333;
+	text-align:center;
+	box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	z-index:9999;
+}
+
+/* Slide transitions */
+
+	.slideUp {
+	/* -webkit-transform:translateY(-100px);
+	transform:translateY(-100px);
+	*/
+	  -webkit-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+	transform:translateY(-100px);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+.slideDown {
+	/*-webkit-transform:translateY(0);
+	transform:translateY(0);
+	*/
+	  -webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+	/*transition:transform .5s ease-out;
+	*/
+	  -webkit-transition:transform .5s ease-out;
+	-o-transition:transform .5s ease-out;
+	transition:transform .5s ease-out;
+}
+</style>
+
+<div class="header" class="header-navigation" id="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://littlebuzi.github.io/">
+                <img class="avatar" src="https://littlebuzi.github.io//images/avatar.png?v=1620229439110" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    buzi
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    时间线
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    分类
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="https://littlebuzi.github.io/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            时间线
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            分类
-          </a>
-        
-      
-        
-          <a href="https://littlebuzi.github.io/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      记录平凡的修炼之路
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </div>
 </div>
 
+<script>
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("header");
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">基于 tensorflow 的动漫人物识别</h2>
-            <div class="post-date">2019-12-10</div>
-            
-              <div class="feature-container" style="background-image: url('https://user-images.githubusercontent.com/287255/43184241-ed3f1af8-9022-11e8-8800-468b002c73d9.png')">
-              </div>
-            
-            <div class="post-content">
-              <br>
+window.addEventListener('scroll', function(e) {
+    last_scroll_position = window.scrollY;
+
+    // Scrolling down
+    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+        // header.removeClass('slideDown').addClass('slideUp');
+        header.classList.remove("slideDown");
+        header.classList.add("slideUp");
+
+        // Scrolling up
+    } else if (new_scroll_position > last_scroll_position) {
+        // header.removeClass('slideUp').addClass('slideDown');
+        header.classList.remove("slideUp");
+        header.classList.add("slideDown");
+    }
+
+    new_scroll_position = last_scroll_position;
+});
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            基于 tensorflow 的动漫人物识别
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-12-10</time>
+                            
+                                <a href="https://littlebuzi.github.io/nKWkHExQP/" class="post-tag i-tag
+                            i-tag-">
+                            #python
+                        </a>
+                                
+                        </div>
+                        
+                            <div class="post-feature-image" style="background-image: url('https://user-images.githubusercontent.com/287255/43184241-ed3f1af8-9022-11e8-8800-468b002c73d9.png')"></div>
+                            
+                                <div class="post-content">
+                                    <br>
 <blockquote>
 <ul>
 <li>总目标：实现动漫人脸识别、建立动漫人脸数据库</li>
@@ -520,83 +608,137 @@ model = cv2.face.createEigenFaceRecognizer() 行找不到face<br>
 <p><a href="https://blog.csdn.net/qq_29007291/article/details/81103603">https://blog.csdn.net/qq_29007291/article/details/81103603</a></p>
 <p><a href="https://blog.csdn.net/mozf881/article/details/84929443">https://blog.csdn.net/mozf881/article/details/84929443</a></p>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://littlebuzi.github.io/nKWkHExQP/" class="tag">
-                    python
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://littlebuzi.github.io/face/">
-                  <h3 class="post-title">
-                    基于opencv的人脸识别签到系统 
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://littlebuzi.github.io/face/">
+                                <h3 class="post-title">
+                                    基于opencv的人脸识别签到系统 
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#1-%E6%A0%87%E6%B3%A8%E5%9B%BE%E7%89%87%E4%B8%AD%E5%8A%A8%E6%BC%AB%E4%BA%BA%E7%89%A9%E7%9A%84%E8%84%B8%E9%83%A8">1、标注图片中动漫人物的脸部</a>
+<ul>
+<li><a href="#11-%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD">1.1、依赖下载：</a></li>
+<li><a href="#12-test%E7%8E%AF%E5%A2%83">1.2、Test环境：</a></li>
+<li><a href="#13-%E5%8F%82%E6%95%B0%E6%9F%A5%E8%AF%A2-%E7%8E%AF%E5%A2%83%E8%B0%83%E8%AF%95%E7%BB%93%E6%9D%9F%E5%BC%80%E5%A7%8B%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD">1.3、参数查询、环境调试结束，开始测试功能：</a></li>
+</ul>
+</li>
+<li><a href="#2-%E6%88%AA%E5%8F%96%E5%B9%B6%E4%BF%9D%E5%AD%98%E8%A7%86%E9%A2%91%E4%B8%80%E5%B8%A7%E5%B8%A7%E6%88%AA%E5%8F%96%E5%88%B0%E7%9A%84%E5%8A%A8%E6%BC%AB%E4%BA%BA%E8%84%B8%E7%9B%AE%E6%A0%87">2、截取并保存视频一帧帧截取到的动漫人脸(目标)：</a>
+<ul>
+<li><a href="#21-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95">2.1、文件目录：</a></li>
+<li><a href="#22-%E5%AF%BC%E5%85%A5%E8%A7%86%E9%A2%91%E4%B8%80%E5%B8%A7%E5%B8%A7%E6%88%AA%E5%8F%96%E5%8A%A8%E6%BC%AB%E4%BA%BA%E8%84%B8">2.2、导入视频一帧帧截取动漫人脸：</a></li>
+<li><a href="#22-%E5%88%86%E7%B1%BB%E5%9B%BE%E7%89%87">2.2、分类图片：</a></li>
+</ul>
+</li>
+<li><a href="#3-%E8%AE%AD%E7%BB%83%E5%9B%BE%E7%89%87">3、训练图片：</a></li>
+<li><a href="#4-%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87">4、识别图片：</a>
+<ul>
+<li><a href="#%E6%AD%A5%E9%AA%A411%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤1.1中可能遇到的问题：</a></li>
+<li><a href="#%E6%B3%95%E4%B8%80">法一：</a></li>
+<li><a href="#%E6%B3%95%E4%BA%8C">法二：</a></li>
+<li><a href="#xftp%E4%BC%A0%E4%B8%8A%E5%8E%BB%E4%BA%91%E7%AB%AF">xftp传上去云端</a></li>
+<li><a href="#%E8%AF%A6%E7%BB%86%E8%AF%B7%E7%9C%8B">详细请看</a></li>
+<li><a href="#%E6%AD%A5%E9%AA%A422%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤2.2中可能遇到的问题：</a></li>
+<li><a href="#%E6%AD%A5%E9%AA%A423%E4%B8%AD%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">步骤2.3中可能遇到的问题：</a></li>
+<li><a href="#import-cv2-%E6%89%BE%E4%B8%8D%E5%88%B0-face">import cv2 找不到 face</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献：</a></li>
+</ul>
 
         </div>
-      </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
+    
+                            
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                </div>
 
-<script type="application/javascript">
 
-AOS.init();
 
-hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+            </div>
 
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
-  
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    </div>
     <script>
-
-      var gitalk = new Gitalk({
-        clientID: 'e7c2b33da7e627d57c5a',
-        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
-        repo: 'littlebuzi.github.io',
-        owner: 'littlebuzi',
-        admin: ['littlebuzi'],
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
     </script>
-  
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: 'e7c2b33da7e627d57c5a',
+            clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+            repo: 'littlebuzi.github.io',
+            owner: 'littlebuzi',
+            admin: ['littlebuzi'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
 
+                    
+                                
+</body>
 
-
-
-  </body>
 </html>
