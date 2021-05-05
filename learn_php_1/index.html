@@ -1,106 +1,110 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-<meta name="description" content=""/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" >
+
 <title>PHP基础学习笔记(上) | buzi</title>
-<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620215462919">
-<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<meta name="description" content="记录平凡的修炼之路">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://littlebuzi.github.io//favicon.ico?v=1620220356009">
 <link rel="stylesheet" href="https://littlebuzi.github.io//styles/main.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
 
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-</head>
-<body>
-<div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            buzi
-        </div>
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://littlebuzi.github.io/">
+        <img src="https://littlebuzi.github.io//images/avatar.png?v=1620220356009" class="site-logo">
+        <h1 class="site-title">buzi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-                <div class="nav-item">
-                    
-                        <a href="/" class="menu gt-a-link">
-                            首页
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/archives" class="menu gt-a-link">
-                            时间线
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/tags" class="menu gt-a-link">
-                            分类
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="https://littlebuzi.github.io/about" class="menu gt-a-link">
-                            关于
-                        </a>
-                    
-                </div>
-            
-        </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            时间线
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="https://littlebuzi.github.io/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
-</nav>
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    PHP基础学习笔记(上)
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2020-04-07 ·
-                    </time>
-                    
-                        <a href="https://littlebuzi.github.io/O2zTJWpBN/" class="post-tags">
-                            # php
-                        </a>
-                    
-                </div>
-                <div class="post-content">
-                    <blockquote>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      记录平凡的修炼之路
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">PHP基础学习笔记(上)</h2>
+            <div class="post-date">2020-04-07</div>
+            
+              <div class="feature-container" style="background-image: url('https://littlebuzi.github.io//post-images/learn_php_1.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <blockquote>
 <p>学习一门新的计算机语言，对于基础基础不能丢三落四、模凌两可，这是一定要过关的。这对于以后遇到问题，能事半功倍，快人一步。不然会处处碰壁，事倍功半。假如你不是特别优秀的人，那可以选择像我一样，重复再重复吧，加油💪~</p>
 </blockquote>
 <hr>
@@ -643,86 +647,83 @@ PHP进阶篇-字符串操作：http://www.imooc.com/learn/726</p>
 2.再好的学习平台，也可能会有结束的一天，所以我现在做的事情，可能可以为优秀的平台在茫茫的互联网长河中留下一点点痕迹。</p>
 </blockquote>
 
-                </div>
-            </article>
-        </div>
-
-        
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://littlebuzi.github.io/前端_1/" class="post-title gt-a-link">
-                    目前流行的9大前端框架
-                </a>
             </div>
-        
-
-        
-
-        
             
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: 'e7c2b33da7e627d57c5a',
-    clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
-    repo: 'littlebuzi.github.io',
-    owner: 'littlebuzi',
-    admin: ['littlebuzi'],
-    id: location.pathname,      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
+              <div class="tag-container">
+                
+                  <a href="https://littlebuzi.github.io/O2zTJWpBN/" class="tag">
+                    php
+                  </a>
+                
+              </div>
             
-
             
-        
-
-        
-
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">记录平凡的修炼之路</div>
-    <div class="social-container">
-        
-            
-                <a href="https://github.com/littlebuzi/" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://littlebuzi.github.io/前端_1/">
+                  <h3 class="post-title">
+                    目前流行的9大前端框架
+                  </h3>
                 </a>
+              </div>
             
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-    <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://littlebuzi.github.io//atom.xml" target="_blank">RSS</a></a>
-    </div>
-</div>
 
-<script>
-    hljs.initHighlightingOnLoad()
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-    </div>
-</div>
-</body>
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'e7c2b33da7e627d57c5a',
+        clientSecret: '70bd30bae9adc0e0559d863df193af430483bcd1',
+        repo: 'littlebuzi.github.io',
+        owner: 'littlebuzi',
+        admin: ['littlebuzi'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
 </html>
